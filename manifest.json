@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "version": "1.0",
+    "name": "NEXXT TABS",
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "icon.png"
+    },
+    "permissions": [
+        "tabs",
+        "storage"
+    ],
+    "icons": {
+      "128": "icon.png"
+    }
+
+}

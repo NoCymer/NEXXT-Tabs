@@ -1,0 +1,118 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+html {
+    height: 100%;
+}
+body{
+    background-image: url(../src/assets/backgrounds/space_fantasy_planets_sky_stars_landscapes_3840x2400.jpg);
+    background-size: cover;
+    margin: 0;
+    padding:0;
+    height: 100%;
+}
+#page-wrapper{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+#settings-page-wrapper{
+    transition: width 0.3s ease-out, height 0.3s ease-out, top 0.3s ease-out;
+    display: none;
+    visibility: hidden;
+    background-color: #2e2e2e;
+    position: absolute;
+    z-index: 9;
+    top: 0%;
+    left: 0%;
+    transform: translateY(-50%);
+    width: 0%;
+    height: 0%;
+    border-radius: 0 0px 50px 0 ;
+
+}
+#settings-container{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border-bottom: #757575 solid 1px;
+}
+#nav-bar{
+    flex-grow: 1;
+    display: flex;
+    align-content: space-between;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+#nav-bar button {
+    height: 100%;
+    font-size: 1rem;
+    color: white;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+#nav-bar button:hover {
+    border-bottom: #ffffff solid 1px;
+}
+#search-wrapper{
+    transition: background-color 0.05s;
+    height: 45px;
+    width: 32%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* color: #ffffff; */
+    border: 3px solid #36363600;
+    background-color: #5c5c5c85;
+    border-radius: 100px;
+    padding: 0px 15px 0px 5px;
+    margin-bottom: 5%;
+}
+
+#search-wrapper:focus-within{
+    background-color: #6d6d6d85;
+}
+
+#settings-wrapper{
+    z-index: 10;
+    align-self: flex-start;
+    justify-self: flex-start;
+}
+
+#settings-button{
+    margin: 5px 0 0 25px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+#button-img{
+    height: 100%;
+    transform: rotate(90deg);
+}
+#search-img{
+   width:40px;
+}
+#search-button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+#search-wrapper form, input {
+    height: 80%;
+    width: 90%;
+    margin-left: 5px;
+    margin-top: 0.5px;
+    border: none;
+    font-size: 1.25rem;
+    background-color: #00000000;
+    color: rgb(245, 245, 245);
+}
+#search-wrapper input:focus {
+    outline: none;
+}
