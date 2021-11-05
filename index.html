@@ -9,6 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
     <script src="js/search.js" defer></script>
     <script src="js/settings.js" defer></script>
@@ -16,21 +17,67 @@
 </head>
 <body>
     <div id="page-wrapper">
-        <div id="settings-wrapper"><button id="settings-button"><img src="src/assets/more-info.svg" alt="" id="button-img"></button></div>     
-        <div id="search-wrapper">
-            <button id="search-button"><img id="search-img" src="src/assets/lens.svg" alt="lens"></button>
-            <form action="" id="search-form"><input type="text" id="search-input" autocomplete="off" spellcheck="false"></form> 
-        </div>
+        <div id="settings-wrapper"><button id="settings-button"><img src="src/assets/more-info.svg" alt="" id="button-img"></button></div> 
+        <div id="search-wrapper-wrapper">
+            <div id="search-wrapper">
+                <button id="search-button"><img id="search-img" src="src/assets/lens.svg" alt="lens"></button>
+                <form action="" id="search-form"><input type="text" id="search-input" autocomplete="off" spellcheck="false"></form> 
+            </div>
+            <div class="search-space"></div>
+        </div>         
         <div id="favorite-wrapper"></div>
     </div>
     <div id="settings-page-wrapper">
         <div id="settings-container">
-            <div id="settings-wrapper"><button id="settings-button"><img src="src/assets/more-info.svg" alt="" id="button-img"></button></div>
+            <div id="settings-wrapper"><button id="settings-button-placeholder"></button></div>
             <div id="nav-bar">
-                <button id="general-nav-button">General</button>
-                <button id="background-nav-button">Background</button>
-                <button id="info-nav-button">Info</button>
+                <button id="general-nav-button">GENERAL</button>
+                <button id="background-nav-button">BACKGROUND</button>
+                <button id="info-nav-button">INFO</button>
             </div>
+        </div>
+        <div id="general-page" class="settings-page">
+            <div id="general-wrapper">
+                <div id="search-engine-settings" class="setting-wrapper">
+                    <div class="setting-entry">
+                        <h3>Search Engine : </h3>
+                        <select id="search-engine" name="search-engine">
+                            <option value="0">Google</option>
+                            <option value="1">DuckDuckGo</option>
+                            <option value="2">Ecosia</option>
+                            <option value="3">Qwant</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="timer-settings" class="setting-wrapper">
+                    <div class="setting-entry">
+                        <h3>Countdown</h3>
+                        <div class="switch-button">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>   
+                    </div>                
+                </div>
+                <div id="bookmark-settings" class="setting-wrapper">   
+                    <div class="setting-entry">
+                        <h3>Bookmarks</h3>
+                        <div class="switch-button">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>   
+                    </div>                          
+                </div>
+            </div>
+        </div>
+        <div id="background-page" class="settings-page">
+            <div>Backgrounds</div>
+        </div>
+        <div id="info-page" class="settings-page">
+            <div>Info</div>
         </div>
     </div>
 </body>
