@@ -101,7 +101,8 @@ const addListeners = () => {
 addBookmarkCloseBtn.addEventListener("click",() => {
     addBookmarkWrapperWrapper.style.display = "none";
 })
-submitBookmark.addEventListener("submit", () => {
+submitBookmark.addEventListener("submit", (e) => {
+    e.preventDefault();
     newBookmark(titleField.value, urlField.value);
     titleField.value = "";
     urlField.value = "";
