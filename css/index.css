@@ -95,21 +95,32 @@ body{
     align-items: center;
 }
 .mainLbl{
+    font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
-    margin-bottom: 2%;
+    margin-bottom: 3.5%;
 }
 .lbl{
-    margin-left: 3.5%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    margin-left: 3%;
 }
 .lblL{
-    margin-left: 2%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    margin-left: 1%;
 }
 .lblR{
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
     margin-left: 1%;
 }
 .lblNb{
+    font-size: 2rem;
     text-align: center;
     width: 100%;
+}
+.lbldot {
+    font-size: 2rem;
 }
 .search-space{
     width:30%;
