@@ -1,13 +1,11 @@
 const settingsBtn = document.querySelector("#settings-button");
 const settingsEl = document.querySelector("#settings-page-wrapper");
-const searchBar = document.querySelector("#search-wrapper");
 const generalNavBtn = document.querySelector("#general-nav-button");
 const backgroundNavBtn = document.querySelector("#background-nav-button");
 const infoNavBtn = document.querySelector("#info-nav-button");
 const generalPage = document.querySelector("#general-page");
 const backgroundPage = document.querySelector("#background-page");
 const infoPage = document.querySelector("#info-page");
-const searchEngine = document.querySelector("#search-engine");
 
 let pageIndex = 0;
 let isShown = false;
@@ -127,12 +125,4 @@ infoNavBtn.addEventListener("click", () => {
     pageIndex = 2;
     setSettingsPage(pageIndex);
 })
-let sE;
-if(localStorage.getItem("searchEngine") != null) {
-    sE = Number(localStorage.getItem("searchEngine"));
-}
-searchEngine.value = sE;
 
-searchEngine.onchange = () => {
-    localStorage.setItem("searchEngine",searchEngine.value);
-}

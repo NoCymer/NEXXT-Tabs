@@ -1,10 +1,12 @@
+const searchBar = document.querySelector("#search-wrapper");
 const searchInput = document.querySelector("#search-input");
 const searchForm = document.querySelector("#search-form");
 const searchButton = document.querySelector("#search-button");
-let searchEnigne = 2;
+const searchEngine = document.querySelector("#search-engine");
+let searchEnigne = 0;
 
 if(localStorage.getItem("searchEngine") != null) {
-    searchEnigne = localStorage.getItem("searchEngine");
+    searchEnigne = Number(localStorage.getItem("searchEngine"));
 }
 const search = (input) => {
     if(localStorage.getItem("searchEngine") != null) {
@@ -42,3 +44,7 @@ searchForm.addEventListener("submit", (e) => {
     search(searchInput.value);
 })
 
+searchEngine.value = searchEnigne;
+searchEngine.onchange = () => {
+    localStorage.setItem("searchEngine",searchEngine.value);
+}

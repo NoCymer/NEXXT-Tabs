@@ -69,7 +69,48 @@ body{
     align-items: center;
     width: 100%;
 }
+#countdownContainerTop{
+    position: absolute;
+    top: 2%;
+    left:50%;
+    transform: translateX(-50%);
+    padding-bottom: 0%;
+    color:white;
+}
+#countdownContainerBottom{
+    position: absolute;
+    bottom: 4%;
+    left:50%;
+    transform: translateX(-50%);
+    color:white;
+}
+.info{
+    display:flex;
+    justify-content: space-evenly;
+}
 
+.lblHolder{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.mainLbl{
+    font-size: 1.5rem;
+    margin-bottom: 2%;
+}
+.lbl{
+    margin-left: 3.5%;
+}
+.lblL{
+    margin-left: 2%;
+}
+.lblR{
+    margin-left: 1%;
+}
+.lblNb{
+    text-align: center;
+    width: 100%;
+}
 .search-space{
     width:30%;
 }
@@ -187,7 +228,7 @@ body{
     display: flex;
 } */
 
-#search-engine{
+.mcq{
     width: 35%;
     height: 25px;
     font-size: 1rem;
@@ -200,11 +241,32 @@ body{
     border-radius: 25px;;
 }
 
+.more-settings-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-img{
+    position: relative;
+    align-self: flex-end;
+    margin-right: 10%;
+    height: 25px;
+}
+.ct-sub-entry-hidden {
+    display: none;
+}
+
 .setting-wrapper {
     margin-left: 6%;
     width: 100%;
     display: flex;
     flex-direction: column;
+    background-color: #3b3b3b;
+    border-radius: 10px;
+    width: 80%;
+    padding: 5% 0 5% 5%;
+    margin-left: 4%;
 }
 
 .setting-entry{
@@ -213,7 +275,10 @@ body{
     align-items: center;
     justify-content: flex-start;
 }
-
+h3{
+    font-weight: normal;
+    font-size: 1.3rem;
+}
 .switch-button{
     margin-left: 5%;
     height: min-content;

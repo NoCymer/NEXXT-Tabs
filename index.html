@@ -13,9 +13,33 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="js/search.js" defer></script>
     <script src="js/settings.js" defer></script>
+    <script src="js/countdown.js" defer></script>
+    <script src="js/countdownSettings.js" defer></script>
     <title>New Tab</title>
 </head>
 <body>
+    <div id="countdownContainerTop" style="display:none;">
+        <table style="max-height:145px; min-width:800px;">
+            <tr class="info">
+                <td id="labelT" colspan="7" class="mainLbl"></td>
+            </tr>
+            <tr class="info">
+                <td class="lblNb" id="tD">00</td>
+                <td class="lbldot">:</td>
+                <td class="lblNb" id="tH">00</td>
+                <td class="lbldot">:</td>
+                <td class="lblNb" id="tM">00</td>
+                <td class="lbldot">:</td>
+                <td class="lblNb" id="tS">00</td>
+            </tr>
+            <tr class="lblHolder">
+                <td class="lblL">Days</td>
+                <td class="lbl">Hours</td>
+                <td class="lbl">Minutes</td>
+                <td class="lblR">Seconds</td>
+            </tr>
+        </table>
+    </div>
     <div id="page-wrapper">
         <div id="settings-wrapper"><button id="settings-button"><img src="src/assets/more-info.svg" alt="" id="button-img"></button></div> 
         <div id="search-wrapper-wrapper">
@@ -41,7 +65,7 @@
                 <div id="search-engine-settings" class="setting-wrapper">
                     <div class="setting-entry">
                         <h3>Search Engine : </h3>
-                        <select id="search-engine" name="search-engine">
+                        <select id="search-engine" name="search-engine" class="mcq">
                             <option value="0">Google</option>
                             <option value="1">DuckDuckGo</option>
                             <option value="2">Ecosia</option>
@@ -54,11 +78,26 @@
                         <h3>Countdown</h3>
                         <div class="switch-button">
                             <label class="switch">
-                                <input type="checkbox">
+                                <input type="checkbox" id="ct-switch">
                                 <span class="slider"></span>
                             </label>
-                        </div>   
-                    </div>                
+                        </div>
+                    </div>  
+                    <div class="setting-entry ct-sub-entry-hidden">
+                        <h3>Position :</h3>
+                        <select id="countdown-position" name="countdown-position" class="mcq">
+                            <option value="0">Top</option>
+                            <option value="1">Bottom</option>
+                        </select>                 
+                    </div>
+                    <div class="setting-entry ct-sub-entry-hidden">
+                        <h3>Event Date :</h3>
+                        <input type="date" id="date" class="mcq">               
+                    </div>
+                    <div class="setting-entry ct-sub-entry-hidden">
+                        <h3>Event Label :</h3>
+                        <input type="text" id='lbl' class="mcq" autocomplete="off" spellcheck="false">                 
+                    </div>
                 </div>
                 <div id="bookmark-settings" class="setting-wrapper">   
                     <div class="setting-entry">
@@ -79,6 +118,28 @@
         <div id="info-page" class="settings-page">
             <div>Info</div>
         </div>
+    </div>
+    <div id="countdownContainerBottom" style="display:none;">
+        <table style="max-height:145px; min-width:800px;">
+            <tr class="info">
+                <td id="labelB" colspan="7" class="mainLbl"></td>
+            </tr>
+            <tr class="info">
+                <td class="lblNb" id="bD">00</td>
+                <td class="lbldot">:</td>
+                <td class="lblNb" id="bH">00</td>
+                <td class="lbldot">:</td>
+                <td class="lblNb" id="bM">00</td>
+                <td class="lbldot">:</td>
+                <td class="lblNb" id="bS">00</td>
+            </tr>
+            <tr class="lblHolder">
+                <td class="lblL">Days</td>
+                <td class="lbl">Hours</td>
+                <td class="lbl">Minutes</td>
+                <td class="lblR">Seconds</td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>
