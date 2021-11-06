@@ -117,12 +117,13 @@ generalNavBtn.addEventListener("click", () => {
     pageIndex = 0;
     setSettingsPage(pageIndex);
 })
+
 backgroundNavBtn.addEventListener("click", () => {
     pageIndex = 1;
     setSettingsPage(pageIndex);
 })
+
 infoNavBtn.addEventListener("click", () => {
     pageIndex = 2;
     setSettingsPage(pageIndex);
 })
-

@@ -1,171 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
-    <script src="js/search.js" defer></script>
-    <script src="js/settings.js" defer></script>
-    <script src="js/bookmarks.js" defer></script>
-    <script src="js/countdown.js" defer></script>
-    <script src="js/countdownSettings.js" defer></script>
-    <title>New Tab</title>
-</head>
-<body>
-    <div id="countdownContainerTop" style="display:none;">
-        <table style="max-height:145px; min-width:800px;">
-            <tr class="info">
-                <td id="labelT" colspan="7" class="mainLbl"></td>
-            </tr>
-            <tr class="info">
-                <td class="lblNb" id="tD">00</td>
-                <td class="lbldot">:</td>
-                <td class="lblNb" id="tH">00</td>
-                <td class="lbldot">:</td>
-                <td class="lblNb" id="tM">00</td>
-                <td class="lbldot">:</td>
-                <td class="lblNb" id="tS">00</td>
-            </tr>
-            <tr class="lblHolder">
-                <td class="lblL">Days</td>
-                <td class="lbl">Hours</td>
-                <td class="lbl">Minutes</td>
-                <td class="lblR">Seconds</td>
-            </tr>
-        </table>
-    </div>
-
-
-    <div id="page-wrapper">
-        <div id="settings-wrapper"><button id="settings-button"><img src="src/assets/more-info.svg" alt="" id="button-img"></button></div> 
-        <div id="search-wrapper-wrapper">
-            <div id="search-wrapper">
-                <button id="search-button"><img id="search-img" src="src/assets/lens.svg" alt="lens"></button>
-                <form action="" id="search-form"><input type="text" id="search-input" autocomplete="off" spellcheck="false"></form> 
-            </div>
-            <div class="search-space"></div>
-            <div id="bookmark-wrapper">
-                <div id="add-bookmark" class ="bookmark" tabindex="1"><img src="src/assets/plus.svg" alt=""></div>
-            </div>
-        </div>         
-    </div>
-
-    <div id="add-bookmark-wrapper-wrapper">
-        <form id="submit-bookmark">
-        <div id="add-bookmark-wrapper">
-            <img src="src/assets/plus.svg" alt="" id="close-cross-btn">
-            <h1 id="bookmark-h1">Add bookmark</h1>
-            <div class="bookmark-option">
-                <h3>Title</h3>
-                <input type="text" class="mcq" id="newBookMarkTitle" autocomplete="off" spellcheck="false">
-            </div>
-            <div class="bookmark-option">
-                <h3>URL</h3>
-                <input type="text" class="mcq" id="newBookMarkURL" autocomplete="off" spellcheck="false">
-            </div>
-            <button class="standard-btn" tabindex="1" id="create-bookmark-btn">Create bookmark</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/search-bar.css">
+        <link rel="stylesheet" href="css/countdown.css">
+        <link rel="stylesheet" href="css/bookmarks.css">
+        <script src="js/search.js" defer></script>
+        <script src="js/settings.js" defer></script>
+        <script src="js/bookmarks.js" defer></script>
+        <script src="js/countdown.js" defer></script>
+        <script src="js/countdownSettings.js" defer></script>
+        <title>New Tab</title>
+    </head>
+    <body>
+        <!-- #region countdownBottom -->
+        <div id="countdownContainerTop" style="display:none;">
+            <table style="max-height:145px; min-width:800px;">
+                <tr class="info">
+                    <td id="labelT" colspan="7" class="mainLbl"></td>
+                </tr>
+                <tr class="info">
+                    <td class="lblNb" id="tD">00</td>
+                    <td class="lbldot">:</td>
+                    <td class="lblNb" id="tH">00</td>
+                    <td class="lbldot">:</td>
+                    <td class="lblNb" id="tM">00</td>
+                    <td class="lbldot">:</td>
+                    <td class="lblNb" id="tS">00</td>
+                </tr>
+                <tr class="lblHolder">
+                    <td class="lblL">Days</td>
+                    <td class="lbl">Hours</td>
+                    <td class="lbl">Minutes</td>
+                    <td class="lblR">Seconds</td>
+                </tr>
+            </table>
         </div>
-        </form>
-    </div>
-
-    <div id="settings-page-wrapper">
-        <div id="settings-container">
-            <div id="settings-wrapper"><button id="settings-button-placeholder"></button></div>
-            <div id="nav-bar">
-                <button id="general-nav-button">GENERAL</button>
-                <button id="background-nav-button">BACKGROUND</button>
-                <button id="info-nav-button">INFO</button>
-            </div>
-        </div>
-        <div id="general-page" class="settings-page">
-            <div id="general-wrapper">
-                <div id="search-engine-settings" class="setting-wrapper">
-                    <div class="setting-entry">
-                        <h3>Search Engine : </h3>
-                        <select id="search-engine" name="search-engine" class="mcq">
-                            <option value="0">Google</option>
-                            <option value="1">DuckDuckGo</option>
-                            <option value="2">Ecosia</option>
-                            <option value="3">Qwant</option>
-                        </select>
-                    </div>
+        <!-- #endregion -->
+    
+        <!-- #region Page-->
+        <div id="page-wrapper">
+            <div id="settings-wrapper"><button id="settings-button"><img src="src/assets/more-info.svg" alt="" id="button-img"></button></div> 
+            <div id="search-wrapper-wrapper">
+                <div id="search-wrapper">
+                    <button id="search-button"><img id="search-img" src="src/assets/lens.svg" alt="lens"></button>
+                    <form action="" id="search-form"><input type="text" id="search-input" autocomplete="off" spellcheck="false"></form> 
                 </div>
-                <div id="timer-settings" class="setting-wrapper">
-                    <div class="setting-entry">
-                        <h3>Countdown</h3>
-                        <div class="switch-button">
-                            <label class="switch">
-                                <input type="checkbox" id="ct-switch">
-                                <span class="slider"></span>
-                            </label>
+                <div class="search-space"></div>
+                <div id="bookmark-wrapper">
+                    <div id="add-bookmark" class ="bookmark" tabindex="1"><img src="src/assets/plus.svg" alt=""></div>
+                </div>
+            </div>         
+        </div>
+        <!-- #endregion -->
+        
+        <!-- #region addBookmark -->
+        <div id="add-bookmark-wrapper-wrapper">
+            <form id="submit-bookmark">
+            <div id="add-bookmark-wrapper">
+                <img src="src/assets/plus.svg" alt="" id="close-cross-btn">
+                <h1 id="bookmark-h1">New bookmark</h1>
+                <div class="bookmark-option">
+                    <h3>Title</h3>
+                    <input type="text" class="mcq" id="newBookMarkTitle" autocomplete="off" spellcheck="false">
+                </div>
+                <div class="bookmark-option">
+                    <h3>URL</h3>
+                    <input type="text" class="mcq" id="newBookMarkURL" autocomplete="off" spellcheck="false">
+                </div>
+                <button class="standard-btn" tabindex="1" id="create-bookmark-btn">Create bookmark</button>
+            </div>
+            </form>
+        </div>
+        <!-- #endregion -->
+    
+        <!-- #region settings -->
+        <div id="settings-page-wrapper">
+            <div id="settings-container">
+                <div id="settings-wrapper"><button id="settings-button-placeholder"></button></div>
+                <div id="nav-bar">
+                    <button id="general-nav-button">GENERAL</button>
+                    <button id="background-nav-button">BACKGROUND</button>
+                    <button id="info-nav-button">INFO</button>
+                </div>
+            </div>
+            <div id="general-page" class="settings-page">
+                <div id="general-wrapper">
+                    <div id="search-engine-settings" class="setting-wrapper">
+                        <div class="setting-entry">
+                            <h3>Search Engine : </h3>
+                            <select id="search-engine" name="search-engine" class="mcq">
+                                <option value="0">Google</option>
+                                <option value="1">DuckDuckGo</option>
+                                <option value="2">Ecosia</option>
+                                <option value="3">Qwant</option>
+                            </select>
                         </div>
-                    </div>  
-                    <div class="setting-entry ct-sub-entry-hidden">
-                        <h3>Position :</h3>
-                        <select id="countdown-position" name="countdown-position" class="mcq">
-                            <option value="0">Top</option>
-                            <option value="1">Bottom</option>
-                        </select>                 
                     </div>
-                    <div class="setting-entry ct-sub-entry-hidden">
-                        <h3>Event Date :</h3>
-                        <input type="date" id="date" class="mcq">               
+                    <div id="timer-settings" class="setting-wrapper">
+                        <div class="setting-entry">
+                            <h3>Countdown</h3>
+                            <div class="switch-button">
+                                <label class="switch">
+                                    <input type="checkbox" id="ct-switch">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>  
+                        <div class="setting-entry ct-sub-entry-hidden">
+                            <h3>Position :</h3>
+                            <select id="countdown-position" name="countdown-position" class="mcq">
+                                <option value="0">Top</option>
+                                <option value="1">Bottom</option>
+                            </select>                 
+                        </div>
+                        <div class="setting-entry ct-sub-entry-hidden">
+                            <h3>Event Date :</h3>
+                            <input type="date" id="date" class="mcq">               
+                        </div>
+                        <div class="setting-entry ct-sub-entry-hidden">
+                            <h3>Event Label :</h3>
+                            <input type="text" id='lbl' class="mcq" autocomplete="off" spellcheck="false">                 
+                        </div>
                     </div>
-                    <div class="setting-entry ct-sub-entry-hidden">
-                        <h3>Event Label :</h3>
-                        <input type="text" id='lbl' class="mcq" autocomplete="off" spellcheck="false">                 
+                    <div id="bookmark-settings" class="setting-wrapper">   
+                        <div class="setting-entry">
+                            <h3>Bookmarks</h3>
+                            <div class="switch-button">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>   
+                        </div>                          
                     </div>
-                </div>
-                <div id="bookmark-settings" class="setting-wrapper">   
-                    <div class="setting-entry">
-                        <h3>Bookmarks</h3>
-                        <div class="switch-button">
-                            <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider"></span>
-                            </label>
-                        </div>   
-                    </div>                          
                 </div>
             </div>
+            <div id="background-page" class="settings-page">
+                <div>Backgrounds</div>
+            </div>
+            <div id="info-page" class="settings-page">
+                <div>Info</div>
+            </div>
         </div>
-        <div id="background-page" class="settings-page">
-            <div>Backgrounds</div>
+        <!-- #endregion -->
+        
+        <!-- #region countdownBottom -->
+        <div id="countdownContainerBottom" style="display:none;">
+            <table style="max-height:145px; min-width:800px;">
+                <tr class="info">
+                    <td id="labelB" colspan="7" class="mainLbl"></td>
+                </tr>
+                <tr class="info">
+                    <td class="lblNb" id="bD">00</td>
+                    <td class="lbldot">:</td>
+                    <td class="lblNb" id="bH">00</td>
+                    <td class="lbldot">:</td>
+                    <td class="lblNb" id="bM">00</td>
+                    <td class="lbldot">:</td>
+                    <td class="lblNb" id="bS">00</td>
+                </tr>
+                <tr class="lblHolder">
+                    <td class="lblL">Days</td>
+                    <td class="lbl">Hours</td>
+                    <td class="lbl">Minutes</td>
+                    <td class="lblR">Seconds</td>
+                </tr>
+            </table>
         </div>
-        <div id="info-page" class="settings-page">
-            <div>Info</div>
-        </div>
-    </div>
-
-
-    <div id="countdownContainerBottom" style="display:none;">
-        <table style="max-height:145px; min-width:800px;">
-            <tr class="info">
-                <td id="labelB" colspan="7" class="mainLbl"></td>
-            </tr>
-            <tr class="info">
-                <td class="lblNb" id="bD">00</td>
-                <td class="lbldot">:</td>
-                <td class="lblNb" id="bH">00</td>
-                <td class="lbldot">:</td>
-                <td class="lblNb" id="bM">00</td>
-                <td class="lbldot">:</td>
-                <td class="lblNb" id="bS">00</td>
-            </tr>
-            <tr class="lblHolder">
-                <td class="lblL">Days</td>
-                <td class="lbl">Hours</td>
-                <td class="lbl">Minutes</td>
-                <td class="lblR">Seconds</td>
-            </tr>
-        </table>
-    </div>
-</body>
+        <!-- #endregion -->
+    </body>
 </html>

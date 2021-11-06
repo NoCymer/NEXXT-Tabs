@@ -14,7 +14,6 @@ const search = (input) => {
     }
     if(input != "" && input != " ") {
         let url = "";
-        console.log(searchEnigne)
         switch(Number(searchEnigne)) {
             case 0:
                 url = `https://www.google.com/search?q=${input}`;

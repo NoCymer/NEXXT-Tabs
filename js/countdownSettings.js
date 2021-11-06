@@ -96,20 +96,17 @@ const setNewLabel = (label)  => {
 }
 
 countdownDate.addEventListener("input",() => {
-    console.log(countdownDate.value)
     localStorage.setItem('ctDate', countdownDate.value);
     checkForDateLabel();
     
 })
 
 countdownLabel.addEventListener("input",() => {
-    console.log(countdownLabel.value)
     setNewLabel(countdownLabel.value);
     localStorage.setItem('ctLabel', countdownLabel.value);
 })
 
 countdownPosition.onchange = () => {
-    console.log(countdownPosition.value)
     localStorage.setItem("ctPosition",countdownPosition.value);
     setPosition(countdownPosition.value);
 }
