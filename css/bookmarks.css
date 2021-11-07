@@ -29,7 +29,7 @@
     left:50%;
     transform: translateX(-50%) translateY(-50%);
     background-color: #2e2e2e;
-    border-radius: 75px;
+    border-radius: 25px;
 }
 
 #add-bookmark-wrapper{

@@ -3,15 +3,24 @@
     "version": "1.0",
     "name": "NEXXT TABS",
     "action": {
-        "default_popup": "index.html",
         "default_icon": "icon.png"
     },
+    "offline_enabled": true,
+    "background": {
+      "service_worker": "js/serviceWorker.js"
+    },
+    "chrome_url_overrides": {
+       "newtab": "index.html"
+    },
     "permissions": [
-        "tabs",
+        "topSites", 
+        "bookmarks", 
+        "unlimitedStorage", 
         "storage"
     ],
     "icons": {
       "128": "icon.png"
-    }
+    },
+    "author": "NoCymer"
 
 }
