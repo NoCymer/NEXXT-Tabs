@@ -1,13 +1,38 @@
 const body = document.querySelector("body");
-const backgroundsPath = '../src/img/backgrounds';
-let intervalValue = 600000; //default value of 10 minutes
-let bgCycleHistory = [];
+const backgroundsPath = '../src/assets/backgrounds';
+const bgCount = 60;
+let intervalValue = 120000; //default value of 2 minutes
+let bgCycleHistory = []; //10 last bgs
+let bgPathArray = [];
+let nextBG;
 
-for(background in backgroundsPath)
 
-const backgroundChanger = () => {
-    let nextBG = 
-    body.style.backgroundImage = `url(${backgroundsPath}/${nextBG})`;
+for(let i =1; i<=bgCount;i++) {
+    bgPathArray.push(`${backgroundsPath}/${i}.jpg`);
 }
-
+const backgroundChanger = () => {
+    if (body.style.backgroundImage == 'url("undefined")') {
+        body.style.backgroundImage = 'url("../src/assets/backgrounds/1.jpg")'
+    }
+    if(localStorage.getItem("intervalValue")) {
+        intervalValue = localStorage.getItem("intervalValue")
+    }
+    if(JSON.parse(localStorage.getItem("bgCycleHistory"))) {
+        bgCycleHistory = JSON.parse(localStorage.getItem("bgCycleHistory"));
+    }
+    if (bgCycleHistory.length >= 10) {
+        bgCycleHistory.splice(0,1);
+    }
+    nextBG = bgPathArray[Math.round(Math.random()*60)];
+    while (bgCycleHistory.includes(nextBG)) {
+        nextBG = bgPathArray[Math.round(Math.random()*60)];
+    }
+    bgCycleHistory.push(nextBG);
+    localStorage.setItem("bgCycleHistory", JSON.stringify(bgCycleHistory));
+    body.style.backgroundImage = `url(${nextBG})`;
+    if (body.style.backgroundImage == 'url("undefined")') {
+        body.style.backgroundImage = 'url("../src/assets/backgrounds/1.jpg")'
+    }
+}
+backgroundChanger();
 setInterval(backgroundChanger, intervalValue)

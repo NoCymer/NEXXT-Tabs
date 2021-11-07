@@ -1,4 +1,7 @@
 #countdownContainerTop{
+    transition: opacity 0.20s ease-out;
+    text-shadow: 2px 2px #3a3a3a;
+    opacity: 0;
     position: absolute;
     top: 2%;
     left:50%;
@@ -8,6 +11,8 @@
 }
 
 #countdownContainerBottom{
+    transition: opacity 0.20s ease-out;
+    opacity: 0;
     position: absolute;
     bottom: 4%;
     left:50%;

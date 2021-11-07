@@ -14,14 +14,20 @@
         <link rel="stylesheet" href="css/search-bar.css">
         <link rel="stylesheet" href="css/countdown.css">
         <link rel="stylesheet" href="css/bookmarks.css">
+        <script src="js/particles.js" defer></script>
+        <script src="js/snowflakes.js" defer></script>
         <script src="js/search.js" defer></script>
         <script src="js/settings.js" defer></script>
         <script src="js/bookmarks.js" defer></script>
+        <script src="js/background.js" defer></script>
         <script src="js/countdown.js" defer></script>
         <script src="js/countdownSettings.js" defer></script>
+        <script src="js/particleSettings.js" defer></script>
         <title>New Tab</title>
     </head>
     <body>
+        
+        
         <!-- #region countdownBottom -->
         <div id="countdownContainerTop" style="display:none;">
             <table style="max-height:145px; min-width:800px;">
@@ -48,19 +54,20 @@
         <!-- #endregion -->
     
         <!-- #region Page-->
-        <div id="page-wrapper">
-            <div id="settings-wrapper"><button id="settings-button"><img src="src/assets/more-info.svg" alt="" id="button-img"></button></div> 
-            <div id="search-wrapper-wrapper">
-                <div id="search-wrapper">
-                    <button id="search-button"><img id="search-img" src="src/assets/lens.svg" alt="lens"></button>
-                    <form action="" id="search-form"><input type="text" id="search-input" autocomplete="off" spellcheck="false"></form> 
-                </div>
-                <div class="search-space"></div>
-                <div id="bookmark-wrapper">
-                    <div id="add-bookmark" class ="bookmark" tabindex="1"><img src="src/assets/plus.svg" alt=""></div>
-                </div>
-            </div>         
-        </div>
+        <div id="particles-js" style="width: 100%; height: 100%; z-index: -1;"></div>
+            <div id="page-wrapper">
+                <div id="settings-wrapper"><button id="settings-button"><img src="src/assets/more-info.svg" alt="" id="button-img"></button></div> 
+                <div id="search-wrapper-wrapper">
+                    <div id="search-wrapper">
+                        <button id="search-button"><img id="search-img" src="src/assets/lens.svg" alt="lens"></button>
+                        <form action="" id="search-form"><input type="text" id="search-input" autocomplete="off" spellcheck="false" placeholder="Search"></form> 
+                    </div>
+                    <div class="search-space"></div>
+                    <div id="bookmark-wrapper">
+                        <div id="add-bookmark" class ="bookmark" tabindex="1"><img src="src/assets/plus.svg" alt=""></div>
+                    </div>
+                </div>         
+            </div>
         <!-- #endregion -->
         
         <!-- #region addBookmark -->
@@ -104,6 +111,17 @@
                                 <option value="2">Ecosia</option>
                                 <option value="3">Qwant</option>
                             </select>
+                        </div>
+                    </div>
+                    <div id="particle-settings" class="setting-wrapper">
+                        <div class="setting-entry">
+                            <h3>Particles</h3>
+                            <div class="switch-button">
+                                <label class="switch">
+                                    <input type="checkbox" id="particles-switch">
+                                    <span class="slider"></span>
+                                </label>
+                            </div> 
                         </div>
                     </div>
                     <div id="timer-settings" class="setting-wrapper">

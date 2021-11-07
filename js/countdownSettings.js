@@ -4,21 +4,34 @@ const countdownDate = document.querySelector("#date");
 const countdownLabel = document.querySelector("#lbl");
 const countdownContainerTop = document.querySelector("#countdownContainerTop");
 const countdownContainerBottom = document.querySelector("#countdownContainerBottom");
+const timerFadeDuration = "200"; //ms
 const setPosition = (posIndex) => {
     switch(Number(posIndex)) {
         case 0:
             //top
             countdownContainerTop.style.display = "block";
-            countdownContainerBottom.style.display = "none";
+            setTimeout(() => {           
+                countdownContainerTop.style.opacity = "1";
+                countdownContainerBottom.style.opacity = "0";
+            }, 1);      
+            setTimeout(() => {           
+                countdownContainerBottom.style.display = "none";
+            }, timerFadeDuration);           
             break;
         case 1:
             //bottom
-            countdownContainerTop.style.display = "none";
-            countdownContainerBottom.style.display = "block";
+            countdownContainerBottom.style.display = "block";    
+            setTimeout(() => {           
+                countdownContainerTop.style.opacity = "0";
+                countdownContainerBottom.style.opacity = "1";
+            }, 1);   
+            setTimeout(() => {           
+                countdownContainerTop.style.display = "none";
+            }, timerFadeDuration);
             break;
     }
 }
-
+let countdownElements = document.querySelectorAll(".ct-sub-entry-hidden");
 
 if(localStorage.getItem('ctDate')){
     countdownDate.value = localStorage.getItem('ctDate');
@@ -28,17 +41,6 @@ if(localStorage.getItem('ctLabel')){
     countdownLabel.value = localStorage.getItem('ctLabel');
 }
 if(JSON.parse(localStorage.getItem("countdown"))) {
-    if(localStorage.getItem('ctPosition')){
-        countdownPosition.value = Number(localStorage.getItem('ctPosition'));
-        setPosition(countdownPosition.value);
-    }
-    else{
-        //default case
-        setPosition(1);
-    }
-}
-let countdownElements = document.querySelectorAll(".ct-sub-entry-hidden");
-if (JSON.parse(localStorage.getItem("countdown"))) {
     countdownElements.forEach((e)=>{
         e.style.display="flex";
     })
@@ -49,17 +51,17 @@ if (JSON.parse(localStorage.getItem("countdown"))) {
     }
     else{
         //default case
-        setPosition(1);
+        setPosition(0);
     }
 }
-else{
+else {
     countdownElements.forEach((e)=>{
         e.style.display="none";
     })
-    countdownContainerTop.style.display = "none";
-    countdownContainerBottom.style.display = "none";
     countdownSwitch.checked = false;
 }
+
+
 countdownSwitch.addEventListener("click",()=> {
     if(countdownSwitch.checked) {
         countdownElements.forEach((e)=>{
@@ -71,7 +73,7 @@ countdownSwitch.addEventListener("click",()=> {
         }
         else{
             //default case
-            setPosition(1);
+            setPosition(0);
         }
         localStorage.setItem("countdown", true);
     }
@@ -79,8 +81,12 @@ countdownSwitch.addEventListener("click",()=> {
         countdownElements.forEach((e)=>{
             e.style.display="none";
         })
-        countdownContainerTop.style.display = "none";
-        countdownContainerBottom.style.display = "none";
+        countdownContainerTop.style.opacity = "0";
+        countdownContainerBottom.style.opacity = "0";
+        setTimeout(() => {           
+            countdownContainerTop.style.display = "none";
+            countdownContainerTop.style.display = "none";
+        }, timerFadeDuration);
         localStorage.setItem("countdown", false);
     }
 })

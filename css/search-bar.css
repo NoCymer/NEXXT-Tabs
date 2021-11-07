@@ -20,7 +20,7 @@
     justify-content: center;
     align-items: center;
     border: 3px solid #36363600;
-    background-color: #5c5c5c85;
+    background-color: #252525df;
     border-radius: 100px;
     padding: 0px 15px 0px 5px;
     margin-bottom: 4vh;
@@ -43,11 +43,11 @@
 }
 
 #search-wrapper:focus-within{
-    background-color: #75757585 !important;
+    background-color: #464646ec !important;
 }
 
 #search-wrapper:hover{
-    background-color: #62626285;
+    background-color: #3b3b3bda;
 }
 
 #search-img{
