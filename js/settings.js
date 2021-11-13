@@ -89,7 +89,7 @@ const toggleSettings = () => {
     else if (!isShown){
         settingsEl.style.display="block";
         settingsEl.style.visibility="visible";
-        searchBar.style.width = "30%";
+        searchBar.style.width = "35%";
         setTimeout(()=> {
             Array.from(settingsEl.children).forEach(element => {
                 element.style.display=displaysObj[element.id];

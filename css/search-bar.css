@@ -10,9 +10,13 @@
     align-items: center;
     width: 100%;
 }
-
+#search-space-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 100%;
+}
 #search-wrapper{
-    justify-self: flex-end;
     transition: background-color 0.1s, width 0.5s;
     height: 40px;
     width: 38%;

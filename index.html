@@ -58,11 +58,13 @@
             <div id="page-wrapper">
                 <div id="settings-wrapper"><button id="settings-button"><img src="src/assets/more-info.svg" alt="" id="button-img"></button></div> 
                 <div id="search-wrapper-wrapper">
-                    <div id="search-wrapper">
-                        <button id="search-button"><img id="search-img" src="src/assets/lens.svg" alt="lens"></button>
-                        <form action="" id="search-form"><input type="text" id="search-input" autocomplete="off" spellcheck="false" placeholder="Search"></form> 
+                    <div id="search-space-wrapper">
+                        <div id="search-wrapper">
+                            <button id="search-button"><img id="search-img" src="src/assets/lens.svg" alt="lens"></button>
+                            <form action="" id="search-form"><input type="text" id="search-input" autocomplete="off" spellcheck="false" placeholder="Search"></form> 
+                        </div>
+                        <div class="search-space"></div>
                     </div>
-                    <div class="search-space"></div>
                     <div id="bookmark-wrapper">
                         <div id="add-bookmark" class ="bookmark" tabindex="1"><img src="src/assets/plus.svg" alt=""></div>
                     </div>
@@ -125,29 +127,32 @@
                         </div>
                     </div>
                     <div id="timer-settings" class="setting-wrapper">
-                        <div class="setting-entry">
+                        <div class="setting-entry" class="">
+                            
                             <h3>Countdown</h3>
                             <div class="switch-button">
                                 <label class="switch">
                                     <input type="checkbox" id="ct-switch">
                                     <span class="slider"></span>
                                 </label>
+                            </div>   
+                        </div>                 
+                        <div id="timer-settings-subwrapper">
+                            <div class="setting-entry ct-sub-entry-hidden">
+                                <h3>Position :</h3>
+                                <select id="countdown-position" name="countdown-position" class="mcq">
+                                    <option value="0">Top</option>
+                                    <option value="1">Bottom</option>
+                                </select>                 
                             </div>
-                        </div>  
-                        <div class="setting-entry ct-sub-entry-hidden">
-                            <h3>Position :</h3>
-                            <select id="countdown-position" name="countdown-position" class="mcq">
-                                <option value="0">Top</option>
-                                <option value="1">Bottom</option>
-                            </select>                 
-                        </div>
-                        <div class="setting-entry ct-sub-entry-hidden">
-                            <h3>Event Date :</h3>
-                            <input type="date" id="date" class="mcq">               
-                        </div>
-                        <div class="setting-entry ct-sub-entry-hidden">
-                            <h3>Event Label :</h3>
-                            <input type="text" id='lbl' class="mcq" autocomplete="off" spellcheck="false">                 
+                            <div class="setting-entry ct-sub-entry-hidden">
+                                <h3>Event Date :</h3>
+                                <input type="date" id="date" class="mcq">               
+                            </div>
+                            <div class="setting-entry ct-sub-entry-hidden">
+                                <h3>Event Label :</h3>
+                                <input type="text" id='lbl' class="mcq" autocomplete="off" spellcheck="false">                 
+                            </div>
                         </div>
                     </div>
                     <div id="bookmark-settings" class="setting-wrapper">   

@@ -70,7 +70,14 @@ body{
     align-self: flex-start;
     justify-self: flex-start;
 }
+/* #timer-settings-subwrapper{
 
+} */
+
+#timer-settings{
+    flex-direction: column;
+    justify-content: center;
+}
 #particles-js {
     transition: opacity 1s;
     position: absolute;
@@ -110,19 +117,20 @@ body{
 }
 
 #general-wrapper{
+    overflow-y : auto;
     color:white;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     height: 100%;
 }
 
 #general-page{
     display: none;
     visibility: hidden;
-    height: 90%;
+    height: 80vh;
 }
 /* #general-page div{
 } */
@@ -174,12 +182,12 @@ body{
 .setting-wrapper {
     margin-left: 6%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background-color: #3b3b3b;
     border-radius: 10px;
     width: 80%;
-    padding: 5% 0 5% 5%;
-    margin-left: 4%;
+    padding: 0% 5% 0% 3%;
+    margin: 10px 0 50px 4%;
 }
 
 .setting-entry{
@@ -259,3 +267,22 @@ h3{
     border: 1px solid #bff0ff;
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track { 
+    border-radius: 25px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 25px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

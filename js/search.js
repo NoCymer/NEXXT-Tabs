@@ -42,7 +42,12 @@ searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
     search(searchInput.value);
 })
-
+searchInput.addEventListener("focus", () => {
+    searchInput.placeholder = "";
+})
+searchInput.addEventListener("focusout", () => {
+    searchInput.placeholder = "Search";
+})
 searchEngine.value = searchEnigne;
 searchEngine.onchange = () => {
     localStorage.setItem("searchEngine",searchEngine.value);

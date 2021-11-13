@@ -1,6 +1,6 @@
 const body = document.querySelector("body");
 const backgroundsPath = '../src/assets/backgrounds';
-const bgCount = 60;
+const bgCount = 62;
 let intervalValue = 120000; //default value of 2 minutes
 let bgCycleHistory = []; //10 last bgs
 let bgPathArray = [];
@@ -23,9 +23,9 @@ const backgroundChanger = () => {
     if (bgCycleHistory.length >= 10) {
         bgCycleHistory.splice(0,1);
     }
-    nextBG = bgPathArray[Math.round(Math.random()*60)];
+    nextBG = bgPathArray[Math.round(Math.random()*bgCount)];
     while (bgCycleHistory.includes(nextBG)) {
-        nextBG = bgPathArray[Math.round(Math.random()*60)];
+        nextBG = bgPathArray[Math.round(Math.random()*bgCount)];
     }
     bgCycleHistory.push(nextBG);
     localStorage.setItem("bgCycleHistory", JSON.stringify(bgCycleHistory));
