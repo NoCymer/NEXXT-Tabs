@@ -5,7 +5,7 @@
 <strong>If you are the artist of one of the image used in this project and wants it removed from the extention, please contact me.</strong><br>
 
 ### Icons rights
-- I own several icons used in this projects therefore you are free to reuse them in your projects.
+- I own all icons that aren't google apps icons used in this projects therefore you are free to reuse them in your projects.
 
 ### Codebase rights
 - You are free to reuse code from this project but please quote the original author.<br>
