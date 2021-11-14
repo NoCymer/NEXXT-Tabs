@@ -1,7 +1,7 @@
 # Chrome NEXXT Tabs
 
 ### Images rights
-- I do not own the images used in this project, therefore i do not claim any rights on them.<br>
+- I do not own any of the images used in this project, therefore i do not claim any rights on them.<br>
 <strong>If you are the artist of one of the image used in this project and wants it removed from the extention, please contact me.</strong><br>
 
 ### Icons rights
