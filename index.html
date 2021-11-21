@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="css/search-bar.css">
         <link rel="stylesheet" href="css/countdown.css">
         <link rel="stylesheet" href="css/bookmarks.css">
+        <link rel="stylesheet" href="css/background.css">
         <script src="js/particles.js" defer></script>
         <script src="js/snowflakes.js" defer></script>
         <script src="js/search.js" defer></script>
@@ -103,7 +104,7 @@
                 </div>
             </div>
             <div id="general-page" class="settings-page">
-                <div id="general-wrapper">
+                <div id="general-wrapper" class="sub-page-wrapper">
                     <div id="search-engine-settings" class="setting-wrapper">
                         <div class="setting-entry">
                             <h3>Search Engine : </h3>
@@ -169,7 +170,47 @@
                 </div>
             </div>
             <div id="background-page" class="settings-page">
-                <div>Backgrounds</div>
+                <div class="sub-page-wrapper">
+                    <div id="background-settings" class="setting-wrapper">   
+                        <div class="multiple-setting-entry">
+                            <div class="sub-setting-entry">
+                                <h3>Cycle Backgrounds</h3>
+                                <div class="switch-button">
+                                    <label class="switch">
+                                        <input type="checkbox" id="cycle-bg-switch">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="sub-setting-entry">
+                                <h3>Shuffle</h3>
+                                <div class="standard-checkbox">
+                                    <label class="checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                      </label>
+                                </div>
+                            </div>
+                        </div>                     
+                    </div>
+                    <div id="pre-background-header">
+                        <h3>Backgrounds Choice</h3>
+                        <div id="pre-background-header-button-wrapper">
+                            <button class="standard-btn" tabindex="1" id="select-all-btn">Select All</button>
+                            <button class="standard-btn" tabindex="1" id="deselect-all-btn">Deselect All</button>
+                        </div>
+                    </div>    
+                    <div id="background-choice">
+                        <div class="background-entry">
+                            <div class="standard-checkbox background-checker">
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                  </label>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
             </div>
             <div id="info-page" class="settings-page">
                 <div>Info</div>

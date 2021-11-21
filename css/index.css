@@ -116,7 +116,7 @@ body{
     height: 80%;
 }
 
-#general-wrapper{
+.sub-page-wrapper{
     overflow-y : auto;
     color:white;
     margin-top: 20px;
@@ -137,6 +137,7 @@ body{
 #background-page{
     display: none;
     visibility: hidden;
+    height: 80vh;
 }
 /* #background-page div{
     
@@ -144,6 +145,7 @@ body{
 #info-page{
     display: none;
     visibility: hidden;
+    height: 80vh;
 }
 /* #info-page div{
     display: flex;
@@ -196,10 +198,28 @@ body{
     align-items: center;
     justify-content: flex-start;
 }
+
+.multiple-setting-entry {
+    color: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.sub-setting-entry{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+}
 h3{
     font-weight: normal;
     font-size: 1.3rem;
 }
+
 
 .switch-button{
     margin-left: 5%;
@@ -261,6 +281,68 @@ h3{
     border-radius: 40px;
     background: #3ecffb linear-gradient(315deg, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.185) 100%);;
 }
+
+.standard-checkbox{
+    display: block;
+    position: relative;
+    margin-left: 10%;
+    height: min-content;
+}
+
+.checkbox input { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.checkbox{
+    border-radius: 5px;
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(204, 204, 204, 0);
+}
+
+.checkmark{
+    border-radius: 5px;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #ccc;
+    border: 1px transparent solid;
+    transition: .2s;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.checkbox:hover input ~ .checkmark {
+    border: 1px solid#1b1b1b;
+}
+
+.checkbox input:checked ~ .checkmark{
+    background-color: #3ecffb;
+}
+.checkbox input:checked ~ .checkmark::after{
+    display: block;
+}
+
+.standard-checkbox .checkmark::after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
 
 .standard-btn:hover{
     background: #3ecffb linear-gradient(315deg, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.472) 100%);;
