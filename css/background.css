@@ -28,10 +28,9 @@
     background-size: contain;
     border-radius: 10px;
     width: 256px;
-    height: 144px;
+    height: 144px; 
     margin: 10px;
 }
-
 .background-checker{
     margin: 0;
     width: 100%;

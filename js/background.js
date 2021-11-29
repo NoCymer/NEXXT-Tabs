@@ -13,6 +13,9 @@ let bgCycleHistory = []; //10 last bgs
 let bgPathArray = [];
 let selectedBgsIDs = [];
 let nextBG;
+let shuffle = true;
+let cycleBG = true;
+let currentIndex = 1;
 
 let tempVar = 1;//debug variable must delete after 
 if (localStorage.getItem("selectedBgsIDs")) {
@@ -76,29 +79,104 @@ for (let i = 1; i <= bgCount; i++) {
     bgPathArray.push(`${backgroundsPath}/${i}.jpg`);
     createNewBgEntry(++tempVar, i);
 }
+
+// assigns shuffle local storage's value
+if (localStorage.getItem("shuffle")) {
+    if (JSON.parse(localStorage.getItem("shuffle"))) {
+        shuffle = true;
+        shuffleSwitch.checked = true;
+    }
+    else {
+        shuffle = false;
+        shuffleSwitch.checked = false;
+    }
+}
+//default case if no user prefs
+else {
+    shuffle = true;
+    shuffleSwitch.checked = true;
+    localStorage.setItem("shuffle", true);
+}
+
+// assigns cycleBG local storage's value
+if (localStorage.getItem("cycleBG")) {
+    if (JSON.parse(localStorage.getItem("cycleBG"))) {
+        cycleBG = true;
+        cycleBgSwitch.checked = true;
+    }
+    else {
+        cycleBG = false;
+        cycleBgSwitch.checked = false;
+    }
+}
+//default case if no user prefs
+else {
+    cycleBG = true;
+    cycleBgSwitch.checked = true;
+    localStorage.setItem("shuffle", true);
+}
+
 selectAllBtn.addEventListener("click", () => {
     return;
+})
+deselectAllBtn.addEventListener("click", () => {
+    return;
+})
+shuffleSwitch.addEventListener("click", () => {
+    if (shuffleSwitch.checked) {
+        shuffle = true;
+        localStorage.setItem("shuffle", true);
+    }
+    else {
+        shuffle = false;
+        localStorage.setItem("shuffle", false);
+    }
+})
+cycleBgSwitch.addEventListener("click", () => {
+    if (cycleBgSwitch.checked) {
+        cycleBG = true;
+        localStorage.setItem("cycleBG", true);
+    }
+    else {
+        cycleBG = false;
+        localStorage.setItem("cycleBG", false);
+    }
 })
 const backgroundChanger = () => {
     if (body.style.backgroundImage == 'url("undefined")') {
         body.style.backgroundImage = 'url("../src/assets/backgrounds/1.jpg")'
     }
-    if (localStorage.getItem("intervalValue")) {
-        intervalValue = localStorage.getItem("intervalValue")
+    if (cycleBG) {
+        if (localStorage.getItem("intervalValue")) {
+            intervalValue = localStorage.getItem("intervalValue")
+        }
+        if (JSON.parse(localStorage.getItem("bgCycleHistory"))) {
+            bgCycleHistory = JSON.parse(localStorage.getItem("bgCycleHistory"));
+        }
+        if (bgCycleHistory.length >= 10) {
+            bgCycleHistory.splice(0, 1);
+        }
+        if (shuffle) {
+            let rand = Math.round(Math.random() * bgCount)
+            currentIndex = rand;
+            nextBG = bgPathArray[rand];
+            while (bgCycleHistory.includes(nextBG)) {
+                rand = Math.round(Math.random() * bgCount)
+                currentIndex = rand;
+                nextBG = bgPathArray[rand];
+            }
+        }
+        else {
+            nextBG = bgPathArray[++currentIndex];
+        }
+        bgCycleHistory.push(nextBG);
+        localStorage.setItem("bgCycleHistory", JSON.stringify(bgCycleHistory));
+        body.style.backgroundImage = `url(${nextBG})`;
     }
-    if (JSON.parse(localStorage.getItem("bgCycleHistory"))) {
-        bgCycleHistory = JSON.parse(localStorage.getItem("bgCycleHistory"));
+    else {
+        //CREATE USER SELECTION IMPLEMENTATION
     }
-    if (bgCycleHistory.length >= 10) {
-        bgCycleHistory.splice(0, 1);
-    }
-    nextBG = bgPathArray[Math.round(Math.random() * bgCount)];
-    while (bgCycleHistory.includes(nextBG)) {
-        nextBG = bgPathArray[Math.round(Math.random() * bgCount)];
-    }
-    bgCycleHistory.push(nextBG);
-    localStorage.setItem("bgCycleHistory", JSON.stringify(bgCycleHistory));
-    body.style.backgroundImage = `url(${nextBG})`;
+
     if (body.style.backgroundImage == 'url("undefined")') {
         body.style.backgroundImage = 'url("../src/assets/backgrounds/1.jpg")'
     }
