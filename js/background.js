@@ -169,7 +169,12 @@ const backgroundChanger = () => {
             }
         }
         else {
-            nextBG = bgPathArray[++currentIndex];
+            if (currentIndex + 1 >= bgPathArray.length) {
+                nextBG = bgPathArray[0];
+            }
+            else {
+                nextBG = bgPathArray[++currentIndex];
+            }
         }
         bgCycleHistory.push(nextBG);
         localStorage.setItem("bgCycleHistory", JSON.stringify(bgCycleHistory));
