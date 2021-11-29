@@ -6,8 +6,10 @@ const selectAllBtn = document.querySelector("#select-all-btn");
 const backgroundChoiceContainer = document.querySelector("#background-choice");
 let backgroundSelectSwitchElements = document.querySelectorAll(".background-entry-switch") //Must recall query selector after hot injecting
 let backgroundSelectElements = document.querySelectorAll(".background-entry") //Must recall query selector after hot injecting
+
 const BACKGROUNDS_PATH = '../src/assets/backgrounds';
 const BACKGROUND_COUNT = 62;
+
 let intervalValue = 120000; //default value of 2 minutes
 let bgCycleHistory = []; //10 last bgs
 let bgPathArray = [];
@@ -17,7 +19,6 @@ let shuffle = true;
 let cycleBG = true;
 let currentIndex = 1;
 
-let tempVar = 1;//debug variable must delete after 
 if (localStorage.getItem("selectedBgsIDs")) {
     selectedBgsIDs = JSON.parse(localStorage.getItem("selectedBgsIDs"));
 }
@@ -77,7 +78,7 @@ const createNewBgEntry = (id, imgID) => {
 }
 for (let i = 1; i <= BACKGROUND_COUNT; i++) {
     bgPathArray.push(`${BACKGROUNDS_PATH}/${i}.jpg`);
-    createNewBgEntry(++tempVar, i);
+    createNewBgEntry(i, i);
 }
 
 // assigns shuffle local storage's value
