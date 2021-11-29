@@ -1,5 +1,4 @@
 const bookmarkWrapper = document.querySelector("#bookmark-wrapper");
-let bookmarks = document.querySelectorAll(".bookmark");
 const addBookmark = document.querySelector("#add-bookmark");
 const addBookmarkWrapperWrapper = document.querySelector("#add-bookmark-wrapper-wrapper");
 const addBookmarkCloseBtn = document.querySelector("#close-cross-btn");
@@ -9,26 +8,27 @@ const urlField = document.querySelector("#newBookMarkURL");
 const submitBookmark = document.querySelector("#submit-bookmark");
 const bookmarkSwitch = document.querySelector("#bookmark-switch");
 let delsBookmarks = document.querySelectorAll(".delBookmark");
-const bookmarksFadeDuration = "200";
+let bookmarks = document.querySelectorAll(".bookmark");
 
-const regexURL = /[A-z]+:\/\/([\W\w]+)/;
-const fadeDuration = "100"; //ms
+const BOOKMARKS_FADE_DURATION = "200";
+const REGEX_URL = /[A-z]+:\/\/([\W\w]+)/;
+const FADE_DURATION = "100"; //ms
 
-const createBookmark = (title, url) => { 
+const createBookmark = (title, url) => {
     let bookmarkImg = document.createElement("img");
-    if(url.includes("http")) {
-        url = url.match(regexURL)[1]
+    if (url.includes("http")) {
+        url = url.match(REGEX_URL)[1]
     }
-    bookmarkImg.src =`https://icons.duckduckgo.com/ip3/${url}.ico`;
-    bookmarkImg.className="bookmark-icon";
+    bookmarkImg.src = `https://icons.duckduckgo.com/ip3/${url}.ico`;
+    bookmarkImg.className = "bookmark-icon";
     let bookmarkDel = document.createElement("img");
-    bookmarkDel.src="src/assets/plus.svg";
-    bookmarkDel.className="delBookmark";
+    bookmarkDel.src = "src/assets/plus.svg";
+    bookmarkDel.className = "delBookmark";
     let bookmark = document.createElement("div");
-    bookmark.className ="bookmark";
+    bookmark.className = "bookmark";
     bookmark.setAttribute("tabindex", "1");
-    bookmark.title=(title.charAt(0).toUpperCase() + title.slice(1));
-    bookmark.dataset.url=url;
+    bookmark.title = (title.charAt(0).toUpperCase() + title.slice(1));
+    bookmark.dataset.url = url;
     bookmark.appendChild(bookmarkImg);
     bookmark.appendChild(bookmarkDel);
     return bookmark;
@@ -37,7 +37,7 @@ const createBookmark = (title, url) => {
 const displayBookmarks = () => {
     if (localStorage.getItem("bookmarks")) {
         let arr = JSON.parse(localStorage.getItem("bookmarks"));
-        arr.forEach((e)=> {
+        arr.forEach((e) => {
             let newBookmark = createBookmark((e.title.charAt(0).toUpperCase() + e.title.slice(1)), e.url);
             addBookmark.parentNode.insertBefore(newBookmark, addBookmark);
         })
@@ -46,20 +46,20 @@ const displayBookmarks = () => {
 }
 
 const newBookmark = (title, url) => {
-    if(url != "") {
-        if(url.includes("http")) {
-            url = url.match(regexURL)[1]
+    if (url != "") {
+        if (url.includes("http")) {
+            url = url.match(REGEX_URL)[1]
         }
         let createdBookmark = {
             title: title,
             url: url
         }
-        if(localStorage.getItem("bookmarks")) {
+        if (localStorage.getItem("bookmarks")) {
             let arr = JSON.parse(localStorage.getItem("bookmarks"));
             arr.push(createdBookmark);
             localStorage.setItem("bookmarks", JSON.stringify(arr));
         }
-        else{
+        else {
             localStorage.setItem("bookmarks", JSON.stringify([createdBookmark]));
         }
         let newBookmark = createBookmark(title, url);
@@ -71,52 +71,52 @@ const newBookmark = (title, url) => {
 const addListeners = () => {
     bookmarks = document.querySelectorAll(".bookmark");
     bookmarks.forEach(element => {
-        if(element.id=="add-bookmark") {
+        if (element.id == "add-bookmark") {
             addBookmark.addEventListener("click", () => {
                 addBookmarkWrapperWrapper.style.display = "block";
                 setTimeout(() => addBookmarkWrapperWrapper.style.opacity = "1", 1)
-                
+
             })
         }
-        else{       
+        else {
             element.addEventListener("click", (e) => {
-                if(String(element.dataset.url).includes("http")) {
+                if (String(element.dataset.url).includes("http")) {
                     window.location = element.dataset.url;
                 }
                 else {
                     window.location = `https://${element.dataset.url}`;
-                } 
+                }
             })
-        }    
+        }
     });
     delsBookmarks = document.querySelectorAll(".delBookmark");
-    delsBookmarks.forEach((e)=> {
+    delsBookmarks.forEach((e) => {
         e.addEventListener("click", (event) => {
             event.stopPropagation();
             e.parentElement.remove();
             let arr = JSON.parse(localStorage.getItem("bookmarks"));
             arr.forEach((i) => {
-                 if (i.url == e.parentElement.dataset.url) {
-                     arr.splice(arr.indexOf(i), 1);
-                 }
+                if (i.url == e.parentElement.dataset.url) {
+                    arr.splice(arr.indexOf(i), 1);
+                }
             })
             localStorage.setItem("bookmarks", JSON.stringify(arr));
         })
     })
 }
 
-addBookmarkCloseBtn.addEventListener("click",() => {
+addBookmarkCloseBtn.addEventListener("click", () => {
     addBookmarkWrapperWrapper.style.opacity = "0";
     setTimeout(() => {
         addBookmarkWrapperWrapper.style.display = "none";
-    },fadeDuration);
-    
+    }, FADE_DURATION);
+
 })
 submitBookmark.addEventListener("submit", (e) => {
     e.preventDefault();
-    let url; 
-    if(urlField.value.includes("http")) {
-        url = urlField.value.match(regexURL)[1]
+    let url;
+    if (urlField.value.includes("http")) {
+        url = urlField.value.match(REGEX_URL)[1]
     }
     else {
         url = urlField.value;
@@ -127,41 +127,41 @@ submitBookmark.addEventListener("submit", (e) => {
     addBookmarkWrapperWrapper.style.opacity = "0";
     setTimeout(() => {
         addBookmarkWrapperWrapper.style.display = "none";
-    },fadeDuration);
+    }, FADE_DURATION);
 })
 
-bookmarkSwitch.addEventListener("click",()=> {
-    if(bookmarkSwitch.checked) { 
+bookmarkSwitch.addEventListener("click", () => {
+    if (bookmarkSwitch.checked) {
         bookmarkWrapper.style.display = "flex";
-        setTimeout(() => {           
+        setTimeout(() => {
             bookmarkWrapper.style.opacity = "1";
-        }, 1); 
+        }, 1);
 
         localStorage.setItem("bookmark", true);
     }
-    else if(!bookmarkSwitch.checked){
-        
+    else if (!bookmarkSwitch.checked) {
+
         bookmarkWrapper.style.opacity = "0";
-        setTimeout(() => {           
+        setTimeout(() => {
             bookmarkWrapper.style.display = "none";
-        }, bookmarksFadeDuration);
+        }, BOOKMARKS_FADE_DURATION);
         localStorage.setItem("bookmark", false);
     }
 })
 
-if (localStorage.getItem("bookmark")){
+if (localStorage.getItem("bookmark")) {
     let bookmarkBool = JSON.parse(localStorage.getItem("bookmark"));
     if (bookmarkBool) {
         bookmarkSwitch.checked = true;
     }
-    else{
+    else {
         bookmarkSwitch.checked = false;
     }
-    if(bookmarkBool) {
+    if (bookmarkBool) {
         bookmarkWrapper.style.display = "flex";
-        setTimeout(() => {           
+        setTimeout(() => {
             bookmarkWrapper.style.opacity = "1";
-        }, 1); 
+        }, 1);
     }
     else {
         bookmarkWrapper.style.display = "none";

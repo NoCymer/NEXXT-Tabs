@@ -6,8 +6,8 @@ const selectAllBtn = document.querySelector("#select-all-btn");
 const backgroundChoiceContainer = document.querySelector("#background-choice");
 let backgroundSelectSwitchElements = document.querySelectorAll(".background-entry-switch") //Must recall query selector after hot injecting
 let backgroundSelectElements = document.querySelectorAll(".background-entry") //Must recall query selector after hot injecting
-const backgroundsPath = '../src/assets/backgrounds';
-const bgCount = 62;
+const BACKGROUNDS_PATH = '../src/assets/backgrounds';
+const BACKGROUND_COUNT = 62;
 let intervalValue = 120000; //default value of 2 minutes
 let bgCycleHistory = []; //10 last bgs
 let bgPathArray = [];
@@ -75,8 +75,8 @@ const createNewBgEntry = (id, imgID) => {
     backgroundChoiceContainer.appendChild(newContainer);
     addBGSwitchListener(inputEl);
 }
-for (let i = 1; i <= bgCount; i++) {
-    bgPathArray.push(`${backgroundsPath}/${i}.jpg`);
+for (let i = 1; i <= BACKGROUND_COUNT; i++) {
+    bgPathArray.push(`${BACKGROUNDS_PATH}/${i}.jpg`);
     createNewBgEntry(++tempVar, i);
 }
 
@@ -160,11 +160,11 @@ const backgroundChanger = () => {
         }
         if (shuffle) {
             //cycle by  shufle logic
-            let rand = Math.round(Math.random() * bgCount)
+            let rand = Math.round(Math.random() * BACKGROUND_COUNT)
             currentIndex = rand;
             nextBG = bgPathArray[rand];
             while (bgCycleHistory.includes(nextBG)) {
-                rand = Math.round(Math.random() * bgCount)
+                rand = Math.round(Math.random() * BACKGROUND_COUNT)
                 currentIndex = rand;
                 nextBG = bgPathArray[rand];
             }
