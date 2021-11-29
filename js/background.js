@@ -130,6 +130,8 @@ shuffleSwitch.addEventListener("click", () => {
     else {
         shuffle = false;
         localStorage.setItem("shuffle", false);
+
+        // add non shuffle logic here
     }
 })
 cycleBgSwitch.addEventListener("click", () => {
