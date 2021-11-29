@@ -159,6 +159,7 @@ const backgroundChanger = () => {
             bgCycleHistory.splice(0, 1);
         }
         if (shuffle) {
+            //cycle by  shufle logic
             let rand = Math.round(Math.random() * bgCount)
             currentIndex = rand;
             nextBG = bgPathArray[rand];
@@ -169,6 +170,7 @@ const backgroundChanger = () => {
             }
         }
         else {
+            // cycle by index logic
             if (currentIndex + 1 >= bgPathArray.length) {
                 nextBG = bgPathArray[0];
             }
