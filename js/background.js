@@ -9,6 +9,7 @@ let backgroundSelectElements = document.querySelectorAll(".background-entry") //
 
 const BACKGROUNDS_PATH = '../src/assets/backgrounds';
 const BACKGROUND_COUNT = 62;
+const REGEX = /url\("\.\.\/src\/assets\/backgrounds\/([\d]+).jpg/;
 
 let intervalValue = 120000; //default value of 2 minutes
 let bgCycleHistory = []; //10 last bgs
@@ -24,14 +25,6 @@ if (localStorage.getItem("selectedBgsIDs")) {
 }
 else {
     selectedBgsIDs = [];
-}
-const getSpanFromSwitch = (node) => {
-    node.parentNode.childNodes.forEach((i) => {
-        if (i.nodeName == "SPAN") {
-            i.style.backgroundColor = "rgba(0,0,0,0)";
-            console.log(node);
-        }
-    })
 }
 
 const addBGSwitchListener = (element) => {
@@ -58,16 +51,40 @@ const addBGSwitchListener = (element) => {
             localStorage.setItem("selectedBgsIDs", jsonArr);
         }
         else {
-            backgroundSelectSwitchElements = document.querySelectorAll(".background-entry-switch")
+            backgroundSelectSwitchElements = document.querySelectorAll(".background-entry-switch");
+            backgroundSelectSwitchElements.forEach((f) => {
+                if (f !== element) f.checked = false;
+                f.parentNode.childNodes.forEach((z) => {
+                    if (z.nodeName == "SPAN") {
+                        z.style.backgroundColor = "";
+                    }
+                })
+            })
             if (element.checked) {
+                localStorage.setItem("manualBgSelected", element.id);
+                body.style.backgroundImage = `url("../src/assets/backgrounds/${element.id}.jpg")`;
                 backgroundSelectSwitchElements.forEach((e) => {
                     if (e !== element) {
-                        getSpanFromSwitch(e);
+                        e.parentNode.childNodes.forEach((i) => {
+                            if (i.nodeName == "SPAN") {
+                                i.style.backgroundColor = "rgba(0,0,0,0)";
+                            }
+                        })
                     }
                 })
             }
             else {
                 // show back checkmark el
+                backgroundSelectSwitchElements = document.querySelectorAll(".background-entry-switch")
+                backgroundSelectSwitchElements.forEach((e) => {
+                    if (e !== element) {
+                        e.parentNode.childNodes.forEach((i) => {
+                            if (i.nodeName == "SPAN") {
+                                i.style.backgroundColor = "";
+                            }
+                        })
+                    }
+                })
             }
         }
     })
@@ -166,7 +183,11 @@ cycleBgSwitch.addEventListener("click", () => {
     }
     else {
         cycleBG = false;
+
         localStorage.setItem("cycleBG", false);
+        console.log(body.style.backgroundImage)
+
+        localStorage.setItem("manualBgSelected", body.style.backgroundImage.match(REGEX)[1]);
     }
 })
 const backgroundChanger = () => {
@@ -216,4 +237,29 @@ const backgroundChanger = () => {
     }
 }
 backgroundChanger();
+console.log(body.style.backgroundImage)
+backgroundSelectSwitchElements = document.querySelectorAll(".background-entry-switch")
+if (localStorage.getItem("cycleBG")) {
+    if (!JSON.parse(localStorage.getItem("cycleBG"))) {
+        if (localStorage.getItem("manualBgSelected")) {
+            let manualBgSelected = localStorage.getItem("manualBgSelected");
+            body.style.backgroundImage = `url("../src/assets/backgrounds/${manualBgSelected}.jpg")`;
+            backgroundSelectSwitchElements.forEach((i) => {
+                if (i.id == manualBgSelected) {
+                    i.checked = true;
+                }
+                else {
+                    i.parentNode.childNodes.forEach((i) => {
+                        if (i.nodeName == "SPAN") {
+                            i.style.backgroundColor = "rgba(0,0,0,0)";
+                        }
+                    })
+                }
+            })
+        }
+        else {
+            localStorage.setItem("manualBgSelected", body.style.backgroundImage.match(REGEX));
+        }
+    }
+}
 setInterval(backgroundChanger, intervalValue)
