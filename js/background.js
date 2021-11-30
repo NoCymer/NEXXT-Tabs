@@ -25,27 +25,51 @@ if (localStorage.getItem("selectedBgsIDs")) {
 else {
     selectedBgsIDs = [];
 }
+const getSpanFromSwitch = (node) => {
+    node.parentNode.childNodes.forEach((i) => {
+        if (i.nodeName == "SPAN") {
+            i.style.backgroundColor = "rgba(0,0,0,0)";
+            console.log(node);
+        }
+    })
+}
+
 const addBGSwitchListener = (element) => {
     element.addEventListener("click", () => {
-        if (localStorage.getItem("selectedBgsIDs")) {
-            selectedBgsIDs = JSON.parse(localStorage.getItem("selectedBgsIDs"));
+        if (cycleBG) {
+            if (localStorage.getItem("selectedBgsIDs")) {
+                selectedBgsIDs = JSON.parse(localStorage.getItem("selectedBgsIDs"));
+            }
+            else {
+                selectedBgsIDs = [];
+            }
+            console.log(selectedBgsIDs)
+            if (element.checked) {
+                console.log(element.id);
+                if (!selectedBgsIDs.includes(Number(element.id))) {
+                    selectedBgsIDs.push(Number(element.id))
+                }
+            }
+            else {
+                selectedBgsIDs.splice(selectedBgsIDs.indexOf(Number(element.id)), 1);
+            }
+            console.log(selectedBgsIDs);
+            let jsonArr = JSON.stringify(selectedBgsIDs);
+            localStorage.setItem("selectedBgsIDs", jsonArr);
         }
         else {
-            selectedBgsIDs = [];
-        }
-        console.log(selectedBgsIDs)
-        if (element.checked) {
-            console.log(element.id);
-            if (!selectedBgsIDs.includes(Number(element.id))) {
-                selectedBgsIDs.push(Number(element.id))
+            backgroundSelectSwitchElements = document.querySelectorAll(".background-entry-switch")
+            if (element.checked) {
+                backgroundSelectSwitchElements.forEach((e) => {
+                    if (e !== element) {
+                        getSpanFromSwitch(e);
+                    }
+                })
+            }
+            else {
+                // show back checkmark el
             }
         }
-        else {
-            selectedBgsIDs.splice(selectedBgsIDs.indexOf(Number(element.id)), 1);
-        }
-        console.log(selectedBgsIDs);
-        let jsonArr = JSON.stringify(selectedBgsIDs);
-        localStorage.setItem("selectedBgsIDs", jsonArr);
     })
 }
 

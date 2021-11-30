@@ -27,8 +27,8 @@
     background: linear-gradient(330deg, rgba(244, 123, 255, 0) 0%, rgba(255, 255, 255, 0.561) 100%), url("../src/assets/backgrounds/9.jpg");
     background-size: contain;
     border-radius: 10px;
-    width: 256px;
-    height: 144px; 
+    width: 231px;
+    height: 130px; 
     margin: 10px;
 }
 .background-checker{
