@@ -74,13 +74,13 @@ const addBGSwitchListener = (element) => {
                 })
             }
             else {
-                // show back checkmark el
-                backgroundSelectSwitchElements = document.querySelectorAll(".background-entry-switch")
-                backgroundSelectSwitchElements.forEach((e) => {
-                    if (e !== element) {
-                        e.parentNode.childNodes.forEach((i) => {
-                            if (i.nodeName == "SPAN") {
-                                i.style.backgroundColor = "";
+                element.checked = true;
+                backgroundSelectSwitchElements.forEach((f) => {
+                    if (f !== element) {
+                        f.checked = false;
+                        f.parentNode.childNodes.forEach((z) => {
+                            if (z.nodeName == "SPAN") {
+                                z.style.backgroundColor = "rgba(0,0,0,0)";
                             }
                         })
                     }
@@ -176,12 +176,27 @@ shuffleSwitch.addEventListener("click", () => {
         // add non shuffle logic here
     }
 })
+let cycleVal = localStorage.getItem("cycleBG")
+if (cycleVal) {
+    if (JSON.parse(cycleVal)) {
+        cycleBG = true;
+        cycleBgSwitch.checked = true;
+        shuffleSwitch.disabled = false;
+    }
+    else {
+        cycleBG = false;
+        cycleBgSwitch.checked = false;
+        shuffleSwitch.disabled = true;
+    }
+}
 cycleBgSwitch.addEventListener("click", () => {
     if (cycleBgSwitch.checked) {
         cycleBG = true;
         localStorage.setItem("cycleBG", true);
+        shuffleSwitch.disabled = false;
     }
     else {
+        shuffleSwitch.disabled = true;
         cycleBG = false;
 
         localStorage.setItem("cycleBG", false);
@@ -258,7 +273,8 @@ if (localStorage.getItem("cycleBG")) {
             })
         }
         else {
-            localStorage.setItem("manualBgSelected", body.style.backgroundImage.match(REGEX));
+            body.style.backgroundImage = 'url("../src/assets/backgrounds/1.jpg")';
+            localStorage.setItem("manualBgSelected", 1)
         }
     }
 }
