@@ -10,13 +10,15 @@ let backgroundSelectElements = document.querySelectorAll(".background-entry") //
 const BACKGROUNDS_PATH = '../src/assets/backgrounds';
 const BACKGROUND_COUNT = 62;
 const REGEX = /url\("\.\.\/src\/assets\/backgrounds\/([\d]+).jpg/;
-
+const REGEX_ID = /\.\.\/src\/assets\/backgrounds\/([\d]+).jpg/;
 let intervalValue = 120000; //default value of 2 minutes
+intervalValue = 3000;
 let bgCycleHistory = []; //10 last bgs
 let bgPathArray = [];
 let selectedBgsIDs = [];
 let nextBG;
 let shuffle = true;
+let selectedBackgroundCount;
 let cycleBG = true;
 let currentIndex = 1;
 
@@ -28,6 +30,7 @@ else {
 }
 
 const addBGSwitchListener = (element) => {
+    backgroundSelectSwitchElements = document.querySelectorAll(".background-entry-switch");
     element.addEventListener("click", () => {
         if (cycleBG) {
             if (localStorage.getItem("selectedBgsIDs")) {
@@ -36,7 +39,18 @@ const addBGSwitchListener = (element) => {
             else {
                 selectedBgsIDs = [];
             }
-            console.log(selectedBgsIDs)
+            backgroundSelectSwitchElements.forEach((e) => {
+                if (e.checked) {
+                    if (localStorage.getItem("selectedBgsIDs")) {
+                        selectedBgsIDs = JSON.parse(localStorage.getItem("selectedBgsIDs"));
+                    }
+                    else {
+                        selectedBgsIDs.push(Number(e.id));
+                    }
+                    if (!selectedBgsIDs.includes(Number(e.id))) selectedBgsIDs.push(Number(e.id));
+                    localStorage.setItem("selectedBgsIDs", JSON.stringify(selectedBgsIDs));
+                }
+            })
             if (element.checked) {
                 console.log(element.id);
                 if (!selectedBgsIDs.includes(Number(element.id))) {
@@ -46,7 +60,6 @@ const addBGSwitchListener = (element) => {
             else {
                 selectedBgsIDs.splice(selectedBgsIDs.indexOf(Number(element.id)), 1);
             }
-            console.log(selectedBgsIDs);
             let jsonArr = JSON.stringify(selectedBgsIDs);
             localStorage.setItem("selectedBgsIDs", jsonArr);
         }
@@ -140,29 +153,23 @@ else {
     localStorage.setItem("shuffle", true);
 }
 
-// assigns cycleBG local storage's value
-if (localStorage.getItem("cycleBG")) {
-    if (JSON.parse(localStorage.getItem("cycleBG"))) {
-        cycleBG = true;
-        cycleBgSwitch.checked = true;
-    }
-    else {
-        cycleBG = false;
-        cycleBgSwitch.checked = false;
-    }
-}
-//default case if no user prefs
-else {
-    cycleBG = true;
-    cycleBgSwitch.checked = true;
-    localStorage.setItem("shuffle", true);
-}
+
 
 selectAllBtn.addEventListener("click", () => {
-    return;
+    backgroundSelectSwitchElements.forEach((e) => {
+        e.checked = true;
+        let arr = []
+        for (i = 1; i <= BACKGROUND_COUNT; i++) arr.push(i);
+        console.log(arr)
+        localStorage.setItem("selectedBgsIDs", JSON.stringify(arr));
+    })
 })
 deselectAllBtn.addEventListener("click", () => {
-    return;
+    backgroundSelectSwitchElements.forEach((e) => {
+        e.checked = false;
+        if (e.id == 1) e.checked = true;
+        localStorage.setItem("selectedBgsIDs", JSON.stringify([1]));
+    })
 })
 shuffleSwitch.addEventListener("click", () => {
     if (shuffleSwitch.checked) {
@@ -172,8 +179,6 @@ shuffleSwitch.addEventListener("click", () => {
     else {
         shuffle = false;
         localStorage.setItem("shuffle", false);
-
-        // add non shuffle logic here
     }
 })
 let cycleVal = localStorage.getItem("cycleBG")
@@ -190,19 +195,48 @@ if (cycleVal) {
     }
 }
 cycleBgSwitch.addEventListener("click", () => {
+    let idFromRegex = body.style.backgroundImage.match(REGEX)[1];
     if (cycleBgSwitch.checked) {
         cycleBG = true;
         localStorage.setItem("cycleBG", true);
         shuffleSwitch.disabled = false;
+        backgroundSelectSwitchElements.forEach((e) => {
+            e.parentNode.childNodes.forEach((i) => {
+                if (i.nodeName == "SPAN") {
+                    i.style.backgroundColor = "";
+                }
+            })
+            if (JSON.parse(localStorage.getItem("selectedBgsIDs")).includes(Number(e.id))) e.checked = true;
+        })
+        backgroundSelectSwitchElements.forEach((i) => {
+            if (idFromRegex == i.id) {
+                extractedNode = i;
+                extractedNode.checked = false;
+            }
+        })
     }
     else {
         shuffleSwitch.disabled = true;
         cycleBG = false;
-
         localStorage.setItem("cycleBG", false);
-        console.log(body.style.backgroundImage)
-
-        localStorage.setItem("manualBgSelected", body.style.backgroundImage.match(REGEX)[1]);
+        let extractedNode;
+        localStorage.setItem("manualBgSelected", idFromRegex);
+        backgroundSelectSwitchElements.forEach((i) => {
+            if (idFromRegex == i.id) {
+                extractedNode = i;
+                extractedNode.checked = true;
+            }
+        })
+        backgroundSelectSwitchElements.forEach((e) => {
+            if (e !== extractedNode) {
+                e.checked = false;
+                e.parentNode.childNodes.forEach((i) => {
+                    if (i.nodeName == "SPAN") {
+                        i.style.backgroundColor = "rgba(0,0,0,0)";
+                    }
+                })
+            }
+        })
     }
 })
 const backgroundChanger = () => {
@@ -221,11 +255,16 @@ const backgroundChanger = () => {
         }
         if (shuffle) {
             //cycle by  shufle logic
-            let rand = Math.round(Math.random() * BACKGROUND_COUNT)
+            selectedBackgroundCount = selectedBgsIDs.length;
+            let rand = Math.round(Math.random() * selectedBackgroundCount)
             currentIndex = rand;
-            nextBG = bgPathArray[rand];
-            while (bgCycleHistory.includes(nextBG)) {
-                rand = Math.round(Math.random() * BACKGROUND_COUNT)
+            nextBG = `url("../src/assets/backgrounds/${selectedBgsIDs[rand]}.jpg")`;
+            console.log(nextBG.match(REGEX_ID))
+            let nextBGId = nextBG.match(REGEX_ID)[1];
+            // shitty code down there must debug !!!!!
+            while (bgCycleHistory.includes(nextBG) || !selectedBgsIDs.includes(nextBGId)) {
+                nextBGId = nextBG.match(REGEX_ID)[1];
+                rand = Math.round(Math.random() * selectedBackgroundCount)
                 currentIndex = rand;
                 nextBG = bgPathArray[rand];
             }
@@ -234,6 +273,7 @@ const backgroundChanger = () => {
             // cycle by index logic
             if (currentIndex + 1 >= bgPathArray.length) {
                 nextBG = bgPathArray[0];
+                currentIndex = 0;
             }
             else {
                 nextBG = bgPathArray[++currentIndex];
@@ -252,7 +292,18 @@ const backgroundChanger = () => {
     }
 }
 backgroundChanger();
-console.log(body.style.backgroundImage)
+if (localStorage.getItem("selectedBgsIDs")) {
+    backgroundSelectSwitchElements.forEach((e) => {
+        selectedBgsIDs = JSON.parse(localStorage.getItem("selectedBgsIDs"))
+        if (cycleBG && selectedBgsIDs.includes(Number(e.id))) {
+            e.checked = true;
+        }
+    })
+}
+else {
+    selectedBgsIDs = [1];
+    localStorage.setItem("selectedBgsIDs", JSON.stringify(selectedBgsIDs));
+}
 backgroundSelectSwitchElements = document.querySelectorAll(".background-entry-switch")
 if (localStorage.getItem("cycleBG")) {
     if (!JSON.parse(localStorage.getItem("cycleBG"))) {
