@@ -7,12 +7,12 @@
       }
 
       .cls-1 {
-        stroke: rgb(133, 133, 133);
+        stroke: rgb(200, 200, 200);
         stroke-width: 12px;
       }
 
       .cls-2 {
-        stroke: rgb(133, 133, 133);
+        stroke: rgb(200, 200, 200);
         stroke-linecap: round;
         stroke-width: 69px;
       }

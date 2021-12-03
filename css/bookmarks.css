@@ -82,8 +82,8 @@
 }
 
 .bookmark{
-    width: 80px;
-    height: 80px;
+    width: 75px;
+    height: 75px;
     transition: border 0.2s;
     border-radius: 10px 30px 15px 25px;
     margin: 12px;
@@ -105,7 +105,7 @@
 .bookmark .bookmark-icon {
     width: 35px;
     height:35px;
-    transform: translateX(60%) translateY(60%);
+    transform: translateX(55%) translateY(55%);
 }
 
 .bookmark-option{
