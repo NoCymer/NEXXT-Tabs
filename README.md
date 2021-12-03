@@ -9,7 +9,7 @@
 Therefore you are free to reuse the icons that i created in your projects.
 
 ### Codebase rights
-- You are free to reuse code from this project but please quote the original author.<br>
+- You are free to reuse code from this project but please mention the original author<br>
 
 ### Libraries used in this project
 - [Particles.js](https://github.com/VincentGarreau/particles.js/) by Vincent Garreau
