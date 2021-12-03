@@ -25,9 +25,9 @@
     <script src="js/countdown.js" defer></script>
     <script src="js/countdownSettings.js" defer></script>
     <script src="js/particleSettings.js" defer></script>
+    <script src="js/googleApps.js" defer></script>
     <title>New Tab</title>
 </head>
-
 <body>
 
 
@@ -59,8 +59,11 @@
     <!-- #region Page-->
     <div id="particles-js" style="width: 100%; height: 100%; z-index: -1;"></div>
     <div id="page-wrapper">
-        <div id="settings-wrapper"><button id="settings-button"><img src="src/assets/more-info.svg" alt=""
-                    id="button-img"></button></div>
+        <div id="settings-wrapper"><button id="settings-button"><img src="src/assets/params.svg" alt=""
+            id="button-img"></button></div>
+        <div id="google-wrapper"><button id="google-apps-btn"><img src="src/assets/googleApps.svg" alt=""
+            id="google-apps-img"></button></div>
+                    
         <div id="search-wrapper-wrapper">
             <div id="search-space-wrapper">
                 <div id="search-wrapper">
@@ -120,6 +123,28 @@
                         </select>
                     </div>
                 </div>
+                <div id="bookmark-settings" class="setting-wrapper">
+                    <div class="setting-entry">
+                        <h3>Bookmarks</h3>
+                        <div class="switch-button">
+                            <label class="switch">
+                                <input type="checkbox" id="bookmark-switch">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div id="google-apps-settings" class="setting-wrapper">
+                    <div class="setting-entry">
+                        <h3>Google Apps</h3>
+                        <div class="switch-button">
+                            <label class="switch">
+                                <input type="checkbox" id="google-apps-switch">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
                 <div id="particle-settings" class="setting-wrapper">
                     <div class="setting-entry">
                         <h3>Particles</h3>
@@ -133,7 +158,6 @@
                 </div>
                 <div id="timer-settings" class="setting-wrapper">
                     <div class="setting-entry" class="">
-
                         <h3>Countdown</h3>
                         <div class="switch-button">
                             <label class="switch">
@@ -157,17 +181,6 @@
                         <div class="setting-entry ct-sub-entry-hidden">
                             <h3>Event Label :</h3>
                             <input type="text" id='lbl' class="mcq" autocomplete="off" spellcheck="false">
-                        </div>
-                    </div>
-                </div>
-                <div id="bookmark-settings" class="setting-wrapper">
-                    <div class="setting-entry">
-                        <h3>Bookmarks</h3>
-                        <div class="switch-button">
-                            <label class="switch">
-                                <input type="checkbox" id="bookmark-switch">
-                                <span class="slider"></span>
-                            </label>
                         </div>
                     </div>
                 </div>
@@ -256,7 +269,128 @@
         </div>
     </div>
     <!-- #endregion -->
-
+    
+    <!-- #region GoogleApps -->
+    <div id="google-apps-container">
+        <div id="google-apps-subcontainer">
+            <div id="google-apps-scroll-container">
+                <div class="google-app-entry" id="https://myaccount.google.com">
+                    <img src="src/assets/google/icon--google-account.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Account</h4>
+                </div>
+                <div class="google-app-entry" id="https://www.blogger.com">
+                    <img src="src/assets/google/icon--google-blogger.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Blogger</h4>
+                </div>
+                <div class="google-app-entry" id="https://books.google.com">
+                    <img src="src/assets/google/icon--google-books.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Books</h4>
+                </div>
+                <div class="google-app-entry" id="https://calendar.google.com">
+                    <img src="src/assets/google/icon--google-calendar.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Calendar</h4>
+                </div>
+                <div class="google-app-entry" id="https://chat.google.com">
+                    <img src="src/assets/google/icon--google-chat.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Chat</h4>
+                </div>
+                <div class="google-app-entry" id="https://contacts.google.com">
+                    <img src="src/assets/google/icon--google-contacts.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Contacts</h4>
+                </div>
+                <div class="google-app-entry" id="https://docs.google.com">
+                    <img src="src/assets/google/icon--google-docs.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Docs</h4>
+                </div>
+                <div class="google-app-entry" id="https://drive.google.com">
+                    <img src="src/assets/google/icon--google-drive.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Drive</h4>
+                </div>
+                <div class="google-app-entry" id="https://duo.google.com">
+                    <img src="src/assets/google/icon--google-duo.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Duo</h4>
+                </div>
+                <div class="google-app-entry" id="https://earth.google.com">
+                    <img src="src/assets/google/icon--google-earth.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Earth</h4>
+                </div>
+                <div class="google-app-entry" id="https://finance.google.com">
+                    <img src="src/assets/google/icon--google-finance.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Finance</h4>
+                </div>
+                <div class="google-app-entry" id="https://gmail.google.com">
+                    <img src="src/assets/google/icon--google-gmail.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Gmail</h4>
+                </div>
+                <div class="google-app-entry" id="https://hangouts.google.com">
+                    <img src="src/assets/google/icon--google-hangouts.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Hangouts</h4>
+                </div>
+                <div class="google-app-entry" id="https://jamboard.google.com">
+                    <img src="src/assets/google/icon--google-jamboard.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Jamboard</h4>
+                </div>
+                <div class="google-app-entry" id="https://keep.google.com">
+                    <img src="src/assets/google/icon--google-keep.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Keep</h4>
+                </div>
+                <div class="google-app-entry" id="https://maps.google.com">
+                    <img src="src/assets/google/icon--google-maps.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Maps</h4>
+                </div>
+                <div class="google-app-entry" id="https://meet.google.com">
+                    <img src="src/assets/google/icon--google-meet.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Meet</h4>
+                </div>
+                <div class="google-app-entry" id="https://www.google.com/business">
+                    <img src="src/assets/google/icon--google-my-business.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">My Buisness</h4>
+                </div>
+                <div class="google-app-entry" id="https://news.google.com">
+                    <img src="src/assets/google/icon--google-news.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">News</h4>
+                </div>
+                <div class="google-app-entry" id="https://photos.google.com">
+                    <img src="src/assets/google/icon--google-photos.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Photos</h4>
+                </div>
+                <div class="google-app-entry" id="https://play.google.com">
+                    <img src="src/assets/google/icon--google-play.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Google Play</h4>
+                </div>
+                <div class="google-app-entry" id="https://search.google.com">
+                    <img src="src/assets/google/icon--google-search.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Search</h4>
+                </div>
+                <div class="google-app-entry" id="https://sheets.google.com">
+                    <img src="src/assets/google/icon--google-sheets.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Sheets</h4>
+                </div>
+                <div class="google-app-entry" id="https://shopping.google.com">
+                    <img src="src/assets/google/icon--google-shopping.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Shopping</h4>
+                </div>
+                <div class="google-app-entry" id="https://google.com/slides">
+                    <img src="src/assets/google/icon--google-slide.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Slide</h4>
+                </div>
+                <div class="google-app-entry" id="https://translate.google.com">
+                    <img src="src/assets/google/icon--google-translate.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Translate</h4>
+                </div>
+                <div class="google-app-entry" id="https://pay.google.com">
+                    <img src="src/assets/google/icon--google-pay.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Pay</h4>
+                </div>
+                <div class="google-app-entry" id="https://youtube.com">
+                    <img src="src/assets/google/icon--google-youtube.png" alt="" class="google-app-entry-img">
+                    <h4 class="google-app-title">Youtube</h4>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <!-- #endregion -->
+    
     <!-- #region countdownBottom -->
     <div id="countdownContainerBottom" style="display:none;">
         <table style="max-height:145px; min-width:800px;">
@@ -282,5 +416,4 @@
     </div>
     <!-- #endregion -->
 </body>
-
 </html>

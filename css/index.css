@@ -68,14 +68,11 @@ body{
 }
 
 #settings-wrapper{
-    margin: 4px 0 0 25px;
+    margin: 4px 0 0 4px;
     z-index: 10;
     align-self: flex-start;
     justify-self: flex-start;
 }
-/* #timer-settings-subwrapper{
-
-} */
 
 #timer-settings{
     flex-direction: column;
@@ -94,12 +91,17 @@ body{
 
 #settings-button{
     transition: transform 0.3s, background-color 0.3s;
-    border-radius: 10px;
+    border-radius: 25px;
     transform: rotate(90deg);
     height: 40px;
+    width: 40px;
     padding-top: 3px;
     border: none;
     outline: none;
+    display: flexbox;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     background-color: transparent;
 }
 
@@ -111,9 +113,119 @@ body{
 }
 
 #settings-button:hover{
-    border-radius: 10px;
+    border-radius: 25px;
     background-color: #444444c9;
 }
+
+#google-apps-container{
+    color: #fdfbfb;
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: width 0.3s ease-out, height 0.3s ease-out, top 0.3s ease-out;
+    display: none;
+    visibility: visible;
+    background-color: #2e2e2e;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    right: 0%;
+    text-align: center;
+    transform: translateY(-50%);
+    width: 18%;
+    height: 100%;
+    border-radius: 0 0 0 50px ;
+
+}
+#google-apps-img-placeholder{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 30px;
+    width: 30px;
+}
+#google-apps-subcontainer{
+    height: 90%;
+}
+#google-apps-scroll-container{
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+.google-app-entry-img{
+    height: 45px;
+    width: 45px;
+}
+.google-app-entry{
+    width: 80px;
+    height: 105px;
+    padding: 5px 0 0 0;
+    margin: 8px 0px 0 8px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.google-app-entry:hover{
+    background-color: #277e99;
+    border-radius: 25px;
+}
+
+#google-apps-btn{
+    transition: all 0.3s;
+    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    padding: 10px 0 0 10px;
+    top: 0;
+    right: 0;
+    border: none;
+    outline: none;
+    display: flexbox;
+    margin-right: 8px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: transparent;
+    position: absolute;
+    top: 2px;
+}
+#google-wrapper{
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 2px 0 0 2px;
+    z-index: 10;
+    align-self: flex-start;
+    justify-self: flex-end;
+}
+#google-apps-btn:hover{
+    border-radius: 5px;
+    background-color: #444444c9;
+}
+
+#google-apps-img{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 30px;
+    width: 30px;
+}
+
+.google-app-title{
+    margin-top: 0;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+}
+
 .info-main-header{
     border-bottom: #fdfbfb 1px solid;
     width: 97%;
@@ -168,9 +280,6 @@ body{
     font-weight: 500;
 }
 
-#button-img{
-    height: 80%;
-}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -275,6 +384,10 @@ input::-webkit-inner-spin-button {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+}
+
+.setting-entry>h3{
+    width: 150px;
 }
 
 .multiple-setting-entry {
