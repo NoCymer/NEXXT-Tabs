@@ -22,9 +22,9 @@ let shuffle = true;
 let selBackgroundCount;
 let cycleBG = true;
 let currentLocalIndex = 1;
+
 const minToMs = (minutes) => minutes * 60000;
 const msToMin = (minutes) => minutes / 60000;
-
 const hideBackgroundCheckbox = (child) => {
     child.parentNode.childNodes.forEach((e) => {
         if (e.nodeName == "SPAN") {
@@ -159,35 +159,26 @@ const backgroundChanger = () => {
                 selBackgroundsIDs = JSON.parse(localStorage.getItem("selectedBgsIDs"));
             }
             else {
-                selBackgroundsIDs = [1];
+                selBackgroundsIDs = [0];
                 localStorage.setItem("selectedBgsIDs", JSON.stringify(selBackgroundsIDs));
             }
             selBackgroundsIDs.sort((a, b) => a - b);
-            let higher = selBackgroundsIDs.at(-1);
-            // cycle by index logic
-            let temp = selBackgroundsIDs[currentLocalIndex]
 
-            nextIndex = currentLocalIndex + 1
             //if index bypass length of array apply 1st background in array
-            if (nextIndex >= selBackgroundsIDs.length) {
+            if (currentLocalIndex + 1 >= selBackgroundsIDs.length) {
                 currentLocalIndex = 0;//you were  here
-                nextBG = `url("../src/assets/backgrounds/${1}.jpg")`;
-                localStorage.setItem("currentIndex", currentLocalIndex)
-
+                nextBG = `url("../src/assets/backgrounds/${selBackgroundsIDs[0]}.jpg")`;
+                localStorage.setItem("currentIndex", 0)
             }
-
             //goes to the next background
             else {
-                nextBG = `url("../src/assets/backgrounds/${selBackgroundsIDs[nextIndex]}.jpg")`;
-                localStorage.setItem("currentIndex", nextIndex);
+                nextBG = `url("../src/assets/backgrounds/${selBackgroundsIDs[currentLocalIndex + 1]}.jpg")`;
+                localStorage.setItem("currentIndex", (currentLocalIndex + 1));
             }
         }
         bgCycleHistory.push(nextBG);
         localStorage.setItem("bgCycleHistory", JSON.stringify(bgCycleHistory));
         body.style.backgroundImage = `${nextBG}`;
-    }
-    else {
-        //CREATE USER SELECTION IMPLEMENTATION
     }
 
     if (body.style.backgroundImage == 'url("undefined")') {
@@ -200,13 +191,12 @@ if (localStorage.getItem("intervalValue")) {
     intervalValue = Number(localStorage.getItem("intervalValue"));
     intervalValueInput.value = msToMin(intervalValue);
 }
+
 else {
     intervalValue = minToMs(2);
     localStorage.setItem("intervalValue", intervalValue);
     intervalValueInput.value = 2;
 }
-
-
 
 if (localStorage.getItem("selectedBgsIDs")) {
     selBackgroundsIDs = JSON.parse(localStorage.getItem("selectedBgsIDs"));
@@ -219,7 +209,7 @@ backgroundsSwitchElement.forEach(element => {
     setupBackgroundSwitchListeners(element);
 });
 
-for (let i = 1; i <= BACKGROUND_COUNT; i++) {
+for (let i = 0; i <= BACKGROUND_COUNT - 1; i++) {
     bgPathArray.push(`${BACKGROUNDS_PATH}/${i}.jpg`);
     createNewBackgroundEntry(i);
 }
@@ -271,7 +261,7 @@ if (localStorage.getItem("selectedBgsIDs")) {
         }
     })
 }
-else {//here dumbass
+else {
     let arr = []
     for (i = 1; i <= BACKGROUND_COUNT; i++) arr.push(i);
     backgroundsSwitchElement.forEach((e) => {
@@ -301,13 +291,12 @@ if (localStorage.getItem("cycleBG")) {
     }
 }
 backgroundChanger();
-setTimeout(backgroundChanger, intervalValue);
 
 selectAllBtn.addEventListener("click", () => {
     backgroundsSwitchElement.forEach((e) => {
         e.checked = true;
         let arr = []
-        for (i = 1; i <= BACKGROUND_COUNT; i++) arr.push(i);
+        for (i = 0; i <= BACKGROUND_COUNT - 1; i++) arr.push(i);
         localStorage.setItem("selectedBgsIDs", JSON.stringify(arr));
         selBackgroundCount = arr.length;
     })
@@ -315,8 +304,8 @@ selectAllBtn.addEventListener("click", () => {
 deselectAllBtn.addEventListener("click", () => {
     backgroundsSwitchElement.forEach((e) => {
         e.checked = false;
-        if (e.id == 1) e.checked = true;
-        localStorage.setItem("selectedBgsIDs", JSON.stringify([1]));
+        if (e.id == 0) e.checked = true;
+        localStorage.setItem("selectedBgsIDs", JSON.stringify([0]));
     })
 })
 shuffleSwitch.addEventListener("click", () => {
