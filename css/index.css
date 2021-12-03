@@ -162,6 +162,11 @@ body{
     text-decoration: none;
     font-weight: 500;
 }
+.info-header ~ ul > li > p > a:hover{
+    color:#3ecffb;
+    text-decoration: underline;
+    font-weight: 500;
+}
 
 #button-img{
     height: 80%;
