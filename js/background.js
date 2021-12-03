@@ -4,102 +4,102 @@ const shuffleSwitch = document.querySelector("#shuffle-bg-switch");
 const deselectAllBtn = document.querySelector("#deselect-all-btn");
 const selectAllBtn = document.querySelector("#select-all-btn");
 const backgroundChoiceContainer = document.querySelector("#background-choice");
-let backgroundSelectSwitchElements = document.querySelectorAll(".background-entry-switch") //Must recall query selector after hot injecting
-let backgroundSelectElements = document.querySelectorAll(".background-entry") //Must recall query selector after hot injecting
+const intervalValueInput = document.querySelector("#cycle-delay-input");
+let backgroundsSwitchElement = document.querySelectorAll(".background-entry-switch"); //Must recall query selector after hot injecting
+let backgroundsElements = document.querySelectorAll(".background-entry"); //Must recall query selector after hot injecting
 
 const BACKGROUNDS_PATH = '../src/assets/backgrounds';
 const BACKGROUND_COUNT = 62;
-const REGEX = /url\("\.\.\/src\/assets\/backgrounds\/([\d]+).jpg/;
-const REGEX_ID = /\.\.\/src\/assets\/backgrounds\/([\d]+).jpg/;
+const REGEX_ID_URL = /url\("\.\.\/src\/assets\/backgrounds\/([\d]+).jpg/;
+const REGEX_ID_PATH = /\.\.\/src\/assets\/backgrounds\/([\d]+).jpg/;
 
 let intervalValue = 120000; //default value of 2 minutes
-intervalValue = 3000; // debug line remove after
 let bgCycleHistory = []; //10 last bgs
 let bgPathArray = [];
-let selectedBgsIDs = [];
+let selBackgroundsIDs = [];
 let nextBG;
 let shuffle = true;
-let selectedBackgroundCount;
+let selBackgroundCount;
 let cycleBG = true;
-let currentIndex = 1;
+let currentLocalIndex = 1;
+const minToMs = (minutes) => minutes * 60000;
+const msToMin = (minutes) => minutes / 60000;
 
-
-const hideCheckbox = (child) => {
+const hideBackgroundCheckbox = (child) => {
     child.parentNode.childNodes.forEach((e) => {
         if (e.nodeName == "SPAN") {
             e.style.backgroundColor = "rgba(0,0,0,0)";
         }
     })
 }
-const showCheckbox = (child) => {
+const showBackgroundCheckbox = (child) => {
     child.parentNode.childNodes.forEach((z) => {
         if (z.nodeName == "SPAN") {
             z.style.backgroundColor = "";
         }
     })
 }
-const addBGSwitchListener = (element) => {
-    backgroundSelectSwitchElements = document.querySelectorAll(".background-entry-switch");
+const setupBackgroundSwitchListeners = (element) => {
+    backgroundsSwitchElement = document.querySelectorAll(".background-entry-switch");
     element.addEventListener("click", () => {
         if (cycleBG) {
             if (localStorage.getItem("selectedBgsIDs")) {
-                selectedBgsIDs = JSON.parse(localStorage.getItem("selectedBgsIDs"));
+                selBackgroundsIDs = JSON.parse(localStorage.getItem("selectedBgsIDs"));
             }
             else {
-                selectedBgsIDs = [];
+                selBackgroundsIDs = [];
             }
-            backgroundSelectSwitchElements.forEach((e) => {
+            backgroundsSwitchElement.forEach((e) => {
                 if (e.checked) {
                     if (localStorage.getItem("selectedBgsIDs")) {
-                        selectedBgsIDs = JSON.parse(localStorage.getItem("selectedBgsIDs"));
+                        selBackgroundsIDs = JSON.parse(localStorage.getItem("selectedBgsIDs"));
                     }
                     else {
-                        selectedBgsIDs.push(Number(e.id));
+                        selBackgroundsIDs.push(Number(e.id));
                     }
-                    if (!selectedBgsIDs.includes(Number(e.id))) selectedBgsIDs.push(Number(e.id));
-                    localStorage.setItem("selectedBgsIDs", JSON.stringify(selectedBgsIDs));
+                    if (!selBackgroundsIDs.includes(Number(e.id))) selBackgroundsIDs.push(Number(e.id));
+                    localStorage.setItem("selectedBgsIDs", JSON.stringify(selBackgroundsIDs));
                 }
             })
             if (element.checked) {
-                console.log(element.id);
-                if (!selectedBgsIDs.includes(Number(element.id))) {
-                    selectedBgsIDs.push(Number(element.id))
+                if (!selBackgroundsIDs.includes(Number(element.id))) {
+                    selBackgroundsIDs.push(Number(element.id))
                 }
             }
             else {
-                selectedBgsIDs.splice(selectedBgsIDs.indexOf(Number(element.id)), 1);
+                selBackgroundsIDs.splice(selBackgroundsIDs.indexOf(Number(element.id)), 1);
             }
-            let jsonArr = JSON.stringify(selectedBgsIDs);
+            let jsonArr = JSON.stringify(selBackgroundsIDs);
             localStorage.setItem("selectedBgsIDs", jsonArr);
         }
         else {
-            backgroundSelectSwitchElements = document.querySelectorAll(".background-entry-switch");
-            backgroundSelectSwitchElements.forEach((f) => {
+            backgroundsSwitchElement = document.querySelectorAll(".background-entry-switch");
+            backgroundsSwitchElement.forEach((f) => {
                 if (f !== element) f.checked = false;
-                showCheckbox(f);
+                showBackgroundCheckbox(f);
             })
             if (element.checked) {
                 localStorage.setItem("manualBgSelected", element.id);
                 body.style.backgroundImage = `url("../src/assets/backgrounds/${element.id}.jpg")`;
-                backgroundSelectSwitchElements.forEach((e) => {
+                backgroundsSwitchElement.forEach((e) => {
                     if (e !== element) {
-                        hideCheckbox(e);
+                        hideBackgroundCheckbox(e);
                     }
                 })
             }
             else {
                 element.checked = true;
-                backgroundSelectSwitchElements.forEach((f) => {
+                backgroundsSwitchElement.forEach((f) => {
                     if (f !== element) {
                         f.checked = false;
-                        hideCheckbox(f);
+                        hideBackgroundCheckbox(f);
                     }
                 })
             }
         }
     })
 }
-const createNewBgEntry = (id) => {
+const createNewBackgroundEntry = (id) => {
     const newContainer = document.createElement("div");
     newContainer.className = "background-entry";
     const subContainer = document.createElement("div");
@@ -119,11 +119,11 @@ const createNewBgEntry = (id) => {
     newContainer.style.background = `linear-gradient(330deg, rgba(244, 123, 255, 0) 0%, rgba(255, 255, 255, 0.561) 100%), url("../src/assets/backgrounds/${id}.jpg")`
     newContainer.style.backgroundSize = "contain"
     backgroundChoiceContainer.appendChild(newContainer);
-    addBGSwitchListener(inputEl);
+    setupBackgroundSwitchListeners(inputEl);
 }
 const backgroundChanger = () => {
     if (localStorage.getItem("selectedBgsIDs")) {
-        selectedBgsIDs = JSON.parse(localStorage.getItem("selectedBgsIDs"));
+        selBackgroundsIDs = JSON.parse(localStorage.getItem("selectedBgsIDs"));
     }
     if (body.style.backgroundImage == 'url("undefined")') {
         body.style.backgroundImage = 'url("../src/assets/backgrounds/1.jpg")'
@@ -138,38 +138,48 @@ const backgroundChanger = () => {
         if (bgCycleHistory.length >= 2) {
             bgCycleHistory.splice(0, 1);
         }
-        
+
         if (shuffle) {
             //cycle by shufle logic
-            selectedBackgroundCount = selectedBgsIDs.length;
-            let rand = Math.ceil(Math.random() * selectedBackgroundCount-1);
-            console.log(selectedBgsIDs)
-            console.log("rand : " + rand)
-            currentIndex = rand;
-            localStorage.setItem("currentIndex", selectedBgsIDs[rand]);
-            nextBG = `url("../src/assets/backgrounds/${selectedBgsIDs[rand]}.jpg")`;
+            selBackgroundCount = selBackgroundsIDs.length;
+            let rand = Math.ceil(Math.random() * selBackgroundCount - 1);
+            currentLocalIndex = rand;
+            localStorage.setItem("currentIndex", selBackgroundsIDs[rand]);
+            nextBG = `url("../src/assets/backgrounds/${selBackgroundsIDs[rand]}.jpg")`;
         }
         else {
-            if(localStorage.getItem("currentIndex")) currentIndex = localStorage.getItem("currentIndex");
-            else currentIndex = 1
-            
-            let higher = -1;
-            selectedBgsIDs.forEach((e) => {
-                if (e > higher) higher = e;
-            })
-            // cycle by index logic
-            console.log(currentIndex)
-            console.log(higher)
-            if (currentIndex + 1 >= higher) {
-                nextBG = `url("../src/assets/backgrounds/${selectedBgsIDs[0]}.jpg")`;
-                currentIndex = 0;//you were  here
-                
+            if (localStorage.getItem("currentIndex")) {
+                currentLocalIndex = localStorage.getItem("currentIndex");
+                if (currentLocalIndex == "undefined") currentLocalIndex = 0;
+            }
+            else currentLocalIndex = 0;
+            currentLocalIndex = Number(currentLocalIndex);
+
+            if (localStorage.getItem("selectedBgsIDs")) {
+                selBackgroundsIDs = JSON.parse(localStorage.getItem("selectedBgsIDs"));
             }
             else {
-                console.log("hi")
-                currentIndex++;
-                nextBG = `url("../src/assets/backgrounds/${selectedBgsIDs[currentIndex]}.jpg")`;
-                localStorage.setItem("currentIndex", selectedBgsIDs[currentIndex]);
+                selBackgroundsIDs = [1];
+                localStorage.setItem("selectedBgsIDs", JSON.stringify(selBackgroundsIDs));
+            }
+            selBackgroundsIDs.sort((a, b) => a - b);
+            let higher = selBackgroundsIDs.at(-1);
+            // cycle by index logic
+            let temp = selBackgroundsIDs[currentLocalIndex]
+
+            nextIndex = currentLocalIndex + 1
+            //if index bypass length of array apply 1st background in array
+            if (nextIndex >= selBackgroundsIDs.length) {
+                currentLocalIndex = 0;//you were  here
+                nextBG = `url("../src/assets/backgrounds/${1}.jpg")`;
+                localStorage.setItem("currentIndex", currentLocalIndex)
+
+            }
+
+            //goes to the next background
+            else {
+                nextBG = `url("../src/assets/backgrounds/${selBackgroundsIDs[nextIndex]}.jpg")`;
+                localStorage.setItem("currentIndex", nextIndex);
             }
         }
         bgCycleHistory.push(nextBG);
@@ -183,22 +193,35 @@ const backgroundChanger = () => {
     if (body.style.backgroundImage == 'url("undefined")') {
         body.style.backgroundImage = 'url("../src/assets/backgrounds/1.jpg")'
     }
+    setTimeout(backgroundChanger, intervalValue);
 }
 
-if (localStorage.getItem("selectedBgsIDs")) {
-    selectedBgsIDs = JSON.parse(localStorage.getItem("selectedBgsIDs"));
+if (localStorage.getItem("intervalValue")) {
+    intervalValue = Number(localStorage.getItem("intervalValue"));
+    intervalValueInput.value = msToMin(intervalValue);
 }
 else {
-    selectedBgsIDs = [];
+    intervalValue = minToMs(2);
+    localStorage.setItem("intervalValue", intervalValue);
+    intervalValueInput.value = 2;
 }
 
-backgroundSelectSwitchElements.forEach(element => {
-    addBGSwitchListener(element);
+
+
+if (localStorage.getItem("selectedBgsIDs")) {
+    selBackgroundsIDs = JSON.parse(localStorage.getItem("selectedBgsIDs"));
+}
+else {
+    selBackgroundsIDs = [];
+}
+
+backgroundsSwitchElement.forEach(element => {
+    setupBackgroundSwitchListeners(element);
 });
 
 for (let i = 1; i <= BACKGROUND_COUNT; i++) {
     bgPathArray.push(`${BACKGROUNDS_PATH}/${i}.jpg`);
-    createNewBgEntry(i);
+    createNewBackgroundEntry(i);
 }
 
 // assigns shuffle local storage's value
@@ -219,20 +242,78 @@ else {
     localStorage.setItem("shuffle", true);
 }
 
+let cycleVal = localStorage.getItem("cycleBG")
+if (cycleVal) {
+    if (JSON.parse(cycleVal)) {
+        cycleBG = true;
+        cycleBgSwitch.checked = true;
+        shuffleSwitch.disabled = false;
+    }
+    else {
+        cycleBG = false;
+        cycleBgSwitch.checked = false;
+        shuffleSwitch.disabled = true;
+    }
+}
+else {
+    cycleBG = true;
+    cycleBgSwitch.checked = true;
+    shuffleSwitch.disabled = false;
+    localStorage.setItem("cycleBG", true);
+}
 
+
+if (localStorage.getItem("selectedBgsIDs")) {
+    backgroundsSwitchElement.forEach((e) => {
+        selBackgroundsIDs = JSON.parse(localStorage.getItem("selectedBgsIDs"))
+        if (cycleBG && selBackgroundsIDs.includes(Number(e.id))) {
+            e.checked = true;
+        }
+    })
+}
+else {//here dumbass
+    let arr = []
+    for (i = 1; i <= BACKGROUND_COUNT; i++) arr.push(i);
+    backgroundsSwitchElement.forEach((e) => {
+        e.checked = true;
+    })
+    localStorage.setItem("selectedBgsIDs", JSON.stringify(arr));
+}
+backgroundsSwitchElement = document.querySelectorAll(".background-entry-switch")
+if (localStorage.getItem("cycleBG")) {
+    if (!JSON.parse(localStorage.getItem("cycleBG"))) {
+        if (localStorage.getItem("manualBgSelected")) {
+            let manualBgSelected = localStorage.getItem("manualBgSelected");
+            body.style.backgroundImage = `url("../src/assets/backgrounds/${manualBgSelected}.jpg")`;
+            backgroundsSwitchElement.forEach((i) => {
+                if (i.id == manualBgSelected) {
+                    i.checked = true;
+                }
+                else {
+                    hideBackgroundCheckbox(i);
+                }
+            })
+        }
+        else {
+            body.style.backgroundImage = 'url("../src/assets/backgrounds/1.jpg")';
+            localStorage.setItem("manualBgSelected", 1)
+        }
+    }
+}
+backgroundChanger();
+setTimeout(backgroundChanger, intervalValue);
 
 selectAllBtn.addEventListener("click", () => {
-    backgroundSelectSwitchElements.forEach((e) => {
+    backgroundsSwitchElement.forEach((e) => {
         e.checked = true;
         let arr = []
         for (i = 1; i <= BACKGROUND_COUNT; i++) arr.push(i);
-        console.log(arr)
         localStorage.setItem("selectedBgsIDs", JSON.stringify(arr));
-        selectedBackgroundCount = arr.length;
+        selBackgroundCount = arr.length;
     })
 })
 deselectAllBtn.addEventListener("click", () => {
-    backgroundSelectSwitchElements.forEach((e) => {
+    backgroundsSwitchElement.forEach((e) => {
         e.checked = false;
         if (e.id == 1) e.checked = true;
         localStorage.setItem("selectedBgsIDs", JSON.stringify([1]));
@@ -249,19 +330,19 @@ shuffleSwitch.addEventListener("click", () => {
     }
 })
 cycleBgSwitch.addEventListener("click", () => {
-    let idFromRegex = body.style.backgroundImage.match(REGEX)[1];
+    let idFromRegex = body.style.backgroundImage.match(REGEX_ID_URL)[1];
+    let extractedNode;
     if (cycleBgSwitch.checked) {
         cycleBG = true;
         localStorage.setItem("cycleBG", true);
         shuffleSwitch.disabled = false;
-        backgroundSelectSwitchElements.forEach((e) => {
-            showCheckbox(e);
+        backgroundsSwitchElement.forEach((e) => {
+            showBackgroundCheckbox(e);
             if (JSON.parse(localStorage.getItem("selectedBgsIDs")).includes(Number(e.id))) e.checked = true;
         })
-        backgroundSelectSwitchElements.forEach((i) => {
-            if (idFromRegex == i.id) {
-                extractedNode = i;
-                extractedNode.checked = false;
+        backgroundsSwitchElement.forEach((i) => {
+            if (!selBackgroundsIDs.includes(Number(i.id))) {
+                i.checked = false;
             }
         })
     }
@@ -269,79 +350,26 @@ cycleBgSwitch.addEventListener("click", () => {
         shuffleSwitch.disabled = true;
         cycleBG = false;
         localStorage.setItem("cycleBG", false);
-        let extractedNode;
         localStorage.setItem("manualBgSelected", idFromRegex);
-        backgroundSelectSwitchElements.forEach((i) => {
+        backgroundsSwitchElement.forEach((i) => {
             if (idFromRegex == i.id) {
                 extractedNode = i;
                 extractedNode.checked = true;
             }
         })
-        backgroundSelectSwitchElements.forEach((e) => {
+        backgroundsSwitchElement.forEach((e) => {
             if (e !== extractedNode) {
                 e.checked = false;
-                hideCheckbox(e);
+                hideBackgroundCheckbox(e);
             }
         })
     }
 })
-
-let cycleVal = localStorage.getItem("cycleBG")
-if (cycleVal) {
-    if (JSON.parse(cycleVal)) {
-        cycleBG = true;
-        cycleBgSwitch.checked = true;
-        shuffleSwitch.disabled = false;
+intervalValueInput.addEventListener("input", () => {
+    if (intervalValueInput.value <= 0 || isNaN(intervalValueInput.value)) {
+        temp = 1;
+        intervalValue = 1
     }
-    else {
-        cycleBG = false;
-        cycleBgSwitch.checked = false;
-        shuffleSwitch.disabled = true;
-    }
-}
-else{
-    cycleBG = true;
-    cycleBgSwitch.checked = true;
-    shuffleSwitch.disabled = false;
-    localStorage.setItem("cycleBG", true);
-}
-
-backgroundChanger();
-if (localStorage.getItem("selectedBgsIDs")) {
-    backgroundSelectSwitchElements.forEach((e) => {
-        selectedBgsIDs = JSON.parse(localStorage.getItem("selectedBgsIDs"))
-        if (cycleBG && selectedBgsIDs.includes(Number(e.id))) {
-            e.checked = true;
-        }
-    })
-}
-else {//here dumbass
-    let arr = []
-    for (i = 1; i <= BACKGROUND_COUNT; i++) arr.push(i);
-    backgroundSelectSwitchElements.forEach((e) => {
-        e.checked = true;
-    })
-    localStorage.setItem("selectedBgsIDs", JSON.stringify(arr));
-}
-backgroundSelectSwitchElements = document.querySelectorAll(".background-entry-switch")
-if (localStorage.getItem("cycleBG")) {
-    if (!JSON.parse(localStorage.getItem("cycleBG"))) {
-        if (localStorage.getItem("manualBgSelected")) {
-            let manualBgSelected = localStorage.getItem("manualBgSelected");
-            body.style.backgroundImage = `url("../src/assets/backgrounds/${manualBgSelected}.jpg")`;
-            backgroundSelectSwitchElements.forEach((i) => {
-                if (i.id == manualBgSelected) {
-                    i.checked = true;
-                }
-                else {
-                    hideCheckbox(i);
-                }
-            })
-        }
-        else {
-            body.style.backgroundImage = 'url("../src/assets/backgrounds/1.jpg")';
-            localStorage.setItem("manualBgSelected", 1)
-        }
-    }
-}
-setInterval(backgroundChanger, intervalValue)
+    intervalValue = minToMs(intervalValueInput.value);
+    localStorage.setItem("intervalValue", intervalValue);
+})

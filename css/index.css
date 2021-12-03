@@ -114,9 +114,79 @@ body{
     border-radius: 10px;
     background-color: #444444c9;
 }
+.info-main-header{
+    border-bottom: #fdfbfb 1px solid;
+    width: 97%;
+    padding-bottom: 5px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding-left: 3%;
+}
+.info-footer{
+    width: 97%;
+    margin: 0px;
+    padding-top: 5px;
+    margin-top: 5px;
+    padding-bottom: 2%;
+    font-weight: 500;
+    font-size: 1.5rem;
+    border-top: #fdfbfb 1px solid;
+    text-align: center;
+    padding-left: 3%; 
+}
+.info-header {
+    width: 97%;
+    margin-left: 3%;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+.info-header ~ ul {
+    margin-right: 0px;
+    text-align: left;
+    width: 90%;
+    font-size: 1.02rem;
+    margin-top: 0px;
+    margin-right: 0px;
+}
+.info-header ~ ul > li > p{
+    margin-right: 0px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+.info-header ~ ul > li > p > a{
+    color:#3ecffb;
+    text-decoration: none;
+    font-weight: 500;
+}
 
 #button-img{
     height: 80%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#cycle-delay-input{
+    width: 15%;
+    padding-left: 10px;
+    margin-right: 10px;
+    -moz-appearance: textfield;
+    margin-left: 10px;
+    outline: none;
+    border: transparent 1px solid;
+    background-color: #2e2e2e;
+    border-radius: 12px;
+}
+#cycle-delay-input:hover{
+    border: #277e99 1px solid;
+}
+#cycle-delay-input:focus-within{
+    border: #3ecffb 1px solid;
 }
 
 .sub-page-wrapper{
