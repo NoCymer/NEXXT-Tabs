@@ -67,7 +67,7 @@ body{
     border-bottom: #ffffff solid 1px;
 }
 
-#settings-wrapper{
+.settings-wrapper{
     margin: 4px 0 0 4px;
     z-index: 10;
     align-self: flex-start;
