@@ -263,7 +263,7 @@ if (localStorage.getItem("selectedBgsIDs")) {
 }
 else {
     let arr = []
-    for (i = 1; i <= BACKGROUND_COUNT; i++) arr.push(i);
+    for (i = 0; i <= BACKGROUND_COUNT - 1; i++) arr.push(i);
     backgroundsSwitchElement.forEach((e) => {
         e.checked = true;
     })
