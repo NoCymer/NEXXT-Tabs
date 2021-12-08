@@ -7,16 +7,27 @@
     justify-content: center;
     align-content: center;
 }
-
+#bookmark-new-page-wrapper{
+    justify-self: flex-end;
+}
+#bookmark-new-page-wrapper > .standard-checkbox{
+    margin-right: 10px;
+}
 #add-bookmark {
     background: #3d3d3d59 linear-gradient(315deg, rgba(244, 123, 255, 0) 0%, rgba(153, 59, 90, 0.171) 100%);  
 }
-
+#bookmark-setting-entry{
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 #add-bookmark img{
     width: 70%;
     transform: translateX(22%) translateY(22%);
 }
-
+#bookmark-new-page-wrapper >h3 {
+    white-space: nowrap;
+}
 #add-bookmark-wrapper-wrapper{
     transition: opacity 0.1s;
     opacity: 0;

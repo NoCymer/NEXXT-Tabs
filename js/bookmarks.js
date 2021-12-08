@@ -7,8 +7,10 @@ const titleField = document.querySelector("#newBookMarkTitle");
 const urlField = document.querySelector("#newBookMarkURL");
 const submitBookmark = document.querySelector("#submit-bookmark");
 const bookmarkSwitch = document.querySelector("#bookmark-switch");
+const bookmarkNewPageSwitch = document.querySelector("#new-page-switch");
 let delsBookmarks = document.querySelectorAll(".delBookmark");
 let bookmarks = document.querySelectorAll(".bookmark");
+let bookmarkNewTabBool = true;
 
 const BOOKMARKS_FADE_DURATION = "200";
 const REGEX_URL = /[A-z]+:\/\/([\W\w]+)/;
@@ -41,7 +43,6 @@ const displayBookmarks = () => {
             let newBookmark = createBookmark((e.title.charAt(0).toUpperCase() + e.title.slice(1)), e.url);
             addBookmark.parentNode.insertBefore(newBookmark, addBookmark);
         })
-        addListeners();
     }
 }
 
@@ -81,10 +82,16 @@ const addListeners = () => {
         else {
             element.addEventListener("click", (e) => {
                 if (String(element.dataset.url).includes("http")) {
-                    window.location = element.dataset.url;
+                    if(bookmarkNewTabBool) {
+                        window.open(element.dataset.url, "_blank");
+                    }
+                    else window.location = element.dataset.url;
                 }
                 else {
-                    window.location = `https://${element.dataset.url}`;
+                    if(bookmarkNewTabBool) {
+                        window.open(`https://${element.dataset.url}`, "_blank");
+                    }
+                    else window.location = `https://${element.dataset.url}`;
                 }
             })
         }
@@ -129,7 +136,6 @@ submitBookmark.addEventListener("submit", (e) => {
         addBookmarkWrapperWrapper.style.display = "none";
     }, FADE_DURATION);
 })
-
 bookmarkSwitch.addEventListener("click", () => {
     if (bookmarkSwitch.checked) {
         bookmarkWrapper.style.display = "flex";
@@ -148,7 +154,31 @@ bookmarkSwitch.addEventListener("click", () => {
         localStorage.setItem("bookmark", false);
     }
 })
-
+bookmarkNewPageSwitch.addEventListener("click", () => {
+    if (bookmarkNewPageSwitch.checked) {
+        localStorage.setItem("bookmarkNewPage", true);
+        bookmarkNewTabBool = true;
+    }
+    else {
+        localStorage.setItem("bookmarkNewPage", false);
+        bookmarkNewTabBool = false;
+    }
+})
+if (localStorage.getItem("bookmarkNewPage")) {
+    if (JSON.parse(localStorage.getItem("bookmarkNewPage"))) {
+        bookmarkNewTabBool = true;
+        bookmarkNewPageSwitch.checked = true;
+    }
+    else {
+        bookmarkNewTabBool = false;
+        bookmarkNewPageSwitch.checked = false;
+    }
+}
+else{
+    localStorage.setItem("bookmarkNewPage", true);
+    bookmarkNewTabBool = true;
+    bookmarkNewPageSwitch.checked = true;
+}
 if (localStorage.getItem("bookmark")) {
     let bookmarkBool = JSON.parse(localStorage.getItem("bookmark"));
     if (bookmarkBool) {
@@ -172,7 +202,6 @@ else {
     bookmarkSwitch.checked = true;
     localStorage.setItem("bookmark", true);
 }
-
 
 displayBookmarks();
 addListeners();

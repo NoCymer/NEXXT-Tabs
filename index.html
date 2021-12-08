@@ -122,13 +122,24 @@
                     </div>
                 </div>
                 <div id="bookmark-settings" class="setting-wrapper">
-                    <div class="setting-entry">
-                        <h3>Bookmarks</h3>
-                        <div class="switch-button">
-                            <label class="switch">
-                                <input type="checkbox" id="bookmark-switch">
-                                <span class="slider"></span>
-                            </label>
+                    <div class="setting-entry" id="bookmark-setting-entry">
+                        <div class="sub-setting-entry bookmark-sub-entry">
+                            <h3>Bookmarks</h3>
+                            <div class="switch-button">
+                                <label class="switch">
+                                    <input type="checkbox" id="bookmark-switch">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sub-setting-entry" id="bookmark-new-page-wrapper">
+                            <h3>Open in a new page</h3>
+                            <div class="standard-checkbox">
+                                <label class="checkbox">
+                                    <input type="checkbox" id="new-page-switch">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -273,115 +284,115 @@
     <div id="google-apps-container">
         <div id="google-apps-subcontainer">
             <div id="google-apps-scroll-container">
-                <div class="google-app-entry" id="https://myaccount.google.com">
+                <div class="google-app-entry" id="https://myaccount.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-account.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Account</h4>
                 </div>
-                <div class="google-app-entry" id="https://www.blogger.com">
+                <div class="google-app-entry" id="https://www.blogger.com" tabindex="1">
                     <img src="src/assets/google/icon--google-blogger.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Blogger</h4>
                 </div>
-                <div class="google-app-entry" id="https://books.google.com">
+                <div class="google-app-entry" id="https://books.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-books.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Books</h4>
                 </div>
-                <div class="google-app-entry" id="https://calendar.google.com">
+                <div class="google-app-entry" id="https://calendar.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-calendar.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Calendar</h4>
                 </div>
-                <div class="google-app-entry" id="https://chat.google.com">
+                <div class="google-app-entry" id="https://chat.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-chat.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Chat</h4>
                 </div>
-                <div class="google-app-entry" id="https://contacts.google.com">
+                <div class="google-app-entry" id="https://contacts.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-contacts.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Contacts</h4>
                 </div>
-                <div class="google-app-entry" id="https://docs.google.com">
+                <div class="google-app-entry" id="https://docs.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-docs.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Docs</h4>
                 </div>
-                <div class="google-app-entry" id="https://drive.google.com">
+                <div class="google-app-entry" id="https://drive.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-drive.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Drive</h4>
                 </div>
-                <div class="google-app-entry" id="https://duo.google.com">
+                <div class="google-app-entry" id="https://duo.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-duo.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Duo</h4>
                 </div>
-                <div class="google-app-entry" id="https://earth.google.com">
+                <div class="google-app-entry" id="https://earth.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-earth.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Earth</h4>
                 </div>
-                <div class="google-app-entry" id="https://finance.google.com">
+                <div class="google-app-entry" id="https://finance.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-finance.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Finance</h4>
                 </div>
-                <div class="google-app-entry" id="https://gmail.google.com">
+                <div class="google-app-entry" id="https://gmail.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-gmail.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Gmail</h4>
                 </div>
-                <div class="google-app-entry" id="https://hangouts.google.com">
+                <div class="google-app-entry" id="https://hangouts.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-hangouts.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Hangouts</h4>
                 </div>
-                <div class="google-app-entry" id="https://jamboard.google.com">
+                <div class="google-app-entry" id="https://jamboard.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-jamboard.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Jamboard</h4>
                 </div>
-                <div class="google-app-entry" id="https://keep.google.com">
+                <div class="google-app-entry" id="https://keep.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-keep.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Keep</h4>
                 </div>
-                <div class="google-app-entry" id="https://maps.google.com">
+                <div class="google-app-entry" id="https://maps.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-maps.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Maps</h4>
                 </div>
-                <div class="google-app-entry" id="https://meet.google.com">
+                <div class="google-app-entry" id="https://meet.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-meet.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Meet</h4>
                 </div>
-                <div class="google-app-entry" id="https://www.google.com/business">
+                <div class="google-app-entry" id="https://www.google.com/business" tabindex="1">
                     <img src="src/assets/google/icon--google-my-business.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">My Buisness</h4>
                 </div>
-                <div class="google-app-entry" id="https://news.google.com">
+                <div class="google-app-entry" id="https://news.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-news.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">News</h4>
                 </div>
-                <div class="google-app-entry" id="https://photos.google.com">
+                <div class="google-app-entry" id="https://photos.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-photos.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Photos</h4>
                 </div>
-                <div class="google-app-entry" id="https://play.google.com">
+                <div class="google-app-entry" id="https://play.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-play.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Google Play</h4>
                 </div>
-                <div class="google-app-entry" id="https://search.google.com">
+                <div class="google-app-entry" id="https://search.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-search.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Search</h4>
                 </div>
-                <div class="google-app-entry" id="https://sheets.google.com">
+                <div class="google-app-entry" id="https://sheets.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-sheets.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Sheets</h4>
                 </div>
-                <div class="google-app-entry" id="https://shopping.google.com">
+                <div class="google-app-entry" id="https://shopping.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-shopping.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Shopping</h4>
                 </div>
-                <div class="google-app-entry" id="https://google.com/slides">
+                <div class="google-app-entry" id="https://google.com/slides" tabindex="1">
                     <img src="src/assets/google/icon--google-slide.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Slide</h4>
                 </div>
-                <div class="google-app-entry" id="https://translate.google.com">
+                <div class="google-app-entry" id="https://translate.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-translate.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Translate</h4>
                 </div>
-                <div class="google-app-entry" id="https://pay.google.com">
+                <div class="google-app-entry" id="https://pay.google.com" tabindex="1">
                     <img src="src/assets/google/icon--google-pay.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Pay</h4>
                 </div>
-                <div class="google-app-entry" id="https://youtube.com">
+                <div class="google-app-entry" id="https://youtube.com" tabindex="1">
                     <img src="src/assets/google/icon--google-youtube.png" alt="" class="google-app-entry-img">
                     <h4 class="google-app-title">Youtube</h4>
                 </div>

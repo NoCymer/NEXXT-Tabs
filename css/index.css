@@ -171,8 +171,8 @@ body{
 .google-app-entry{
     width: 80px;
     transition: all 0.2s;
-    height: 105px;
-    padding: 5px 0 0 0;
+    height: 90px;
+    padding: 8px 0 0 0;
     margin: 8px 0px 0 8px;
     border-radius: 25px;
     -webkit-touch-callout: none;
@@ -184,6 +184,9 @@ body{
 }
 .google-app-entry:hover{
     background-color: #277e99;
+}
+.google-app-entry:focus-within{
+    background-color: #4499b3;
 }
 
 #google-apps-btn{
@@ -261,8 +264,8 @@ body{
     margin-bottom: 0px;
     margin-top: 0px;
     text-align: left;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
 }
 .info-header ~ ul {
     margin-right: 0px;
