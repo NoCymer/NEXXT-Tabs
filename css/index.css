@@ -170,9 +170,11 @@ body{
 }
 .google-app-entry{
     width: 80px;
+    transition: all 0.2s;
     height: 105px;
     padding: 5px 0 0 0;
     margin: 8px 0px 0 8px;
+    border-radius: 25px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -182,7 +184,6 @@ body{
 }
 .google-app-entry:hover{
     background-color: #277e99;
-    border-radius: 25px;
 }
 
 #google-apps-btn{
