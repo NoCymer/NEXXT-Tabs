@@ -40,30 +40,12 @@ if (localStorage.getItem('ctDate')) {
 if (localStorage.getItem('ctLabel')) {
     countdownLabel.value = localStorage.getItem('ctLabel');
 }
-if (JSON.parse(localStorage.getItem("countdown"))) {
-    countdownElements.forEach((e) => {
-        e.style.display = "flex";
-    })
-    countdownSwitch.checked = true;
-    if (localStorage.getItem('ctPosition')) {
-        countdownPosition.value = Number(localStorage.getItem('ctPosition'));
-        setPosition(countdownPosition.value);
-    }
-    else {
-        //default case
-        setPosition(0);
-    }
-}
-else {
-    countdownElements.forEach((e) => {
-        e.style.display = "none";
-    })
-    countdownSwitch.checked = false;
-}
-
-
-countdownSwitch.addEventListener("click", () => {
-    if (countdownSwitch.checked) {
+let ctSwitch = new switchButton(
+    countdownSwitch,
+    "countdown",
+    false,
+    () => { },
+    () => {
         countdownElements.forEach((e) => {
             e.style.display = "flex";
         })
@@ -75,9 +57,8 @@ countdownSwitch.addEventListener("click", () => {
             //default case
             setPosition(0);
         }
-        localStorage.setItem("countdown", true);
-    }
-    else if (!countdownSwitch.checked) {
+    },
+    () => {
         countdownElements.forEach((e) => {
             e.style.display = "none";
         })
@@ -87,12 +68,7 @@ countdownSwitch.addEventListener("click", () => {
             countdownContainerTop.style.display = "none";
             countdownContainerTop.style.display = "none";
         }, TIMER_FADE_DURATION);
-        localStorage.setItem("countdown", false);
-    }
-})
-
-
-
+    });
 const setNewLabel = (label) => {
     document.getElementById("labelT").textContent = label;
     document.getElementById("labelT").innerText = label;

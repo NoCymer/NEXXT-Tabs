@@ -213,25 +213,27 @@ for (let i = 0; i <= BACKGROUND_COUNT - 1; i++) {
     bgPathArray.push(`${BACKGROUNDS_PATH}/${i}.jpg`);
     createNewBackgroundEntry(i);
 }
+let shuffleSwitchBTN = new switchButton(
+    shuffleSwitch,
+    "shuffle",
+    () => { },
+    () => shuffle = true,
+    () => shuffle = false
+);
 
-// assigns shuffle local storage's value
-if (localStorage.getItem("shuffle")) {
-    if (JSON.parse(localStorage.getItem("shuffle"))) {
-        shuffle = true;
-        shuffleSwitch.checked = true;
+let cycleBgSwitchBTN = new switchButton(
+    cycleBgSwitch,
+    "cycleBG",
+    () => { },
+    () => {
+        cycleBG = true;
+        shuffleSwitch.disabled = false;
+    },
+    () => {
+        cycleBG = false;
+        shuffleSwitch.disabled = true;
     }
-    else {
-        shuffle = false;
-        shuffleSwitch.checked = false;
-    }
-}
-//default case if no user prefs
-else {
-    shuffle = true;
-    shuffleSwitch.checked = true;
-    localStorage.setItem("shuffle", true);
-}
-
+)
 let cycleVal = localStorage.getItem("cycleBG")
 if (cycleVal) {
     if (JSON.parse(cycleVal)) {

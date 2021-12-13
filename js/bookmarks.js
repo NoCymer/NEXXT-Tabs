@@ -82,13 +82,13 @@ const addListeners = () => {
         else {
             element.addEventListener("click", (e) => {
                 if (String(element.dataset.url).includes("http")) {
-                    if(bookmarkNewTabBool) {
+                    if (bookmarkNewTabBool) {
                         window.open(element.dataset.url, "_blank");
                     }
                     else window.location = element.dataset.url;
                 }
                 else {
-                    if(bookmarkNewTabBool) {
+                    if (bookmarkNewTabBool) {
                         window.open(`https://${element.dataset.url}`, "_blank");
                     }
                     else window.location = `https://${element.dataset.url}`;
@@ -136,72 +136,31 @@ submitBookmark.addEventListener("submit", (e) => {
         addBookmarkWrapperWrapper.style.display = "none";
     }, FADE_DURATION);
 })
-bookmarkSwitch.addEventListener("click", () => {
-    if (bookmarkSwitch.checked) {
+let bookmarkSwitchBTN = new switchButton(
+    bookmarkSwitch,
+    "bookmark",
+    true,
+    () => { },
+    () => {
         bookmarkWrapper.style.display = "flex";
         setTimeout(() => {
             bookmarkWrapper.style.opacity = "1";
         }, 1);
-
-        localStorage.setItem("bookmark", true);
-    }
-    else if (!bookmarkSwitch.checked) {
-
+    },
+    () => {
         bookmarkWrapper.style.opacity = "0";
         setTimeout(() => {
             bookmarkWrapper.style.display = "none";
         }, BOOKMARKS_FADE_DURATION);
-        localStorage.setItem("bookmark", false);
     }
-})
-bookmarkNewPageSwitch.addEventListener("click", () => {
-    if (bookmarkNewPageSwitch.checked) {
-        localStorage.setItem("bookmarkNewPage", true);
-        bookmarkNewTabBool = true;
-    }
-    else {
-        localStorage.setItem("bookmarkNewPage", false);
-        bookmarkNewTabBool = false;
-    }
-})
-if (localStorage.getItem("bookmarkNewPage")) {
-    if (JSON.parse(localStorage.getItem("bookmarkNewPage"))) {
-        bookmarkNewTabBool = true;
-        bookmarkNewPageSwitch.checked = true;
-    }
-    else {
-        bookmarkNewTabBool = false;
-        bookmarkNewPageSwitch.checked = false;
-    }
-}
-else{
-    localStorage.setItem("bookmarkNewPage", true);
-    bookmarkNewTabBool = true;
-    bookmarkNewPageSwitch.checked = true;
-}
-if (localStorage.getItem("bookmark")) {
-    let bookmarkBool = JSON.parse(localStorage.getItem("bookmark"));
-    if (bookmarkBool) {
-        bookmarkSwitch.checked = true;
-    }
-    else {
-        bookmarkSwitch.checked = false;
-    }
-    if (bookmarkBool) {
-        bookmarkWrapper.style.display = "flex";
-        setTimeout(() => {
-            bookmarkWrapper.style.opacity = "1";
-        }, 1);
-    }
-    else {
-        bookmarkWrapper.style.display = "none";
-    }
-}
-else {
-    bookmarkWrapper.style.display = "flex";
-    bookmarkSwitch.checked = true;
-    localStorage.setItem("bookmark", true);
-}
-
+);
+let bookmarkNewPageSwitchBTN = new switchButton(
+    bookmarkNewPageSwitch,
+    "bookmarkNewPage",
+    true,
+    () => { },
+    () => bookmarkNewTabBool = true,
+    () => bookmarkNewTabBool = false
+)
 displayBookmarks();
 addListeners();

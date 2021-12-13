@@ -9,16 +9,20 @@ const TRANSITION_DURATION_SHORT = 10; // in ms;
 let isGoogleAppsShown = false;
 let googleAppsBool;
 let displaysObjGoogle = [];
-
-if (localStorage.getItem("googleApps")) {
-    googleAppsBool = JSON.parse(localStorage.getItem("googleApps"));
-    googleAppsSwitch.checked = googleAppsBool;
-}
-else {
-    googleAppsBool = true;
-    localStorage.setItem("googleApps", true);
-    googleAppsSwitch.checked = true;
-}
+const googleAppsSwitchBTN = new switchButton(
+    googleAppsSwitch,
+    "googleApps",
+    true,
+    () => {
+        updateGoogleAppsButton();
+    },
+    () => {
+        googleAppsBool = true;
+    },
+    () => {
+        googleAppsBool = false;
+    },
+);
 googleAppsContainer.style.width = "0%";
 googleAppsContainer.style.height = "0%";
 googleAppsContainer.style.top = "0%";
@@ -28,7 +32,7 @@ Array.from(googleAppsContainer.children).forEach(element => {
     element.style.visibility = "hidden";
 });
 googleSites.forEach((e) => {
-    e.addEventListener("click",()=>{
+    e.addEventListener("click", () => {
         window.open(e.id, "_blank");
     })
 })
@@ -40,14 +44,14 @@ const updateGoogleAppsButton = () => {
             googleWrapper.style.display = "block";
             googleWrapper.style.visibility = "visible";
             setTimeout(() => {
-                googleWrapper.style.opacity = "1";   
+                googleWrapper.style.opacity = "1";
             }, TRANSITION_DURATION_SHORT)
         }, TRANSITION_DURATION_SHORT)
     }
-    else{
-        googleWrapper.style.opacity = "0";   
+    else {
+        googleWrapper.style.opacity = "0";
         setTimeout(() => {
-            googleWrapper.style.visibility = "hidden";   
+            googleWrapper.style.visibility = "hidden";
             googleWrapper.style.display = "none";
         }, TRANSITION_DURATION)
     }
@@ -62,13 +66,13 @@ const hideGoogleApps = () => {
     });
     setTimeout(() => {
         googleAppsContainer.style.display = "none";
-        googleAppsContainer.style.visibility = "hidden";   
+        googleAppsContainer.style.visibility = "hidden";
     }, TRANSITION_DURATION)
 }
 const showGoogleApps = () => {
     googleAppsContainer.style.display = "block";
     googleAppsContainer.style.visibility = "visible";
-    setTimeout(() => { 
+    setTimeout(() => {
         Array.from(googleAppsContainer.children).forEach(element => {
             element.style.display = displaysObjGoogle[element.id];
             element.style.visibility = "visible";
@@ -80,17 +84,6 @@ const showGoogleApps = () => {
         googleAppsContainer.style.top = "50%";
     }, TRANSITION_DURATION_SHORT)
 }
-googleAppsSwitch.addEventListener("click", () => {
-    if (googleAppsSwitch.checked) {
-        googleAppsBool = true;
-    }
-    else {
-        googleAppsBool = false;
-    }
-    localStorage.setItem("googleApps", googleAppsBool);
-    updateGoogleAppsButton();
-})
-
 googleAppsButton.addEventListener("click", () => {
     if (isGoogleAppsShown) {
         hideGoogleApps();
