@@ -27,9 +27,4 @@ class switchButton {
     storeToLocalStorage() {
         localStorage.setItem(String(this.localStorageKey), JSON.parse(this.switchBool));
     }
-
 }
-
-/*Cette vidéo est un documentaire sur la barriére de corail,
- qui est entrain de disparaitre peu à peu et est sur le point de mourrir
- à cause des produits chimiques rejetées dans la mè-re et du réchauffement climatique*/
