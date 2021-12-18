@@ -5,8 +5,8 @@ const deselectAllBtn = document.querySelector("#deselect-all-btn");
 const selectAllBtn = document.querySelector("#select-all-btn");
 const backgroundChoiceContainer = document.querySelector("#background-choice");
 const intervalValueInput = document.querySelector("#cycle-delay-input");
-let backgroundsSwitchElement = document.querySelectorAll(".background-entry-switch"); //Must recall query selector after hot injecting
-let backgroundsElements = document.querySelectorAll(".background-entry"); //Must recall query selector after hot injecting
+let backgroundsSwitchElement = document.querySelectorAll(".background-entry-switch"); //Must recall query selector after injecting
+let backgroundsElements = document.querySelectorAll(".background-entry"); //Must recall query selector after injecting
 
 const BACKGROUNDS_PATH = '../src/assets/backgrounds';
 const BACKGROUND_COUNT = 62;
