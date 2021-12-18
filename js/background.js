@@ -216,6 +216,7 @@ for (let i = 0; i <= BACKGROUND_COUNT - 1; i++) {
 let shuffleSwitchBTN = new switchButton(
     shuffleSwitch,
     "shuffle",
+    true,
     () => { },
     () => shuffle = true,
     () => shuffle = false
@@ -224,6 +225,7 @@ let shuffleSwitchBTN = new switchButton(
 let cycleBgSwitchBTN = new switchButton(
     cycleBgSwitch,
     "cycleBG",
+    true,
     () => { },
     () => {
         cycleBG = true;
@@ -309,16 +311,6 @@ deselectAllBtn.addEventListener("click", () => {
         if (e.id == 0) e.checked = true;
         localStorage.setItem("selectedBgsIDs", JSON.stringify([0]));
     })
-})
-shuffleSwitch.addEventListener("click", () => {
-    if (shuffleSwitch.checked) {
-        shuffle = true;
-        localStorage.setItem("shuffle", true);
-    }
-    else {
-        shuffle = false;
-        localStorage.setItem("shuffle", false);
-    }
 })
 cycleBgSwitch.addEventListener("click", () => {
     let idFromRegex = body.style.backgroundImage.match(REGEX_ID_URL)[1];
