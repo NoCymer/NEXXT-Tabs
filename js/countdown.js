@@ -22,11 +22,10 @@ function setLabel() {
 const checkForDateLabel = () => {
     clearTimeout(currentTimeout);
     clearTimeout(nextTimeout);
-    if(localStorage.getItem('ctDate')){
-        date = localStorage.getItem('ctDate');
+    if(localStorage.getItem('ctDateTime')){
+        date = localStorage.getItem('ctDateTime');
         setDate();
     }
-    
     if(localStorage.getItem('ctLabel')){
         label = localStorage.getItem('ctLabel');
         setLabel();

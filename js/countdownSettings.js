@@ -1,6 +1,6 @@
 const countdownSwitch = document.querySelector("#ct-switch");
 const countdownPosition = document.querySelector("#countdown-position");
-const countdownDate = document.querySelector("#date");
+const countdownDateTime = document.querySelector("#datetime");
 const countdownLabel = document.querySelector("#lbl");
 const countdownContainerTop = document.querySelector("#countdownContainerTop");
 const countdownContainerBottom = document.querySelector("#countdownContainerBottom");
@@ -33,8 +33,8 @@ const setPosition = (posIndex) => {
 }
 let countdownElements = document.querySelectorAll(".ct-sub-entry-hidden");
 
-if (localStorage.getItem('ctDate')) {
-    countdownDate.value = localStorage.getItem('ctDate');
+if (localStorage.getItem('ctDateTime')) {
+    countdownDateTime.value = localStorage.getItem('ctDateTime');
 }
 
 if (localStorage.getItem('ctLabel')) {
@@ -77,12 +77,11 @@ const setNewLabel = (label) => {
     document.getElementById("labelB").innerText = label;
 }
 
-countdownDate.addEventListener("input", () => {
-    localStorage.setItem('ctDate', countdownDate.value);
+countdownDateTime.addEventListener("input", () => {
+    localStorage.setItem('ctDateTime', countdownDateTime.value);
     checkForDateLabel();
-
 })
-
+ 
 countdownLabel.addEventListener("input", () => {
     setNewLabel(countdownLabel.value);
     localStorage.setItem('ctLabel', countdownLabel.value);

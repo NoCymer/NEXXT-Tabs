@@ -324,35 +324,25 @@ input::-webkit-inner-spin-button {
     justify-content: flex-start;
     height: 100%;
 }
-
 #general-page{
     display: none;
     visibility: hidden;
     height: 80vh;
 }
-/* #general-page div{
-} */
 #background-page{
     display: none;
     visibility: hidden;
     height: 80vh;
 }
-/* #background-page div{
-    
-} */
 #info-page{
     display: none;
     visibility: hidden;
     height: 80vh;
 }
-/* #info-page div{
-    display: flex;
-} */
-
 .mcq{
-    width: 35%;
+    width: 45%;
     height: 25px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin-left: 5%;
     text-align: center;
     color:white;
