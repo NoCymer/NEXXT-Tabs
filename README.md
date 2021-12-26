@@ -13,4 +13,6 @@
 ### Libraries used in this project
 - [Particles.js](https://github.com/VincentGarreau/particles.js/) by Vincent Garreau
 
+### Feedback and Bug Report
+- If you want to submit a bug report, leave a Feedback or if you have any question concerning the project, you are very welcome to do it by filling the folowing [form](https://forms.gle/MvYPGFKk7A8ShPZu7)
 ## ©Copyright [NoCymer](https://github.com/NoCymer/)  2021-2022
