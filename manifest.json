@@ -12,12 +12,7 @@
     "chrome_url_overrides": {
        "newtab": "index.html"
     },
-    "permissions": [
-        "topSites", 
-        "bookmarks", 
-        "unlimitedStorage", 
-        "storage"
-    ],
+    "permissions": [],
     "icons": {
       "128": "icon.png"
     },
