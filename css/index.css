@@ -238,34 +238,33 @@ body{
 }
 
 .info-main-header{
-    border-bottom: #fdfbfb 1px solid;
-    width: 97%;
-    padding-bottom: 5px;
-    margin-top: 0px;
-    margin-bottom: 10px;
-    padding-left: 3%;
+    border-bottom: #797979 1px solid;
+    width: 93%;
+    padding-bottom: 20px;
+    margin: 0px 15px 10px 15px;
+    border-radius: 0 0 2px 2px;
+    text-align: center;
 }
 .info-footer{
-    width: 97%;
-    margin: 0px;
-    padding-top: 5px;
-    margin-top: 5px;
-    padding-bottom: 2%;
+    width: 93%;
+    padding-top: 25px;
+    padding-bottom: 5px;
+    margin: 0px 15px 10px 15px;
     font-weight: 500;
     font-size: 1.5rem;
-    border-top: #fdfbfb 1px solid;
+    border-top: #797979 1px solid;
+    border-radius: 2px 2px 0px 0px;
     text-align: center;
-    padding-left: 3%; 
 }
 .info-header {
     width: 97%;
     margin-left: 3%;
     margin-right: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
     margin-top: 0px;
     text-align: left;
     font-family: 'Roboto', sans-serif;
-    font-weight: 600;
+    font-weight: 500;
 }
 .info-header ~ ul {
     margin-right: 0px;
@@ -277,15 +276,15 @@ body{
 }
 .info-header ~ ul > li > p{
     margin-right: 0px;
-    margin-top: 10px;
-    margin-bottom: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
-.info-header ~ ul > li > p > a{
+a{
     color:#3ecffb;
     text-decoration: none;
     font-weight: 500;
 }
-.info-header ~ ul > li > p > a:hover{
+a:hover{
     color:#3ecffb;
     text-decoration: underline;
     font-weight: 500;
@@ -317,7 +316,7 @@ input::-webkit-inner-spin-button {
 .sub-page-wrapper{
     overflow-y : auto;
     color:white;
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
