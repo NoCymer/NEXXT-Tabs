@@ -31,8 +31,8 @@ const createBookmark = (title, url) => {
     bookmark.setAttribute("tabindex", "1");
     bookmark.title = (title.charAt(0).toUpperCase() + title.slice(1));
     bookmark.dataset.url = url;
-    bookmark.appendChild(bookmarkImg);
     bookmark.appendChild(bookmarkDel);
+    bookmark.appendChild(bookmarkImg);
     return bookmark;
 }
 
@@ -65,50 +65,57 @@ const newBookmark = (title, url) => {
         }
         let newBookmark = createBookmark(title, url);
         addBookmark.parentNode.insertBefore(newBookmark, addBookmark);
-        addListeners();
+        addListener(newBookmark);
+        addDelListener(newBookmark.firstChild);
     }
+}
+const addListener = (element) => {
+    if (element.id == "add-bookmark") {
+        addBookmark.addEventListener("click", () => {
+            addBookmarkWrapperWrapper.style.display = "block";
+            setTimeout(() => addBookmarkWrapperWrapper.style.opacity = "1", 1)
+
+        })
+    }
+    else {
+        element.addEventListener("click", (e) => {
+            if (String(element.dataset.url).includes("http")) {
+                if (bookmarkNewTabBool) {
+                    window.open(element.dataset.url, "_blank");
+                }
+                else window.location = element.dataset.url;
+            }
+            else {
+                if (bookmarkNewTabBool) {
+                    window.open(`https://${element.dataset.url}`, "_blank");
+                }
+                else window.location = `https://${element.dataset.url}`;
+            }
+        })
+    }
+}
+const addDelListener = (element) => {
+    element.addEventListener("click", (event) => {
+        event.stopPropagation();
+        element.parentElement.remove();
+        let arr = JSON.parse(localStorage.getItem("bookmarks"));
+        arr.forEach((i) => {
+            if (i.url == element.parentElement.dataset.url) {
+                arr.splice(arr.indexOf(i), 1);
+            }
+        })
+        localStorage.setItem("bookmarks", JSON.stringify(arr));
+    })
 }
 
 const addListeners = () => {
     bookmarks = document.querySelectorAll(".bookmark");
     bookmarks.forEach(element => {
-        if (element.id == "add-bookmark") {
-            addBookmark.addEventListener("click", () => {
-                addBookmarkWrapperWrapper.style.display = "block";
-                setTimeout(() => addBookmarkWrapperWrapper.style.opacity = "1", 1)
-
-            })
-        }
-        else {
-            element.addEventListener("click", (e) => {
-                if (String(element.dataset.url).includes("http")) {
-                    if (bookmarkNewTabBool) {
-                        window.open(element.dataset.url, "_blank");
-                    }
-                    else window.location = element.dataset.url;
-                }
-                else {
-                    if (bookmarkNewTabBool) {
-                        window.open(`https://${element.dataset.url}`, "_blank");
-                    }
-                    else window.location = `https://${element.dataset.url}`;
-                }
-            })
-        }
+        addListener(element);
     });
     delsBookmarks = document.querySelectorAll(".delBookmark");
     delsBookmarks.forEach((e) => {
-        e.addEventListener("click", (event) => {
-            event.stopPropagation();
-            e.parentElement.remove();
-            let arr = JSON.parse(localStorage.getItem("bookmarks"));
-            arr.forEach((i) => {
-                if (i.url == e.parentElement.dataset.url) {
-                    arr.splice(arr.indexOf(i), 1);
-                }
-            })
-            localStorage.setItem("bookmarks", JSON.stringify(arr));
-        })
+        addDelListener(e);
     })
 }
 
