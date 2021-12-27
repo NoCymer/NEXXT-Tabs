@@ -27,8 +27,8 @@
     background: linear-gradient(330deg, rgba(244, 123, 255, 0) 0%, rgba(255, 255, 255, 0.561) 100%), url("../src/assets/backgrounds/9.jpg");
     background-size: contain;
     border-radius: 10px;
-    width: 231px;
-    height: 130px; 
+    width: 250px;
+    height: 140px; 
     margin: 10px;
 }
 .background-checker{
@@ -48,4 +48,58 @@
 }
 .background-checker>label:hover input ~ span{
     border: 1px transparent solid !important;
+}
+@media (max-width: 1920px) {
+    .background-entry {
+        width: 265px;
+        height: 149px; 
+    }
+}
+@media (max-width: 1580px) {
+    .background-entry {
+        width: 231px;
+        height: 130px;
+    }
+}
+@media (max-width: 1340px) {
+    .background-entry {
+        width: 200px;
+        height: 112px; 
+    }
+}
+@media (max-width: 1175px) {
+    .background-entry {
+        width: 180px;
+        height: 101px; 
+    }
+}
+@media (max-width: 1080px) {
+    .background-entry {
+        width: 158px;
+        height: 89px; 
+    }
+}
+@media (max-width: 960px) {
+    .background-entry {
+        width: 145px;
+        height: 82px; 
+    }
+}
+@media (max-width: 900px) {
+    .background-entry {
+        width: 126px;
+        height: 71px; 
+    }
+}
+@media (max-width: 780px) {
+    .background-entry {
+        width: 120px;
+        height: 67px; 
+    }
+}
+@media (max-width: 750px) {
+    .background-entry {
+        width: 115px;
+        height: 65px; 
+    }
 }
