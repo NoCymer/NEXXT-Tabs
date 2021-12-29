@@ -249,12 +249,16 @@ body{
     width: 93%;
     padding-top: 25px;
     padding-bottom: 5px;
-    margin: 0px 15px 10px 15px;
+    margin: 0px 15px 0px 15px;
     font-weight: 500;
     font-size: 1.5rem;
     border-top: #797979 1px solid;
     border-radius: 2px 2px 0px 0px;
     text-align: center;
+}
+#app-version{
+    font-size: 0.9rem;
+    margin-top: 0;
 }
 .info-header {
     width: 97%;
