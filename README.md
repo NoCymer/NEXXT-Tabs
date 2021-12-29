@@ -1,5 +1,5 @@
 # Chrome NEXXT Tabs
-## [Chrome web store download link](https://chrome.google.com/webstore/detail/nexxt-tabs/dbocanalfbkfdbpjpnbjmipaidlogbmi)
+#### [Chrome web store download link](https://chrome.google.com/webstore/detail/nexxt-tabs/dbocanalfbkfdbpjpnbjmipaidlogbmi)
 
 ### Images rights
 - I do not own any of the images used in this project, therefore i do not claim any rights on them.<br>
