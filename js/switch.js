@@ -27,4 +27,10 @@ class switchButton {
     storeToLocalStorage() {
         localStorage.setItem(String(this.localStorageKey), JSON.parse(this.switchBool));
     }
+    disable() {
+        this.element.disabled = true;
+    }
+    enable() {
+        this.element.disabled = false;
+    }
 }

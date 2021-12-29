@@ -278,16 +278,15 @@ body{
     margin-right: 0px;
     margin-top: 5px;
     margin-bottom: 5px;
+    color: #f3f3f3;
 }
 a{
-    color:#3ecffb;
+    color:#47d0fa;
     text-decoration: none;
     font-weight: 500;
 }
 a:hover{
-    color:#3ecffb;
     text-decoration: underline;
-    font-weight: 500;
 }
 
 input::-webkit-outer-spin-button,

@@ -13,14 +13,23 @@ let bookmarks = document.querySelectorAll(".bookmark");
 let bookmarkNewTabBool = true;
 
 const BOOKMARKS_FADE_DURATION = "200";
-const REGEX_URL = /[A-z]+:\/\/([\W\w]+)/;
+const REGEX_URL = /[A-z]+:\/\/(w{3}\.)?([\W\w]+)/;
 const FADE_DURATION = "100"; //ms
 
+const parseUrl = (localUrl) => {
+    localUrl = localUrl.trim();
+    if (localUrl.includes("http")) {
+        localUrl = localUrl.match(REGEX_URL)[2];
+    }
+    let char = localUrl.charAt(localUrl.length - 1);
+    if (char == "/") {
+        localUrl = localUrl.substring(0, localUrl.length-1);
+    }
+    return localUrl;
+}
 const createBookmark = (title, url) => {
     let bookmarkImg = document.createElement("img");
-    if (url.includes("http")) {
-        url = url.match(REGEX_URL)[1]
-    }
+    url = parseUrl(url);
     bookmarkImg.src = `https://icons.duckduckgo.com/ip3/${url}.ico`;
     bookmarkImg.className = "bookmark-icon";
     let bookmarkDel = document.createElement("img");
@@ -35,7 +44,6 @@ const createBookmark = (title, url) => {
     bookmark.appendChild(bookmarkImg);
     return bookmark;
 }
-
 const displayBookmarks = () => {
     if (localStorage.getItem("bookmarks")) {
         let arr = JSON.parse(localStorage.getItem("bookmarks"));
@@ -45,12 +53,9 @@ const displayBookmarks = () => {
         })
     }
 }
-
 const newBookmark = (title, url) => {
     if (url != "") {
-        if (url.includes("http")) {
-            url = url.match(REGEX_URL)[1]
-        }
+        url = parseUrl(url);
         let createdBookmark = {
             title: title,
             url: url
@@ -129,12 +134,7 @@ addBookmarkCloseBtn.addEventListener("click", () => {
 submitBookmark.addEventListener("submit", (e) => {
     e.preventDefault();
     let url;
-    if (urlField.value.includes("http")) {
-        url = urlField.value.match(REGEX_URL)[1]
-    }
-    else {
-        url = urlField.value;
-    }
+    url = parseUrl(urlField.value);
     newBookmark(titleField.value, url);
     titleField.value = "";
     urlField.value = "";
@@ -143,6 +143,14 @@ submitBookmark.addEventListener("submit", (e) => {
         addBookmarkWrapperWrapper.style.display = "none";
     }, FADE_DURATION);
 })
+let bookmarkNewPageSwitchBTN = new switchButton(
+    bookmarkNewPageSwitch,
+    "bookmarkNewPage",
+    true,
+    () => { },
+    () => bookmarkNewTabBool = true,
+    () => bookmarkNewTabBool = false
+)
 let bookmarkSwitchBTN = new switchButton(
     bookmarkSwitch,
     "bookmark",
@@ -153,21 +161,16 @@ let bookmarkSwitchBTN = new switchButton(
         setTimeout(() => {
             bookmarkWrapper.style.opacity = "1";
         }, 1);
+        bookmarkNewPageSwitchBTN.enable();
     },
     () => {
         bookmarkWrapper.style.opacity = "0";
         setTimeout(() => {
             bookmarkWrapper.style.display = "none";
         }, BOOKMARKS_FADE_DURATION);
+        bookmarkNewPageSwitchBTN.disable();
     }
 );
-let bookmarkNewPageSwitchBTN = new switchButton(
-    bookmarkNewPageSwitch,
-    "bookmarkNewPage",
-    true,
-    () => { },
-    () => bookmarkNewTabBool = true,
-    () => bookmarkNewTabBool = false
-)
+
 displayBookmarks();
 addListeners();
