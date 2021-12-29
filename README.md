@@ -1,5 +1,5 @@
 # Chrome NEXXT Tabs
-#### [Chrome web store download link](https://chrome.google.com/webstore/detail/nexxt-tabs/dbocanalfbkfdbpjpnbjmipaidlogbmi)
+#### <img src="https://user-images.githubusercontent.com/61873313/147617470-f843f8e2-8596-4d23-bdfe-ba477c80b680.png" width="15" title="hover text"> [  Chrome web store download link](https://chrome.google.com/webstore/detail/nexxt-tabs/dbocanalfbkfdbpjpnbjmipaidlogbmi)
 
 ### Images rights
 - I do not own any of the images used in this project, therefore i do not claim any rights on them.<br>
