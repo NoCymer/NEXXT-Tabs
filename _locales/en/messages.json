@@ -1,0 +1,130 @@
+{
+    "appName": {
+        "message": "NEXXT TABS",
+        "description": "App name"
+    } ,
+    "appDesc": {
+      "message": "NEXXT Tabs will please every anime fans. Replace your basic tab to a minimalist customizable anime themed tab.",
+      "description": "Extension description."
+    },
+    "tabName": {
+      "message": "New Tab",
+      "description": "Tab name"
+    },
+    "searchEngine": {
+        "message": "Search Engine",
+        "description" : "search engine placeholder"
+    },
+    "searchPlaceholder": {
+        "message": "Search",
+        "description" : "search placeholder"
+    },
+    "bookmarks": {
+      "message": "Bookmarks",
+      "description" : "bookmarks placeholder"
+    },
+    "bookmarkNewH1": {
+      "message": "New bookmark",
+      "description" : "bookmarks h1 placeholder"
+    },
+    "bookmarkNewTitle": {
+      "message": "Title",
+      "description" : "bookmarks title placeholder"
+    },
+    "bookmarkNewLink": {
+      "message": "Link",
+      "description" : "bookmarks link placeholder"
+    },
+    "bookmarkNewCreate": {
+      "message": "Create bookmark",
+      "description" : "bookmarks create placeholder"
+    },
+    "generalTab": {
+      "message": "GENERAL",
+      "description" : "generalTab placeholder"
+    },
+    "backgroundTab": {
+      "message": "BACKGROUND",
+      "description" : "backgroundTab placeholder"
+    },
+    "infoTab": {
+      "message": "INFO",
+      "description" : "infoTab placeholder"
+    },
+    "openNewPage": {
+      "message": "Open in a new page",
+      "description" : "search engine placeholder"
+    },
+    "googleApps": {
+      "message": "Google Apps",
+      "description" : "googleApps placeholder"
+    },
+    "particles": {
+      "message": "Particles",
+      "description" : "particles placeholder"
+    },
+    "countdown": {
+      "message": "Countdown",
+      "description" : "countdown placeholder"
+    },
+    "countdownPosition": {
+      "message": "Position",
+      "description" : "countdown position placeholder"
+    },
+    "countdownPositionTop": {
+      "message": "Top",
+      "description" : "countdown position top placeholder"
+    },
+    "countdownPositionBottom": {
+      "message": "Bottom",
+      "description" : "countdown position bottom placeholder"
+    },
+    "countdownDate": {
+      "message": "Event Date",
+      "description" : "countdown eDate placeholder"
+    },
+    "countdownLabel": {
+      "message": "Event Label",
+      "description" : "countdown eLabel placeholder"
+    },
+    "cycleBG": {
+      "message": "Cycle Backgrounds",
+      "description" : "cycleBackgrounds placeholder"
+    },
+    "shuffleBG": {
+      "message": "Shuffle",
+      "description" : "shuffleBackgrounds placeholder"
+    },
+    "delayBG": {
+      "message": "Delay",
+      "description" : "delayBackgrounds placeholder"
+    },
+    "backgroundChoice": {
+      "message": "Backgrounds Choice",
+      "description" : "backgroundsChoice placeholder"
+    },
+    "selectAll": {
+      "message": "Select All",
+      "description" : "selectAll placeholder"
+    },
+    "deselectAll": {
+      "message": "Deselect All",
+      "description" : "deselectAll placeholder"
+    },
+    "days": {
+      "message": "Days",
+      "description" : "days placeholder"
+    },
+    "hours": {
+      "message": "Hours",
+      "description" : "hours placeholder"
+    },
+    "minutes": {
+      "message": "Minutes",
+      "description" : "minutes placeholder"
+    },
+    "seconds": {
+      "message": "Seconds",
+      "description" : "seconds placeholder"
+    }  
+}

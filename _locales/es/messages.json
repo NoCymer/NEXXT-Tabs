@@ -1,0 +1,130 @@
+{
+  "appName": {
+      "message": "NEXXT TABS",
+      "description": "App name"
+  } ,
+  "appDesc": {
+    "message": "NEXXT Tabs will please every anime fans. Replace your basic tab to a minimalist customizable anime themed tab.",
+    "description": "Extension description."
+  },
+  "tabName": {
+    "message": "Nueva pestaña",
+    "description": "Tab name"
+  },
+  "searchEngine": {
+      "message": "Buscador",
+      "description" : "search engine placeholder"
+  },
+  "searchPlaceholder": {
+      "message": "Buscar",
+      "description" : "search placeholder"
+  },
+  "bookmarks": {
+    "message": "Marcadores",
+    "description" : "bookmarks placeholder"
+  },
+  "bookmarkNewH1": {
+    "message": "Nuevo marcador",
+    "description" : "bookmarks h1 placeholder"
+  },
+  "bookmarkNewTitle": {
+    "message": "Título",
+    "description" : "bookmarks title placeholder"
+  },
+  "bookmarkNewLink": {
+    "message": "Enlace",
+    "description" : "bookmarks link placeholder"
+  },
+  "bookmarkNewCreate": {
+    "message": "Crear marcador",
+    "description" : "bookmarks create placeholder"
+  },
+  "generalTab": {
+    "message": "GENERAL",
+    "description" : "generalTab placeholder"
+  },
+  "backgroundTab": {
+    "message": "FONDO",
+    "description" : "backgroundTab placeholder"
+  },
+  "infoTab": {
+    "message": "INFO",
+    "description" : "infoTab placeholder"
+  },
+  "openNewPage": {
+    "message": "Abrir en una nueva página",
+    "description" : "search engine placeholder"
+  },
+  "googleApps": {
+    "message": "Google Apps",
+    "description" : "googleApps placeholder"
+  },
+  "particles": {
+    "message": "Particulas",
+    "description" : "particles placeholder"
+  },
+  "countdown": {
+    "message": "Cuenta Regresiva",
+    "description" : "countdown placeholder"
+  },
+  "countdownPosition": {
+    "message": "Posición",
+    "description" : "countdown position placeholder"
+  },
+  "countdownPositionTop": {
+    "message": "Cima",
+    "description" : "countdown position top placeholder"
+  },
+  "countdownPositionBottom": {
+    "message": "Fondo",
+    "description" : "countdown position bottom placeholder"
+  },
+  "countdownDate": {
+    "message": "Fecha",
+    "description" : "countdown eDate placeholder"
+  },
+  "countdownLabel": {
+    "message": "Etiqueta",
+    "description" : "countdown eLabel placeholder"
+  },
+  "cycleBG": {
+    "message": "Fondos De Ciclo",
+    "description" : "cycleBackgrounds placeholder"
+  },
+  "shuffleBG": {
+    "message": "Barajar",
+    "description" : "shuffleBackgrounds placeholder"
+  },
+  "delayBG": {
+    "message": "Demora",
+    "description" : "delayBackgrounds placeholder"
+  },
+  "backgroundChoice": {
+    "message": "Elección De Fondos",
+    "description" : "backgroundsChoice placeholder"
+  },
+  "selectAll": {
+    "message": "Seleccionar Todo",
+    "description" : "selectAll placeholder"
+  },
+  "deselectAll": {
+    "message": "Deseleccionar Todo",
+    "description" : "deselectAll placeholder"
+  },
+  "days": {
+    "message": "Días",
+    "description" : "days placeholder"
+  },
+  "hours": {
+    "message": "Horas",
+    "description" : "hours placeholder"
+  },
+  "minutes": {
+    "message": "Minutos",
+    "description" : "minutes placeholder"
+  },
+  "seconds": {
+    "message": "Segundos",
+    "description" : "seconds placeholder"
+  }  
+}

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +15,9 @@
     <link rel="stylesheet" href="css/countdown.css">
     <link rel="stylesheet" href="css/bookmarks.css">
     <link rel="stylesheet" href="css/background.css">
+    <script src="js/localizeHTML.js" defer></script>
     <script src="js/switch.js"></script>
+    <script src="js/storage.js"></script>
     <script src="js/particles.js" defer></script>
     <script src="js/snowflakes.js" defer></script>
     <script src="js/search.js" defer></script>
@@ -28,7 +29,7 @@
     <script src="js/particleSettings.js" defer></script>
     <script src="js/googleApps.js" defer></script>
     <script src="js/version.js" defer></script>
-    <title>New Tab</title>
+    <title>__MSG_tabName__</title>
 </head>
 
 <body>
@@ -48,10 +49,10 @@
                 <td class="lblNb" id="tS">00</td>
             </tr>
             <tr class="lblHolder">
-                <td class="lblL">Days</td>
-                <td class="lbl">Hours</td>
-                <td class="lbl">Minutes</td>
-                <td class="lblR">Seconds</td>
+                <td class="lblL">__MSG_days__</td>
+                <td class="lbl">__MSG_hours__</td>
+                <td class="lbl">__MSG_minutes__</td>
+                <td class="lblR">__MSG_seconds__</td>
             </tr>
         </table>
     </div>
@@ -70,7 +71,7 @@
                 <div id="search-wrapper">
                     <button id="search-button"><img id="search-img" src="src/assets/lens.svg" alt="lens"></button>
                     <form id="search-form"><input type="text" id="search-input" autocomplete="off" spellcheck="false"
-                            placeholder="Search"></form>
+                            placeholder="__MSG_searchPlaceholder__"></form>
                 </div>
                 <div class="search-space"></div>
             </div>
@@ -86,16 +87,16 @@
         <form id="submit-bookmark">
             <div id="add-bookmark-wrapper">
                 <img src="src/assets/plus.svg" alt="" id="close-cross-btn">
-                <h1 id="bookmark-h1">New bookmark</h1>
+                <h1 id="bookmark-h1">__MSG_bookmarkNewH1__</h1>
                 <div class="bookmark-option">
-                    <h3>Title</h3>
+                    <h3>__MSG_bookmarkNewTitle__</h3>
                     <input type="text" class="mcq" id="newBookMarkTitle" autocomplete="off" spellcheck="false">
                 </div>
                 <div class="bookmark-option">
-                    <h3>URL</h3>
+                    <h3>__MSG_bookmarkNewLink__</h3>
                     <input type="text" class="mcq" id="newBookMarkURL" autocomplete="off" spellcheck="false">
                 </div>
-                <button class="standard-btn" tabindex="1" id="create-bookmark-btn">Create bookmark</button>
+                <button class="standard-btn" tabindex="1" id="create-bookmark-btn">__MSG_bookmarkNewCreate__</button>
             </div>
         </form>
     </div>
@@ -106,16 +107,16 @@
         <div id="settings-container">
             <div class="settings-wrapper"><button id="settings-button-placeholder"></button></div>
             <div id="nav-bar">
-                <button id="general-nav-button">GENERAL</button>
-                <button id="background-nav-button">BACKGROUND</button>
-                <button id="info-nav-button">INFO</button>
+                <button id="general-nav-button">__MSG_generalTab__</button>
+                <button id="background-nav-button">__MSG_backgroundTab__</button>
+                <button id="info-nav-button">__MSG_infoTab__</button>
             </div>
         </div>
         <div id="general-page" class="settings-page">
             <div id="general-wrapper" class="sub-page-wrapper">
                 <div id="search-engine-settings" class="setting-wrapper">
                     <div class="setting-entry">
-                        <h3>Search Engine : </h3>
+                        <h3>__MSG_searchEngine__ : </h3>
                         <select id="search-engine" name="search-engine" class="mcq">
                             <option value="0">Google</option>
                             <option value="1">DuckDuckGo</option>
@@ -127,7 +128,7 @@
                 <div id="bookmark-settings" class="setting-wrapper">
                     <div class="setting-entry" id="bookmark-setting-entry">
                         <div class="sub-setting-entry bookmark-sub-entry">
-                            <h3>Bookmarks</h3>
+                            <h3>__MSG_bookmarks__</h3>
                             <div class="switch-button">
                                 <label class="switch">
                                     <input type="checkbox" id="bookmark-switch">
@@ -136,7 +137,7 @@
                             </div>
                         </div>
                         <div class="sub-setting-entry" id="bookmark-new-page-wrapper">
-                            <h3>Open in a new page</h3>
+                            <h3>__MSG_openNewPage__</h3>
                             <div class="standard-checkbox">
                                 <label class="checkbox">
                                     <input type="checkbox" id="new-page-switch">
@@ -148,7 +149,7 @@
                 </div>
                 <div id="google-apps-settings" class="setting-wrapper">
                     <div class="setting-entry">
-                        <h3>Google Apps</h3>
+                        <h3>__MSG_googleApps__</h3>
                         <div class="switch-button">
                             <label class="switch">
                                 <input type="checkbox" id="google-apps-switch">
@@ -159,7 +160,7 @@
                 </div>
                 <div id="particle-settings" class="setting-wrapper">
                     <div class="setting-entry">
-                        <h3>Particles</h3>
+                        <h3>__MSG_particles__</h3>
                         <div class="switch-button">
                             <label class="switch">
                                 <input type="checkbox" id="particles-switch">
@@ -170,7 +171,7 @@
                 </div>
                 <div id="timer-settings" class="setting-wrapper">
                     <div class="setting-entry">
-                        <h3>Countdown</h3>
+                        <h3>__MSG_countdown__</h3>
                         <div class="switch-button">
                             <label class="switch">
                                 <input type="checkbox" id="ct-switch">
@@ -180,18 +181,18 @@
                     </div>
                     <div id="timer-settings-subwrapper">
                         <div class="setting-entry ct-sub-entry-hidden">
-                            <h3>Position :</h3>
+                            <h3>__MSG_countdownPosition__ :</h3>
                             <select id="countdown-position" name="countdown-position" class="mcq">
-                                <option value="0">Top</option>
-                                <option value="1">Bottom</option>
+                                <option value="0">__MSG_countdownPositionTop__</option>
+                                <option value="1">__MSG_countdownPositionBottom__</option>
                             </select>
                         </div>
                         <div class="setting-entry ct-sub-entry-hidden">
-                            <h3>Event Date:</h3>
+                            <h3>__MSG_countdownDate__ :</h3>
                             <input type="datetime-local" id="datetime" class="mcq">
                         </div>
                         <div class="setting-entry ct-sub-entry-hidden">
-                            <h3>Event Label :</h3>
+                            <h3>__MSG_countdownLabel__ :</h3>
                             <input type="text" id='lbl' class="mcq" autocomplete="off" spellcheck="false">
                         </div>
                     </div>
@@ -203,7 +204,7 @@
                 <div id="background-settings" class="setting-wrapper">
                     <div class="multiple-setting-entry">
                         <div class="sub-setting-entry">
-                            <h3>Cycle Backgrounds</h3>
+                            <h3>__MSG_cycleBG__</h3>
                             <div class="switch-button">
                                 <label class="switch">
                                     <input type="checkbox" id="cycle-bg-switch">
@@ -212,7 +213,7 @@
                             </div>
                         </div>
                         <div class="sub-setting-entry">
-                            <h3>Shuffle</h3>
+                            <h3>__MSG_shuffleBG__</h3>
                             <div class="standard-checkbox">
                                 <label class="checkbox">
                                     <input type="checkbox" id="shuffle-bg-switch">
@@ -221,17 +222,17 @@
                             </div>
                         </div>
                         <div class="sub-setting-entry">
-                            <h3>Delay</h3>
+                            <h3>__MSG_delayBG__</h3>
                             <input type="number" id="cycle-delay-input" spellcheck="false" autocomplete="off">
-                            <h3>Minutes</h3>
+                            <h3>__MSG_minutes__</h3>
                         </div>
                     </div>
                 </div>
                 <div id="pre-background-header">
-                    <h3>Backgrounds Choice</h3>
+                    <h3>__MSG_backgroundsChoice__</h3>
                     <div id="pre-background-header-button-wrapper">
-                        <button class="standard-btn" tabindex="1" id="select-all-btn">Select All</button>
-                        <button class="standard-btn" tabindex="1" id="deselect-all-btn">Deselect All</button>
+                        <button class="standard-btn" tabindex="1" id="select-all-btn">__MSG_selectAll__</button>
+                        <button class="standard-btn" tabindex="1" id="deselect-all-btn">__MSG_deselectAll__</button>
                     </div>
                 </div>
                 <div id="background-choice"></div>
@@ -428,10 +429,10 @@
                 <td class="lblNb" id="bS">00</td>
             </tr>
             <tr class="lblHolder">
-                <td class="lblL">Days</td>
-                <td class="lbl">Hours</td>
-                <td class="lbl">Minutes</td>
-                <td class="lblR">Seconds</td>
+                <td class="lblL">__MSG_days__</td>
+                <td class="lbl">__MSG_hours__</td>
+                <td class="lbl">__MSG_minutes__</td>
+                <td class="lblR">__MSG_seconds__</td>
             </tr>
         </table>
     </div>

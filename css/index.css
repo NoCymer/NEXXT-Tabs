@@ -315,9 +315,26 @@ input::-webkit-inner-spin-button {
 #cycle-delay-input:focus-within{
     border: #3ecffb 1px solid;
 }
-
+.settings-page{
+    display: none;
+    visibility: hidden;
+    height: 85vh;
+}
+.settings-page::after{
+    background: linear-gradient(0deg, rgba(46,46,46,1) 0%,rgba(255,255,255,0) 10%);
+    z-index: 5;
+    top: 58px;
+    content: "";
+    display: block;
+    height: 85vh;
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    width: 98%;
+}
 .sub-page-wrapper{
     overflow-y : auto;
+    overflow-x: hidden;
     color:white;
     margin-top: 10px;
     display: flex;
@@ -326,21 +343,7 @@ input::-webkit-inner-spin-button {
     justify-content: flex-start;
     height: 100%;
 }
-#general-page{
-    display: none;
-    visibility: hidden;
-    height: 80vh;
-}
-#background-page{
-    display: none;
-    visibility: hidden;
-    height: 80vh;
-}
-#info-page{
-    display: none;
-    visibility: hidden;
-    height: 80vh;
-}
+
 .mcq{
     width: 35%;
     height: 25px;
@@ -549,7 +552,7 @@ h3{
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 7px;
 }
 
 /* Track */
