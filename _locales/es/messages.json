@@ -1,0 +1,170 @@
+{
+  "appName": {
+      "message": "NEXXT TABS",
+      "description": "App name"
+  } ,
+  "appDesc": {
+    "message": "NEXXT Tabs complacerá a todos los fanáticos del anime. Reemplace su pestaña básica por una pestaña personalizable con tema de anime.",
+    "description": "Extension description."
+  },
+  "tabName": {
+    "message": "Nueva pestaña",
+    "description": "Tab name"
+  },
+  "searchEngine": {
+      "message": "Buscador",
+      "description" : "search engine placeholder"
+  },
+  "searchPlaceholder": {
+      "message": "Buscar",
+      "description" : "search placeholder"
+  },
+  "bookmarks": {
+    "message": "Marcadores",
+    "description" : "bookmarks placeholder"
+  },
+  "bookmarkNewH1": {
+    "message": "Nuevo marcador",
+    "description" : "bookmarks h1 placeholder"
+  },
+  "bookmarkNewTitle": {
+    "message": "Título",
+    "description" : "bookmarks title placeholder"
+  },
+  "bookmarkNewLink": {
+    "message": "Enlace",
+    "description" : "bookmarks link placeholder"
+  },
+  "bookmarkNewCreate": {
+    "message": "Crear marcador",
+    "description" : "bookmarks create placeholder"
+  },
+  "generalTab": {
+    "message": "GENERAL",
+    "description" : "generalTab placeholder"
+  },
+  "backgroundTab": {
+    "message": "FONDO",
+    "description" : "backgroundTab placeholder"
+  },
+  "infoTab": {
+    "message": "INFO",
+    "description" : "infoTab placeholder"
+  },
+  "openNewPage": {
+    "message": "Abrir en una nueva página",
+    "description" : "search engine placeholder"
+  },
+  "googleApps": {
+    "message": "Google Apps",
+    "description" : "googleApps placeholder"
+  },
+  "particles": {
+    "message": "Particulas",
+    "description" : "particles placeholder"
+  },
+  "countdown": {
+    "message": "Cuenta Regresiva",
+    "description" : "countdown placeholder"
+  },
+  "countdownPosition": {
+    "message": "Posición",
+    "description" : "countdown position placeholder"
+  },
+  "countdownPositionTop": {
+    "message": "Cima",
+    "description" : "countdown position top placeholder"
+  },
+  "countdownPositionBottom": {
+    "message": "Fondo",
+    "description" : "countdown position bottom placeholder"
+  },
+  "countdownDate": {
+    "message": "Fecha",
+    "description" : "countdown eDate placeholder"
+  },
+  "countdownLabel": {
+    "message": "Etiqueta",
+    "description" : "countdown eLabel placeholder"
+  },
+  "cycleBG": {
+    "message": "Fondos De Ciclo",
+    "description" : "cycleBackgrounds placeholder"
+  },
+  "shuffleBG": {
+    "message": "Barajar",
+    "description" : "shuffleBackgrounds placeholder"
+  },
+  "delayBG": {
+    "message": "Demora",
+    "description" : "delayBackgrounds placeholder"
+  },
+  "backgroundChoice": {
+    "message": "Elección De Fondos",
+    "description" : "backgroundsChoice placeholder"
+  },
+  "selectAll": {
+    "message": "Seleccionar Todo",
+    "description" : "selectAll placeholder"
+  },
+  "deselectAll": {
+    "message": "Deseleccionar Todo",
+    "description" : "deselectAll placeholder"
+  },
+  "days": {
+    "message": "Días",
+    "description" : "days placeholder"
+  },
+  "hours": {
+    "message": "Horas",
+    "description" : "hours placeholder"
+  },
+  "minutes": {
+    "message": "Minutos",
+    "description" : "minutes placeholder"
+  },
+  "seconds": {
+    "message": "Segundos",
+    "description" : "seconds placeholder"
+  },
+  "imageRights": {
+    "message": "Derechos de imágenes",
+    "description" : "Image rights placeholder"
+  },
+  "imageRightsTxt": {
+    "message": "No soy propietario de ninguna de las imágenes utilizadas en este proyecto, por lo tanto, no reclamo ningún derecho sobre ellas. <strong> Si usted es el autor de una de las imágenes utilizadas en este proyecto y desea que se le acredite o desea eliminarlo de la extensión, comuníquese conmigo.</strong>",
+    "description" : "Image rightsTxt placeholder"
+  },
+  "iconsRights": {
+    "message": "Derechos de los iconos",
+    "description" : "Icons rights placeholder"
+  },
+  "iconsRightsTxt": {
+    "message": "No soy propietario de ninguno de los íconos de <a href='https://about.google/intl/ALL_fr/products/' target='_blank'>Aplicaciones de Google</a> u otros íconos tomados de sitios web para los marcadores. Pero todos los demás íconos presentes en este proyecto son de uso gratuito debido a que los he creado yo, por lo tanto, puede reutilizarlos en sus propios proyectos, pero debe mencionar <a href='https://github.com/NoCymer/' target ='_blank'>NoCymer</a> en los créditos.",
+    "description" : "Icons rightsTxt placeholder"
+  },
+  "codebaseRights": {
+    "message": "Derechos de base de código",
+    "description" : "codebase rights placeholder"
+  },
+  "codebaseRightsTxt": {
+    "message": "Al ser este proyecto de código abierto, puedes reutilizar el código de él y contribuir a su desarrollo en <a href='https://github.com/NoCymer/NEXXT-Tabs' target='_blank'>GitHub</a>.",
+    "description" : "codebaseTxt placeholder"
+  },
+  "libraries": {
+    "message": "Bibliotecas utilizadas en este proyecto",
+    "description" : "libraries placeholder"
+  },
+  "librariesTxt": {
+    "message": "<a href='https://github.com/VincentGarreau/particles.js/' target='_blank'>Particles.js</a> por Vincent Garreau.",
+    "description" : "librariesTxt placeholder"
+  },
+  "feedbackBR": {
+    "message": "Informe de Errores y Comentarios",
+    "description" : "feedbackBR placeholder"
+  },
+  "feedbackBRTxt": {
+    "message": "Si desea enviar un <strong>Informe de Error</strong>, deje un <strong> Comentario </strong> o si tiene alguna <strong>Pregunta</strong> sobre el proyecto, puede hacerlo. Rellenando el siguiente <a href='https://forms.gle/MvYPGFKk7A8ShPZu7' target='_blank'>formulario</a>.",
+    "description" : "feedbackBRTxt placeholder"
+  }
+}

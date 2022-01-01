@@ -16,7 +16,7 @@ const search = (input) => {
         let url = "";
         switch(Number(searchEnigne)) {
             case 0:
-                url = `https://www.google.com/search?q=${input}`;
+                url = `https://google.com/search?q=${input}`;
                 window.location = url;  
                 break;
             case 1:
@@ -24,11 +24,11 @@ const search = (input) => {
                 window.location = url;  
                 break;
             case 2:
-                url = `https://www.ecosia.org/search?q=${input}`;
+                url = `https://ecosia.org/search?q=${input}`;
                 window.location = url;  
                 break;
             case 3:
-                url = `https://www.qwant.com/?q=${input}`;
+                url = `https://qwant.com/?q=${input}`;
                 window.location = url;  
                 break;
         }
