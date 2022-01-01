@@ -4,7 +4,7 @@
       "description": "App name"
   } ,
   "appDesc": {
-    "message": "NEXXT Tabs will please every anime fans. Replace your basic tab to a minimalist customizable anime themed tab.",
+    "message": "NEXXT Tabs complacerá a todos los fanáticos del anime. Reemplace su pestaña básica por una pestaña minimalista con tema de anime personalizable.",
     "description": "Extension description."
   },
   "tabName": {
@@ -126,5 +126,45 @@
   "seconds": {
     "message": "Segundos",
     "description" : "seconds placeholder"
-  }  
+  },
+  "imageRights": {
+    "message": "Derechos de imágenes",
+    "description" : "Image rights placeholder"
+  },
+  "imageRightsTxt": {
+    "message": "No soy propietario de ninguna de las imágenes utilizadas en este proyecto, por lo tanto, no reclamo ningún derecho sobre ellas. <strong> Si usted es el autor de una de las imágenes utilizadas en este proyecto y desea que se le acredite o desea eliminarlo de la extensión, comuníquese conmigo.</strong>",
+    "description" : "Image rightsTxt placeholder"
+  },
+  "iconsRights": {
+    "message": "Derechos de los iconos",
+    "description" : "Icons rights placeholder"
+  },
+  "iconsRightsTxt": {
+    "message": "No soy propietario de ninguno de los íconos de <a href='https://about.google/intl/ALL_fr/products/' target='_blank'>Aplicaciones de Google</a> u otros íconos tomados de sitios web para los marcadores. Pero todos los demás íconos presentes en este proyecto son de uso gratuito debido a que los he creado yo, por lo tanto, puede reutilizarlos en sus propios proyectos, pero debe mencionar <a href='https://github.com/NoCymer/' target ='_blank'>NoCymer</a> en los créditos.",
+    "description" : "Icons rightsTxt placeholder"
+  },
+  "codebaseRights": {
+    "message": "Derechos de base de código",
+    "description" : "codebase rights placeholder"
+  },
+  "codebaseRightsTxt": {
+    "message": "Al ser este proyecto de código abierto, puedes reutilizar el código de él y contribuir a su desarrollo en <a href='https://github.com/NoCymer/NEXXT-Tabs' target='_blank'>GitHub</a>.",
+    "description" : "codebaseTxt placeholder"
+  },
+  "libraries": {
+    "message": "Bibliotecas utilizadas en este proyecto",
+    "description" : "libraries placeholder"
+  },
+  "librariesTxt": {
+    "message": "<a href='https://github.com/VincentGarreau/particles.js/' target='_blank'>Particles.js</a> por Vincent Garreau.",
+    "description" : "librariesTxt placeholder"
+  },
+  "feedbackBR": {
+    "message": "Informe de Errores y Comentarios",
+    "description" : "feedbackBR placeholder"
+  },
+  "feedbackBRTxt": {
+    "message": "Si desea enviar un <strong>Informe de Error</strong>, deje un <strong> Comentario </strong> o si tiene alguna <strong>Pregunta</strong> sobre el proyecto, puede hacerlo. Rellenando el siguiente <a href='https://forms.gle/MvYPGFKk7A8ShPZu7' target='_blank'>formulario</a>.",
+    "description" : "feedbackBRTxt placeholder"
+  }
 }
