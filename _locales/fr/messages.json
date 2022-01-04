@@ -1,8 +1,8 @@
 {
   "appName": {
-      "message": "NEXXT TABS",
-      "description": "App name"
-  } ,
+    "message": "NEXXT TABS",
+    "description": "App name"
+  },
   "appDesc": {
     "message": "NEXXT Tabs ravira tous les fans d'animes. Remplacez votre onglet de base par un onglet personnalisable sur le thème des animes.",
     "description": "Extension description."
@@ -12,159 +12,159 @@
     "description": "Tab name"
   },
   "searchEngine": {
-      "message": "Moteur De Recherche",
-      "description" : "search engine placeholder"
+    "message": "Moteur De Recherche",
+    "description": "search engine placeholder"
   },
   "searchPlaceholder": {
-      "message": "Rechercher",
-      "description" : "search placeholder"
+    "message": "Rechercher",
+    "description": "search placeholder"
   },
   "bookmarks": {
     "message": "Marque Pages",
-    "description" : "bookmarks placeholder"
+    "description": "bookmarks placeholder"
   },
   "bookmarkNewH1": {
     "message": "Nouveau Marque Page",
-    "description" : "bookmarks h1 placeholder"
+    "description": "bookmarks h1 placeholder"
   },
   "bookmarkNewTitle": {
     "message": "Titre",
-    "description" : "bookmarks title placeholder"
+    "description": "bookmarks title placeholder"
   },
   "bookmarkNewLink": {
     "message": "Lien",
-    "description" : "bookmarks link placeholder"
+    "description": "bookmarks link placeholder"
   },
   "bookmarkNewCreate": {
-    "message": "Créer Un Nouveau Marque Page",
-    "description" : "bookmarks create placeholder"
+    "message": "Valider",
+    "description": "bookmarks create placeholder"
   },
   "generalTab": {
     "message": "GÉNÉRAL",
-    "description" : "generalTab placeholder"
+    "description": "generalTab placeholder"
   },
   "backgroundTab": {
     "message": "FONDS",
-    "description" : "backgroundTab placeholder"
+    "description": "backgroundTab placeholder"
   },
   "infoTab": {
     "message": "INFO",
-    "description" : "infoTab placeholder"
+    "description": "infoTab placeholder"
   },
   "openNewPage": {
     "message": "Ouvrir dans un nouvel onglet",
-    "description" : "search engine placeholder"
+    "description": "search engine placeholder"
   },
   "googleApps": {
     "message": "Google Apps",
-    "description" : "googleApps placeholder"
+    "description": "googleApps placeholder"
   },
   "particles": {
     "message": "Particules",
-    "description" : "particles placeholder"
+    "description": "particles placeholder"
   },
   "countdown": {
     "message": "Compte a rebours",
-    "description" : "countdown placeholder"
+    "description": "countdown placeholder"
   },
   "countdownPosition": {
     "message": "Position",
-    "description" : "countdown position placeholder"
+    "description": "countdown position placeholder"
   },
   "countdownPositionTop": {
     "message": "Haut",
-    "description" : "countdown position top placeholder"
+    "description": "countdown position top placeholder"
   },
   "countdownPositionBottom": {
     "message": "Bas",
-    "description" : "countdown position bottom placeholder"
+    "description": "countdown position bottom placeholder"
   },
   "countdownDate": {
     "message": "Date",
-    "description" : "countdown eDate placeholder"
+    "description": "countdown eDate placeholder"
   },
   "countdownLabel": {
     "message": "Libelé",
-    "description" : "countdown eLabel placeholder"
+    "description": "countdown eLabel placeholder"
   },
   "cycleBG": {
     "message": "Changement De Fond",
-    "description" : "cycleBackgrounds placeholder"
+    "description": "cycleBackgrounds placeholder"
   },
   "shuffleBG": {
     "message": "Mélanger",
-    "description" : "shuffleBackgrounds placeholder"
+    "description": "shuffleBackgrounds placeholder"
   },
   "delayBG": {
     "message": "Délai",
-    "description" : "delayBackgrounds placeholder"
+    "description": "delayBackgrounds placeholder"
   },
   "backgroundChoice": {
     "message": "Choix des fonds",
-    "description" : "backgroundsChoice placeholder"
+    "description": "backgroundsChoice placeholder"
   },
   "selectAll": {
     "message": "Tous séléctionner",
-    "description" : "selectAll placeholder"
+    "description": "selectAll placeholder"
   },
   "deselectAll": {
     "message": "Tout déséléctionner",
-    "description" : "deselectAll placeholder"
+    "description": "deselectAll placeholder"
   },
   "days": {
     "message": "Jours",
-    "description" : "days placeholder"
+    "description": "days placeholder"
   },
   "hours": {
     "message": "Heures",
-    "description" : "hours placeholder"
+    "description": "hours placeholder"
   },
   "minutes": {
     "message": "Minutes",
-    "description" : "minutes placeholder"
+    "description": "minutes placeholder"
   },
   "seconds": {
     "message": "Secondes",
-    "description" : "seconds placeholder"
+    "description": "seconds placeholder"
   },
   "imageRights": {
     "message": "Droits à l'image",
-    "description" : "Image rights placeholder"
+    "description": "Image rights placeholder"
   },
   "imageRightsTxt": {
     "message": "Je ne possède aucune des images utilisées dans ce projet, donc je ne revendique aucun droit sur elles. <strong>Si vous êtes l'auteur d'une des images utilisées dans ce projet et souhaitez être crédité ou souhaitez qu'elle soit supprimée de l'extension, veuillez me contacter.</strong>",
-    "description" : "Image rightsTxt placeholder"
+    "description": "Image rightsTxt placeholder"
   },
   "iconsRights": {
     "message": "Droits des icônes",
-    "description" : "Icons rights placeholder"
+    "description": "Icons rights placeholder"
   },
   "iconsRightsTxt": {
     "message": "Je ne possède aucune des icônes d' <a href='https://about.google/intl/ALL_fr/products/'' target='_blank'>Applications Google</a> ni aucune autre icône provenant des sites Web des marque pages. Mais toutes les autres icônes présentes dans ce projet sont libres d'utilisation car elles ont été créées par moi, vous êtes donc libre de les réutiliser dans vos propres projets mais vous devez mentionner <a href='https://github.com/NoCymer/ 'target='_blank'>NoCymer</a> dans les crédits.",
-    "description" : "Icons rightsTxt placeholder"
+    "description": "Icons rightsTxt placeholder"
   },
   "codebaseRights": {
     "message": "Droits de base de code",
-    "description" : "codebase rights placeholder"
+    "description": "codebase rights placeholder"
   },
   "codebaseRightsTxt": {
     "message": "Ce projet étant OpenSource, vous êtes libre d'en réutiliser le code et de contribuer à son développement sur <a href='https://github.com/NoCymer/NEXXT-Tabs' target='_blank'>GitHub</a>.",
-    "description" : "codebaseTxt placeholder"
+    "description": "codebaseTxt placeholder"
   },
   "libraries": {
     "message": "Librairies utilisées dans ce projet",
-    "description" : "libraries placeholder"
+    "description": "libraries placeholder"
   },
   "librariesTxt": {
     "message": "<a href='https://github.com/VincentGarreau/particles.js/' target='_blank'>Particles.js</a> par Vincent Garreau.",
-    "description" : "librariesTxt placeholder"
+    "description": "librariesTxt placeholder"
   },
   "feedbackBR": {
     "message": "Commentaires et Rapport de bugs",
-    "description" : "feedbackBR placeholder"
+    "description": "feedbackBR placeholder"
   },
   "feedbackBRTxt": {
     "message": "Si vous souhaitez soumettre un <strong>Rapport de bug</strong>, laissez un <strong>Commentaire</strong> ou si vous avez une <strong>Question</strong> concernant le projet, n'hésitez pas à remplir le <a href='https://forms.gle/MvYPGFKk7A8ShPZu7' target='_blank'>formulaire</a> suivant.",
-    "description" : "feedbackBRTxt placeholder"
+    "description": "feedbackBRTxt placeholder"
   }
 }
