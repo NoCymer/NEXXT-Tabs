@@ -2,6 +2,7 @@
     font-family: 'Roboto', sans-serif;
 }
 html {
+    scroll-behavior: smooth;
     height: 100%;
     --switch-checked-color:#3ecffb;
     --switch-unchecked-color:#ccc;

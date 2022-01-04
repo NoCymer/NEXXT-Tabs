@@ -11,18 +11,15 @@ let pageIndex = 0;
 let isShown = false;
 let displaysObj = {};
 
-Array.from(settingsEl.children).forEach(element => {
-    displaysObj[element.id] = element.style.display;
-    element.style.display = "none";
-    element.style.visibility = "hidden";
-});
 generalPage.style.display = "none";
-backgroundPage.style.display = "none";
-infoPage.style.display = "none";
-
 generalPage.style.visibility = "hidden";
+
+backgroundPage.style.display = "none";
 backgroundPage.style.visibility = "hidden";
+
+infoPage.style.display = "none";
 infoPage.style.visibility = "hidden";
+
 const setSettingsPage = (index) => {
     switch (index) {
         case 0:
@@ -67,50 +64,30 @@ const setSettingsPage = (index) => {
     }
 }
 
+const settingsMenu = new Menu(
+    settingsEl,
+    "38%",
+    "100%",
+    "50%",
+    200
+);
 
-const toggleSettings = () => {
-    if (isShown) {
-        settingsEl.style.width = "0%";
-        settingsEl.style.height = "0%";
-        settingsEl.style.top = "0%";
-        searchBar.style.width = "38%";
-        Array.from(settingsEl.children).forEach(element => {
-            element.style.display = "none";
-            element.style.visibility = "hidden";
-        });
-        setTimeout(() => {
-            settingsEl.style.display = "none";
-            settingsEl.style.visibility = "hidden";
-
-        }, 300)
-        settingsBtn.style.transform = "rotate(90deg)";
-        isShown = false;
-    }
-    else if (!isShown) {
-        settingsEl.style.display = "block";
-        settingsEl.style.visibility = "visible";
-        searchBar.style.width = "29%";
-        setTimeout(() => {
-            Array.from(settingsEl.children).forEach(element => {
-                element.style.display = displaysObj[element.id];
-                element.style.visibility = "visible";
-            });
-            setSettingsPage(pageIndex);
-        }, 200)
-        setTimeout(() => {
-            settingsEl.style.width = "38%";
-            settingsEl.style.height = "100%";
-            settingsEl.style.top = "50%";
-            settingsBtn.style.transform = "rotate(0deg)";
-        }, 10)
-        isShown = true;
-
-    }
-}
-
+settingsEl.style.width = "0%";
+settingsEl.style.height = "0%";
+settingsEl.style.top = "0%";
 settingsBtn.addEventListener("click", () => {
-    toggleSettings();
-
+    if (isShown) {
+        settingsMenu.hide();
+        searchBar.style.width = "38%";
+        settingsBtn.style.transform = "rotate(90deg)";
+    }
+    else {
+        settingsMenu.show();
+        searchBar.style.width = "29%";
+        settingsBtn.style.transform = "rotate(0deg)";
+        setTimeout(() => {setSettingsPage(pageIndex);}, 200)
+    }
+    isShown = !isShown;
 })
 
 generalNavBtn.addEventListener("click", () => {

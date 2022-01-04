@@ -8,7 +8,13 @@ const TRANSITION_DURATION_SHORT = 10; // in ms;
 
 let isGoogleAppsShown = false;
 let googleAppsBool;
-let displaysObjGoogle = [];
+const googleAppsMenu = new Menu(
+    googleAppsContainer,
+    "20%",
+    "100%",
+    "50%",
+    TRANSITION_DURATION
+);
 const googleAppsSwitchBTN = new switchButton(
     googleAppsSwitch,
     "googleApps",
@@ -26,18 +32,11 @@ const googleAppsSwitchBTN = new switchButton(
 googleAppsContainer.style.width = "0%";
 googleAppsContainer.style.height = "0%";
 googleAppsContainer.style.top = "0%";
-Array.from(googleAppsContainer.children).forEach(element => {
-    displaysObjGoogle[element.id] = element.style.display;
-    element.style.display = "none";
-    element.style.visibility = "hidden";
-});
 googleSites.forEach((e) => {
     e.addEventListener("click", () => {
         window.open(e.id, "_blank");
     })
 })
-
-
 const updateGoogleAppsButton = () => {
     if (googleAppsBool) {
         setTimeout(() => {
@@ -56,43 +55,14 @@ const updateGoogleAppsButton = () => {
         }, TRANSITION_DURATION)
     }
 }
-const hideGoogleApps = () => {
-    googleAppsContainer.style.width = "0%";
-    googleAppsContainer.style.height = "0%";
-    googleAppsContainer.style.top = "0%";
-    Array.from(googleAppsContainer.children).forEach(element => {
-        element.style.display = "none";
-        element.style.visibility = "hidden";
-    });
-    setTimeout(() => {
-        googleAppsContainer.style.display = "none";
-        googleAppsContainer.style.visibility = "hidden";
-    }, TRANSITION_DURATION)
-}
-const showGoogleApps = () => {
-    googleAppsContainer.style.display = "block";
-    googleAppsContainer.style.visibility = "visible";
-    setTimeout(() => {
-        Array.from(googleAppsContainer.children).forEach(element => {
-            element.style.display = displaysObjGoogle[element.id];
-            element.style.visibility = "visible";
-        });
-    }, TRANSITION_DURATION)
-    setTimeout(() => {
-        googleAppsContainer.style.width = "20%";
-        googleAppsContainer.style.height = "100%";
-        googleAppsContainer.style.top = "50%";
-    }, TRANSITION_DURATION_SHORT)
-}
 googleAppsButton.addEventListener("click", () => {
     if (isGoogleAppsShown) {
-        hideGoogleApps();
-        isGoogleAppsShown = false;
+        googleAppsMenu.hide();
     }
     else {
-        showGoogleApps();
-        isGoogleAppsShown = true;
+        googleAppsMenu.show();
     }
+    isGoogleAppsShown = !isGoogleAppsShown;
 })
 
 updateGoogleAppsButton();
