@@ -260,6 +260,7 @@ body{
 #app-version{
     font-size: 0.9rem;
     margin-top: 0;
+    margin-bottom: 45px;
 }
 .info-header {
     width: 97%;
