@@ -26,6 +26,10 @@ const googleAppsSwitchBTN = new switchButton(
         googleAppsBool = true;
     },
     () => {
+        if (isGoogleAppsShown) {
+            googleAppsMenu.hide();
+            isGoogleAppsShown = false;
+        }
         googleAppsBool = false;
     },
 );
