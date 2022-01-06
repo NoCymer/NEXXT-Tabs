@@ -24,7 +24,7 @@
     "description" : "bookmarks placeholder"
   },
   "bookmarkNewH1": {
-    "message": "Validar",
+    "message": "Nuevo marcador",
     "description" : "bookmarks h1 placeholder"
   },
   "bookmarkNewTitle": {
@@ -36,7 +36,7 @@
     "description" : "bookmarks link placeholder"
   },
   "bookmarkNewCreate": {
-    "message": "Crear marcador",
+    "message": "Validar",
     "description" : "bookmarks create placeholder"
   },
   "generalTab": {
