@@ -1,0 +1,114 @@
+#schedule-main-conatiner{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    max-width: 1180px;
+    width: 1000px;
+    min-width: 700px;
+    max-height: 80vh;
+    padding: 20px 0 20px;
+    background-color: #2e2e2efb;
+    
+    border-radius: 50px 0px 0px 50px;
+    color: white;
+}
+#schedule-main-sub-conatiner{
+    max-height: 80vh;
+    padding-left: 50px;
+    overflow-y: scroll;
+}
+#week-days-container{
+    /* padding: 0 40px 0 40px; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 20px;
+}
+.day{
+    /* margin-left: 40px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-content: flex-start;
+}
+.day-header{
+    position: sticky;
+    top: 0;
+    font-size: 1.3em;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgb(187, 187, 187);
+    background-color: #2e2e2efb;
+}
+.anime-entry{
+    min-height: 50px;
+    margin-bottom: 10px;
+    width: 110px;
+    padding: 5px;
+    border-radius: 25px;
+    background-color: #cc79a0c4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.anime-entry:hover{
+    background-color: #e079a9da;
+}
+.current-day{
+    background-color: #ff93c5ed;
+}
+.current-day:hover{
+    background-color: #ff7dbaed;
+}
+
+.anime-title{
+    font-size: 0.7em;
+    text-align: center;
+    pointer-events: none;
+}
+@media (max-width: 1550px) {
+    #schedule-main-conatiner{
+        width: 800px;
+        font-size: 0.8rem;
+    }
+    .anime-entry{
+        min-height: 25px;
+        width: 90px;
+    }
+}
+@media (max-width: 1130px) {
+    #schedule-main-conatiner{
+        width: 700px;
+        font-size: 0.75rem;
+    }
+    .anime-entry{
+        min-height: 25px;
+        border-radius: 15px;
+        width: 80px;
+    }
+}
+@media (max-width: 980px) {
+    #schedule-main-conatiner{
+        width: 500px;
+        font-size: 0.65rem;
+    }
+    .anime-entry{
+        min-height: 25px;
+        border-radius: 15px;
+        width: 70px;
+    }
+}
+@media (max-width: 880px) {
+    #schedule-main-conatiner{
+        width: 300px;
+        font-size: 0.50rem;
+    }
+    .anime-entry{
+        min-height: 25px;
+        border-radius: 15px;
+        width: 60px;
+    }
+}

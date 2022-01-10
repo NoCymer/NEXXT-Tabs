@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="css/countdown.css">
     <link rel="stylesheet" href="css/bookmarks.css">
     <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/schedule.css">
+    <script src="/js/jquery.js"></script>
     <script src="js/localizeHTML.js" defer></script>
     <script src="js/bookmark.js"></script>
     <script src="js/menu.js"></script>
@@ -31,6 +33,7 @@
     <script src="js/countdownSettings.js" defer></script>
     <script src="js/particleSettings.js" defer></script>
     <script src="js/googleApps.js" defer></script>
+    <script src="js/animeSchedule.js" defer></script>
     <script src="js/version.js" defer></script>
     <title>__MSG_tabName__</title>
 </head>
@@ -403,7 +406,33 @@
         </div>
     </div>
     <!-- #endregion -->
-
+    <div id="schedule-main-conatiner">
+        <div id="schedule-main-sub-conatiner">
+            <div id="week-days-container">
+                <div id="Monday" class="day">
+                    <h1 class="day-header">Monday</h1>                
+                </div>
+                <div id="Tuesday" class="day">
+                    <h1 class="day-header">Tuesday</h1>
+                </div>
+                <div id="Wednesday" class="day">
+                    <h1 class="day-header">Wednesday</h1>
+                </div>
+                <div id="Thursday" class="day">
+                    <h1 class="day-header">Thursday</h1>
+                </div>
+                <div id="Friday" class="day">
+                    <h1 class="day-header">Friday</h1>
+                </div>
+                <div id="Saturday" class="day">
+                    <h1 class="day-header">Saturday</h1>
+                </div>
+                <div id="Sunday" class="day">
+                    <h1 class="day-header">Sunday</h1>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- #region countdownBottom -->
     <div id="countdownContainerBottom" style="display:none;">
         <table style="max-height:145px; min-width:800px;">

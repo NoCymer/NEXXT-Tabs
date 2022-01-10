@@ -1,5 +1,5 @@
 class Storage{
-    constructor(key, defaultValue = "") {
+    constructor(key, defaultValue = "undefined") {
         this.key = key;
         let temp = localStorage.getItem(`${this.key}`)
         if (temp) {

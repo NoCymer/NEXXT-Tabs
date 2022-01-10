@@ -14,7 +14,6 @@ class Menu {
         });
     }
     hide() {
-        console.log(this.container.id + " hidden")
         this.container.style.width = "0%";
         this.container.style.height = "0%";
         this.container.style.top = "0%";
