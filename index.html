@@ -406,11 +406,17 @@
         </div>
     </div>
     <!-- #endregion -->
+    <div id="schedule-handle">
+        <img src="src/assets/arrow.svg" alt="" id="schedule-handle-el">
+    </div>
     <div id="schedule-main-conatiner">
+        <div id="schedule-handle-op">
+            <img src="src/assets/arrow.svg" alt="" id="schedule-handle-el-op">
+        </div>
         <div id="schedule-main-sub-conatiner">
             <div id="week-days-container">
                 <div id="Monday" class="day">
-                    <h1 class="day-header">Monday</h1>                
+                    <h1 class="day-header">Monday</h1>
                 </div>
                 <div id="Tuesday" class="day">
                     <h1 class="day-header">Tuesday</h1>
@@ -433,30 +439,31 @@
             </div>
         </div>
     </div>
-    <!-- #region countdownBottom -->
-    <div id="countdownContainerBottom" style="display:none;">
-        <table style="max-height:145px; min-width:800px;">
-            <tr class="info">
-                <td id="labelB" colspan="7" class="mainLbl"></td>
-            </tr>
-            <tr class="info">
-                <td class="lblNb" id="bD">00</td>
-                <td class="lbldot">:</td>
-                <td class="lblNb" id="bH">00</td>
-                <td class="lbldot">:</td>
-                <td class="lblNb" id="bM">00</td>
-                <td class="lbldot">:</td>
-                <td class="lblNb" id="bS">00</td>
-            </tr>
-            <tr class="lblHolder">
-                <td class="lblL">__MSG_days__</td>
-                <td class="lbl">__MSG_hours__</td>
-                <td class="lbl">__MSG_minutes__</td>
-                <td class="lblR">__MSG_seconds__</td>
-            </tr>
-        </table>
-    </div>
-    <!-- #endregion -->
+    <! -->
+        <!-- #region countdownBottom -->
+        <div id="countdownContainerBottom" style="display:none;">
+            <table style="max-height:145px; min-width:800px;">
+                <tr class="info">
+                    <td id="labelB" colspan="7" class="mainLbl"></td>
+                </tr>
+                <tr class="info">
+                    <td class="lblNb" id="bD">00</td>
+                    <td class="lbldot">:</td>
+                    <td class="lblNb" id="bH">00</td>
+                    <td class="lbldot">:</td>
+                    <td class="lblNb" id="bM">00</td>
+                    <td class="lbldot">:</td>
+                    <td class="lblNb" id="bS">00</td>
+                </tr>
+                <tr class="lblHolder">
+                    <td class="lblL">__MSG_days__</td>
+                    <td class="lbl">__MSG_hours__</td>
+                    <td class="lbl">__MSG_minutes__</td>
+                    <td class="lblR">__MSG_seconds__</td>
+                </tr>
+            </table>
+        </div>
+        <!-- #endregion -->
 </body>
 
 </html>

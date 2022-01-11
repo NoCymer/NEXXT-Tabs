@@ -7,9 +7,34 @@ const saturday = $("#Saturday");
 const sunday = $("#Sunday");
 const scheduleStorage = new Storage("schedule");
 const scheduleLastUpdateStorage = new Storage("scheduleLastUpdate", 0);
+const scheduleMenu = new Menu(document.querySelector("#schedule-main-conatiner"), "", "80vh", "50%", 300, "60%");
+let handleContainer = $("#schedule-handle");
+let handleContainerOp = $("#schedule-handle-op");
+let scheduleHandle = $("schedule-handle-el");
+let scheduleHandleOp = $("schedule-handle-el-op");
+handleContainer.hover(() => {
+    scheduleHandle.attr("src", "src/assets/arrow-hc.svg")
+}, () => {
+    scheduleHandle.attr("src", "src/assets/arrow.svg")
+})
+handleContainerOp.hover(() => {
+    scheduleHandleOp.attr("src", "src/assets/arrow-hc.svg")
+})
+
+handleContainer.on("click", () => {
+    if (scheduleMenu.isShown) {
+        scheduleMenu.hide();
+    } else { scheduleMenu.show(); }
+})
+handleContainerOp.on("click", () => {
+    if (scheduleMenu.isShown) {
+        scheduleMenu.hide();
+    } else { scheduleMenu.show(); }
+})
+
 const REFRESH_COOLDOWN = 10000;//in ms 
 let current_day = new Date().getDay();
-switch(current_day) {
+switch (current_day) {
     case 0:
         current_day = "#Sunday";
         break;
@@ -33,13 +58,17 @@ switch(current_day) {
         break;
 }
 
+const checkForDayChange = () => {
+
+}
+
 const displayInTable = (el, day) => {
     let newDiv;
     newDiv = $(`<div class="anime-entry"><h1 class="anime-title">${el["title"]}</h1></div></div>`);
-    if(day === current_day) {
+    if (day === current_day) {
         newDiv = $(`<div class="anime-entry current-day"><h1 class="anime-title">${el["title"]}</h1></div></div>`);
     }
-    newDiv.on("click",() => {
+    newDiv.on("click", () => {
         window.open(el["url"], "_blank");
     })
     $(`${day}`).append(newDiv)
@@ -67,9 +96,10 @@ if (scheduleStorage.getValue() == "undefined" || new Date().getTime() >= (schedu
 
         }
     });
-    console.log(new Date().getTime() >= (scheduleLastUpdateStorage.getValue() + REFRESH_COOLDOWN))
     scheduleLastUpdateStorage.setValue(new Date().getTime());
 }
 else {
-    processResponse(scheduleStorage.getValue());  
+    processResponse(scheduleStorage.getValue());
 }
+
+setInterval(() => checkForDayChange());

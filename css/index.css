@@ -128,7 +128,7 @@ body{
     background-color: #2e2e2e;
     position: absolute;
     z-index: 2;
-    top: 50%;
+    top: 0%;
     right: 0%;
     text-align: center;
     transform: translateY(-50%);

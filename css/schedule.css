@@ -1,14 +1,13 @@
 #schedule-main-conatiner{
+    transition: all 300ms;
     position: absolute;
-    top: 50px;
-    right: 0;
-    max-width: 1180px;
-    width: 1000px;
-    min-width: 700px;
-    max-height: 80vh;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+    min-width: 0%;
+    height: 0vh;
     padding: 20px 0 20px;
     background-color: #2e2e2efb;
-    
     border-radius: 50px 0px 0px 50px;
     color: white;
 }
@@ -16,6 +15,19 @@
     max-height: 80vh;
     padding-left: 50px;
     overflow-y: scroll;
+}
+#schedule-main-sub-conatiner::after{
+    background: linear-gradient(0deg, rgba(46,46,46,1) 0%,rgba(255,255,255,0) 10%);
+    z-index: 5;
+    bottom: 18px;
+    content: "";
+    margin-right: 8px;
+    display: block;
+    height: 85vh;
+    right: 0;
+    pointer-events: none;
+    position: fixed;
+    width: 96%;
 }
 #week-days-container{
     /* padding: 0 40px 0 40px; */
@@ -25,8 +37,40 @@
     justify-content: space-evenly;
     padding-top: 20px;
 }
+#schedule-handle{
+    width: 60px;
+    height: 85%;
+    position: fixed;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+}
+#schedule-handle-el{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%) translateX(50%);
+}
+#schedule-handle-op{
+    width: 60px;
+    height: 85%;
+    position: fixed;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+}
+#schedule-handle-el-op{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%) translateX(50%) rotate(180deg);
+}
 .day{
-    /* margin-left: 40px; */
+    margin:0px 5px 0px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,10 +113,18 @@
     text-align: center;
     pointer-events: none;
 }
+@media (min-width: 1551px) {
+    #schedule-main-conatiner{
+        font-size: 1.1rem;
+    }
+    .anime-entry{
+        min-height: 25px;
+        width: 100px;
+    }
+}
 @media (max-width: 1550px) {
     #schedule-main-conatiner{
-        width: 800px;
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
     .anime-entry{
         min-height: 25px;
@@ -81,7 +133,7 @@
 }
 @media (max-width: 1130px) {
     #schedule-main-conatiner{
-        width: 700px;
+        /* width: 700px; */
         font-size: 0.75rem;
     }
     .anime-entry{
@@ -92,8 +144,8 @@
 }
 @media (max-width: 980px) {
     #schedule-main-conatiner{
-        width: 500px;
-        font-size: 0.65rem;
+        /* width: 500px; */
+        font-size: 0.70rem;
     }
     .anime-entry{
         min-height: 25px;
@@ -103,8 +155,8 @@
 }
 @media (max-width: 880px) {
     #schedule-main-conatiner{
-        width: 300px;
-        font-size: 0.50rem;
+        /* width: 300px; */
+        font-size: 0.70rem;
     }
     .anime-entry{
         min-height: 25px;
