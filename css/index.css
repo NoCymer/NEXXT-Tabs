@@ -553,6 +553,35 @@ h3{
     border: 1px solid #bff0ff;
 }
 
+.featurePresentation{
+    font-size: 0.8rem;
+    opacity: 0;
+    color: rgb(200, 200, 200);
+    padding: 0px 5px 0px 5px;
+    position: fixed;
+    min-width: 200px;
+    min-height: 60px;
+    background-color: #2e2e2e;
+    background: linear-gradient(315deg, rgba(0, 0, 0, 0.555) 0%, rgb(192, 60, 104) 100%);
+    border-radius: 10px 30px 15px 25px;
+    animation: featureFade 1000ms linear 2s;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+    pointer-events: none;
+}
+#schedule-feature-close{
+    pointer-events: all;
+    transition: all 500ms;
+    width: 25px;
+    height: 25px;
+    transform: rotate(45deg);
+    position: absolute;
+    top:-10px;
+    left: -10px;
+}
+#schedule-feature-close:hover{
+    box-shadow: 0px 0px 10px 7px rgb(251, 85, 154), 0 0 10px 2px rgb(251, 85, 154) inset;
+}
 ::-webkit-scrollbar {
     width: 7px;
 }
@@ -571,4 +600,14 @@ h3{
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+@keyframes featureFade {
+    0%{
+        opacity: 0%;
+    }
+
+    100%{
+        opacity: 100%;
+    }
 }

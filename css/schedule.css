@@ -1,11 +1,11 @@
 #schedule-main-conatiner{
-    transition: all 300ms;
+    transition: all 250ms;
     position: absolute;
     top: 50%;
     right: 0%;
     transform: translateY(-50%);
     min-width: 0%;
-    height: 0vh;
+    height: 80vh;
     padding: 20px 0 20px;
     background-color: #2e2e2efb;
     border-radius: 50px 0px 0px 50px;
@@ -46,6 +46,7 @@
     transform: translateY(-50%);
 }
 #schedule-handle-el{
+    transition: all 200ms;
     width: 30px;
     height: 30px;
     position: relative;
@@ -62,6 +63,7 @@
     transform: translateY(-50%);
 }
 #schedule-handle-el-op{
+    transition: all 200ms;
     width: 30px;
     height: 30px;
     position: relative;
@@ -69,8 +71,14 @@
     right: 0%;
     transform: translateY(-50%) translateX(50%) rotate(180deg);
 }
+#schedule-feature{
+    right: 0px;
+    bottom: 48%;
+    /* transform: translateY(-40%); */
+}
+
 .day{
-    margin:0px 5px 0px 0px;
+    margin:0px 5px 40px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,19 +101,19 @@
     width: 110px;
     padding: 5px;
     border-radius: 20px;
-    background-color: #cc79a0c4;
+    background-color: #cc79a0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .anime-entry:hover{
-    background-color: #e079a9da;
+    background-color: rgb(223, 147, 183)
 }
 .current-day{
-    background-color: #ff93c5ed;
+    background-color: #ff7cb9;
 }
 .current-day:hover{
-    background-color: #ff7dbaed;
+    background-color: #fd9bc9;
 }
 
 .anime-title{
@@ -113,6 +121,8 @@
     text-align: center;
     pointer-events: none;
 }
+
+
 @media (min-width: 1551px) {
     #schedule-main-conatiner{
         font-size: 1.1rem;

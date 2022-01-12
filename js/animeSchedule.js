@@ -7,19 +7,46 @@ const saturday = $("#Saturday");
 const sunday = $("#Sunday");
 const scheduleStorage = new Storage("schedule");
 const scheduleLastUpdateStorage = new Storage("scheduleLastUpdate", 0);
-const scheduleMenu = new Menu(document.querySelector("#schedule-main-conatiner"), "", "80vh", "50%", 300, "60%");
+const scheduleMenu = new Menu(document.querySelector("#schedule-main-conatiner"), "", "80vh", "50%", 250, "60%", false);
 let handleContainer = $("#schedule-handle");
 let handleContainerOp = $("#schedule-handle-op");
-let scheduleHandle = $("schedule-handle-el");
-let scheduleHandleOp = $("schedule-handle-el-op");
-handleContainer.hover(() => {
-    scheduleHandle.attr("src", "src/assets/arrow-hc.svg")
-}, () => {
-    scheduleHandle.attr("src", "src/assets/arrow.svg")
-})
-handleContainerOp.hover(() => {
-    scheduleHandleOp.attr("src", "src/assets/arrow-hc.svg")
-})
+let scheduleHandle = $("#schedule-handle-el");
+let scheduleHandleOp = $("#schedule-handle-el-op");
+
+// Showcase the new feature needs to be remove in further versions
+const scheduleFeature = $("#schedule-feature");
+const scheduleFeatureClose = $("#schedule-feature-close");
+if(JSON.parse(localStorage.getItem("newUser"))) {
+    localStorage.setItem("newScheduleFeatureShowed", true);
+}
+if(!localStorage.getItem("newScheduleFeatureShowed") && !JSON.parse(localStorage.getItem("newUser"))) {
+    scheduleFeature.css("animation-play-state", "running");
+    localStorage.setItem("newScheduleFeatureShowed", true);
+}
+scheduleFeatureClose.on("click", () => scheduleFeature.remove())
+handleContainer.on("click", () => scheduleFeature.remove())
+///////////////////////////////////////////////////////////////////
+
+handleContainer.mouseenter(function () { 
+    scheduleHandle.attr("src", "src/assets/arrow-hc.svg");
+    scheduleHandle.width("35px");
+    scheduleHandle.height("35px");
+    scheduleHandle.css("right", "15px");
+}).mouseleave(function () { 
+    scheduleHandle.attr("src", "src/assets/arrow.svg");
+    scheduleHandle.width("30px");
+    scheduleHandle.height("30px");
+    scheduleHandle.css("right", "0px");
+});
+handleContainerOp.mouseenter(function () { 
+    scheduleHandleOp.attr("src", "src/assets/arrow-hc.svg");
+    scheduleHandleOp.width("35px");
+    scheduleHandleOp.height("35px");
+}).mouseleave(function () { 
+    scheduleHandleOp.attr("src", "src/assets/arrow.svg")
+    scheduleHandleOp.width("30px");
+    scheduleHandleOp.height("30px");
+});
 
 handleContainer.on("click", () => {
     if (scheduleMenu.isShown) {

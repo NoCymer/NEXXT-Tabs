@@ -1,9 +1,10 @@
 class Menu {
-    constructor(container, finalWidth, finalHeight, finalTop, transitionTime, minWidth) {
+    constructor(container, finalWidth, finalHeight, finalTop, transitionTime, minWidth, transitionHeightBool = true) {
         this.container = container;
         this.finalWidth = finalWidth;
         this.finalHeight = finalHeight;
         this.finalTop = finalTop;
+        this.transitionHeightBool = transitionHeightBool
         this.minWidth = minWidth;
         this.baseTop = container.style.top;
         this.transitionTime = transitionTime;
@@ -20,7 +21,9 @@ class Menu {
             this.container.style.minWidth = 0;
         }
         this.container.style.width = "0%";
-        this.container.style.height = "0%";
+        if(this.transitionHeightBool) {
+            this.container.style.height = "0%";
+        }
         this.container.style.top = this.baseTop;
         Array.from(this.container.children).forEach(element => {
             element.style.display = "none";
