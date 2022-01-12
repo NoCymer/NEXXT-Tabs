@@ -29,6 +29,10 @@
     position: fixed;
     width: 96%;
 }
+#schedule-main-sub-conatiner>h1{
+    text-align: center;
+    margin-bottom: 0;
+}
 #week-days-container{
     /* padding: 0 40px 0 40px; */
     width: 100%;
