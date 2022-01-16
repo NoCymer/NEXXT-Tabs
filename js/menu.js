@@ -33,7 +33,7 @@ class Menu {
             this.container.style.display = "none";
             this.container.style.visibillity = "hidden";
         }, this.transitionTime);
-        this.isShown = !this.isShown;
+        this.isShown = false;
     }
     show() {
         this.container.style.display = "block";
@@ -54,6 +54,6 @@ class Menu {
             this.container.style.height = this.finalHeight;
             this.container.style.top = this.finalTop;
         }, 10)
-        this.isShown = !this.isShown;
+        this.isShown = true;
     }
 }

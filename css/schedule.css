@@ -105,19 +105,19 @@
     width: 110px;
     padding: 5px;
     border-radius: 20px;
-    background-color: #cc79a0;
+    background-color: #ff68aed2;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .anime-entry:hover{
-    background-color: rgb(223, 147, 183)
+    background-color: #ff86bfd2;
 }
 .current-day{
-    background-color: #ff7cb9;
+    background-color: #ff91c4;
 }
 .current-day:hover{
-    background-color: #fd9bc9;
+    background-color: #ffa4cf;
 }
 
 .anime-title{

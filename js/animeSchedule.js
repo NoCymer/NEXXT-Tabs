@@ -1,3 +1,6 @@
+const SCHEDULE_FADE_DURATION = "200";
+const scheduleSwitch = $("#schedule-switch");
+const scheduleContainer = $("#schedule-main-conatiner");
 const monday = $("#Monday");
 const tuesday = $("#Tuesday");
 const wednesday = $("#Wednesday");
@@ -7,7 +10,7 @@ const saturday = $("#Saturday");
 const sunday = $("#Sunday");
 const scheduleStorage = new Storage("schedule");
 const scheduleLastUpdateStorage = new Storage("scheduleLastUpdate", 0);
-const scheduleMenu = new Menu(document.querySelector("#schedule-main-conatiner"), "", "80vh", "50%", 250, "60%", false);
+const scheduleMenu = new Menu(scheduleContainer.get(0), "", "80vh", "50%", 250, "60%", false);
 let handleContainer = $("#schedule-handle");
 let handleContainerOp = $("#schedule-handle-op");
 let scheduleHandle = $("#schedule-handle-el");
@@ -26,6 +29,30 @@ if(!localStorage.getItem("newScheduleFeatureShowed") && !JSON.parse(localStorage
 scheduleFeatureClose.on("click", () => scheduleFeature.remove())
 handleContainer.on("click", () => scheduleFeature.remove())
 ///////////////////////////////////////////////////////////////////
+
+scheduleSwitchBtn = new switchButton(
+    scheduleSwitch.get(0),
+    "scheduleBool",
+    true,
+    () => {},
+    () => {
+        scheduleHandle.css("display", "block");
+        handleContainer.css("display", "block");
+        setTimeout(() => {
+            scheduleHandle.css("opacity", "1");
+            handleContainer.css("opacity", "1");
+        }, 1);
+        
+    },
+    () => {
+        scheduleMenu.hide()
+        scheduleHandle.css("opacity", "0");
+        setTimeout(() => {
+            scheduleHandle.css("display", "none");
+            handleContainer.css("display", "none");
+        }, SCHEDULE_FADE_DURATION);
+    } 
+)
 
 handleContainer.mouseenter(function () { 
     scheduleHandle.attr("src", "src/assets/arrow-hc.svg");
@@ -49,9 +76,11 @@ handleContainerOp.mouseenter(function () {
 });
 
 handleContainer.on("click", () => {
-    if (scheduleMenu.isShown) {
-        scheduleMenu.hide();
-    } else { scheduleMenu.show(); }
+    if(scheduleSwitchBtn.switchBool) {
+        if (scheduleMenu.isShown) {
+            scheduleMenu.hide();
+        } else { scheduleMenu.show(); }
+    }
 })
 handleContainerOp.on("click", () => {
     if (scheduleMenu.isShown) {
@@ -83,10 +112,6 @@ switch (current_day) {
     case 6:
         current_day = "#Saturday";
         break;
-}
-
-const checkForDayChange = () => {
-
 }
 
 const displayInTable = (el, day) => {
@@ -128,5 +153,3 @@ if (scheduleStorage.getValue() == "undefined" || new Date().getTime() >= (schedu
 else {
     processResponse(scheduleStorage.getValue());
 }
-
-setInterval(() => checkForDayChange());

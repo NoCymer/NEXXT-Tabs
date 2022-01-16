@@ -99,7 +99,7 @@ body{
     padding-top: 3px;
     border: none;
     outline: none;
-    display: flexbox;
+    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -200,7 +200,7 @@ body{
     right: 0;
     border: none;
     outline: none;
-    display: flexbox;
+    display: flex;
     margin-right: 8px;
     align-items: center;
     justify-content: center;
@@ -316,6 +316,10 @@ input::-webkit-inner-spin-button {
 }
 #cycle-delay-input:focus-within{
     border: #3ecffb 1px solid;
+}
+
+#button-img, #google-apps-img, #search-img, .bookmark-icon, .google-app-entry-img{
+    pointer-events: none;
 }
 .settings-page{
     display: none;

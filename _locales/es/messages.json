@@ -156,7 +156,7 @@
     "description" : "libraries placeholder"
   },
   "librariesTxt": {
-    "message": "<a href='https://github.com/VincentGarreau/particles.js/' target='_blank'>Particles.js</a> por Vincent Garreau.",
+    "message": "<li><p><a href='https://github.com/VincentGarreau/particles.js/' target='_blank'>Particles.js</a></p></li><li><p><a href='https://jquery.com/' target='_blank'>jQuery</a></p></li>",
     "description" : "librariesTxt placeholder"
   },
   "feedbackBR": {
@@ -166,5 +166,37 @@
   "feedbackBRTxt": {
     "message": "Si desea enviar un <strong>Informe de Error</strong>, deje un <strong> Comentario </strong> o si tiene alguna <strong>Pregunta</strong> sobre el proyecto, puede hacerlo. Rellenando el siguiente <a href='https://forms.gle/MvYPGFKk7A8ShPZu7' target='_blank'>formulario</a>.",
     "description" : "feedbackBRTxt placeholder"
+  },
+  "schedule": {
+    "message": "Horario de Anime",
+    "description": "schedule placeholder"
+  },
+  "monday": {
+    "message": "Lunes",
+    "description": "Monday placeholder"
+  },
+  "tuesday": {
+    "message": "Martes",
+    "description": "Tuesday placeholder"
+  },
+  "wednesday": {
+    "message": "Miércoles",
+    "description": "Wednesday placeholder"
+  },
+  "thursday": {
+    "message": "Jueves",
+    "description": "Thursday placeholder"
+  },
+  "friday": {
+    "message": "Viernes",
+    "description": "Friday placeholder"
+  },
+  "saturday": {
+    "message": "Sábado",
+    "description": "Saturday placeholder"
+  },
+  "sunday": {
+    "message": "Domingo",
+    "description": "Sunday placeholder"
   }
 }
