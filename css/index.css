@@ -318,7 +318,7 @@ input::-webkit-inner-spin-button {
     border: #3ecffb 1px solid;
 }
 
-#button-img, #google-apps-img, #search-img, .bookmark-icon, .google-app-entry-img{
+#button-img, #google-apps-img, #search-img, #add-bookmark-plus, #close-cross-btn, #schedule-feature-close, #schedule-handle-el-op, #schedule-handle-el, .bookmark-icon, .google-app-entry-img{
     pointer-events: none;
 }
 .settings-page{
