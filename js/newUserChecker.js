@@ -4,4 +4,3 @@ if(localStorage.getItem("particle")) {
     localStorage.setItem("newUser", false);
     newUser = false;
 }
-console.log(newUser)

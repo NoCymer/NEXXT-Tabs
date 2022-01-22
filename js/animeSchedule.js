@@ -1,4 +1,6 @@
 const SCHEDULE_FADE_DURATION = "200";
+const regexDate = /(.+?)(?=at)at ([\d|:]+)/
+const days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
 const scheduleSwitch = $("#schedule-switch");
 const scheduleContainer = $("#schedule-main-conatiner");
 const monday = $("#Monday");
@@ -8,9 +10,11 @@ const thursday = $("#Thursday");
 const friday = $("#Friday");
 const saturday = $("#Saturday");
 const sunday = $("#Sunday");
+const weekEls = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
 const scheduleStorage = new Storage("schedule");
 const scheduleLastUpdateStorage = new Storage("scheduleLastUpdate", 0);
 const scheduleMenu = new Menu(scheduleContainer.get(0), "", "80vh", "50%", 250, "60%", false);
+const scheduleLoading = $("#schedule-loading");
 let handleContainer = $("#schedule-handle");
 let handleContainerOp = $("#schedule-handle-op");
 let scheduleHandle = $("#schedule-handle-el");
@@ -88,7 +92,7 @@ handleContainerOp.on("click", () => {
     } else { scheduleMenu.show(); }
 })
 
-const REFRESH_COOLDOWN = 10000;//in ms 
+const REFRESH_COOLDOWN = 10000;//in ms 10 seconds
 let current_day = new Date().getDay();
 switch (current_day) {
     case 0:
@@ -125,30 +129,66 @@ const displayInTable = (el, day) => {
     })
     $(`${day}`).append(newDiv)
 }
-
 const processResponse = (res) => {
-    res["monday"].forEach((e) => displayInTable(e, "#Monday"))
-    res["tuesday"].forEach((e) => displayInTable(e, "#Tuesday"))
-    res["wednesday"].forEach((e) => displayInTable(e, "#Wednesday"))
-    res["thursday"].forEach((e) => displayInTable(e, "#Thursday"))
-    res["friday"].forEach((e) => displayInTable(e, "#Friday"))
-    res["saturday"].forEach((e) => displayInTable(e, "#Saturday"))
-    res["sunday"].forEach((e) => displayInTable(e, "#Sunday"))
+    $(".anime-entry").remove();
+    res.list.forEach((entry) => {
+        for ([key, value] of Object.entries(entry)) {
+            let broadcast = value["broadcast"]
+            let startDate = value["aired"]["prop"]["from"];
+            let date = new Date(`${startDate["month"]}/${startDate["day"]}/${startDate["year"]} ${broadcast["time"]}:00 UTC+9`)
+            switch (date.getDay()) {
+                case 0: //sunday
+                    displayInTable(value, "#Sunday");
+                    break;
+                case 1: 
+                    displayInTable(value, "#Monday");  
+                    break;
+                case 2: 
+                    displayInTable(value, "#Tuesday");
+                    break;
+                case 3: 
+                    displayInTable(value, "#Wednesday");
+                    break;
+                case 4: 
+                    displayInTable(value, "#Thursday");
+                    break;
+                case 5: 
+                    displayInTable(value, "#Friday");
+                    break;
+                case 6: 
+                    displayInTable(value, "#Saturday");
+                    break;
+            }
+        }
+    })
+    scheduleLoading.hide();
 }
 
 if (scheduleStorage.getValue() == "undefined" || new Date().getTime() >= (scheduleLastUpdateStorage.getValue() + REFRESH_COOLDOWN)) {
-    $.ajax({
-        type: "GET",
-        url: "https://api.jikan.moe/v3/schedule",
-        dataType: "json",
-        success: (response) => {
-            scheduleStorage.setValue(response);
-            console.log(response)
-            processResponse(response);
-
-        }
-    });
-    scheduleLastUpdateStorage.setValue(new Date().getTime());
+    if(scheduleStorage.getValue() != "undefined") processResponse(scheduleStorage.getValue());
+    let i = 0;
+    let week = {
+        list: []
+    };
+    days.forEach((day) => {
+        setTimeout(() => {
+            $.ajax({
+                type: "GET",
+                url: `https://api.jikan.moe/v4/schedules/${day}`,
+                dataType: "json",
+                success: (response) => {
+                    week.list.push(response["data"])
+                    if (day == "sunday") {
+                        scheduleStorage.setValue(week);
+                        processResponse(week);
+                        scheduleLastUpdateStorage.setValue(new Date().getTime());
+                        scheduleLoading.hide();
+                    } 
+                }
+            });
+        }, i*1000)    
+        i++
+    })     
 }
 else {
     processResponse(scheduleStorage.getValue());

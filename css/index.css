@@ -165,6 +165,25 @@ body{
     align-items: flex-start;
     justify-content: space-evenly;
 }
+.loading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 50px;
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes rotate {
+    0%{
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    }
+    100%{
+        transform: translateX(-50%) translateY(-50%) rotate(360deg);
+    }
+}
 .google-app-entry-img{
     height: 45px;
     width: 45px;
