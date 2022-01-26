@@ -140,7 +140,7 @@
     "description": "Icons rights placeholder"
   },
   "iconsRightsTxt": {
-    "message": "Je ne possède aucune des icônes d' <a href='https://about.google/intl/ALL_fr/products/'' target='_blank'>Applications Google</a> ni aucune autre icône provenant des sites Web des marque pages. Mais toutes les autres icônes présentes dans ce projet sont libres d'utilisation car elles ont été créées par moi, vous êtes donc libre de les réutiliser dans vos propres projets mais vous devez mentionner <a href='https://github.com/NoCymer/ 'target='_blank'>NoCymer</a> dans les crédits.",
+    "message": "Je ne possède aucune icône de marque ni aucune autre icône tirée de sites Web pour les signets. Mais toutes les autres icônes présentes dans ce projet sont libres d'utilisation car elles ont été créées par moi, vous êtes donc libre de les réutiliser dans vos propres projets mais vous devez mentionner <a href='https://github.com/NoCymer/ 'target='_blank'>NoCymer</a> au générique.",
     "description": "Icons rightsTxt placeholder"
   },
   "codebaseRights": {
@@ -156,7 +156,7 @@
     "description": "libraries placeholder"
   },
   "librariesTxt": {
-    "message": "<li><p><a href='https://github.com/VincentGarreau/particles.js/' target='_blank'>Particles.js</a></p></li><li><p><a href='https://jquery.com/' target='_blank'>jQuery</a></p></li>",
+    "message": "<li><p><a href='https://github.com/VincentGarreau/particles.js/' target='_blank'>Particles.js</a></p></li><li><p><a href='https://jquery.com/' target='_blank'>jQuery</a></p></li><li><p><a href='https://jikan.moe/' target='_blank'>JikanAPI</a></p></li>",
     "description": "librariesTxt placeholder"
   },
   "feedbackBR": {

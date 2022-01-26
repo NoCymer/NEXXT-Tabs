@@ -173,14 +173,11 @@ body{
     width: 50px;
     animation-name: rotate;
     animation-duration: 1s;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
 @keyframes rotate {
-    0%{
-        transform: translateX(-50%) translateY(-50%) rotate(0deg);
-    }
-    100%{
+    to{
         transform: translateX(-50%) translateY(-50%) rotate(360deg);
     }
 }
@@ -265,16 +262,32 @@ body{
     border-radius: 0 0 2px 2px;
     text-align: center;
 }
-.info-footer{
+.contact-means{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 93%;
     padding-top: 25px;
     padding-bottom: 5px;
     margin: 0px 15px 0px 15px;
-    font-weight: 500;
-    font-size: 1.5rem;
     border-top: #797979 1px solid;
     border-radius: 2px 2px 0px 0px;
+}
+.info-footer{
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 1.5rem;
     text-align: center;
+}
+.contact-img{
+    transition: all 0.2s;
+    padding: 3px 15px;
+    width: 50px;
+    height: 50px;
+}
+.contact-img:hover{
+    transform: scale(1.15);
 }
 #app-version{
     font-size: 0.9rem;
@@ -288,11 +301,13 @@ body{
     margin-bottom: 5px;
     margin-top: 0px;
     text-align: left;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
+    color: #ffffff;
 }
 .info-header ~ ul {
     margin-right: 0px;
+    margin-bottom: 10px;
     text-align: left;
     width: 90%;
     font-size: 1.02rem;
@@ -303,10 +318,13 @@ body{
     margin-right: 0px;
     margin-top: 5px;
     margin-bottom: 5px;
-    color: #f3f3f3;
+    color: #e7e7e7;
+}
+strong{
+    color: #ffffff;
 }
 a{
-    color:#47d0fa;
+    color:#56d7ff;
     text-decoration: none;
     font-weight: 500;
 }
@@ -341,7 +359,6 @@ input::-webkit-inner-spin-button {
 #google-apps-img,
 #search-img,
 #add-bookmark-plus,
-#close-cross-btn,
 #schedule-feature-close,
 #schedule-handle-el-op,
 #schedule-handle-el,
@@ -420,14 +437,11 @@ input::-webkit-inner-spin-button {
 }
 
 .setting-entry{
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-}
-
-.setting-entry>h3{
-    width: 150px;
+    justify-content: space-between;
 }
 
 .multiple-setting-entry {
@@ -443,8 +457,12 @@ input::-webkit-inner-spin-button {
 .sub-setting-entry{
     display: flex;
     flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
     align-items: center;
-    margin-left: 10px;
+}
+.left-sub-setting{
+    justify-content: left;
 }
 h3{
     font-weight: normal;
@@ -516,7 +534,7 @@ h3{
 .standard-checkbox{
     display: block;
     position: relative;
-    margin-left: 10%;
+    margin-left: 2%;
     height: min-content;
 }
 
