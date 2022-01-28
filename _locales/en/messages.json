@@ -164,7 +164,7 @@
       "description" : "feedbackBR placeholder"
     },
     "feedbackBRTxt": {
-      "message": "If you want to submit a <strong>Bug Report</strong>, leave a <strong>Comment</strong> or if you have any <strong>Question</strong> concerning the project, you are very welcome to do it by filling the folowing <a href='https://forms.gle/MvYPGFKk7A8ShPZu7' target='_blank'>form</a>.",
+      "message": "If you want to submit a <strong>Bug Report</strong>, leave a <strong>Comment</strong> or if you have any <strong>Question</strong> concerning the project, you are very welcome to do it by filling the following <a href='https://forms.gle/MvYPGFKk7A8ShPZu7' target='_blank'>form</a>.",
       "description" : "feedbackBRTxt placeholder"
     },
     "schedule": {
