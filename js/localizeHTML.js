@@ -1,11 +1,12 @@
 const localREGEX = /__MSG_(\w+)__/g
 const supportedLanguges = ["en", "fr", "es", "vi"]
-
+let currentLanguage = ""
 //checks if the language is supported if yes store it
 const languageStorage = new Storage("language", (supportedLanguges.includes(window.navigator.language) ? window.navigator.language : "en"))
 
 const localizeHtml = () => {
     let html = document.querySelector("html")
+    currentLanguage = languageStorage.getValue();
     fetch(`../_locales/${languageStorage.getValue()}/messages.json`).then((response)=> {
         return response.json();
     }).then(jsondata => {
@@ -23,7 +24,8 @@ setTimeout(() => {
     languageEl.value = languageStorage.getValue()
     $("#refresh-txt").hide()
     languageEl.onchange = () => {
-        languageStorage.setValue(languageEl.value)
         $("#refresh-txt").show()
+        languageStorage.setValue(languageEl.value)
+        if (languageEl.value == currentLanguage) {$("#refresh-txt").hide()}
     }
 }, 500);
