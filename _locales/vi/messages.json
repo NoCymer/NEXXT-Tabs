@@ -2,57 +2,57 @@
     "appName": {
         "message": "NEXXT TABS",
         "description": "App name"
-    } ,
+    },
     "appDesc": {
-      "message": "NEXXT Tabs will please every anime fans. Replace your basic tab to a minimalist customizable anime themed tab.",
+      "message": "NEXXT Tabs sẽ hấp dẫn người hâm mộ anime, sự mở rộng vì Chrome cá nhân hóa và giản dị, về anime.",
       "description": "Extension description."
     },
     "tabName": {
-      "message": "New Tab",
+      "message": "Tab Mới",
       "description": "Tab name"
     },
     "searchEngine": {
-        "message": "Search Engine",
+        "message": "Máy tìm Kiếm",
         "description" : "search engine placeholder"
     },
     "searchPlaceholder": {
-        "message": "Search",
+        "message": "Tìm Kiếm",
         "description" : "search placeholder"
     },
     "bookmarks": {
-      "message": "Bookmarks",
+      "message": "Dấu Trang",
       "description" : "bookmarks placeholder"
     },
     "bookmarkNewH1": {
-      "message": "New bookmark",
+      "message": "Dấu Trang  Mới",
       "description" : "bookmarks h1 placeholder"
     },
     "bookmarkNewTitle": {
-      "message": "Title",
+      "message": "Tên Dấu Trang",
       "description" : "bookmarks title placeholder"
     },
     "bookmarkNewLink": {
-      "message": "Link",
+      "message": "Liên Kết",
       "description" : "bookmarks link placeholder"
     },
     "bookmarkNewCreate": {
-      "message": "Validate",
+      "message": "Xác nhận",
       "description" : "bookmarks create placeholder"
     },
     "generalTab": {
-      "message": "GENERAL",
+      "message": "CHỦ YẾU",
       "description" : "generalTab placeholder"
     },
     "backgroundTab": {
-      "message": "BACKGROUND",
+      "message": "HINH NềN",
       "description" : "backgroundTab placeholder"
     },
     "infoTab": {
-      "message": "INFO",
+      "message": "INFOS",
       "description" : "infoTab placeholder"
     },
     "openNewPage": {
-      "message": "Open in a new page",
+      "message": "Mở trên một trang mới",
       "description" : "search engine placeholder"
     },
     "googleApps": {
@@ -60,99 +60,99 @@
       "description" : "googleApps placeholder"
     },
     "particles": {
-      "message": "Particles",
+      "message": "Hiệu ứng hạt",
       "description" : "particles placeholder"
     },
     "countdown": {
-      "message": "Countdown",
+      "message": "đếm Ngược",
       "description" : "countdown placeholder"
     },
     "countdownPosition": {
-      "message": "Position",
+      "message": "Địa điểm",
       "description" : "countdown position placeholder"
     },
     "countdownPositionTop": {
-      "message": "Top",
+      "message": "Trên",
       "description" : "countdown position top placeholder"
     },
     "countdownPositionBottom": {
-      "message": "Bottom",
+      "message": "Dưới",
       "description" : "countdown position bottom placeholder"
     },
     "countdownDate": {
-      "message": "Event Date",
+      "message": "Ngày Sự kiện",
       "description" : "countdown eDate placeholder"
     },
     "countdownLabel": {
-      "message": "Event Label",
+      "message": "Nhãn mác Sự kiện",
       "description" : "countdown eLabel placeholder"
     },
     "cycleBG": {
-      "message": "Cycle Backgrounds",
+      "message": "Hình Nền đổi",
       "description" : "cycleBackgrounds placeholder"
     },
     "shuffleBG": {
-      "message": "Shuffle",
+      "message": "Trộn Hình Nền",
       "description" : "shuffleBackgrounds placeholder"
     },
     "delayBG": {
-      "message": "Delay",
+      "message": "Chờ",
       "description" : "delayBackgrounds placeholder"
     },
     "backgroundChoice": {
-      "message": "Backgrounds Choice",
+      "message": "Sự lựa Chọn Hình Nền",
       "description" : "backgroundsChoice placeholder"
     },
     "selectAll": {
-      "message": "Select All",
+      "message": "Chọn tất cả",
       "description" : "selectAll placeholder"
     },
     "deselectAll": {
-      "message": "Deselect All",
+      "message": "bỏ Chọn tất cả",
       "description" : "deselectAll placeholder"
     },
     "days": {
-      "message": "Days",
+      "message": "Ngày",
       "description" : "days placeholder"
     },
     "hours": {
-      "message": "Hours",
+      "message": "Giờ",
       "description" : "hours placeholder"
     },
     "minutes": {
-      "message": "Minutes",
+      "message": "Phút",
       "description" : "minutes placeholder"
     },
     "seconds": {
-      "message": "Seconds",
+      "message": "Giây",
       "description" : "seconds placeholder"
     },
     "imageRights": {
-      "message": "Image rights",
+      "message": "Bản Quyền Hình Nền",
       "description" : "Image rights placeholder"
     },
     "imageRightsTxt": {
-      "message": "I do not own any of the images used in this project, therefore i do not claim any rights on them. <strong>If you are the author of one of the images used in this project and want to be credited or want it removed from the extention, please contact me.</strong>",
+      "message": "Tôi không sở hữu bất kỳ hình nền nào của phần sự mở rộng, và không có quyền đối với nó. Nếu bạn là tác giả của một trong số họ và muốn được ghi có hoặc xóa của bạn, liên hệ với tôi.",
       "description" : "Image rightsTxt placeholder"
     },
     "iconsRights": {
-      "message": "Icons rights",
+      "message": "Bản Quyền Hình Nền",
       "description" : "Icons rights placeholder"
     },
     "iconsRightsTxt": {
-      "message": "I do not own any brand icons or any other icon taken from websites for the bookmarks. But all others icons present in this project are free to use due to them being created by me, therefore you are free to reuse them in your own projects but you must mention <a href='https://github.com/NoCymer/'target='_blank'>NoCymer</a> in the credits.",
+      "message": "Tôi không sở hữu bất kỳ biểu tượng nào của phần dấu trang của sự mở rộng, Các biểu tượng khác là của tôi, nếu bạn sử dụng chúng, vui lòng đề cập <a href='https://github.com/NoCymer/'target='_blank'>NoCymer</a>.",
       "description" : "Icons rightsTxt placeholder"
     },
     "codebaseRights": {
-      "message": "Codebase rights",
+      "message": "Bản Quyền Cơ Sở Mã",
       "description" : "codebase rights placeholder"
     },
     "codebaseRightsTxt": {
-      "message": "This project being OpenSource, you are free to reuse code from it and contribute to its developpement on <a href='https://github.com/NoCymer/NEXXT-Tabs' target='_blank'>GitHub</a>.",
+      "message": "NEXXT TABS là OpenSource. Bạn có thể sử dụng hoặc đóng góp vào mã của anh ấy tại đây: <a href='https://github.com/NoCymer/NEXXT-Tabs' target='_blank'>GitHub</a>.",
       "description" : "codebaseTxt placeholder"
     },
     "libraries": {
-      "message": "Libraries used in this project",
+      "message": "Bản Quyền Libraries ",
       "description" : "libraries placeholder"
     },
     "librariesTxt": {
@@ -160,51 +160,51 @@
       "description" : "librariesTxt placeholder"
     },
     "feedbackBR": {
-      "message": "Feedback and Bug Report",
+      "message": "Nhận xét và Báo cáo",
       "description" : "feedbackBR placeholder"
     },
     "feedbackBRTxt": {
-      "message": "If you want to submit a <strong>Bug Report</strong>, leave a <strong>Comment</strong> or if you have any <strong>Question</strong> concerning the project, you are very welcome to do it by filling the following <a href='https://forms.gle/MvYPGFKk7A8ShPZu7' target='_blank'>form</a>.",
+      "message": "Nếu bạn muốn gửi  <strong>báo cáo</strong>, gửi <strong>nhận xét</strong>, nếu bạn có câu <strong>Câu Hỏi</strong> về NEXXT TABS, Dùng <a href='https://forms.gle/MvYPGFKk7A8ShPZu7' target='_blank'>form</a>.",
       "description" : "feedbackBRTxt placeholder"
     },
     "schedule": {
-      "message": "Anime Schedule",
+      "message": "Lịch Anime",
       "description": "schedule placeholder"
     },
     "monday": {
-      "message": "Monday",
+      "message": "Thứ hai",
       "description": "Monday placeholder"
     },
     "tuesday": {
-      "message": "Tuesday",
+      "message": "Thứ ba",
       "description": "Tuesday placeholder"
     },
     "wednesday": {
-      "message": "Wednesday",
+      "message": "Thứ tư",
       "description": "Wednesday placeholder"
     },
     "thursday": {
-      "message": "Thursday",
+      "message": "Thứ năm",
       "description": "Thursday placeholder"
     },
     "friday": {
-      "message": "Friday",
+      "message": "Thứ năm",
       "description": "Friday placeholder"
     },
     "saturday": {
-      "message": "Saturday",
+      "message": "Thứ bảy",
       "description": "Saturday placeholder"
     },
     "sunday": {
-      "message": "Sunday",
+      "message": "Chủ nhật",
       "description": "Sunday placeholder"
     },
     "language": {
-      "message": "Language",
+      "message": "Ngôn ngữ",
       "description": "Language placeholder"
     },
     "refresh": {
-      "message": "A page refresh is required.",
+      "message": "Làm mới trang là bắt buộc.",
       "description": "refresh alert placeholder"
     }
 }

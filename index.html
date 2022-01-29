@@ -16,11 +16,14 @@
     <link rel="stylesheet" href="css/countdown.css">
     <link rel="stylesheet" href="css/bookmarks.css">
     <link rel="stylesheet" href="css/background.css">
-    <script src="js/localizeHTML.js" defer></script>
+    <link rel="stylesheet" href="css/schedule.css">
+    <script src="js/newUserChecker.js"></script>
+    <script src="js/jquery.js"></script>
     <script src="js/bookmark.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/switch.js"></script>
     <script src="js/storage.js"></script>
+    <script src="js/localizeHTML.js"></script>
     <script src="js/particles.js" defer></script>
     <script src="js/snowflakes.js" defer></script>
     <script src="js/search.js" defer></script>
@@ -31,6 +34,7 @@
     <script src="js/countdownSettings.js" defer></script>
     <script src="js/particleSettings.js" defer></script>
     <script src="js/googleApps.js" defer></script>
+    <script src="js/animeSchedule.js" defer></script>
     <script src="js/version.js" defer></script>
     <title>__MSG_tabName__</title>
 </head>
@@ -79,7 +83,7 @@
                 <div class="search-space"></div>
             </div>
             <div id="bookmark-wrapper">
-                <div id="add-bookmark" class="bookmark" tabindex="1"><img src="src/assets/plus.svg" alt=""></div>
+                <div id="add-bookmark" class="bookmark" tabindex="1"><img src="src/assets/plus.svg" alt="" id="add-bookmark-plus"></div>
             </div>
         </div>
     </div>
@@ -117,6 +121,18 @@
         </div>
         <div id="general-page" class="settings-page">
             <div id="general-wrapper" class="sub-page-wrapper">
+                <div id="language-settings" class="setting-wrapper">
+                    <div class="setting-entry">
+                        <h3>__MSG_language__ : </h3>
+                        <h4 class="alert-txt" id="refresh-txt">__MSG_refresh__</h4>
+                        <select id="language-choice" name="search-engine" class="mcq">
+                            <option value="en">English</option>
+                            <option value="fr">Français</option>
+                            <option value="es">Español</option>
+                            <option value="vi">Tiếng Việt</option>
+                        </select>
+                    </div>
+                </div>
                 <div id="search-engine-settings" class="setting-wrapper">
                     <div class="setting-entry">
                         <h3>__MSG_searchEngine__ : </h3>
@@ -172,6 +188,17 @@
                         </div>
                     </div>
                 </div>
+                <div id="timetable-settings" class="setting-wrapper">
+                    <div class="setting-entry">
+                        <h3>__MSG_schedule__</h3>
+                        <div class="switch-button">
+                            <label class="switch">
+                                <input type="checkbox" id="schedule-switch">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
                 <div id="timer-settings" class="setting-wrapper">
                     <div class="setting-entry">
                         <h3>__MSG_countdown__</h3>
@@ -215,7 +242,7 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="sub-setting-entry">
+                        <div class="sub-setting-entry left-sub-setting">
                             <h3>__MSG_shuffleBG__</h3>
                             <div class="standard-checkbox">
                                 <label class="checkbox">
@@ -224,7 +251,7 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="sub-setting-entry">
+                        <div class="sub-setting-entry left-sub-setting">
                             <h3>__MSG_delayBG__</h3>
                             <input type="number" id="cycle-delay-input" spellcheck="false" autocomplete="off">
                             <h3>__MSG_minutes__</h3>
@@ -232,7 +259,7 @@
                     </div>
                 </div>
                 <div id="pre-background-header">
-                    <h3>__MSG_backgroundsChoice__</h3>
+                    <h3>__MSG_backgroundChoice__</h3>
                     <div id="pre-background-header-button-wrapper">
                         <button class="standard-btn" tabindex="1" id="select-all-btn">__MSG_selectAll__</button>
                         <button class="standard-btn" tabindex="1" id="deselect-all-btn">__MSG_deselectAll__</button>
@@ -264,17 +291,17 @@
                     </li>
                 </ul>
                 <h2 class="info-header">__MSG_libraries__</h2>
-                <ul>
-                    <li>
-                        <p>__MSG_librariesTxt__</p>
-                    </li>
-                </ul>
+                <ul>__MSG_librariesTxt__</ul>
                 <h2 class="info-header">__MSG_feedbackBR__</h2>
                 <ul>
                     <li>
                         <p>__MSG_feedbackBRTxt__</p>
                     </li>
                 </ul>
+                <div class="contact-means">
+                    <a href="https://discord.gg/WN9ar7gZRG" target="_blank" title="Join us on Discord"><img src="src/assets/Discord-Logo-White.svg" alt="" class="contact-img"></a>
+                    <a href="https://github.com/NoCymer" target="_blank" title="Follow me on GitHub"><img src="src/assets/GitHub-Mark-Light-120px-plus.png" alt="" class="contact-img"></a>
+                </div>
                 <h1 class="info-footer">©Copyright <a href="https://github.com/NoCymer/" target="_blank">NoCymer</a>
                     2021 - 2022</h1>
                 <p id="app-version"></p>
@@ -403,31 +430,69 @@
         </div>
     </div>
     <!-- #endregion -->
-
-    <!-- #region countdownBottom -->
-    <div id="countdownContainerBottom" style="display:none;">
-        <table style="max-height:145px; min-width:800px;">
-            <tr class="info">
-                <td id="labelB" colspan="7" class="mainLbl"></td>
-            </tr>
-            <tr class="info">
-                <td class="lblNb" id="bD">00</td>
-                <td class="lbldot">:</td>
-                <td class="lblNb" id="bH">00</td>
-                <td class="lbldot">:</td>
-                <td class="lblNb" id="bM">00</td>
-                <td class="lbldot">:</td>
-                <td class="lblNb" id="bS">00</td>
-            </tr>
-            <tr class="lblHolder">
-                <td class="lblL">__MSG_days__</td>
-                <td class="lbl">__MSG_hours__</td>
-                <td class="lbl">__MSG_minutes__</td>
-                <td class="lblR">__MSG_seconds__</td>
-            </tr>
-        </table>
+    <div class="featurePresentation" id="schedule-feature">
+        <h1>Check out this new feature</h1>
+        <img src="src/assets/plus.svg" alt="" id="schedule-feature-close">
     </div>
-    <!-- #endregion -->
+    <div id="schedule-handle">
+        <img src="src/assets/arrow.svg" alt="" id="schedule-handle-el">
+    </div>
+    <div id="schedule-main-conatiner">
+        <div id="schedule-handle-op">
+            <img src="src/assets/arrow.svg" alt="" id="schedule-handle-el-op">
+        </div>
+        <div id="schedule-main-sub-conatiner">
+            <h1>__MSG_schedule__</h1>
+            <img src="src/assets/loading.svg" alt="" class="loading" id="schedule-loading">
+            <div id="week-days-container">
+                <div id="Monday" class="day">
+                    <h1 class="day-header">__MSG_monday__</h1>
+                </div>
+                <div id="Tuesday" class="day">
+                    <h1 class="day-header">__MSG_tuesday__</h1>
+                </div>
+                <div id="Wednesday" class="day">
+                    <h1 class="day-header">__MSG_wednesday__</h1>
+                </div>
+                <div id="Thursday" class="day">
+                    <h1 class="day-header">__MSG_thursday__</h1>
+                </div>
+                <div id="Friday" class="day">
+                    <h1 class="day-header">__MSG_friday__</h1>
+                </div>
+                <div id="Saturday" class="day">
+                    <h1 class="day-header">__MSG_saturday__</h1>
+                </div>
+                <div id="Sunday" class="day">
+                    <h1 class="day-header">__MSG_sunday__</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- #region countdownBottom -->
+        <div id="countdownContainerBottom" style="display:none;">
+            <table style="max-height:145px; min-width:800px;">
+                <tr class="info">
+                    <td id="labelB" colspan="7" class="mainLbl"></td>
+                </tr>
+                <tr class="info">
+                    <td class="lblNb" id="bD">00</td>
+                    <td class="lbldot">:</td>
+                    <td class="lblNb" id="bH">00</td>
+                    <td class="lbldot">:</td>
+                    <td class="lblNb" id="bM">00</td>
+                    <td class="lbldot">:</td>
+                    <td class="lblNb" id="bS">00</td>
+                </tr>
+                <tr class="lblHolder">
+                    <td class="lblL">__MSG_days__</td>
+                    <td class="lbl">__MSG_hours__</td>
+                    <td class="lbl">__MSG_minutes__</td>
+                    <td class="lblR">__MSG_seconds__</td>
+                </tr>
+            </table>
+        </div>
+        <!-- #endregion -->
 </body>
 
 </html>

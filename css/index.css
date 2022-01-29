@@ -99,7 +99,7 @@ body{
     padding-top: 3px;
     border: none;
     outline: none;
-    display: flexbox;
+    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -128,7 +128,7 @@ body{
     background-color: #2e2e2e;
     position: absolute;
     z-index: 2;
-    top: 50%;
+    top: 0%;
     right: 0%;
     text-align: center;
     transform: translateY(-50%);
@@ -165,6 +165,22 @@ body{
     align-items: flex-start;
     justify-content: space-evenly;
 }
+.loading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 50px;
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes rotate {
+    to{
+        transform: translateX(-50%) translateY(-50%) rotate(360deg);
+    }
+}
 .google-app-entry-img{
     height: 45px;
     width: 45px;
@@ -187,6 +203,7 @@ body{
     background-color: #277e99;
 }
 .google-app-entry:focus-within{
+    outline: none;
     background-color: #4499b3;
 }
 
@@ -200,7 +217,7 @@ body{
     right: 0;
     border: none;
     outline: none;
-    display: flexbox;
+    display: flex;
     margin-right: 8px;
     align-items: center;
     justify-content: center;
@@ -246,16 +263,34 @@ body{
     border-radius: 0 0 2px 2px;
     text-align: center;
 }
-.info-footer{
+.contact-means{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 93%;
     padding-top: 25px;
     padding-bottom: 5px;
     margin: 0px 15px 0px 15px;
-    font-weight: 500;
-    font-size: 1.5rem;
     border-top: #797979 1px solid;
     border-radius: 2px 2px 0px 0px;
+}
+.info-footer{
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 1.5rem;
     text-align: center;
+}
+.contact-img{
+    padding: 3px 15px;
+    width: 50px;
+    height: 50px;
+}
+.contact-means > *{
+    transition: all 0.2s;
+}
+.contact-means > *:hover{
+    transform: scale(1.15);
 }
 #app-version{
     font-size: 0.9rem;
@@ -269,11 +304,13 @@ body{
     margin-bottom: 5px;
     margin-top: 0px;
     text-align: left;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
+    color: #ffffff;
 }
 .info-header ~ ul {
     margin-right: 0px;
+    margin-bottom: 10px;
     text-align: left;
     width: 90%;
     font-size: 1.02rem;
@@ -284,10 +321,13 @@ body{
     margin-right: 0px;
     margin-top: 5px;
     margin-bottom: 5px;
-    color: #f3f3f3;
+    color: #e7e7e7;
+}
+strong{
+    color: #ffffff;
 }
 a{
-    color:#47d0fa;
+    color:#56d7ff;
     text-decoration: none;
     font-weight: 500;
 }
@@ -317,6 +357,18 @@ input::-webkit-inner-spin-button {
 #cycle-delay-input:focus-within{
     border: #3ecffb 1px solid;
 }
+
+#button-img,
+#google-apps-img,
+#search-img,
+#add-bookmark-plus,
+#schedule-feature-close,
+#schedule-handle-el-op,
+#schedule-handle-el,
+.bookmark-icon,
+.google-app-entry-img{
+    pointer-events: none;
+}
 .settings-page{
     display: none;
     visibility: hidden;
@@ -334,6 +386,9 @@ input::-webkit-inner-spin-button {
     position: fixed;
     width: 98%;
 }
+.alert-txt{
+    color:rgb(255, 155, 155);
+}
 .sub-page-wrapper{
     overflow-y : auto;
     overflow-x: hidden;
@@ -345,7 +400,9 @@ input::-webkit-inner-spin-button {
     justify-content: flex-start;
     height: 100%;
 }
-
+.setting-wrapper:last-child{
+    margin-bottom: 70px;
+}
 .mcq{
     width: 35%;
     height: 25px;
@@ -382,20 +439,17 @@ input::-webkit-inner-spin-button {
     flex-direction: row;
     background-color: #3b3b3b;
     border-radius: 10px;
-    width: 80%;
+    width: 76%;
     padding: 0% 5% 0% 3%;
-    margin: 10px 0 50px 4%;
+    margin: 10px 0 40px 4%;
 }
 
 .setting-entry{
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-}
-
-.setting-entry>h3{
-    width: 150px;
+    justify-content: space-between;
 }
 
 .multiple-setting-entry {
@@ -411,8 +465,12 @@ input::-webkit-inner-spin-button {
 .sub-setting-entry{
     display: flex;
     flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
     align-items: center;
-    margin-left: 10px;
+}
+.left-sub-setting{
+    justify-content: left;
 }
 h3{
     font-weight: normal;
@@ -484,7 +542,7 @@ h3{
 .standard-checkbox{
     display: block;
     position: relative;
-    margin-left: 10%;
+    margin-left: 2%;
     height: min-content;
 }
 
@@ -553,6 +611,35 @@ h3{
     border: 1px solid #bff0ff;
 }
 
+.featurePresentation{
+    font-size: 0.8rem;
+    opacity: 0;
+    color: rgb(200, 200, 200);
+    padding: 0px 5px 0px 5px;
+    position: fixed;
+    min-width: 200px;
+    min-height: 60px;
+    background-color: #2e2e2e;
+    background: linear-gradient(315deg, rgba(0, 0, 0, 0.555) 0%, rgb(192, 60, 104) 100%);
+    border-radius: 10px 30px 15px 25px;
+    animation: featureFade 1000ms linear 2s;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+    pointer-events: none;
+}
+#schedule-feature-close{
+    pointer-events: all;
+    transition: all 500ms;
+    width: 25px;
+    height: 25px;
+    transform: rotate(45deg);
+    position: absolute;
+    top:-10px;
+    left: -10px;
+}
+#schedule-feature-close:hover{
+    box-shadow: 0px 0px 10px 7px rgb(251, 85, 154), 0 0 10px 2px rgb(251, 85, 154) inset;
+}
 ::-webkit-scrollbar {
     width: 7px;
 }
@@ -571,4 +658,14 @@ h3{
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+@keyframes featureFade {
+    0%{
+        opacity: 0%;
+    }
+
+    100%{
+        opacity: 100%;
+    }
 }
