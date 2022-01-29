@@ -2,7 +2,7 @@
     "appName": {
         "message": "NEXXT TABS",
         "description": "App name"
-    } ,
+    },
     "appDesc": {
       "message": "NEXXT Tabs sẽ hấp dẫn người hâm mộ anime, sự mở rộng vì Chrome cá nhân hóa và giản dị, về anime.",
       "description": "Extension description."
