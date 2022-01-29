@@ -7,13 +7,15 @@
 <strong>If you are the author of one of the images used in this project and want to be credited or want it removed from the extention, please contact me.</strong><br>
 
 ### Icons rights
-- I do not own any of the [Google apps](https://about.google/intl/ALL_fr/products/)  icons or other icons taken from websites for the bookmarks. But all others icons present in this project are free to use due to them being created by me, therefore you are free to reuse them in your own projects but you must mention [NoCymer](https://github.com/NoCymer/) in the credits.
+- I do not own any brand icons or any other icon taken from websites for the bookmarks. But all others icons present in this project are free to use due to them being created by me, therefore you are free to reuse them in your own projects but you must mention [NoCymer](https://github.com/NoCymer/) in the credits.
 
 ### Codebase rights
 - This project being OpenSource, you are free to reuse code from it and contribute to its developpement on [GitHub](https://github.com/NoCymer/NEXXT-Tabs/)
 
 ### Libraries used in this project
-- [Particles.js](https://github.com/VincentGarreau/particles.js/) by Vincent Garreau
+- [Particles.js](https://github.com/VincentGarreau/particles.js/)
+- [jQuery](https://jquery.com/)
+- [JikanAPI](https://jikan.moe/)
 
 ### Feedback and Bug Report
 - If you want to submit a bug report, leave a Feedback or if you have any question concerning the project, you are very welcome to do it by filling the folowing [form](https://forms.gle/MvYPGFKk7A8ShPZu7)
