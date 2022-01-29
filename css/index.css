@@ -386,6 +386,9 @@ input::-webkit-inner-spin-button {
     position: fixed;
     width: 98%;
 }
+.alert-txt{
+    color:rgb(255, 155, 155);
+}
 .sub-page-wrapper{
     overflow-y : auto;
     overflow-x: hidden;

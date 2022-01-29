@@ -198,5 +198,13 @@
   "sunday": {
     "message": "Dimanche",
     "description": "Sunday placeholder"
+  },
+  "language": {
+    "message": "Langue",
+    "description": "Language placeholder"
+  },
+  "refresh": {
+    "message": "Un rechargement de la page est requis.",
+    "description": "refresh alert placeholder"
   }
 }

@@ -19,11 +19,11 @@
     <link rel="stylesheet" href="css/schedule.css">
     <script src="js/newUserChecker.js"></script>
     <script src="js/jquery.js"></script>
-    <script src="js/localizeHTML.js" defer></script>
     <script src="js/bookmark.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/switch.js"></script>
     <script src="js/storage.js"></script>
+    <script src="js/localizeHTML.js"></script>
     <script src="js/particles.js" defer></script>
     <script src="js/snowflakes.js" defer></script>
     <script src="js/search.js" defer></script>
@@ -121,6 +121,18 @@
         </div>
         <div id="general-page" class="settings-page">
             <div id="general-wrapper" class="sub-page-wrapper">
+                <div id="language-settings" class="setting-wrapper">
+                    <div class="setting-entry">
+                        <h3>__MSG_language__ : </h3>
+                        <h4 class="alert-txt" id="refresh-txt">__MSG_refresh__</h4>
+                        <select id="language-choice" name="search-engine" class="mcq">
+                            <option value="en">English</option>
+                            <option value="fr">Français</option>
+                            <option value="es">Español</option>
+                            <option value="vi">Tiếng Việt</option>
+                        </select>
+                    </div>
+                </div>
                 <div id="search-engine-settings" class="setting-wrapper">
                     <div class="setting-entry">
                         <h3>__MSG_searchEngine__ : </h3>
@@ -247,7 +259,7 @@
                     </div>
                 </div>
                 <div id="pre-background-header">
-                    <h3>__MSG_backgroundsChoice__</h3>
+                    <h3>__MSG_backgroundChoice__</h3>
                     <div id="pre-background-header-button-wrapper">
                         <button class="standard-btn" tabindex="1" id="select-all-btn">__MSG_selectAll__</button>
                         <button class="standard-btn" tabindex="1" id="deselect-all-btn">__MSG_deselectAll__</button>

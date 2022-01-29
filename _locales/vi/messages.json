@@ -198,6 +198,13 @@
     "sunday": {
       "message": "Chủ nhật",
       "description": "Sunday placeholder"
+    },
+    "language": {
+      "message": "Ngôn ngữ",
+      "description": "Language placeholder"
+    },
+    "refresh": {
+      "message": "Làm mới trang là bắt buộc.",
+      "description": "refresh alert placeholder"
     }
-    
 }
