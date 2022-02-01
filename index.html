@@ -23,7 +23,7 @@
     <script src="js/menu.js"></script>
     <script src="js/switch.js"></script>
     <script src="js/storage.js"></script>
-    <script src="js/localizeHTML.js"></script>
+    <script src="js/localizeHTML.js" defer></script>
     <script src="js/particles.js" defer></script>
     <script src="js/snowflakes.js" defer></script>
     <script src="js/search.js" defer></script>
@@ -83,7 +83,8 @@
                 <div class="search-space"></div>
             </div>
             <div id="bookmark-wrapper">
-                <div id="add-bookmark" class="bookmark" tabindex="1"><img src="src/assets/plus.svg" alt="" id="add-bookmark-plus"></div>
+                <div id="add-bookmark" class="bookmark" tabindex="1"><img src="src/assets/plus.svg" alt=""
+                        id="add-bookmark-plus"></div>
             </div>
         </div>
     </div>
@@ -121,7 +122,7 @@
         </div>
         <div id="general-page" class="settings-page">
             <div id="general-wrapper" class="sub-page-wrapper">
-                <div id="language-settings" class="setting-wrapper">
+                <!-- <div id="language-settings" class="setting-wrapper">
                     <div class="setting-entry">
                         <h3>__MSG_language__ : </h3>
                         <h4 class="alert-txt" id="refresh-txt">__MSG_refresh__</h4>
@@ -132,7 +133,7 @@
                             <option value="vi">Tiếng Việt</option>
                         </select>
                     </div>
-                </div>
+                </div> -->
                 <div id="search-engine-settings" class="setting-wrapper">
                     <div class="setting-entry">
                         <h3>__MSG_searchEngine__ : </h3>
@@ -299,8 +300,10 @@
                     </li>
                 </ul>
                 <div class="contact-means">
-                    <a href="https://discord.gg/WN9ar7gZRG" target="_blank" title="Join us on Discord"><img src="src/assets/Discord-Logo-White.svg" alt="" class="contact-img"></a>
-                    <a href="https://github.com/NoCymer" target="_blank" title="Follow me on GitHub"><img src="src/assets/GitHub-Mark-Light-120px-plus.png" alt="" class="contact-img"></a>
+                    <a href="https://discord.gg/WN9ar7gZRG" target="_blank" title="Join us on Discord"><img
+                            src="src/assets/Discord-Logo-White.svg" alt="" class="contact-img"></a>
+                    <a href="https://github.com/NoCymer" target="_blank" title="Follow me on GitHub"><img
+                            src="src/assets/GitHub-Mark-Light-120px-plus.png" alt="" class="contact-img"></a>
                 </div>
                 <h1 class="info-footer">©Copyright <a href="https://github.com/NoCymer/" target="_blank">NoCymer</a>
                     2021 - 2022</h1>
@@ -469,30 +472,30 @@
             </div>
         </div>
     </div>
-        <!-- #region countdownBottom -->
-        <div id="countdownContainerBottom" style="display:none;">
-            <table style="max-height:145px; min-width:800px;">
-                <tr class="info">
-                    <td id="labelB" colspan="7" class="mainLbl"></td>
-                </tr>
-                <tr class="info">
-                    <td class="lblNb" id="bD">00</td>
-                    <td class="lbldot">:</td>
-                    <td class="lblNb" id="bH">00</td>
-                    <td class="lbldot">:</td>
-                    <td class="lblNb" id="bM">00</td>
-                    <td class="lbldot">:</td>
-                    <td class="lblNb" id="bS">00</td>
-                </tr>
-                <tr class="lblHolder">
-                    <td class="lblL">__MSG_days__</td>
-                    <td class="lbl">__MSG_hours__</td>
-                    <td class="lbl">__MSG_minutes__</td>
-                    <td class="lblR">__MSG_seconds__</td>
-                </tr>
-            </table>
-        </div>
-        <!-- #endregion -->
+    <!-- #region countdownBottom -->
+    <div id="countdownContainerBottom" style="display:none;">
+        <table style="max-height:145px; min-width:800px;">
+            <tr class="info">
+                <td id="labelB" colspan="7" class="mainLbl"></td>
+            </tr>
+            <tr class="info">
+                <td class="lblNb" id="bD">00</td>
+                <td class="lbldot">:</td>
+                <td class="lblNb" id="bH">00</td>
+                <td class="lbldot">:</td>
+                <td class="lblNb" id="bM">00</td>
+                <td class="lbldot">:</td>
+                <td class="lblNb" id="bS">00</td>
+            </tr>
+            <tr class="lblHolder">
+                <td class="lblL">__MSG_days__</td>
+                <td class="lbl">__MSG_hours__</td>
+                <td class="lbl">__MSG_minutes__</td>
+                <td class="lblR">__MSG_seconds__</td>
+            </tr>
+        </table>
+    </div>
+    <!-- #endregion -->
 </body>
 
 </html>
