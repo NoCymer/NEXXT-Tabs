@@ -77,6 +77,7 @@ body{
 #timer-settings{
     flex-direction: column;
     justify-content: center;
+    padding-bottom: 5px;
 }
 #particles-js {
     transition: opacity 1s;
@@ -436,7 +437,7 @@ input::-webkit-inner-spin-button {
     display: flex;
     flex-direction: row;
     background-color: #3b3b3b;
-    border-radius: 10px;
+    border-radius: 8px;
     width: 76%;
     padding: 0% 5% 0% 3%;
     margin: 10px 0 40px 4%;
@@ -468,6 +469,25 @@ input::-webkit-inner-spin-button {
     width: 100%;
     justify-content: space-between;
     align-items: center;
+}
+.secondary-sub-setting > h3 {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.secondary-sub-setting{
+    justify-content: left;
+}
+.secondary-sub-setting > h3{
+    font-size: 1.1rem;
+    padding-left: 10px;
+    margin-left: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-left: #797979 3px solid;
+}
+
+#bookmark-new-page-wrapper{
+    padding-bottom: 10px;
 }
 .left-sub-setting{
     justify-content: left;
@@ -638,6 +658,19 @@ h3{
 }
 #schedule-feature-close:hover{
     box-shadow: 0px 0px 10px 7px rgb(251, 85, 154), 0 0 10px 2px rgb(251, 85, 154) inset;
+}
+.sub-checkbox{
+    margin-top: 5px;
+}
+.sub-checkbox .checkmark{
+    height: 18px;
+    width: 18px;
+}
+.sub-checkbox .checkmark::after{
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
 }
 ::-webkit-scrollbar {
     width: 7px;
