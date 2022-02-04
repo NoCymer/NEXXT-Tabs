@@ -1,8 +1,10 @@
 const localREGEX = /__MSG_(\w+)__/g
+const languageREGEX = /\w+/
 const supportedLanguges = ["en", "fr", "es", "vi"]
 let currentLanguage = ""
 //checks if the language is supported if yes store it
-const languageStorage = new Storage("language", (supportedLanguges.includes(navigator.language) ? navigator.language : "en"))
+let match = navigator.language.match(languageREGEX)[0]
+const languageStorage = new Storage("language", (supportedLanguges.includes(match) ? navigator.language : "en"))
 const localizeHtml = () => {
     let html = document.querySelector("html")
     currentLanguage = languageStorage.getValue();
