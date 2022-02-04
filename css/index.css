@@ -449,6 +449,9 @@ input::-webkit-inner-spin-button {
     align-items: center;
     justify-content: space-between;
 }
+.setting-entry > h3 {
+    min-width: fit-content;
+}
 
 .multiple-setting-entry {
     color: #fff;
