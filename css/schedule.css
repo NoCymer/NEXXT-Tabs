@@ -4,6 +4,7 @@
     top: 50%;
     right: 0%;
     transform: translateY(-50%);
+    visibility: hidden;
     min-width: 0%;
     height: 80vh;
     padding: 20px 0 20px;
@@ -34,7 +35,6 @@
     margin-bottom: 0;
 }
 #week-days-container{
-    /* padding: 0 40px 0 40px; */
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -78,7 +78,6 @@
 #schedule-feature{
     right: 0px;
     bottom: 48%;
-    /* transform: translateY(-40%); */
 }
 
 .day{
@@ -147,7 +146,6 @@
 }
 @media (max-width: 1130px) {
     #schedule-main-conatiner{
-        /* width: 700px; */
         font-size: 0.75rem;
     }
     .anime-entry{
@@ -158,7 +156,6 @@
 }
 @media (max-width: 980px) {
     #schedule-main-conatiner{
-        /* width: 500px; */
         font-size: 0.70rem;
     }
     .anime-entry{
@@ -169,7 +166,6 @@
 }
 @media (max-width: 880px) {
     #schedule-main-conatiner{
-        /* width: 300px; */
         font-size: 0.70rem;
     }
     .anime-entry{

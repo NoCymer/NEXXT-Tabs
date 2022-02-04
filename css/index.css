@@ -43,7 +43,6 @@ body{
     align-items: stretch;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    /*border-bottom: #757575 solid 1px;*/
     background-color: #3b3b3b;
 }
 #nav-bar{
@@ -96,7 +95,6 @@ body{
     transform: rotate(90deg);
     height: 40px;
     width: 40px;
-    padding-top: 3px;
     border: none;
     outline: none;
     display: flex;
