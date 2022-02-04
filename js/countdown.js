@@ -32,6 +32,7 @@ document.addEventListener("translated", () => {
         }
     }
     checkForDateLabel();
+    document.addEventListener('checkForDateLabel', e => checkForDateLabel());
     function setDate(){
         let parsedDate = new Date(date);
         currentTimeout = countdown(parsedDate);

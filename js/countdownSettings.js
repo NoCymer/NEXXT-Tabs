@@ -80,7 +80,7 @@ document.addEventListener("translated", () => {
     
     countdownDateTime.addEventListener("input", () => {
         localStorage.setItem('ctDateTime', countdownDateTime.value);
-        checkForDateLabel();
+        document.dispatchEvent(new CustomEvent('checkForDateLabel'))
     })
      
     countdownLabel.addEventListener("input", () => {
