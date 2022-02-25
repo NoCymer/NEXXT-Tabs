@@ -132,7 +132,7 @@
       "description" : "Image rights placeholder"
     },
     "imageRightsTxt": {
-      "message": "Tôi không sở hữu bất kỳ hình ảnh nào được sử dụng trong dự án này, do đó tôi không có bất kỳ quyền nào đối với chúng. Nếu bạn là tác giả của một trong những hình ảnh được sử dụng trong dự án này và muốn được credit hoặc muốn nó bị xóa khỏi tiện ích mở rộng này, vui lòng liên hệ với tôi.",
+      "message": "Tôi không sở hữu bất kỳ hình ảnh nào được sử dụng trong dự án này, do đó tôi không có bất kỳ quyền nào đối với chúng. <strong>Nếu bạn là tác giả của một trong những hình ảnh được sử dụng trong dự án này và muốn được credit hoặc muốn nó bị xóa khỏi tiện ích mở rộng này, vui lòng liên hệ với tôi.</strong>",
       "description" : "Image rightsTxt placeholder"
     },
     "iconsRights": {
