@@ -4,7 +4,7 @@
         "description": "App name"
     },
     "appDesc": {
-      "message": "NEXXT Tabs sẽ hấp dẫn người hâm mộ anime, sự mở rộng vì Chrome cá nhân hóa và giản dị, về anime.",
+      "message": "NEXXT Tabs sẽ làm hài lòng mọi người hâm mộ anime. Thay thế trang tab mới của bạn thành một trang tab mới tối giản theo chủ đề anime có thể tùy chỉnh.",
       "description": "Extension description."
     },
     "tabName": {
@@ -12,27 +12,27 @@
       "description": "Tab name"
     },
     "searchEngine": {
-        "message": "Máy tìm Kiếm",
+        "message": "Máy tìm kiếm",
         "description" : "search engine placeholder"
     },
     "searchPlaceholder": {
-        "message": "Tìm Kiếm",
+        "message": "Tìm kiếm",
         "description" : "search placeholder"
     },
     "bookmarks": {
-      "message": "Dấu Trang",
+      "message": "Dấu trang",
       "description" : "bookmarks placeholder"
     },
     "bookmarkNewH1": {
-      "message": "Dấu Trang  Mới",
+      "message": "Dấu trang mới",
       "description" : "bookmarks h1 placeholder"
     },
     "bookmarkNewTitle": {
-      "message": "Tên Dấu Trang",
+      "message": "Tên dấu trang",
       "description" : "bookmarks title placeholder"
     },
     "bookmarkNewLink": {
-      "message": "Liên Kết",
+      "message": "Liên kết",
       "description" : "bookmarks link placeholder"
     },
     "bookmarkNewCreate": {
@@ -40,19 +40,19 @@
       "description" : "bookmarks create placeholder"
     },
     "generalTab": {
-      "message": "CHỦ YẾU",
+      "message": "CHUNG",
       "description" : "generalTab placeholder"
     },
     "backgroundTab": {
-      "message": "HINH NềN",
+      "message": "HINH NỀN",
       "description" : "backgroundTab placeholder"
     },
     "infoTab": {
-      "message": "INFOS",
+      "message": "THÔNG TIN",
       "description" : "infoTab placeholder"
     },
     "openNewPage": {
-      "message": "Mở trên một trang mới",
+      "message": "Mở trong tab mới",
       "description" : "search engine placeholder"
     },
     "googleApps": {
@@ -64,11 +64,11 @@
       "description" : "particles placeholder"
     },
     "countdown": {
-      "message": "đếm Ngược",
+      "message": "Đếm ngược",
       "description" : "countdown placeholder"
     },
     "countdownPosition": {
-      "message": "Địa điểm",
+      "message": "Vị trí",
       "description" : "countdown position placeholder"
     },
     "countdownPositionTop": {
@@ -80,27 +80,27 @@
       "description" : "countdown position bottom placeholder"
     },
     "countdownDate": {
-      "message": "Ngày Sự kiện",
+      "message": "Ngày",
       "description" : "countdown eDate placeholder"
     },
     "countdownLabel": {
-      "message": "Nhãn mác Sự kiện",
+      "message": "Sự kiện",
       "description" : "countdown eLabel placeholder"
     },
     "cycleBG": {
-      "message": "Hình Nền đổi",
+      "message": "Tự động đổi hình nền",
       "description" : "cycleBackgrounds placeholder"
     },
     "shuffleBG": {
-      "message": "Trộn Hình Nền",
+      "message": "Trộn hình nền",
       "description" : "shuffleBackgrounds placeholder"
     },
     "delayBG": {
-      "message": "Chờ",
+      "message": "Thay đổi hình ảnh mỗi",
       "description" : "delayBackgrounds placeholder"
     },
     "backgroundChoice": {
-      "message": "Sự lựa Chọn Hình Nền",
+      "message": "Chọn hình nền",
       "description" : "backgroundsChoice placeholder"
     },
     "selectAll": {
@@ -108,7 +108,7 @@
       "description" : "selectAll placeholder"
     },
     "deselectAll": {
-      "message": "bỏ Chọn tất cả",
+      "message": "Bỏ chọn tất cả",
       "description" : "deselectAll placeholder"
     },
     "days": {
@@ -132,27 +132,27 @@
       "description" : "Image rights placeholder"
     },
     "imageRightsTxt": {
-      "message": "Tôi không sở hữu bất kỳ hình nền nào của phần sự mở rộng, và không có quyền đối với nó. Nếu bạn là tác giả của một trong số họ và muốn được ghi có hoặc xóa của bạn, liên hệ với tôi.",
+      "message": "Tôi không sở hữu bất kỳ hình ảnh nào được sử dụng trong dự án này, do đó tôi không có bất kỳ quyền nào đối với chúng. Nếu bạn là tác giả của một trong những hình ảnh được sử dụng trong dự án này và muốn được credit hoặc muốn nó bị xóa khỏi tiện ích mở rộng này, vui lòng liên hệ với tôi.",
       "description" : "Image rightsTxt placeholder"
     },
     "iconsRights": {
-      "message": "Bản Quyền Hình Nền",
+      "message": "Bản Quyền Biểu Tượng",
       "description" : "Icons rights placeholder"
     },
     "iconsRightsTxt": {
-      "message": "Tôi không sở hữu bất kỳ biểu tượng nào của phần dấu trang của sự mở rộng, Các biểu tượng khác là của tôi, nếu bạn sử dụng chúng, vui lòng đề cập <a href='https://github.com/NoCymer/'target='_blank'>NoCymer</a>.",
+      "message": "Tôi không sở hữu bất kỳ biểu tượng thương hiệu nào hoặc bất kỳ biểu tượng nào khác được lấy từ các trang web cho dấu trang. Nhưng tất cả các biểu tượng khác có trong dự án này đều được sử dụng miễn phí do chúng do tôi tạo ra, do đó bạn có thể tự do sử dụng lại chúng trong các dự án của riêng mình nhưng bạn phải đề cập đến <a href='https://github.com/NoCymer/'target='_blank'>NoCymer</a> trong phần credit.",
       "description" : "Icons rightsTxt placeholder"
     },
     "codebaseRights": {
-      "message": "Bản Quyền Cơ Sở Mã",
+      "message": "Bản Quyền Mã Cơ Sở",
       "description" : "codebase rights placeholder"
     },
     "codebaseRightsTxt": {
-      "message": "NEXXT TABS là OpenSource. Bạn có thể sử dụng hoặc đóng góp vào mã của anh ấy tại đây: <a href='https://github.com/NoCymer/NEXXT-Tabs' target='_blank'>GitHub</a>.",
+      "message": "NEXXT TABS là mã nguồn mở, do đó bạn có thể sử dụng hoặc đóng góp vào mã của anh ấy tại đây: <a href='https://github.com/NoCymer/NEXXT-Tabs' target='_blank'>GitHub</a>.",
       "description" : "codebaseTxt placeholder"
     },
     "libraries": {
-      "message": "Bản Quyền Libraries ",
+      "message": "Bản Quyền Thư Viện",
       "description" : "libraries placeholder"
     },
     "librariesTxt": {
@@ -160,11 +160,11 @@
       "description" : "librariesTxt placeholder"
     },
     "feedbackBR": {
-      "message": "Nhận xét và Báo cáo",
+      "message": "Phản hồi",
       "description" : "feedbackBR placeholder"
     },
     "feedbackBRTxt": {
-      "message": "Nếu bạn muốn gửi  <strong>báo cáo</strong>, gửi <strong>nhận xét</strong>, nếu bạn có câu <strong>Câu Hỏi</strong> về NEXXT TABS, Dùng <a href='https://forms.gle/MvYPGFKk7A8ShPZu7' target='_blank'>form</a>.",
+      "message": "Nếu bạn muốn gửi <strong>Báo cáo lỗi</strong>, hãy để lại <strong>Bình luận</strong> hoặc nếu bạn có bất kỳ <strong>Câu hỏi</strong> nào liên quan đến dự án, chúng tôi rất hoan nghênh bạn thực hiện bằng cách điền vào biểu mẫu sau.",
       "description" : "feedbackBRTxt placeholder"
     },
     "schedule": {
@@ -188,7 +188,7 @@
       "description": "Thursday placeholder"
     },
     "friday": {
-      "message": "Thứ năm",
+      "message": "Thứ sáu",
       "description": "Friday placeholder"
     },
     "saturday": {
@@ -204,7 +204,7 @@
       "description": "Language placeholder"
     },
     "refresh": {
-      "message": "Làm mới trang là bắt buộc.",
+      "message": "Vui lòng tải lại trang!",
       "description": "refresh alert placeholder"
     }
 }
