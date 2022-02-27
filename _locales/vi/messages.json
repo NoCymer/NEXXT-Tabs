@@ -164,7 +164,7 @@
       "description" : "feedbackBR placeholder"
     },
     "feedbackBRTxt": {
-      "message": "Nếu bạn muốn gửi <strong>Báo cáo lỗi</strong>, hãy để lại <strong>Bình luận</strong> hoặc nếu bạn có bất kỳ <strong>Câu hỏi</strong> nào liên quan đến dự án, chúng tôi rất hoan nghênh bạn thực hiện bằng cách điền vào biểu mẫu sau.",
+      "message": "Nếu bạn muốn gửi <strong>Báo cáo lỗi</strong>, hãy để lại <strong>Bình luận</strong> hoặc nếu bạn có bất kỳ <strong>Câu hỏi</strong> nào liên quan đến dự án, chúng tôi rất hoan nghênh bạn thực hiện bằng cách điền vào biểu mẫu <a href='https://forms.gle/MvYPGFKk7A8ShPZu7' target='_blank'>này</a>.",
       "description" : "feedbackBRTxt placeholder"
     },
     "schedule": {
