@@ -1,0 +1,135 @@
+#schedule-main-conatiner{
+    transition: all 250ms;
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+    visibility: hidden;
+    min-width: 0%;
+    height: 80vh;
+    padding: 20px 0 20px;
+    background-color: #2e2e2efb;
+    border-radius: 50px 0px 0px 50px;
+    color: white;
+}
+#schedule-main-sub-conatiner{
+    max-height: 80vh;
+    padding-left: 50px;
+    overflow-y: scroll;
+}
+#schedule-main-sub-conatiner::after{
+    background: linear-gradient(0deg, rgba(46,46,46,1) 0%,rgba(255,255,255,0) 10%);
+    z-index: 5;
+    bottom: 18px;
+    content: "";
+    margin-right: 8px;
+    display: block;
+    height: 85vh;
+    right: 0;
+    pointer-events: none;
+    position: fixed;
+    width: 92%;
+}
+#schedule-main-sub-conatiner>h1{
+    text-align: center;
+    margin-bottom: 0;
+}
+#week-days-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 20px;
+}
+#schedule-handle{
+    width: 60px;
+    height: 85%;
+    position: fixed;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+}
+#schedule-handle-el{
+    transition: all 200ms;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%) translateX(50%);
+}
+#schedule-handle-op{
+    width: 60px;
+    height: 85%;
+    position: fixed;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+}
+#schedule-handle-el-op{
+    transition: all 200ms;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%) translateX(50%) rotate(180deg);
+}
+#schedule-feature{
+    right: 0px;
+    bottom: 48%;
+}
+#Tuesday,
+#Wednesday,
+#Thursday,
+#Friday,
+#Saturday,
+#Sunday {
+    display: none;
+    opacity: 0;
+}
+.day{
+    margin:0px 5px 40px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-content: flex-start;
+}
+.day-header{
+    position: sticky;
+    top: 0;
+    font-size: 2.2em;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgb(187, 187, 187);
+    background-color: #2e2e2efb;
+}
+.anime-entry{
+    min-height: 50px;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 20px 10px 20px 10px;
+    background-color: #ff68aed2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.anime-entry:hover{
+    background-color: #ff86bfd2;
+}
+.current-day{
+    background-color: #ff91c4;
+}
+.current-day:hover{
+    background-color: #ffa4cf;
+}
+
+.anime-title{
+    font-size: 0.7em;
+    text-align: center;
+    pointer-events: none;
+}
