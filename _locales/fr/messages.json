@@ -1,8 +1,8 @@
 {
   "appName": {
-    "message": "NEXXT TABS",
-    "description": "App name"
-  },
+      "message": "NEXXT TABS",
+      "description": "App name"
+  } ,
   "appDesc": {
     "message": "NEXXT Tabs ravira tous les fans d'animes. Remplacez votre onglet de base par un onglet personnalisable sur le thème des animes.",
     "description": "Extension description."
@@ -12,164 +12,376 @@
     "description": "Tab name"
   },
   "searchEngine": {
-    "message": "Moteur De Recherche",
-    "description": "search engine placeholder"
+      "message": "Moteur De Recherche",
+      "description" : "search engine placeholder"
+  },
+  "searchEngineDesc": {
+      "message": "SELECTIONNER UN MOTEUR DE RECHERCHE",
+      "description" : "search engine description placeholder"
   },
   "searchPlaceholder": {
-    "message": "Rechercher",
-    "description": "search placeholder"
+      "message": "Rechercher",
+      "description" : "search placeholder"
+  },
+  "view": {
+      "message": "Voir",
+      "description" : "view placeholder"
+  },
+  "features": {
+      "message": "Fonctionnalités",
+      "description" : "features placeholder"
+  },
+  "featuresDesc": {
+      "message": "ACTIVER LES FONCTIONNALITES DE L'EXTENTION",
+      "description" : "features desc placeholder"
+  },
+  "googleAppDesc": {
+      "message": "Afficher Les Raccourcis Google Apps",
+      "description" : "googleAppDesc placeholder"
+  },
+  "newTabDesc": {
+      "message": "Ouvrir dans un nouvel onglet",
+      "description" : "newTabDesc placeholder"
+  },
+  "weekday": {
+    "message": "Jours de la semaine",
+    "description" : "weekday placeholder"
+  },
+  "weekdayDesc": {
+    "message": "SELECTIONNER UN JOUR DE LA SEMAINE POUR L'AFFICHER",
+    "description" : "weekday desc placeholder"
+  },
+  "mondayShort": {
+    "message": "Lu",
+    "description" : "monday short display placeholder"
+  },
+  "tuesdayShort": {
+    "message": "Ma",
+    "description" : "tuesday short display placeholder"
+  },
+  "wednesdayShort": {
+    "message": "Me",
+    "description" : "wednesday short display placeholder"
+  },
+  "thursdayShort": {
+    "message": "Je",
+    "description" : "thursday short display placeholder"
+  },
+  "fridayShort": {
+    "message": "Ve",
+    "description" : "friday short display placeholder"
+  },
+  "saturdayShort": {
+    "message": "Sa",
+    "description" : "saturday short display placeholder"
+  },
+  "sundayShort": {
+    "message": "Di",
+    "description" : "sunday short display placeholder"
+  },
+  "save": {
+    "message": "Sauvegarder",
+    "description" : "save placeholder"
+  },
+  "cancel": {
+    "message": "Annuler",
+    "description" : "cancel placeholder"
+  },
+  "discard": {
+    "message": "Annuler",
+    "description" : "discard placeholder"
   },
   "bookmarks": {
-    "message": "Marque Pages",
-    "description": "bookmarks placeholder"
+    "message": "Marque Page",
+    "description" : "bookmarks placeholder"
+  },
+  "bookmarksDesc": {
+    "message": "Activer le système<br>de marque page",
+    "description" : "bookmarks desc placeholder"
   },
   "bookmarkNewH1": {
-    "message": "Nouveau Marque Page",
-    "description": "bookmarks h1 placeholder"
+    "message": "Nouveau marque page",
+    "description" : "bookmarks h1 placeholder"
   },
   "bookmarkNewTitle": {
     "message": "Titre",
-    "description": "bookmarks title placeholder"
-  },
-  "bookmarkNewLink": {
-    "message": "Lien",
-    "description": "bookmarks link placeholder"
-  },
-  "bookmarkNewCreate": {
-    "message": "Valider",
-    "description": "bookmarks create placeholder"
+    "description" : "bookmarks title placeholder"
   },
   "generalTab": {
-    "message": "GÉNÉRAL",
-    "description": "generalTab placeholder"
+    "message": "GENERAL",
+    "description" : "generalTab placeholder"
   },
   "backgroundTab": {
-    "message": "FONDS",
-    "description": "backgroundTab placeholder"
+    "message": "ARRIERE PLAN",
+    "description" : "backgroundTab placeholder"
+  },
+  "backgroundSettings": {
+    "message": "Paramètres d'arriére plan",
+    "description" : "backgroundTab settings placeholder"
+  },
+  "backgroundSettingsDesc": {
+    "message": "CONFIGURER LE COMPORTEMENT DES ARRIÈRE-PLAN",
+    "description" : "backgroundTab settings desc placeholder"
+  },
+  "backgroundSelection": {
+    "message": "Sélection d'arrière-plan",
+    "description" : "background selection placeholder"
+  },
+  "backgroundSelectionDesc": {
+    "message": "Sélection d'arrière-plan",
+    "description" : "background selection  desc placeholder"
+  },
+  "backgroundEdit": {
+    "message": "Modifier les arrière-plans",
+    "description" : "background edit placeholder"
+  },
+  "backgroundSelect": {
+    "message": "Sélectionnez les arrière-plans",
+    "description" : "background select placeholder"
+  },
+  "timeTab": {
+    "message": "AFFICHAGE DE L'HEURE",
+    "description" : "timeTab placeholder"
+  },
+  "upperDisplay": {
+    "message": "Affichage Supérieur",
+    "description" : "upperDisplay placeholder"
+  },
+  "upperDisplayDesc": {
+    "message": "SÉLECTIONNER L'AFFICHAGE DE L'ÉCRAN SUPÉRIEUR",
+    "description" : "upperDisplay desc placeholder"
+  },
+  "lowerDisplay": {
+    "message": "Affichage Inférieur",
+    "description" : "lowerDisplay placeholder"
+  },
+  "lowerDisplayDesc": {
+    "message": "SÉLECTIONNER L'AFFICHAGE DE L'ÉCRAN INFÉRIEUR",
+    "description" : "lowerDisplay desc placeholder"
+  },
+  "none": {
+    "message": "Aucun",
+    "description" : "none placeholder"
+  },
+  "clock": {
+    "message": "Horloge",
+    "description" : "clock placeholder"
   },
   "infoTab": {
-    "message": "INFO",
-    "description": "infoTab placeholder"
+    "message": "INFORMATIONS",
+    "description" : "infoTab placeholder"
   },
   "openNewPage": {
-    "message": "Ouvrir dans un nouvel onglet",
-    "description": "search engine placeholder"
+    "message": "Ouvrir dans une nouvelle page",
+    "description" : "search engine placeholder"
   },
   "googleApps": {
     "message": "Google Apps",
-    "description": "googleApps placeholder"
+    "description" : "googleApps placeholder"
   },
   "particles": {
     "message": "Particules",
-    "description": "particles placeholder"
+    "description" : "particles placeholder"
+  },
+  "particlesDesc": {
+    "message": "Activer l'effet de particules",
+    "description" : "particles desc placeholder"
   },
   "countdown": {
-    "message": "Compte a rebours",
-    "description": "countdown placeholder"
+    "message": "Compte à rebours",
+    "description" : "countdown placeholder"
   },
-  "countdownPosition": {
-    "message": "Position",
-    "description": "countdown position placeholder"
+  "countdownTitle": {
+    "message": "Paramétre du compte à rebours",
+    "description" : "countdown title placeholder"
   },
-  "countdownPositionTop": {
-    "message": "Haut",
-    "description": "countdown position top placeholder"
+  "countdownDesc": {
+    "message": "CONFIGURER COMTE A REBOURS",
+    "description" : "countdown desc placeholder"
   },
-  "countdownPositionBottom": {
-    "message": "Bas",
-    "description": "countdown position bottom placeholder"
+  "label": {
+    "message": "Libellé",
+    "description" : "label placeholder"
   },
-  "countdownDate": {
+  "chooseLabel": {
+    "message": "Choisissez un libellé",
+    "description" : "choose label placeholder"
+  },
+  "date": {
     "message": "Date",
-    "description": "countdown eDate placeholder"
+    "description" : "date placeholder"
   },
-  "countdownLabel": {
-    "message": "Libelé",
-    "description": "countdown eLabel placeholder"
+  "chooseDate": {
+    "message": "Choisissez une date",
+    "description" : "choose date placeholder"
+  },
+  "clockTitle": {
+    "message": "Paramétre De l'Horloge",
+    "description" : "clock title placeholder"
+  },
+  "clockDesc": {
+    "message": "CONFIGURER HORLOGE",
+    "description" : "clock desc placeholder"
+  },
+  "timeFormat": {
+    "message": "Format D'Heure",
+    "description" : "time format placeholder"
+  },
+  "timeFormatDesc": {
+    "message": "Choisissez un format d'heure",
+    "description" : "time format desc placeholder"
+  },
+  "appearanceTab": {
+    "message": "APPARANCE",
+    "description" : "appearanceTab placeholder"
+  },
+  "colors": {
+    "message": "Couleurs",
+    "description" : "colors placeholder"
+  },
+  "colorsDesc": {
+    "message": "SELECTIONNER DES COULEURS",
+    "description" : "colors desc placeholder"
+  },
+  "mainAccent": {
+    "message": "Accent Principal",
+    "description" : "main accent placeholder"
+  },
+  "pickColor": {
+    "message": "CHOISSEZ UNE COULEUR",
+    "description" : "pickColor placeholder"
+  },
+  "defaultColors": {
+    "message": "Couleurs par défaut",
+    "description" : "defaultColors placeholder"
+  },
+  "customColors": {
+    "message": "Couleurs personnalisées",
+    "description" : "customColors placeholder"
   },
   "cycleBG": {
-    "message": "Changement De Fond",
-    "description": "cycleBackgrounds placeholder"
+    "message": "Cycler Les Arrière Plan",
+    "description" : "cycleBackgrounds placeholder"
+  },
+  "cycleBGDesc": {
+    "message": "Cycler parmis les arrières plans sélectionnées",
+    "description" : "cycleBackgrounds Desc placeholder"
+  },
+  "cycleBGInterval": {
+    "message": "Intervale De Cycle",
+    "description" : "cycleBackgrounds interval placeholder"
+  },
+  "cycleBGIntervalDesc": {
+    "message": "Temps entre chaque changement de fond",
+    "description" : "cycleBackgrounds interval desc placeholder"
   },
   "shuffleBG": {
-    "message": "Mélanger",
-    "description": "shuffleBackgrounds placeholder"
+    "message": "Cycle Aléatoire",
+    "description" : "shuffleBackgrounds placeholder"
   },
-  "delayBG": {
-    "message": "Délai",
-    "description": "delayBackgrounds placeholder"
-  },
-  "backgroundChoice": {
-    "message": "Choix des fonds",
-    "description": "backgroundsChoice placeholder"
+  "shuffleBGDesc": {
+    "message": "Mélanger l'ordre d'apparition des arrière-plans",
+    "description" : "shuffleBackgrounds desc placeholder"
   },
   "selectAll": {
-    "message": "Tous séléctionner",
-    "description": "selectAll placeholder"
+    "message": "Tout Sélectionner",
+    "description" : "selectAll placeholder"
   },
   "deselectAll": {
-    "message": "Tout déséléctionner",
-    "description": "deselectAll placeholder"
+    "message": "Tout Déselectionner",
+    "description" : "deselectAll placeholder"
   },
   "days": {
     "message": "Jours",
-    "description": "days placeholder"
+    "description" : "days placeholder"
   },
   "hours": {
     "message": "Heures",
-    "description": "hours placeholder"
+    "description" : "hours placeholder"
   },
   "minutes": {
     "message": "Minutes",
-    "description": "minutes placeholder"
+    "description" : "minutes placeholder"
   },
   "seconds": {
     "message": "Secondes",
-    "description": "seconds placeholder"
+    "description" : "seconds placeholder"
   },
-  "imageRights": {
-    "message": "Droits à l'image",
-    "description": "Image rights placeholder"
+  "backgroundsRights": {
+    "message": "Droits D'Arrière Plan",
+    "description" : "backgroundsRights placeholder"
   },
-  "imageRightsTxt": {
-    "message": "Je ne possède aucune des images utilisées dans ce projet, donc je ne revendique aucun droit sur elles. <strong>Si vous êtes l'auteur d'une des images utilisées dans ce projet et souhaitez être crédité ou souhaitez qu'elle soit supprimée de l'extension, veuillez me contacter.</strong>",
-    "description": "Image rightsTxt placeholder"
+  "backgroundsRightsP1": {
+    "message": "NEXXT Tabs™ n'est propriétaire d'aucun des arrière-plans utilisés dans le projet et ne revendique aucun droit sur aucun d'entre eux.",
+    "description" : "backgroundsRights P1 placeholder"
+  },
+  "backgroundsRightsP2": {
+    "message": "Si vous êtes l'auteur d'un des arrière-plans utilisés dans le projet et que vous souhaitez être crédité ou si vous souhaitez qu'il en soit retiré, n'hésitez pas à nous contacter.",
+    "description" : "backgroundsRights P2 placeholder"
   },
   "iconsRights": {
-    "message": "Droits des icônes",
-    "description": "Icons rights placeholder"
+    "message": "Droits D'Icone",
+    "description" : "iconsRights placeholder"
   },
-  "iconsRightsTxt": {
-    "message": "Je ne possède aucune icône de marque ni aucune autre icône tirée de sites Web pour les signets. Mais toutes les autres icônes présentes dans ce projet sont libres d'utilisation car elles ont été créées par moi, vous êtes donc libre de les réutiliser dans vos propres projets mais vous devez mentionner <a href='https://github.com/NoCymer/ 'target='_blank'>NoCymer</a> au générique.",
-    "description": "Icons rightsTxt placeholder"
+  "iconsRightsP1": {
+    "message": "NEXXT Tabs™ n'est propriétaire d'aucune icône de marque utilisée dans le projet ni affilié à eux de quelque manière que ce soit, par conséquent NEXXT Tabs™ ne revendique aucun droit sur aucun d'entre eux.",
+    "description" : "iconsRights P1 placeholder"
+  },
+  "iconsRightsP2": {
+    "message": "Toutes les applications Google sont des marques déposées de Google LLC et NEXXT Tabs™ n'est en aucun cas approuvé par ou affilié à Google.",
+    "description" : "iconsRights P2 placeholder"
+  },
+  "iconsRightsP3": {
+    "message": "Toutes les icônes non-marque présentes dans le projet sont libres de droit, vous êtes donc libre de les réutiliser mais vous devez indiquer <a target='_blank' href='https://github.com/NoCymer'>NoCymer</a> comme le propriétaire légitime.",
+    "description" : "iconsRights P3 placeholder"
   },
   "codebaseRights": {
-    "message": "Droits de base de code",
-    "description": "codebase rights placeholder"
+    "message": "Droits De Base De Code",
+    "description" : "codebaseRights placeholder"
   },
-  "codebaseRightsTxt": {
-    "message": "Ce projet étant OpenSource, vous êtes libre d'en réutiliser le code et de contribuer à son développement sur <a href='https://github.com/NoCymer/NEXXT-Tabs' target='_blank'>GitHub</a>.",
-    "description": "codebaseTxt placeholder"
+  "codebaseRightsP1": {
+    "message": "Ce projet étant OpenSource, vous êtes libre d'accéder à sa base de code et de contribuer à son développement sur <a target='_blank' href='https://github.com/NoCymer/NEXXT-Tabs'>GitHub.</a>",
+    "description" : "codebaseRights P1 placeholder"
   },
-  "libraries": {
-    "message": "Librairies utilisées dans ce projet",
-    "description": "libraries placeholder"
+  "codebaseRightsLibraries": {
+    "message": "Librairies",
+    "description" : "codebaseRights libraries placeholder"
   },
-  "librariesTxt": {
-    "message": "<li><p><a href='https://github.com/VincentGarreau/particles.js/' target='_blank'>Particles.js</a></p></li><li><p><a href='https://jquery.com/' target='_blank'>jQuery</a></p></li><li><p><a href='https://jikan.moe/' target='_blank'>JikanAPI</a></p></li>",
-    "description": "librariesTxt placeholder"
+  "feedbackAndBugs": {
+    "message": "Commentaires & Bugs",
+    "description" : "feedbackAndBugs placeholder"
   },
-  "feedbackBR": {
-    "message": "Commentaires et Rapport de bugs",
-    "description": "feedbackBR placeholder"
+  "feedbackAndBugsP1": {
+    "message": "Si vous souhaitez rédiger un avis ou soumettre un rapport de bug, cela contribuera grandement au développement du projet.",
+    "description" : "feedbackAndBugs P1 placeholder"
   },
-  "feedbackBRTxt": {
-    "message": "Si vous souhaitez soumettre un <strong>Rapport de bug</strong>, laissez un <strong>Commentaire</strong> ou si vous avez une <strong>Question</strong> concernant le projet, n'hésitez pas à remplir le <a href='https://forms.gle/MvYPGFKk7A8ShPZu7' target='_blank'>formulaire</a> suivant.",
-    "description": "feedbackBRTxt placeholder"
+  "feedbackAndBugsLeaveFeedback": {
+    "message": "Rédiger Un Avis",
+    "description" : "feedbackAndBugsLeaveFeedback placeholder"
+  },
+  "feedbackAndBugsReportBug": {
+    "message": "Sigaler Un Bug",
+    "description" : "feedbackAndBugsReportBug placeholder"
+  },
+  "contact": {
+    "message": "Contact",
+    "description" : "contact placeholder"
+  },
+  "contactUs": {
+    "message": "Contactez Nous",
+    "description" : "contact us placeholder"
+  },
+  "contactP1": {
+    "message": "Si vous avez des questions ou si vous avez besoin d'aide pour tout ce qui concerne le projet, nous serons heureux de vous aider.",
+    "description" : "contact P1 placeholder"
   },
   "schedule": {
-    "message": "Calendrier des Animes",
+    "message": "Emploi Du Temps Des Animes",
     "description": "schedule placeholder"
+  },
+  "scheduleDesc": {
+    "message": "Activer l'emploi du temps de publication des animées",
+    "description": "schedule desc placeholder"
   },
   "monday": {
     "message": "Lundi",
@@ -203,8 +415,20 @@
     "message": "Langue",
     "description": "Language placeholder"
   },
+  "languageDesc": {
+    "message": "SELECTIONNER UNE LANGUE",
+    "description": "Language desc placeholder"
+  },
+  "notice": {
+    "message": "Information",
+    "description": "notice alert placeholder"
+  },
   "refresh": {
-    "message": "Un rechargement de la page est requis.",
+    "message": "Actualiser",
     "description": "refresh alert placeholder"
+  },
+  "refreshDesc": {
+    "message": "Une actualisation de la page est requise",
+    "description": "refresh alert desc placeholder"
   }
 }

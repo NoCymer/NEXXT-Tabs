@@ -12,32 +12,100 @@
     "description": "Tab name"
   },
   "searchEngine": {
-      "message": "Buscador",
+      "message": "Motor de Búsqueda",
       "description" : "search engine placeholder"
+  },
+  "searchEngineDesc": {
+      "message": "SELECCIONE UN MOTOR DE BÚSQUEDA",
+      "description" : "search engine description placeholder"
   },
   "searchPlaceholder": {
       "message": "Buscar",
       "description" : "search placeholder"
   },
+  "view": {
+      "message": "Ver",
+      "description" : "view placeholder"
+  },
+  "features": {
+      "message": "Características",
+      "description" : "features placeholder"
+  },
+  "featuresDesc": {
+      "message": "ACTIVA LAS CARACTERÍSTICAS DE LA EXTENSIÓN",
+      "description" : "features desc placeholder"
+  },
+  "googleAppDesc": {
+      "message": "Muestra accesos directos de Google Apps",
+      "description" : "googleAppDesc placeholder"
+  },
+  "newTabDesc": {
+      "message": "Se abre en una nueva pestaña",
+      "description" : "newTabDesc placeholder"
+  },
+  "weekday": {
+    "message": "Días De La Semana",
+    "description" : "weekday placeholder"
+  },
+  "weekdayDesc": {
+    "message": "SELECCIONA UN DÍA DE LA SEMANA PARA MOSTRARLO",
+    "description" : "weekday desc placeholder"
+  },
+  "mondayShort": {
+    "message": "Lu",
+    "description" : "monday short display placeholder"
+  },
+  "tuesdayShort": {
+    "message": "Ma",
+    "description" : "tuesday short display placeholder"
+  },
+  "wednesdayShort": {
+    "message": "Mi",
+    "description" : "wednesday short display placeholder"
+  },
+  "thursdayShort": {
+    "message": "Ju",
+    "description" : "thursday short display placeholder"
+  },
+  "fridayShort": {
+    "message": "Vi",
+    "description" : "friday short display placeholder"
+  },
+  "saturdayShort": {
+    "message": "Sá",
+    "description" : "saturday short display placeholder"
+  },
+  "sundayShort": {
+    "message": "Do",
+    "description" : "sunday short display placeholder"
+  },
+  "save": {
+    "message": "Guardar",
+    "description" : "save placeholder"
+  },
+  "cancel": {
+    "message": "Cancelar",
+    "description" : "cancel placeholder"
+  },
+  "discard": {
+    "message": "Desechar",
+    "description" : "discard placeholder"
+  },
   "bookmarks": {
     "message": "Marcadores",
     "description" : "bookmarks placeholder"
+  },
+  "bookmarksDesc": {
+    "message": "Habilita el sistema<br>de marcadores",
+    "description" : "bookmarks desc placeholder"
   },
   "bookmarkNewH1": {
     "message": "Nuevo marcador",
     "description" : "bookmarks h1 placeholder"
   },
   "bookmarkNewTitle": {
-    "message": "Título",
+    "message": "Titulo",
     "description" : "bookmarks title placeholder"
-  },
-  "bookmarkNewLink": {
-    "message": "Enlace",
-    "description" : "bookmarks link placeholder"
-  },
-  "bookmarkNewCreate": {
-    "message": "Validar",
-    "description" : "bookmarks create placeholder"
   },
   "generalTab": {
     "message": "GENERAL",
@@ -47,8 +115,60 @@
     "message": "FONDO",
     "description" : "backgroundTab placeholder"
   },
+  "backgroundSettings": {
+    "message": "Configuración De Fondo",
+    "description" : "backgroundTab settings placeholder"
+  },
+  "backgroundSettingsDesc": {
+    "message": "CONFIGURAR COMPORTAMIENTO DE FONDOS",
+    "description" : "backgroundTab settings desc placeholder"
+  },
+  "backgroundSelection": {
+    "message": "Selección De Fondo",
+    "description" : "background selection placeholder"
+  },
+  "backgroundSelectionDesc": {
+    "message": "SELECCIONA FONDOS",
+    "description" : "background selection  desc placeholder"
+  },
+  "backgroundEdit": {
+    "message": "Editar Fondos",
+    "description" : "background edit placeholder"
+  },
+  "backgroundSelect": {
+    "message": "Seleccionar fondos",
+    "description" : "background select placeholder"
+  },
+  "timeTab": {
+    "message": "VISUALIZACIÓN DE LA HORA",
+    "description" : "timeTab placeholder"
+  },
+  "upperDisplay": {
+    "message": "Pantalla Superior",
+    "description" : "upperDisplay placeholder"
+  },
+  "upperDisplayDesc": {
+    "message": "SELECCIONE LA PANTALLA SUPERIOR",
+    "description" : "upperDisplay desc placeholder"
+  },
+  "lowerDisplay": {
+    "message": "Pantalla Inferior",
+    "description" : "lowerDisplay placeholder"
+  },
+  "lowerDisplayDesc": {
+    "message": "SELECCIONE LA PANTALLA INFERIOR",
+    "description" : "lowerDisplay desc placeholder"
+  },
+  "none": {
+    "message": "Ninguno",
+    "description" : "none placeholder"
+  },
+  "clock": {
+    "message": "Reloj",
+    "description" : "clock placeholder"
+  },
   "infoTab": {
-    "message": "INFO",
+    "message": "INFORMACIÓN",
     "description" : "infoTab placeholder"
   },
   "openNewPage": {
@@ -60,48 +180,108 @@
     "description" : "googleApps placeholder"
   },
   "particles": {
-    "message": "Particulas",
+    "message": "Partículas",
     "description" : "particles placeholder"
+  },
+  "particlesDesc": {
+    "message": "Habilita el efecto de partículas que caen",
+    "description" : "particles desc placeholder"
   },
   "countdown": {
     "message": "Cuenta Regresiva",
     "description" : "countdown placeholder"
   },
-  "countdownPosition": {
-    "message": "Posición",
-    "description" : "countdown position placeholder"
+  "countdownTitle": {
+    "message": "Configuración De Cuenta Regresiva",
+    "description" : "countdown title placeholder"
   },
-  "countdownPositionTop": {
-    "message": "Cima",
-    "description" : "countdown position top placeholder"
+  "countdownDesc": {
+    "message": "CONFIGURAR CUENTA REGRESIVA",
+    "description" : "countdown desc placeholder"
   },
-  "countdownPositionBottom": {
-    "message": "Fondo",
-    "description" : "countdown position bottom placeholder"
-  },
-  "countdownDate": {
-    "message": "Fecha",
-    "description" : "countdown eDate placeholder"
-  },
-  "countdownLabel": {
+  "label": {
     "message": "Etiqueta",
-    "description" : "countdown eLabel placeholder"
+    "description" : "label placeholder"
+  },
+  "chooseLabel": {
+    "message": "Elige una etiqueta",
+    "description" : "choose label placeholder"
+  },
+  "date": {
+    "message": "Fecha",
+    "description" : "date placeholder"
+  },
+  "chooseDate": {
+    "message": "Selecciona una fecha",
+    "description" : "choose date placeholder"
+  },
+  "clockTitle": {
+    "message": "Configuración Del Reloj",
+    "description" : "clock title placeholder"
+  },
+  "clockDesc": {
+    "message": "CONFIGURAR RELOJ",
+    "description" : "clock desc placeholder"
+  },
+  "timeFormat": {
+    "message": "Formato de tiempo",
+    "description" : "time format placeholder"
+  },
+  "timeFormatDesc": {
+    "message": "Elige un formato de hora",
+    "description" : "time format desc placeholder"
+  },
+  "appearanceTab": {
+    "message": "APARIENCIA",
+    "description" : "appearanceTab placeholder"
+  },
+  "colors": {
+    "message": "Colores",
+    "description" : "colors placeholder"
+  },
+  "colorsDesc": {
+    "message": "SELECCIONA COLORES",
+    "description" : "colors desc placeholder"
+  },
+  "mainAccent": {
+    "message": "Acento Principal",
+    "description" : "main accent placeholder"
+  },
+  "pickColor": {
+    "message": "Elige un color",
+    "description" : "pickColor placeholder"
+  },
+  "defaultColors": {
+    "message": "Colores predeterminados",
+    "description" : "defaultColors placeholder"
+  },
+  "customColors": {
+    "message": "Colores personalizados",
+    "description" : "customColors placeholder"
   },
   "cycleBG": {
     "message": "Fondos De Ciclo",
     "description" : "cycleBackgrounds placeholder"
   },
+  "cycleBGDesc": {
+    "message": "Desplazarse por los fondos seleccionados",
+    "description" : "cycleBackgrounds Desc placeholder"
+  },
+  "cycleBGInterval": {
+    "message": "Intervalo De Ciclo",
+    "description" : "cycleBackgrounds interval placeholder"
+  },
+  "cycleBGIntervalDesc": {
+    "message": "Tiempo entre cada cambio de fondo",
+    "description" : "cycleBackgrounds interval desc placeholder"
+  },
   "shuffleBG": {
-    "message": "Barajar",
+    "message": "Ciclo Aleatorio",
     "description" : "shuffleBackgrounds placeholder"
   },
-  "delayBG": {
-    "message": "Demora",
-    "description" : "delayBackgrounds placeholder"
-  },
-  "backgroundChoice": {
-    "message": "Elección De Fondos",
-    "description" : "backgroundsChoice placeholder"
+  "shuffleBGDesc": {
+    "message": "Cambia el orden de aparición de los fondos",
+    "description" : "shuffleBackgrounds desc placeholder"
   },
   "selectAll": {
     "message": "Seleccionar Todo",
@@ -112,7 +292,7 @@
     "description" : "deselectAll placeholder"
   },
   "days": {
-    "message": "Días",
+    "message": "Dias",
     "description" : "days placeholder"
   },
   "hours": {
@@ -127,49 +307,81 @@
     "message": "Segundos",
     "description" : "seconds placeholder"
   },
-  "imageRights": {
-    "message": "Derechos de imágenes",
-    "description" : "Image rights placeholder"
+  "backgroundsRights": {
+    "message": "Derechos De Fondos",
+    "description" : "backgroundsRights placeholder"
   },
-  "imageRightsTxt": {
-    "message": "No soy propietario de ninguna de las imágenes utilizadas en este proyecto, por lo tanto, no reclamo ningún derecho sobre ellas. <strong> Si usted es el autor de una de las imágenes utilizadas en este proyecto y desea que se le acredite o desea eliminarlo de la extensión, comuníquese conmigo.</strong>",
-    "description" : "Image rightsTxt placeholder"
+  "backgroundsRightsP1": {
+    "message": "NEXXT Tabs™ no es propietario de ninguno de los fondos utilizados en el proyecto y no reclama ningún derecho sobre ninguno de ellos.",
+    "description" : "backgroundsRights P1 placeholder"
+  },
+  "backgroundsRightsP2": {
+    "message": "Si usted es el autor de uno de los fondos utilizados en el proyecto y desea que se le acredite o desea que se elimine, no dude en contactarnos.",
+    "description" : "backgroundsRights P2 placeholder"
   },
   "iconsRights": {
-    "message": "Derechos de los iconos",
-    "description" : "Icons rights placeholder"
+    "message": "Derechos De Iconos",
+    "description" : "iconsRights placeholder"
   },
-  "iconsRightsTxt": {
-    "message": "No soy dueño de ningún ícono de marca ni de ningún otro ícono tomado de sitios web para los marcadores. Pero todos los demás íconos presentes en este proyecto son de uso gratuito debido a que los creé yo, por lo tanto, puede reutilizarlos en sus propios proyectos, pero debe mencionar <a href='https://github.com/NoCymer/ 'target='_blank'>NoCymer</a> en los créditos.",
-    "description" : "Icons rightsTxt placeholder"
+  "iconsRightsP1": {
+    "message": "NEXXT Tabs™ no es propietario de ningún icono de marca utilizado en el proyecto ni está afiliado a ellos de ninguna manera, por lo tanto, NEXXT Tabs™ no reclama ningún derecho sobre ninguno de ellos.",
+    "description" : "iconsRights P1 placeholder"
+  },
+  "iconsRightsP2": {
+    "message": "Todas las aplicaciones de Google son marcas comerciales de Google LLC y NEXXT Tabs™ no cuenta con la aprobación ni está afiliada a Google de ninguna manera.",
+    "description" : "iconsRights P2 placeholder"
+  },
+  "iconsRightsP3": {
+    "message": "Todos los íconos que no pertenecen a la marca presentes en el proyecto están libres de derechos de autor, por lo que puede reutilizarlos, pero debe indicar <a target='_blank' href='https://github.com/NoCymer'>NoCymer</a> como justo dueño.",
+    "description" : "iconsRights P3 placeholder"
   },
   "codebaseRights": {
-    "message": "Derechos de base de código",
-    "description" : "codebase rights placeholder"
+    "message": "Derechos De Base De Código",
+    "description" : "codebaseRights placeholder"
   },
-  "codebaseRightsTxt": {
-    "message": "Al ser este proyecto de código abierto, puedes reutilizar el código de él y contribuir a su desarrollo en <a href='https://github.com/NoCymer/NEXXT-Tabs' target='_blank'>GitHub</a>.",
-    "description" : "codebaseTxt placeholder"
+  "codebaseRightsP1": {
+    "message": "Dado que este proyecto es de código abierto, puede acceder libremente a su código base y contribuir a su desarrollo en <a target='_blank' href='https://github.com/NoCymer/NEXXT-Tabs'>GitHub.</a>",
+    "description" : "codebaseRights P1 placeholder"
   },
-  "libraries": {
-    "message": "Bibliotecas utilizadas en este proyecto",
-    "description" : "libraries placeholder"
+  "codebaseRightsLibraries": {
+    "message": "Bibliotecas",
+    "description" : "codebaseRights libraries placeholder"
   },
-  "librariesTxt": {
-    "message": "<li><p><a href='https://github.com/VincentGarreau/particles.js/' target='_blank'>Particles.js</a></p></li><li><p><a href='https://jquery.com/' target='_blank'>jQuery</a></p></li><li><p><a href='https://jikan.moe/' target='_blank'>JikanAPI</a></p></li>",
-    "description" : "librariesTxt placeholder"
+  "feedbackAndBugs": {
+    "message": "Comentarios & Errores",
+    "description" : "feedbackAndBugs placeholder"
   },
-  "feedbackBR": {
-    "message": "Informe de Errores y Comentarios",
-    "description" : "feedbackBR placeholder"
+  "feedbackAndBugsP1": {
+    "message": "Si desea dejar un comentario o enviar un informe de error, contribuirá en gran medida al desarrollo del proyecto.",
+    "description" : "feedbackAndBugs P1 placeholder"
   },
-  "feedbackBRTxt": {
-    "message": "Si desea enviar un <strong>Informe de Error</strong>, deje un <strong> Comentario </strong> o si tiene alguna <strong>Pregunta</strong> sobre el proyecto, puede hacerlo. Rellenando el siguiente <a href='https://forms.gle/MvYPGFKk7A8ShPZu7' target='_blank'>formulario</a>.",
-    "description" : "feedbackBRTxt placeholder"
+  "feedbackAndBugsLeaveFeedback": {
+    "message": "Deja Comentario",
+    "description" : "feedbackAndBugsLeaveFeedback placeholder"
+  },
+  "feedbackAndBugsReportBug": {
+    "message": "Reportar Error",
+    "description" : "feedbackAndBugsReportBug placeholder"
+  },
+  "contact": {
+    "message": "Contacto",
+    "description" : "contact placeholder"
+  },
+  "contactUs": {
+    "message": "Contacta Nosotros",
+    "description" : "contact us placeholder"
+  },
+  "contactP1": {
+    "message": "Si tiene alguna pregunta o si necesita ayuda con cualquier cosa relacionada con el proyecto, estaremos encantados de atenderle.",
+    "description" : "contact P1 placeholder"
   },
   "schedule": {
-    "message": "Horario de Anime",
+    "message": "Calendario de anime",
     "description": "schedule placeholder"
+  },
+  "scheduleDesc": {
+    "message": "Habilita el calendario de lanzamientos de animes",
+    "description": "schedule desc placeholder"
   },
   "monday": {
     "message": "Lunes",
@@ -203,8 +415,20 @@
     "message": "Idioma",
     "description": "Language placeholder"
   },
+  "languageDesc": {
+    "message": "SELECCIONA UN IDIOMA",
+    "description": "Language desc placeholder"
+  },
+  "notice": {
+    "message": "Información",
+    "description": "notice alert placeholder"
+  },
   "refresh": {
-    "message": "Se requiere actualizar la página.",
+    "message": "Actualizar",
     "description": "refresh alert placeholder"
+  },
+  "refreshDesc": {
+    "message": "Se requiere una actualización de la página.",
+    "description": "refresh alert desc placeholder"
   }
 }

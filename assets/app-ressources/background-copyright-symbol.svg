@@ -1,0 +1,54 @@
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 364.91 283.95">
+  <defs>
+    <style>
+      .cls-1, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        stroke: #d8d8d8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-3 {
+        stroke-width: 16px;
+      }
+
+      .cls-4 {
+        stroke-width: 28.22px;
+      }
+
+      .cls-5 {
+        stroke-width: 24px;
+      }
+
+      .cls-6 {
+        stroke-width: 18px;
+      }
+
+      .cls-7 {
+        stroke-width: 19px;
+      }
+    </style>
+    <clipPath id="clip-path" transform="translate(-93.19 -82.52)">
+      <rect class="cls-1" x="81" y="79" width="344" height="344"/>
+    </clipPath>
+  </defs>
+  <g class="cls-2">
+    <g class="cls-2">
+      <polyline class="cls-3" points="11.66 199.05 103.71 115.07 159.48 176.88 230.69 143.29 266.98 168.15"/>
+    </g>
+  </g>
+  <path class="cls-4" d="M391,104" transform="translate(-93.19 -82.52)"/>
+  <path class="cls-5" d="M105.19,331.63v22.84H400.45L400,234" transform="translate(-93.19 -82.52)"/>
+  <path class="cls-5" d="M305,147l-199.81-.14v72.56" transform="translate(-93.19 -82.52)"/>
+  <g>
+    <path class="cls-6" d="M394.1,201.52a55,55,0,1,1,55-55,55,55,0,0,1-55,55" transform="translate(-93.19 -82.52)"/>
+    <path class="cls-7" d="M418.6,133c-5-10-12-14-24-14a27.61,27.61,0,0,0,0,55.22c11.77,0,21-4.22,24-14.22" transform="translate(-93.19 -82.52)"/>
+  </g>
+</svg>

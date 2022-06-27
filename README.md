@@ -1,22 +1,29 @@
 # NEXXT Tabs
-#### <img src="https://user-images.githubusercontent.com/61873313/147617470-f843f8e2-8596-4d23-bdfe-ba477c80b680.png" width="15" title="hover text"> [Chrome web store download link](https://chrome.google.com/webstore/detail/nexxt-tabs/dbocanalfbkfdbpjpnbjmipaidlogbmi)
-#### <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Firefox_logo%2C_2019.svg/739px-Firefox_logo%2C_2019.svg.png" width="15" title="hover text"> [Firefox store download link](https://addons.mozilla.org/en-US/firefox/addon/nexxt-tabs/)
 
-### Images rights
-- I do not own any of the images used in this project, therefore i do not claim any rights on them.<br>
-<strong>If you are the author of one of the images used in this project and want to be credited or want it removed from the extention, please contact me.</strong><br>
+**NEXXT-Tabs is an open source Chrome extension which changes Chrome's new tab appearance and gives it an anime themed look with lot of customizable features.**
 
-### Icons rights
-- I do not own any brand icons or any other icon taken from websites for the bookmarks. But all others icons present in this project are free to use due to them being created by me, therefore you are free to reuse them in your own projects but you must mention [NoCymer](https://github.com/NoCymer/) in the credits.
+- [Download on Chrome web store](https://chrome.google.com/webstore/detail/nexxt-tabs/dbocanalfbkfdbpjpnbjmipaidlogbmi)  
 
-### Codebase rights
-- This project being OpenSource, you are free to reuse code from it and contribute to its developpement on [GitHub](https://github.com/NoCymer/NEXXT-Tabs/)
+- [Download on Firefox store](https://addons.mozilla.org/en-US/firefox/addon/nexxt-tabs/)
 
-### Libraries used in this project
+## Backgrounds Rights
+
+- NEXXT Tabs™ is **not proprietary** of any of the backgrounds used in the project, and **claims no rights** on any them.
+
+- If you are the **author** of one of the backgrounds used in the project and want to be **credited** or want it **removed** from it, feel free to **contact us**.
+  
+## Icons Rights
+
+- NEXXT Tabs™ is **not proprietary** of any brand icon used in the project nor affiliated with them in any way, therefore **NEXXT Tabs™ claims no rights on any of them.**
+
+- All Google Apps are trademarks of Google LLC and NEXXT Tabs™ is not endorsed by or affiliated with Google in any way.
+
+- All **non-brand icons** present in the project are **copyright free**, therefore you are free to reuse them but you must **indicate NoCymer** as the **rightful owner**.
+
+## Libraries and APIs used in this project
+
 - [Particles.js](https://github.com/VincentGarreau/particles.js/)
 - [jQuery](https://jquery.com/)
 - [JikanAPI](https://jikan.moe/)
 
-### Feedback and Bug Report
-- If you want to submit a bug report, leave a Feedback or if you have any question concerning the project, you are very welcome to do it by filling the folowing [form](https://forms.gle/MvYPGFKk7A8ShPZu7)
-## ©Copyright [NoCymer](https://github.com/NoCymer/)  2021-2022
+### **NEXXT Tabs™ | © 2022 - 2023 NoCymer**

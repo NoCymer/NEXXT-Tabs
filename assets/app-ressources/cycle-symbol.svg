@@ -1,0 +1,21 @@
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 404 438.44">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #d8d8d8;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 51px;
+      }
+
+      .cls-2 {
+        fill: #d8d8d8;
+      }
+    </style>
+  </defs>
+  <g>
+    <path class="cls-1" d="M283.67,431.72a176.45,176.45,0,1,0-184.8-95" transform="translate(-54.5 -55.31)"/>
+    <polygon class="cls-2" points="108.17 395.11 289.44 438.44 238.22 375.02 267.91 299.12 108.17 395.11"/>
+  </g>
+</svg>

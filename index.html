@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,493 +10,713 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/search-bar.css">
-    <link rel="stylesheet" href="css/countdown.css">
-    <link rel="stylesheet" href="css/bookmarks.css">
-    <link rel="stylesheet" href="css/background.css">
-    <link rel="stylesheet" href="css/schedule.css">
-    <script src="js/newUserChecker.js"></script>
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery.js"></script>
-    <script src="js/bookmark.js"></script>
-    <script src="js/menu.js"></script>
-    <script src="js/switch.js"></script>
-    <script src="js/storage.js"></script>
-    <script src="js/localizeHTML.js" defer></script>
-    <script src="js/particles.js"></script>
-    <script src="js/snowflakes.js"></script>
-    <script src="js/search.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/bookmarks.js"></script>
-    <script src="js/background.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/info.js"></script>
+    <script src="js/update.js"></script>
+    <script src="js/google-apps.js"></script>
+    <script src="js/video-player.js"></script>
     <script src="js/countdown.js"></script>
-    <script src="js/countdownSettings.js"></script>
-    <script src="js/particleSettings.js"></script>
-    <script src="js/googleApps.js"></script>
+    <script src="js/clock.js"></script>
     <script src="js/schedule.js"></script>
-    <script src="js/version.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/bookmark.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/localize.js"></script>
+    <script src="js/migration.js" defer></script>
     <title>__MSG_tabName__</title>
 </head>
-
 <body>
-    <!-- #region countdownBottom -->
-    <div id="countdownContainerTop" style="display:none;">
-        <table style="max-height:145px; min-width:800px;">
-            <tr class="info">
-                <td id="labelT" colspan="7" class="mainLbl"></td>
-            </tr>
-            <tr class="info">
-                <td class="lblNb" id="tD">00</td>
-                <td class="lbldot">:</td>
-                <td class="lblNb" id="tH">00</td>
-                <td class="lbldot">:</td>
-                <td class="lblNb" id="tM">00</td>
-                <td class="lbldot">:</td>
-                <td class="lblNb" id="tS">00</td>
-            </tr>
-            <tr class="lblHolder">
-                <td class="lblL">__MSG_days__</td>
-                <td class="lbl">__MSG_hours__</td>
-                <td class="lbl">__MSG_minutes__</td>
-                <td class="lblR">__MSG_seconds__</td>
-            </tr>
-        </table>
-    </div>
-    <!-- #endregion -->
-
-    <!-- #region Page-->
-    <div id="particles-js" style="width: 100%; height: 100%; z-index: -1;"></div>
-    <div id="page-wrapper">
-        <div class="settings-wrapper"><button id="settings-button"><img src="src/assets/params.svg" alt=""
-                    id="button-img"></button></div>
-        <div id="google-wrapper"><button id="google-apps-btn"><img src="src/assets/googleApps.svg" alt=""
-                    id="google-apps-img"></button></div>
-
-        <div id="search-wrapper-wrapper">
-            <div id="search-space-wrapper">
-                <div id="search-wrapper">
-                    <button id="search-button"><img id="search-img" src="src/assets/lens.svg" alt="lens"></button>
-                    <form id="search-form"><input type="text" id="search-input" autocomplete="off" spellcheck="false"
-                            placeholder="__MSG_searchPlaceholder__"></form>
-                </div>
-                <div class="search-space"></div>
+    <div id="particles-js" style="width: 100%; height: 100%; position: absolute; pointer-events: none;"></div>
+    <div class="side-pannel small" id="settings-pannel">
+        <div class="side-pannel-small">
+            <div class="side-bar left">
+                <div class="side-bar-element interactible active" id="general-settings"></div>
+                <div class="side-bar-element interactible" id="language-settings"></div>
+                <div class="side-bar-element interactible" id="background-settings"></div>
+                <div class="side-bar-element interactible" id="time-settings"></div>
+                <div class="side-bar-element interactible" id="style-settings"></div>
+                <div class="side-bar-element interactible" id="infos"></div>
+                <span class="active-effect"></span>
             </div>
-            <div id="bookmark-wrapper">
-                <div id="add-bookmark" class="bookmark" tabindex="1"><img src="src/assets/plus.svg" alt=""
-                        id="add-bookmark-plus"></div>
+            <div class="side-pannel-content">
+                <div class="side-pannel-entry active" id="general-settings-pannel">
+                    <h1 class="side-pannel-header">__MSG_generalTab__</h1>
+                    <div class="side-header-separator"></div>
+                    <div class="side-pannel-section">
+                        <div class="side-pannel-section-header">__MSG_searchEngine__</div>
+                        <div class="side-pannel-section-desc">__MSG_searchEngineDesc__</div>
+                        <div class="side-pannel-option-list" id="search-engine-selector">
+                            <div class="side-pannel-select-option" id="google" value="google">
+                                <div class="img"></div>
+                                <p>Google</p>
+                            </div>
+                            <div class="side-pannel-select-option" id="duckduckgo" value="duckduckgo">
+                                <div class="img"></div>
+                                <p>DuckDuckGo</p>
+                            </div>
+                            <div class="side-pannel-select-option" id="qwant" value="qwant">
+                                <div class="img"></div>
+                                <p>Qwant</p>
+                            </div>
+                            <div class="side-pannel-select-option" id="ecosia" value="ecosia">
+                                <div class="img"></div>
+                                <p>Ecosia</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="side-separator"></div>
+    
+                    <div class="side-pannel-section">
+                        <div class="side-pannel-section-header">__MSG_features__</div>
+                        <div class="side-pannel-section-desc">__MSG_featuresDesc__</div>
+                        <div class="side-pannel-feature-option">
+                            <div class="side-pannel-feature-option-wrapper" id="apps">
+                                <div class="img"></div>
+                                <div>
+                                    <div class="side-pannel-feature-option-title">Google Apps</div>
+                                    <div class="side-pannel-feature-option-desc">__MSG_googleAppDesc__</div>
+                                </div>
+                                <div class="switch-button">
+                                    <label class="switch">
+                                        <input type="checkbox" id="google-apps-switch">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="side-pannel-feature-option-wrapper sub-feature new-tab" id="google-apps-nt">
+                                <div class="img"></div>
+                                <div>
+                                    <div class="side-pannel-feature-option-desc">__MSG_newTabDesc__</div>
+                                </div>
+                                <div class="standard-checkbox sub-checkbox">
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="google-apps-nt-switch">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="side-small-separator"></div>      
+                        </div>
+                        <div class="side-pannel-feature-option">
+                            <div class="side-pannel-feature-option-wrapper" id="bookmarks">
+                                <div class="img"></div>
+                                <div>
+                                    <div class="side-pannel-feature-option-title">__MSG_bookmarks__</div>
+                                    <div class="side-pannel-feature-option-desc">__MSG_bookmarksDesc__</div>
+                                </div>
+                                <div class="switch-button">
+                                    <label class="switch">
+                                        <input type="checkbox" id="bookmark-switch">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="side-pannel-feature-option-wrapper sub-feature new-tab"  id="bookmark-nt">
+                                <div class="img"></div>
+                                <div>
+                                    <div class="side-pannel-feature-option-desc">__MSG_newTabDesc__</div>
+                                </div>
+                                <div class="standard-checkbox sub-checkbox">
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="bookmark-nt-switch">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="side-small-separator"></div>      
+                        </div>
+                        <div class="side-pannel-feature-option">
+                            <div class="side-pannel-feature-option-wrapper" id="particle">
+                                <div class="img"></div>
+                                <div>
+                                    <div class="side-pannel-feature-option-title">__MSG_particles__</div>
+                                    <div class="side-pannel-feature-option-desc">__MSG_particlesDesc__</div>
+                                </div>
+                                <div class="switch-button">
+                                    <label class="switch">
+                                        <input type="checkbox" id="particle-switch">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="side-small-separator"></div>      
+                        </div>
+                        <div class="side-pannel-feature-option">
+                            <div class="side-pannel-feature-option-wrapper" id="schedule">
+                                <div class="img"></div>
+                                <div>
+                                    <div class="side-pannel-feature-option-title">__MSG_schedule__</div>
+                                    <div class="side-pannel-feature-option-desc">__MSG_scheduleDesc__</div>
+                                </div>
+                                <div class="switch-button">
+                                    <label class="switch">
+                                        <input type="checkbox" id="schedule-switch">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+                <div class="side-pannel-entry" id="language-settings-pannel">
+                    <h1 class="side-pannel-header">__MSG_language__</h1>
+                    <div class="side-header-separator"></div>
+                    <div class="side-pannel-section">
+                        <div class="side-pannel-section-header">__MSG_language__</div>
+                        <div class="side-pannel-section-desc">__MSG_languageDesc__</div>
+                        <div class="side-pannel-option-list" id="language-selector">
+                            <div class="side-pannel-select-option" id="english" value="en">
+                                <div class="img"></div>
+                                <p>English</p>
+                            </div>
+                            <div class="side-pannel-select-option" id="french" value="fr">
+                                <div class="img"></div>
+                                <p>Français</p>
+                            </div>
+                            <div class="side-pannel-select-option" id="spanish" value="es">
+                                <div class="img"></div>
+                                <p>Español</p>
+                            </div>
+                            <div class="side-pannel-select-option" id="vietnamese" value="vi">
+                                <div class="img"></div>
+                                <p>Tiếng Việt</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="side-separator language-warning"></div> 
+                    <div class="side-pannel-section language-warning">
+                        <div class="side-pannel-section-header image-within warning"><div class="img"></div>__MSG_notice__</div>
+                        <div class="side-pannel-section-desc">__MSG_refreshDesc__</div>
+                        <div class="line-button-side-wrapper">
+                            <div class="line-button red full active" id="contact-button">__MSG_refresh__</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="side-pannel-entry" id="background-settings-pannel">
+                    <h1 class="side-pannel-header">__MSG_backgroundTab__</h1>
+                    <div class="side-header-separator"></div>
+                    <div class="side-pannel-section">
+                        <div class="side-pannel-section-header">__MSG_backgroundSettings__</div>
+                        <div class="side-pannel-section-desc">__MSG_backgroundSettingsDesc__</div>
+                        <div class="side-pannel-feature-option">
+                            <div class="side-pannel-feature-option-wrapper" id="cycle">
+                                <div class="img"></div>
+                                <div>
+                                    <div class="side-pannel-feature-option-title">__MSG_cycleBG__</div>
+                                    <div class="side-pannel-feature-option-desc">__MSG_cycleBGDesc__</div>
+                                </div>
+                                <div class="switch-button">
+                                    <label class="switch">
+                                        <input type="checkbox" id="cycle-switch">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="side-small-separator"></div>      
+                        </div>
+                        <div class="side-pannel-feature-option">
+                            <div class="side-pannel-feature-option-wrapper" id="shuffle">
+                                <div class="img"></div>
+                                <div>
+                                    <div class="side-pannel-feature-option-title">__MSG_shuffleBG__</div>
+                                    <div class="side-pannel-feature-option-desc">__MSG_shuffleBGDesc__</div>
+                                </div>
+                                <div class="switch-button">
+                                    <label class="switch">
+                                        <input type="checkbox" id="shuffle-switch">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="side-small-separator"></div>      
+                        </div>
+                        <div class="side-pannel-feature-option">
+                            <div class="side-pannel-feature-option-wrapper" id="delay">
+                                <div class="img"></div>
+                                <div>
+                                    <div class="side-pannel-feature-option-title">__MSG_cycleBGInterval__</div>
+                                    <div class="side-pannel-feature-option-desc">__MSG_cycleBGIntervalDesc__</div>
+                                </div>
+                                <div class="user-entry-wrapper">
+                                    <input class="user-entry-input" value="30" id="delay-input"></input>
+                                    <div class="user-entry-select-wrapper">
+                                        <div class="drop-down-clickable" id="delay-open">
+                                            <h3 class="user-entry-desc" id="delay-unit-value">__MSG_minutes__</h3>
+                                            <div class="drop-down-arrow" id="delay-dda">
+                                        </div>
+                                        </div>
+                                        <div class="drop-down-menu" id="delay-dd">
+                                            <ul>
+                                                <li value="hr">__MSG_hours__</li>
+                                                <li value="min">__MSG_minutes__</li>
+                                                <li value="sec">__MSG_seconds__</li>
+                                            </ul>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+    
+    
+                    <div class="side-separator"></div>
+    
+    
+    
+                    <div class="side-pannel-section">
+                        <div class="side-pannel-section-header">__MSG_backgroundSelection__</div>
+                        <div class="side-pannel-section-desc">__MSG_backgroundSelectionDesc__</div>
+                        <div class="background-button-wrapper" id="check">
+                            <div class="img"></div>
+                            <div class="large-button-blue">__MSG_backgroundEdit__</div>
+                        </div>
+                        <div class="inline-button-wrapper background">
+                            <div class="line-button green full inline" id="bg-save">__MSG_save__</div>
+                            <div class="line-button red inline" id="bg-cancel">__MSG_cancel__</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="side-pannel-entry" id="time-settings-pannel">
+                    <h1 class="side-pannel-header">__MSG_timeTab__</h1>
+                    <div class="side-header-separator"></div>
+                    <div class="side-pannel-section">
+                        <div class="side-pannel-section-header">__MSG_upperDisplay__</div>
+                        <div class="side-pannel-section-desc">__MSG_upperDisplayDesc__</div>
+                        <div class="side-pannel-option-list" id="upper-display-selector">
+                            <div class="side-pannel-select-option none" id="up-none" value="none">
+                                <div class="img"></div>
+                                <p>__MSG_none__</p>
+                            </div>
+                            <div class="side-pannel-select-option clock" id="up-clock" value="clock">
+                                <div class="img"></div>
+                                <p>__MSG_clock__</p>
+                            </div>
+                            <div class="side-pannel-select-option countdown" id="up-countdown" value="countdown">
+                                <div class="img"></div>
+                                <p>__MSG_countdown__</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="side-separator"></div>
+                    <div class="side-pannel-section">
+                        <div class="side-pannel-section-header">__MSG_lowerDisplay__</div>
+                        <div class="side-pannel-section-desc">__MSG_lowerDisplayDesc__</div>
+                        <div class="side-pannel-option-list" id="lower-display-selector">
+                            <div class="side-pannel-select-option none" id="down-none" value="none">
+                                <div class="img"></div>
+                                <p>__MSG_none__</p>
+                            </div>
+                            <div class="side-pannel-select-option clock" id="down-clock" value="clock">
+                                <div class="img"></div>
+                                <p>__MSG_clock__</p>
+                            </div>
+                            <div class="side-pannel-select-option countdown" id="down-countdown" value="countdown">
+                                <div class="img"></div>
+                                <p>__MSG_countdown__</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="side-separator"></div>
+                    <div class="side-pannel-section">
+                        <div class="side-pannel-section-header">__MSG_countdownTitle__</div>
+                        <div class="side-pannel-section-desc">__MSG_countdownDesc__</div>
+                        <div class="side-pannel-feature-option">
+                            <div class="side-pannel-feature-option-wrapper" id="label">
+                                <div class="img"></div>
+                                <div>
+                                    <div class="side-pannel-feature-option-title">__MSG_label__</div>
+                                    <div class="side-pannel-feature-option-desc">__MSG_chooseLabel__</div>
+                                </div>
+                                <div class="user-entry-wrapper">
+                                    <input type="text" class="user-entry-input" placeholder="abc..." id="countdown-label-input">
+                                </div>
+                            </div>
+                            <div class="side-small-separator"></div>
+                        </div>
+                        <div class="side-pannel-feature-option">
+                            <div class="side-pannel-feature-option-wrapper" id="date-time">
+                                <div class="img"></div>
+                                <div>
+                                    <div class="side-pannel-feature-option-title">__MSG_date__</div>
+                                    <div class="side-pannel-feature-option-desc">__MSG_chooseDate__</div>
+                                </div>
+                                <div class="user-entry-wrapper">
+                                    <input type="datetime-local" class="date-time" id="countdown-date-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="side-separator"></div>
+                    <div class="side-pannel-section">
+                        <div class="side-pannel-section-header">__MSG_clockTitle__</div>
+                        <div class="side-pannel-section-desc">__MSG_clockDesc__</div>
+                        <div class="side-pannel-feature-option">
+                            <div class="side-pannel-feature-option-wrapper" id="time-format">
+                                <div class="img"></div>
+                                <div>
+                                    <div class="side-pannel-feature-option-title">__MSG_timeFormat__</div>
+                                    <div class="side-pannel-feature-option-desc">__MSG_timeFormatDesc__</div>
+                                </div>
+                                <div class="dual-choice-button" id="time-format-dual-choice">
+                                    <div class="left" value="12h">12H</div>
+                                    <div class="right" value="24h">24H</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="side-pannel-entry" id="style-settings-pannel">
+                    <h1 class="side-pannel-header">__MSG_appearanceTab__</h1>
+                    <div class="side-header-separator"></div>
+                    <div class="side-pannel-section">
+                        <div class="side-pannel-section-header">__MSG_colors__</div>
+                        <div class="side-pannel-section-desc">__MSG_colorsDesc__</div>
+                        <div class="color-palette" id="main-accent-palette">
+                            <div class="color-wrapper">
+                                <div class="color-display" style="--color-var: #68b6ff;" id="main-accent-color-display">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467.64 489.82">
+                                    <defs>
+                                      <style>
+                                        .cls-1, .cls-3 {
+                                          fill: var(--color-var);
+                                          transition: .25s;
+                                        }
+                                  
+                                        .cls-2 {
+                                          fill: none;
+                                          stroke: #000;
+                                          stroke-width: 6px;
+                                        }
+                                  
+                                        .cls-2, .cls-3 {
+                                          stroke-miterlimit: 10;
+                                        }
+                                  
+                                        .cls-3 {
+                                          stroke: #d8d8d8;
+                                          stroke-width: 5px;
+                                        }
+                                      </style>
+                                    </defs>
+                                    <g>
+                                      <path class="cls-1" d="M190.86,209.08c1.57-2.74,6.06-11.56,3.08-20.21-4.94-14.33-24.76-11.22-48.1-28.6-5.85-4.35-17.24-13-24.34-27.77-9.08-18.85-8.94-43,1-62,13-24.87,38.47-32.62,61-39,44.57-12.61,105.6-11.66,116,13C304,55.21,295,61,297.21,92.39c1.11,15.92,3.91,18,3,30.78-1.49,21.56-8.78,27.49-5.8,37.48,4.25,14.21,24.36,20.15,38.16,24,53.53,15.11,92.21-1.09,97.67,10.92,4,8.84-17.06,17.32-18.24,41.08-.83,16.59,8.28,35.71,22.6,45,13.43,8.71,23.88,2.39,29.53,10.62,6.85,10,.29,31.22-12.66,39.16-9.95,6.1-15.91-.39-32,6-4.47,1.77-15.07,6.66-23,17-8.13,10.6-5.8,17-11.12,27.23-9.36,18.1-34.69,33.31-46.5,26.43-16.93-9.85,1.29-48.5-20.12-66.42-19.13-16-52.24-7.22-55.93-6.19-14.81,4.15-24.69,12-31.18,17.2-27.48,22.16-25.9,42.38-39.85,44.22-21.34,2.81-51.55-41-43.05-58.91,3.15-6.62,8.36-8.47,11.24-15.13,3.75-8.68-5.94-18-15.22-19.94s-19.23-.1-28-3.81a15.49,15.49,0,0,1-6.88-5.6C102.4,282,122,250.19,149.49,234.05,168.25,223,182.14,224.3,190.86,209.08Z" transform="translate(-6.86 -16)"/>
+                                      <path class="cls-1" d="M197.34,212.86c4-7.09,6-15.29,4.51-23.39-1.27-6.74-5.64-12.19-11.37-15.75-5.22-3.23-11.3-5.06-17-7.22-1.59-.6-3.17-1.23-4.75-1.86-.33-.13-1.32-.52.24.11-.45-.18-.89-.38-1.33-.57-1-.44-2-.89-3-1.36a91.55,91.55,0,0,1-10.85-6.09c-1.63-1.08-3.22-2.21-4.79-3.39l-1.17-.88c-.21-.16-1.17-.89-.08-.06s0,0-.26-.21c-2.24-1.78-4.41-3.65-6.47-5.63a47.46,47.46,0,0,1-6.78-7.46c1.06,1.6-.62-.87-.91-1.28-.58-.81-1.14-1.65-1.68-2.49a62.38,62.38,0,0,1-3.12-5.45c-.37-.74-.74-1.49-1.08-2.25-.13-.27-.91-2.12-.2-.4-.16-.38-.31-.75-.45-1.12-.74-1.87-1.38-3.78-1.94-5.71-.51-1.75-.95-3.53-1.31-5.31-.21-1-.39-2-.55-3-.07-.39-.16-.82-.19-1.21.13,1.93,0-.35-.07-.74a72.64,72.64,0,0,1-.27-12c.06-.92.13-1.84.22-2.76.05-.51.11-1,.17-1.54,0-.36.07-1.45,0,.17A36.68,36.68,0,0,1,124,88c.44-1.89,1-3.77,1.58-5.62.28-.87.59-1.74.91-2.6.18-.48.38-1,.55-1.43s.15-.38-.17.38l.37-.84a60.59,60.59,0,0,1,5.62-10l.64-.91c.05-.06,1.12-1.55.41-.58s.39-.47.44-.54l.7-.84q1.74-2.07,3.66-4t3.72-3.39c.6-.5,1.19-1,1.84-1.49-1.5,1-.43.34-.06.07s1-.72,1.48-1.07a79.71,79.71,0,0,1,8.45-5.11Q156.21,49,158.32,48c.79-.36,1.58-.72,2.37-1.06.31-.14.63-.3.95-.41-1.88.67-.32.14.12,0a196.74,196.74,0,0,1,18.94-6.36c6.62-1.93,13.28-3.69,20.05-5q5.17-1,10.38-1.83l2.77-.4c1.38-.19-.12,0-.34,0,.46-.08.93-.12,1.39-.18q2.76-.35,5.54-.63A208.71,208.71,0,0,1,241.55,31q5.25,0,10.48.34c3.14.2,6.3.78,9.44.91-2.35-.1.24,0,.86.15s1.24.2,1.86.3c1.58.28,3.16.59,4.73.94A80.4,80.4,0,0,1,277,35.91c1.15.4,2.29.83,3.41,1.27,1.35.53-1.42-.65-.52-.22l.88.4c.57.26,1.14.53,1.7.82,1,.52,2,1.09,3,1.7.45.27.89.56,1.33.86.29.2,2.1,1.54.89.62s.25.23.53.48.81.73,1.19,1.11.68.68,1,1l.51.59c.49.56.55,1.32-.39-.53.41.8,1.06,1.52,1.51,2.32.25.44.46.9.69,1.36.45.89-.76-2-.14-.27a15.93,15.93,0,0,1,.62,2.22c0,.19.06.39.1.57.25,1-.3-1.48-.17-1.31a4.09,4.09,0,0,1,.09,1.36,20.36,20.36,0,0,1-.06,2.07c0,.36-.08.71-.11,1.07-.08.87.36-2.27.15-1.15-.05.25-.08.5-.12.74-.68,4-1.71,8-2.34,12A114.85,114.85,0,0,0,289.4,86a148.82,148.82,0,0,0,2.52,23.25c.22,1.2.44,2.4.63,3.61.05.31.08.63.14.94,0,0-.24-2.06-.11-.86.07.73.15,1.46.2,2.19a61.69,61.69,0,0,1-.21,10.17c-.09,1-.21,2-.31,2.94-.13,1.26.28-1.8,0,.15l-.18,1.17q-.44,2.69-1,5.33c-.65,2.87-1.47,5.69-2.32,8.51-1.35,4.47-2.83,9.24-2.41,14,1.36,15.22,14.4,23.77,27.36,29.06,14.46,5.9,30.13,9.26,45.58,11.19,14.19,1.78,28.45,1.74,42.71,1.15,4.91-.2,9.83-.48,14.75-.4,1,0,1.94.05,2.9.11l1.27.1c.89.08,2.31.66-.29-.07.68.19,1.42.24,2.11.42.36.09.7.2,1.05.3,1.54.45-1.32-.68-.66-.31.49.27,2.15,1.38.84.36s-.38-.29-.11,0c1.11,1.16-1-1.75-.42-.58a3.65,3.65,0,0,0,.34.61c.55.75-.56-2-.44-1,0,.13.09.3.12.42.38,1.41-.2-2.14-.12-.85,0,.18,0,.36,0,.53.11.73.46-1.83.15-1.15a6.67,6.67,0,0,0-.31,1.08c-.25,1,1-2,.29-.7A26.27,26.27,0,0,1,422,200c-.25.37-.52.72-.78,1.08-1,1.43,1.18-1.46,0,0-.71.89-1.43,1.77-2.15,2.66-3.58,4.44-7.14,9-9.63,14.12a48,48,0,0,0-4.94,21.5,61.75,61.75,0,0,0,18.15,42.3c6,5.93,13.55,10.49,21.93,12.06,2.09.39,4.21.65,6.32.88.63.08,1.27.14,1.9.21a10.3,10.3,0,0,0,1.36.16c-.84,0-1.54-.24-.26,0s2.36.7,3.54.91c-1.69-.31-1.2-.61-.55-.18a3.93,3.93,0,0,0,.84.51c-.15,0-1.39-1.27-.57-.44l.89.89c1,1-.55-1-.25-.3a6.48,6.48,0,0,0,.49.79c.12.21.21.46.35.66.74,1.13-.49-1.47-.22-.58.38,1.28.71,2.51,1,3.81.22,1-.17-2-.09-.55,0,.28,0,.56.06.84,0,.72,0,1.44,0,2.16s-.08,1.33-.12,2-.49,1.26.08-.41a8.78,8.78,0,0,0-.23,1.36,36,36,0,0,1-1,4.12c-.24.77-.51,1.53-.79,2.28,0-.07-.35.91-.36.91q.68-1.57.18-.45l-.2.44a40.26,40.26,0,0,1-2.22,4.08c-.38.62-.79,1.23-1.21,1.82-.1.15-1.11,1.36-.28.41s-.49.57-.63.74a31.88,31.88,0,0,1-3,3,6,6,0,0,0-.72.6c0-.47,1.36-.94.21-.19-.72.48-1.43,1-2.19,1.39l-.82.43-.41.2c-.73.33-.54.25.59-.25a10.2,10.2,0,0,0-1.56.52c-.63.18-1.27.3-1.91.43-1.17.24.8-.11.86-.11-.37,0-.76.08-1.14.1-2.68.18-5.38,0-8.07.06a50,50,0,0,0-11.17,1.49c-14.32,3.64-28.06,13.33-35.73,26a43.89,43.89,0,0,0-4.61,10.94c-.83,3-1.45,6.1-2.47,9.07-.18.52-.38,1-.56,1.54s-.11,1.08.1-.19a10.66,10.66,0,0,1-1.29,2.65,44.83,44.83,0,0,1-2.62,4.3c-.39.57-.8,1.12-1.2,1.67-1.05,1.46,1.06-1.25-.1.12l-.67.81q-1.69,2-3.57,3.88-1.68,1.68-3.5,3.23a14.38,14.38,0,0,0-2,1.68c.73-1,.79-.59.27-.21s-1,.72-1.48,1.07a56.27,56.27,0,0,1-8.44,5l-.87.4c-1.46.69,1.28-.46.28-.11-.65.22-1.28.5-1.93.73a35.64,35.64,0,0,1-4.19,1.17c-.78.16-2.84.1-.42.12-.57,0-1.16.11-1.74.13s-1.12,0-1.68,0c-.31,0-1.53-.2-.09,0s.1,0-.22-.06c-.5-.11-1-.26-1.48-.4-1.73-.48,1.45.9-.05,0-.41-.26-.83-.54-1.25-.79-.77-.43,1.5,1.37.62.49-.22-.22-.47-.42-.7-.64s-.62-.7-.95-1c-.6-.65,1.12,1.71.51.63-.1-.18-.23-.35-.34-.52-.29-.46-.54-.93-.79-1.4-.83-1.58.56,1.66,0,0a29.12,29.12,0,0,1-.93-3.15c-.13-.54-.23-1.07-.33-1.61-.06-.3-.1-.61-.15-.92-.31-1.72.18,1.73,0,.3-.27-2.58-.43-5.15-.51-7.74-.37-12.52.07-25.26-5.13-36.95-5.73-12.9-19-20.42-32.51-22.63a94,94,0,0,0-35.05,1.35,83.52,83.52,0,0,0-32,14.69,127,127,0,0,0-17.63,15.27,111.54,111.54,0,0,0-13,17c-2.58,4.13-4.89,8.43-7.71,12.41-1,1.47,1.23-1.41.07-.1-.29.33-.56.66-.86,1s-.58.6-.89.88l-.4.36c-1.13,1,1.08-.73.57-.43-.7.42-1.51.81-2.18,1.26,0,0,2-.7,1.05-.46-.22.06-.44.15-.65.22-.5.15-1,.23-1.52.36-1,.24,2.3-.2.35-.08-.46,0-.93,0-1.39,0s-1-.12-1.56-.11c0,0,2.12.37,1,.13l-1-.19a25,25,0,0,1-3.06-.9,8,8,0,0,0-.81-.32s1.85.85.82.35c-.6-.3-1.2-.57-1.79-.87-1.06-.56-2.08-1.17-3.09-1.82-.49-.32-1-.65-1.45-1s-2.35-2-.57-.39c-2-1.81-4-3.44-5.92-5.36-1-1-1.9-2-2.81-3.05l-1.29-1.51c-.23-.29-.46-.58-.7-.86-.36-.45-1.17-1.89-.06-.06-1.45-2.4-3.31-4.58-4.78-7a75.33,75.33,0,0,1-4-7.46c-.26-.57-.49-1.17-.77-1.72,1.1,2.16,0,.08-.18-.51-.47-1.24-.91-2.49-1.29-3.76-.32-1.09-.61-2.2-.85-3.31-.13-.59-.24-1.19-.34-1.79-.34-1.85.14,1.77,0-.09a27.83,27.83,0,0,1-.13-3.16c0-.48.05-.95.08-1.43.1-1.75-.45,2,0,0,.2-.89.6-1.77.77-2.65,0,0-1,1.8-.42,1,.28-.42.47-1,.73-1.39s.5-.85.78-1.26l.33-.47c.49-.67.44-.6-.16.2,0,0,3-3.25,3.23-3.49a44.77,44.77,0,0,0,4.29-5.14,19.33,19.33,0,0,0,3.82-12.45,22.15,22.15,0,0,0-5.68-12.73,28.46,28.46,0,0,0-9.41-7.07,40.33,40.33,0,0,0-14.29-3.37c-4.19-.34-8.39-.39-12.58-.75-2.09-.18,1,.21-.28,0-.54-.1-1.08-.17-1.61-.28-.86-.17-1.71-.36-2.55-.6-.63-.18-1.24-.41-1.87-.6s-1,0,.12.08c-.79,0-1.88-1.07-2.52-1.44-.9-.52,1.18,1.23-.06-.06-.26-.28-.57-.57-.85-.83-1.31-1.23.38.81-.15-.14-.13-.22-.29-.45-.43-.67s-.14-.31-.23-.44c-.64-.9.62,1.77.4,1-.13-.46-.31-.9-.42-1.37,0-.17-.06-.35-.11-.52-.3-1.15.16,1.93.13,1,0-.43-.07-.86-.08-1.29s0-1,0-1.51c0-.21,0-.42,0-.63a5.67,5.67,0,1,0-.11.71c.62-2.3,1-4.58,1.85-6.84l.36-.93c.43-1.13-.24.58-.28.65.33-.61.57-1.29.87-1.92.64-1.34,1.33-2.66,2.06-3.95a81.46,81.46,0,0,1,5-7.73,25.38,25.38,0,0,1,1.53-2.05c-1.37,1.55.29-.36.6-.73q1.77-2.19,3.66-4.26a104.44,104.44,0,0,1,7.45-7.43c1.25-1.13,2.54-2.24,3.85-3.31l1.32-1.07c.31-.25.93-1-.17.13a21.91,21.91,0,0,1,2.52-1.87,92.49,92.49,0,0,1,9.78-6.12q2.44-1.31,5-2.48c.88-.41,1.76-.79,2.64-1.19,1.1-.49-.21.15-.24.1l1.52-.63c6-2.42,12.17-4.43,17.8-7.56a38.2,38.2,0,0,0,14.53-14.29c2-3.39.89-8.37-2.69-10.26a7.63,7.63,0,0,0-10.26,2.69c-.44.76-.9,1.5-1.39,2.23-.19.27-.39.54-.58.82-1,1.42,1.1-1.23,0,0a36.8,36.8,0,0,1-3.22,3.27,3.61,3.61,0,0,0-.68.57l.82-.63-.71.53c-.48.34-1,.66-1.46,1a43.33,43.33,0,0,1-4.28,2.35c-.54.26-1.1.52-1.65.76a13.19,13.19,0,0,0-1.27.56c.12-.08,1.68-.69.49-.21l-4.55,1.79c-3.79,1.47-7.58,3-11.29,4.66a104.41,104.41,0,0,0-36.46,28c-8.16,9.71-16,21.36-17.25,34.31a19.19,19.19,0,0,0,5.82,16.09c7.28,6.81,17.39,7.56,26.86,8,2,.08,4,.17,6,.35.66.06,1.32.13,2,.21-.3,0-1.47-.25,0,0a27.49,27.49,0,0,1,3.11.72c.43.13.85.29,1.28.43,1.36.48-.14-.11-.27-.11a7.76,7.76,0,0,1,2.45,1.31c.32.19.63.39.94.6l.46.31c.66.49.6.44-.2-.16.71.27,1.48,1.3,2,1.86.3.32.58.67.88,1,.73.81-.95-1.49-.07,0,.24.39,1.39,1.84,1.24,2.23,0,.09-.55-1.86-.23-.41.06.3.16.65.25.94.49,1.53.08-1.67,0-.08a6.69,6.69,0,0,0-.05,1.45c-.51-.51.39-1.53,0-.53,0,.08-.6,1.65-.16.6s-.37.66-.4.71c-.19.34-.39.68-.59,1s-1.15,1.95-.12.28a6.73,6.73,0,0,1-.68.82c-.63.73-1.29,1.43-2,2.12-2.76,2.86-5.5,5.87-7.19,9.51a25.44,25.44,0,0,0-2.29,8.91c-.46,5.09.66,10.46,2.26,15.26a82.69,82.69,0,0,0,19.58,31.35c7.43,7.51,18.14,15.4,29.33,14.5A21,21,0,0,0,205.11,398c3.37-3.62,5.81-8,8.33-12.22,1.51-2.54,3.05-5.06,4.7-7.51.84-1.25,1.7-2.48,2.6-3.69.26-.35.53-.7.79-1.06.68-.91-1.14,1.43,0,0,.65-.8,1.3-1.61,2-2.4a95.16,95.16,0,0,1,8.55-8.84c1.64-1.5,3.33-2.94,5.06-4.34l1.37-1.09c.44-.36,2.81-2,.79-.64,5.7-4,11.2-7.77,17.57-10.66,1.81-.82-.95.35.21-.09.5-.19,1-.4,1.48-.58q1.37-.53,2.76-1,2-.67,4-1.23c1.16-.31,2.32-.59,3.49-.85q3-.68,6.09-1.15c.61-.1,1.22-.17,1.83-.28,0,0-2.06.26-.84.12.33,0,.65-.09,1-.12q2.19-.27,4.38-.42a83,83,0,0,1,8.64-.19c1.6.05,3.19.15,4.78.31l1,.11c1.66.16-1.39-.25-.31-.05.89.15,1.77.27,2.65.44,1.53.29,3.05.64,4.54,1.07.71.21,1.42.42,2.12.66l1.16.41.69.27c.76.3.62.23-.42-.2.44-.07,1.39.63,1.8.83q1.11.54,2.19,1.17c.72.41,1.43.85,2.12,1.32.28.18.55.39.82.57,1.34.89-1-.91.09.05a31.25,31.25,0,0,1,3.38,3.23l.58.69c1,1.15-.73-1.16-.21-.29.41.69.93,1.33,1.35,2s.73,1.26,1.06,1.91l.39.78c.1.2.62,1.54.16.3l.42,1.13c.29.83.56,1.67.79,2.52.36,1.28.66,2.57.91,3.88.14.73.26,1.47.38,2.2.08.49.08,1.39-.08-.65,0,.44.11.89.16,1.34.34,3,.49,6,.58,9.05.16,5.59,0,11.2.56,16.78s1.48,11.65,4.74,16.46a20.81,20.81,0,0,0,16.19,9.22c6.53.5,13.15-1.85,18.93-4.65A66.76,66.76,0,0,0,380.94,400a57.58,57.58,0,0,0,13.19-19.51,76.81,76.81,0,0,0,2.81-9.51c.38-1.5.79-3,1.31-4.47.11-.32.24-.64.35-1,.58-1.7-.76,1.48.07-.18.43-.87.84-1.74,1.32-2.58s1.11-1.84,1.72-2.73l.83-1.14c-.89,1.21.4-.49.49-.6a48.57,48.57,0,0,1,4.31-4.53c.65-.6,1.32-1.19,2-1.76a9.69,9.69,0,0,1,1.11-.9c-1.35.85-.5.37-.19.15,1.47-1.06,2.95-2.08,4.51-3a65.52,65.52,0,0,1,7-3.59c1-.44-2.06.83-.25.11,1.09-.43,2.19-.83,3.3-1.18a50.31,50.31,0,0,1,5.79-1.4c1.51-.29-.43,0-.44,0s1.05-.11,1.25-.13c.7-.06,1.41-.11,2.12-.14,1.5-.06,3,0,4.5,0a46.51,46.51,0,0,0,9.12-.65c6.79-1.29,12.9-5.94,17.14-11.25,8.51-10.66,14-27.3,7.13-40.17a17.37,17.37,0,0,0-7.83-7.59c-3.58-1.61-7.14-2.08-11-2.5l-2.15-.24c-.26,0-1.66-.44-.5-.06s-.33-.06-.55-.1a35.74,35.74,0,0,1-5.49-1.34l-1.45-.53c-1.15-.41,1.57.81-.29-.15-.93-.48-1.85-.95-2.75-1.49s-1.53-1-2.27-1.49c-.31-.22-1.85-1.14-.2-.11a11.21,11.21,0,0,1-1.25-1,47.25,47.25,0,0,1-3.56-3.37q-.94-1-1.83-2l-.71-.85c-1-1.14.8,1.11-.35-.45a56.36,56.36,0,0,1-5.55-9.34c-.2-.42-.38-.85-.58-1.27-.49-1.06.66,1.7,0,0-.3-.78-.6-1.56-.88-2.35a56.21,56.21,0,0,1-1.63-5.56c-.19-.8-.35-1.6-.51-2.4-.08-.45-.15-.89-.23-1.34-.25-1.37,0,.22,0,.39a21.55,21.55,0,0,1-.37-5.56c0-.79,0-1.57,0-2.35a9.25,9.25,0,0,1,.23-2.74c-.5,1.1-.18,1.12-.05.42.08-.43.14-.85.23-1.28.17-.9.38-1.8.62-2.69.41-1.47,1-2.87,1.46-4.31.33-1-.81,1.73-.13.31.13-.27.25-.55.38-.82.38-.8.79-1.59,1.22-2.37a61.85,61.85,0,0,1,4.44-6.75c1-1.36-1.07,1.36.12-.16l1.16-1.45c.73-.91,1.46-1.8,2.18-2.71,3.23-4,6.62-8.3,6.86-13.7a13.57,13.57,0,0,0-6.76-12.09c-3.63-2.17-8.05-2.71-12.19-3-4.63-.27-9.29,0-13.91.17-13.93.58-27.83.9-41.72-.5l-3.16-.35-1.28-.16s-2.1-.28-1-.12l-.95-.14-1.32-.2c-1.33-.2-2.67-.42-4-.66q-6.61-1.17-13.13-2.83A171.74,171.74,0,0,1,319,172.47a9,9,0,0,1-1.87-.75c1.5,1.05.5.21-.06,0l-.92-.41c-1.5-.7-3-1.44-4.42-2.26a43.08,43.08,0,0,1-4.07-2.59c-.16-.11-.63-.55-.76-.56.86.08,1.09.91.24.15-.63-.56-1.27-1.11-1.87-1.7s-1-1.1-1.53-1.65-.18-.74.34.47a6.15,6.15,0,0,0-.64-.9c-.37-.55-.71-1.11-1-1.69-.17-.32-.3-.69-.5-1-.24-.52-.14-.26.31.79-.11-.28-.21-.56-.31-.84-.35-1-.41-2.13-.79-3.09.62,1.59.18,1.76.13.91,0-.25,0-.51-.05-.76,0-.51,0-1,0-1.52,0-.86.53-2.32-.09.18.12-.49.17-1,.27-1.53.22-1.08.5-2.14.8-3.2.71-2.52,1.52-5,2.21-7.53a95.38,95.38,0,0,0,3.45-23.09c.13-6-1-11.73-2-17.56-.13-.77-.26-1.54-.37-2.31l-.15-1c-.28-1.82.19,1.76,0-.16-.24-2.15-.46-4.29-.61-6.45-.29-4.13-.42-8.28-.32-12.42.08-3.22.3-6.43.68-9.62.27-2.17-.23,1.57.07-.5.1-.64.2-1.29.31-1.93.2-1.17.42-2.34.65-3.5a100.11,100.11,0,0,0,2.14-12.28c.7-10.08-5.64-18.64-13.54-24.16-9.82-6.86-22.31-9.33-34-10.8a180.65,180.65,0,0,0-41.64.05,245.44,245.44,0,0,0-43.36,8.69c-13.31,3.91-26.87,8.61-38.26,16.74a70.42,70.42,0,0,0-27.34,39A78.36,78.36,0,0,0,113,131.77a75.32,75.32,0,0,0,13.84,21.72,98.48,98.48,0,0,0,13.95,12.33,98.15,98.15,0,0,0,21.09,12.1c3.51,1.49,7.06,2.86,10.64,4.19,1.46.54,2.93,1.09,4.39,1.65l1.83.74c1,.38-1.78-.8-.42-.17.37.17.75.33,1.12.51a32.17,32.17,0,0,1,3.28,1.74c.47.28.91.62,1.38.91,1.16.69-1.19-1-.51-.42.22.2.46.38.68.57.39.36.76.72,1.12,1.11a4.57,4.57,0,0,0,.58.66c-1.22-.89-.89-1.28-.54-.68s.66,1,.95,1.52c.11.21.21.44.33.65.73,1.2-.56-1.78-.16-.4.24.86.45,1.79.74,2.64.39,1.11,0-1.69.06.26,0,.42.05.84.06,1.27a15.88,15.88,0,0,1-.17,3.08c.31-1.71.08-.56,0-.23-.14.55-.24,1.12-.38,1.68s-.39,1.39-.63,2.08c-.16.48-.35.95-.52,1.42-.23.63-.61.66.22-.5a34.33,34.33,0,0,0-1.56,3.09c-1.94,3.41-.92,8.35,2.69,10.26A7.63,7.63,0,0,0,197.34,212.86Z" transform="translate(-6.86 -16)"/>
+                                    </g>
+                                    <g>
+                                      <path class="cls-1" d="M352.5,141.5c-9.19,3.55-12.16,3.2-13,2-2.66-3.8,17.37-14.26,21-33.69,3.18-17.19-9.59-25.18-3.52-39C361.65,60,373,56,375.7,55.09c13.16-4.2,28.28.55,36,10.65,9,11.77,4.93,26.67,1,41-3.45,12.51-6,17.12-9.48,19.67-5.05,3.73-10.35,3.6-15.72,4.06C379,131.22,367.05,133.68,352.5,141.5Z" transform="translate(-6.86 -16)"/>
+                                      <path class="cls-1" d="M351.3,137.16a54.11,54.11,0,0,1-7.53,2.42c-.41.09-.83.15-1.24.24-.86.19,1.17-.08.34,0l-.48,0h-.83c-1.07,0,1.16.25.34,0s.15.07.49.25c-.78-.41.89.81.46.39s.81,1.21.43.53a3.63,3.63,0,0,1,.48,1.7c0-.74-.27,1.42-.1.68s0,.19-.22.45c.26-.36.46-.77.71-1.14.53-.78-.78.92-.14.19.2-.23.4-.48.61-.71.44-.51.91-1,1.37-1.49,1.12-1.18,2.27-2.33,3.39-3.51a84.49,84.49,0,0,0,8.25-9.86c6.05-8.63,9-19,7.24-29.44-.72-4.17-2.3-8.1-3.6-12.11-.31-.94-.6-1.88-.84-2.83s-.27-2-.59-2.85c.38,1,.07.58,0,.1,0-.18,0-.37-.05-.55,0-.52-.05-1,0-1.55s.05-.95.08-1.43c.05-.89.17.09,0,.18A4.47,4.47,0,0,0,360,76a26,26,0,0,1,1-3.23c.23-.66-.49,1,0-.06l.41-.84c.29-.59.62-1.17,1-1.74s.64-1,1-1.46c.11-.16.85-1,.13-.19l.54-.65a26.53,26.53,0,0,1,2.4-2.46c.39-.36.8-.69,1.2-1,.81-.7-.8.58.05,0l.61-.44c.81-.58,1.64-1.12,2.5-1.63s1.56-.87,2.37-1.27l1-.49.49-.22c.74-.33-1,.41-.33.14,1.09-.42,2.18-.83,3.31-1.16a31.06,31.06,0,0,1,3.82-.87c.26,0,1.12-.15.1,0l.92-.1c.68-.06,1.36-.11,2-.13a35.71,35.71,0,0,1,3.87.09l.92.08s1.22.17.5.06l.49.08,1.08.2a36.73,36.73,0,0,1,3.71,1c.57.19,1.15.39,1.71.6.29.1.57.22.85.33-1-.39,0,0,.25.12a33,33,0,0,1,3.33,1.75c.5.31,1,.63,1.49,1,.25.17.49.33.73.51s.81.63.22.15a31.74,31.74,0,0,1,2.73,2.46c.41.42.8.84,1.18,1.28l.56.67c.59.7-.31-.49.23.31a30.78,30.78,0,0,1,2.19,3.66c.14.29.28.59.41.89-.36-.82,0,0,.07.19.25.67.47,1.34.67,2s.33,1.24.46,1.87c.08.38.15.76.22,1.14,0,0,.17,1.25.09.55s.05.56.05.56c0,.32.05.64.07,1,.05.72.07,1.43.08,2.15,0,1.4-.06,2.8-.19,4.19-.06.67-.14,1.34-.22,2s.18-1.08,0,.22c-.07.41-.13.82-.2,1.22-.49,2.91-1.16,5.78-1.89,8.64a145.23,145.23,0,0,1-5,16.68c-.11.29-.23.59-.35.88-.33.82.11-.23.1-.24s-.56,1.24-.64,1.4A23.53,23.53,0,0,1,403,120c-.18.31-.38.61-.58.91l-.36.5c-.43.64.67-.75.28-.37s-.82,1-1.29,1.39c-.21.19-.45.35-.65.55.94-.94.64-.48.14-.13-.31.22-.63.42-.95.62s-.63.37-1,.54c.07,0-1.2.58-.62.32s-.68.25-.62.23l-1.17.36c-.65.19-1.31.33-2,.46-.39.07-.79.14-1.18.19.93-.13,0,0-.19,0-1.4.15-2.8.23-4.2.34A92.37,92.37,0,0,0,359,133.36q-4.5,1.94-8.81,4.25a4.55,4.55,0,0,0-1.62,6.16,4.62,4.62,0,0,0,6.16,1.62A87.27,87.27,0,0,1,372,138.1q3.69-1.12,7.47-1.92,1.53-.31,3.09-.57l1.76-.28-.35,0c.37,0,.75-.1,1.11-.14,6-.7,12.11-.55,17.7-3.28a19.7,19.7,0,0,0,8.57-8.45c2.69-5,4.27-10.54,5.76-16a130.8,130.8,0,0,0,4.13-18.86c.73-5.92.52-12.22-1.65-17.84a32.74,32.74,0,0,0-11.37-14.61c-16.35-12.08-42.38-8.49-53.5,9a24.09,24.09,0,0,0-3.88,15.09c.47,4.57,2.06,8.74,3.5,13.06a47.81,47.81,0,0,1,1.75,6.57c.06.32.11.64.16,1s.27.64,0-.22a7.63,7.63,0,0,1,.16,1.85,29.82,29.82,0,0,1-.05,4.12c0,.38-.08.76-.12,1.14.1-.92,0-.23,0,0-.13.72-.26,1.44-.42,2.16a34.11,34.11,0,0,1-1,3.62c-.21.58-.43,1.15-.65,1.73s.45-1,0,0c-.14.3-.27.6-.42.9-.5,1.07-1.06,2.13-1.66,3.15s-1.21,2-1.86,2.94l-.89,1.26-.55.74-.36.48.33-.43a11.82,11.82,0,0,1-2.06,2.49c-.69.81-1.41,1.6-2.13,2.39-2.24,2.42-4.69,4.67-6.8,7.2s-4.09,5.86-2.18,9.26c2.06,3.69,6.83,3.36,10.33,2.62a54,54,0,0,0,7.8-2.48c2.19-.84,3.94-3.07,3.14-5.54C356.15,138.17,353.66,136.26,351.3,137.16Z" transform="translate(-6.86 -16)"/>
+                                    </g>
+                                    <g>
+                                      <path class="cls-1" d="M127.33,203.66c2-1,4.26-2.51,4.17-4.16-.18-3.33-9.73-4.82-18-7-9.9-2.61-34-9-46.47-25.84-6.65-9-5.08-13-11.71-18.78-7.62-6.7-19.66-7.07-28.43-2a31.69,31.69,0,0,0-15.58,24.91C10.05,193.28,36.82,214.56,60,215.16c.75,0,3.33-.4,8.51-.64a226.16,226.16,0,0,0,46.23-7Z" transform="translate(-6.86 -16)"/>
+                                      <path class="cls-1" d="M129.6,207.55c3.36-1.76,6.87-4.6,6.3-8.81-.36-2.72-2.43-4.7-4.82-5.84-5.24-2.5-11.16-3.36-16.72-4.83-3.3-.87-6.57-1.78-9.81-2.82-2-.66-4.09-1.37-6.1-2.14-1-.39-2-.82-3.07-1.22-.63-.25,1,.44,0,0l-.89-.39q-.9-.39-1.8-.81a74.34,74.34,0,0,1-13-7.6c-.15-.11-1.08-.83-.2-.14l-.55-.44c-.55-.43-1.09-.88-1.62-1.34-1-.84-1.92-1.71-2.83-2.63S72.8,166.69,72,165.7c-.18-.22-1.29-1.63-.62-.75-.52-.69-1-1.39-1.52-2.11a45.9,45.9,0,0,1-3.85-7,50.42,50.42,0,0,0-2.63-5.44,26.41,26.41,0,0,0-13.5-10.84c-11.56-4.27-24.72-.14-33,8.57A35.28,35.28,0,0,0,7.3,178.07c1.65,10.3,8.28,19.58,16,26.3,8.28,7.2,18.56,12.68,29.45,14.53a36.66,36.66,0,0,0,7.46.75c1.74-.06,3.48-.33,5.22-.45,4.93-.35,9.86-.54,14.78-1,12.76-1.28,25.73-3.34,38-7l10.3-3.11a4.5,4.5,0,0,0-2.39-8.68c-6.55,2-13,4-19.73,5.53q-8.94,2-18,3.33l-1.18.16c-.19,0-.89.12,0,0l-1.91.25c-1.34.16-2.69.32-4,.46q-3.56.38-7.11.64c-4.38.31-8.76.48-13.13.9a15.52,15.52,0,0,1-5.09-.23c1.22.31-.49-.08-.81-.14-.56-.09-1.12-.2-1.68-.31-1.25-.26-2.48-.57-3.7-.92s-2.24-.69-3.34-1.09c-.56-.2-1.11-.41-1.66-.63l-.45-.18c.59.24-.66-.29-.77-.34a60.56,60.56,0,0,1-6.67-3.51c-1-.63-2-1.29-3-2-.49-.34-1-.69-1.46-1.05l-.58-.43c.9.67-.34-.28-.5-.4a57,57,0,0,1-5.48-5.06c-.81-.84-1.58-1.72-2.32-2.61-.21-.25-1.26-1.62-.59-.72-.41-.55-.81-1.1-1.2-1.66a41,41,0,0,1-3.44-6c-.12-.25-.23-.51-.34-.75-.47-1,.34.91-.06-.14-.19-.51-.39-1-.56-1.52a31.06,31.06,0,0,1-.94-3.26c-.12-.52-.23-1-.33-1.57a2.71,2.71,0,0,1-.12-.79c-.17.83.06.59,0,.09a31.55,31.55,0,0,1-.17-3.5c0-.53,0-1,.07-1.57l.06-.73c0-.31.32-.82,0-.3s0,0,.06-.31.09-.51.14-.76c.11-.57.24-1.13.39-1.69a28.72,28.72,0,0,1,1-3.26c.09-.26.2-.52.3-.78-.39,1-.09.24,0,0,.25-.57.53-1.13.82-1.69a32.41,32.41,0,0,1,1.89-3.15l.51-.73s.72-.95.3-.41.31-.38.32-.39c.23-.28.47-.56.71-.83a32.63,32.63,0,0,1,2.63-2.63c.47-.42,1-.83,1.46-1.21-.81.62.22-.15.32-.22l1-.66a28,28,0,0,1,3.3-1.84c.16-.08,1.29-.51.27-.13l.69-.27c.69-.25,1.39-.47,2.1-.67s1.19-.3,1.8-.42l1.08-.2c.86-.14.06,0-.1,0a28.68,28.68,0,0,1,4-.16c.61,0,1.21.07,1.82.13,1.22.11-.94-.21.25,0l.72.13a27.11,27.11,0,0,1,3.84,1.1c1.13.4-.83-.43.26.1l.65.31c.54.26,1.07.56,1.58.87s1,.66,1.51,1c-.87-.6.1.09.24.2s.57.49.84.75c.66.62,1.95,1.57,2.27,2.44-.33-.9-.26-.34,0,0,.11.15.22.31.32.47.29.45.57.92.83,1.4.93,1.73,1.64,3.56,2.47,5.34C63.12,171,71,178.61,80.13,184.16A105.27,105.27,0,0,0,105,194.8c3.31,1,6.66,1.89,10,2.72,2.77.67,5.57,1.29,8.31,2.08,1.1.31,2.16.76,3.24,1.06.63.18-1-.48-.12,0l.6.3.55.31c.85.49-.18.06-.19-.18a4.16,4.16,0,0,0,.42.42c-.41-.13-.65-.92-.4-.47l-.32-.77c.12.44.09.2-.07-.72,0,0,.48-1.45.24-1l-.09.13c.36-.46.36-.5,0-.13l-.28.25c.34-.26.38-.3.12-.11-.66.36-1.27.79-1.94,1.14a4.52,4.52,0,0,0-1.61,6.15A4.6,4.6,0,0,0,129.6,207.55Z" transform="translate(-6.86 -16)"/>
+                                    </g>
+                                    <g>
+                                      <path class="cls-1" d="M245.82,415c-16.54,11.26-24.58,17-28.77,24-6.29,10.44-6.41,23.81-3.4,35.89,1,4.06,4.91,15.14,15.33,21.74,19,12.05,43.26-2.18,47.81-4.86,5.25-3.09,17.28-10.24,22.88-25.2a48.7,48.7,0,0,0-.49-34.65c-4.44-11.17-7.2-10.46-10.11-21.63-3.91-15-.36-27.9-3.57-28.74-.75-.2-2,.24-4,3a102.52,102.52,0,0,1-7.29,8.61C264.47,403.45,256.45,407.72,245.82,415Z" transform="translate(-6.86 -16)"/>
+                                      <path class="cls-1" d="M243.55,411.08c-5.46,3.72-11,7.43-16.22,11.43a68.54,68.54,0,0,0-10.48,9.21c-8.38,9.58-10.7,22.89-9.17,35.25a55.22,55.22,0,0,0,3.91,15.47A40.89,40.89,0,0,0,220.94,496a35.23,35.23,0,0,0,17.34,9.09,46.35,46.35,0,0,0,18.8-.46,76.64,76.64,0,0,0,22.55-9.33c8.64-5.12,16.36-11.84,21.27-20.72A52.37,52.37,0,0,0,304,431.91a62.3,62.3,0,0,0-4.23-9.3c-1.09-1.93-2.35-3.75-3.42-5.69-.26-.47-.51-.95-.74-1.44-.15-.29-.92-1.67-.28-.55a21,21,0,0,1-1.55-4.56c-.52-1.84-.95-3.69-1.29-5.57-.08-.46-.16-.92-.23-1.38,0,0-.22-1.53-.1-.61-.11-.87-.2-1.75-.28-2.63-.28-3.2-.34-6.41-.35-9.62a57.22,57.22,0,0,0-.17-6.42c-.28-2.54-1-5-3.29-6.41-3-1.86-6.54-.1-8.66,2.25a30.64,30.64,0,0,0-1.95,2.47c-.61.81.64-.82,0,0l-.4.51c-1,1.3-2.1,2.59-3.2,3.84a98.79,98.79,0,0,1-7.6,7.85q-1.82,1.67-3.71,3.23l-1.84,1.48c.8-.63-.21.16-.31.23-.4.31-.81.61-1.22.91-2.44,1.8-5,3.49-7.49,5.16-2.71,1.79-5.43,3.56-8.11,5.39-2,1.32-3,4-1.62,6.16,1.25,1.93,4.08,3,6.16,1.61,5.09-3.46,10.33-6.69,15.3-10.32a101.31,101.31,0,0,0,15-13.3c2-2.21,3.95-4.5,5.79-6.87l1.05-1.37c.57-.75-.58.61.29-.35.13-.16,1.17-1,1.16-1.19,0,.39-.91.52-.15.16-1.29.6-.81.3-.44.22a2.65,2.65,0,0,1-1.78,0c.58.14-1.19-.57-.7-.28a2.76,2.76,0,0,1-1.24-1.22,3.3,3.3,0,0,1,.18.32c-.75-1.43-.3-.6-.14-.06.27,1-.08-1.2,0-.06,0,.54.08,1.08.1,1.62.08,2.4,0,4.8.05,7.2A73.26,73.26,0,0,0,285.45,414a40,40,0,0,0,3.12,7.5c1,1.8,2.16,3.51,3.19,5.29.65,1.11,1.25,2.24,1.8,3.4.29.61.57,1.23.85,1.85.58,1.31-.31-.82.25.61.22.56.45,1.12.65,1.68a48.8,48.8,0,0,1,2.47,9.81c-.14-1,.05.47.05.54l.09.88c.08.87.13,1.74.16,2.62a45.78,45.78,0,0,1-.09,5.24c-.06.87-.14,1.74-.25,2.61,0-.2.13-.81,0,.1-.07.43-.14.86-.22,1.28a44,44,0,0,1-1.21,5.07c-.25.83-.52,1.65-.81,2.47-.12.33-.25.65-.37,1s-.42,1-.09.24a41.79,41.79,0,0,1-2.07,4.19c-.67,1.18-1.39,2.33-2.16,3.44l-.62.87c-.11.15-.84,1.09-.15.21-.45.58-.92,1.16-1.41,1.72a50,50,0,0,1-5.27,5.22l-1.11.92a4.26,4.26,0,0,0-.66.53c.67-.82.39-.3,0,0-.81.61-1.65,1.2-2.49,1.77-2.21,1.49-4.51,2.86-6.85,4.15q-2.16,1.2-4.41,2.27c-.92.44-1.86.84-2.79,1.26-.59.26,1.07-.43.16-.07l-.81.33c-.6.24-1.21.47-1.82.69a61.21,61.21,0,0,1-7.26,2.18c-1.22.28-2.44.52-3.68.71-.23,0-1.34.3-.17,0a5.4,5.4,0,0,1-.69.08c-.81.09-1.63.16-2.44.2a38.84,38.84,0,0,1-3.89,0c-.72,0-1.43-.09-2.14-.17l-.72-.08c1.23.15-.36-.08-.58-.12a31.16,31.16,0,0,1-3.92-1c-.71-.23-1.41-.49-2.11-.76.87.34.07,0-.14-.08-.41-.18-.82-.38-1.22-.58a32.72,32.72,0,0,1-3.71-2.25c-.1-.07-1.14-.85-.34-.23-.3-.23-.6-.48-.89-.72-.57-.49-1.13-1-1.67-1.51a33.4,33.4,0,0,1-2.78-3c-.16-.19-.65-.84,0,0-.21-.27-.41-.54-.61-.82-.44-.62-.87-1.25-1.27-1.9-.6-.95-1.16-1.93-1.68-2.92-.21-.42-.43-.85-.63-1.28-.12-.24-.23-.49-.34-.74l-.22-.48c-.18-.44-.13-.32.16.37a11.73,11.73,0,0,0-.89-2.37c-.24-.69-.45-1.38-.64-2.08-.32-1.22-.59-2.46-.84-3.71-.16-.82-.31-1.66-.44-2.49,0-.28-.08-.56-.13-.83.15,1-.08-.73-.1-.9a54.48,54.48,0,0,1-.23-9.64c.05-.83.14-1.66.23-2.48.15-1.36-.18.89.06-.44.05-.27.09-.55.14-.82a41.51,41.51,0,0,1,1.14-4.78c.24-.78.51-1.55.8-2.31,0-.1.55-1.34.16-.44q.19-.47.42-.93a31.76,31.76,0,0,1,2.06-3.75l.57-.85c.24-.34,1.23-1.44.18-.27.58-.65,1.11-1.36,1.71-2a49.5,49.5,0,0,1,4.11-3.95c.79-.68,1.59-1.34,2.4-2l.71-.56c.18-.14,1-.81.07-.06.5-.4,1-.79,1.55-1.18,2.26-1.69,4.57-3.33,6.89-4.95,2.83-2,5.68-3.93,8.54-5.88,1.94-1.32,3-4,1.61-6.16C248.46,410.76,245.63,409.66,243.55,411.08Z" transform="translate(-6.86 -16)"/>
+                                    </g>
+                                    <g>
+                                      <path class="cls-1" d="M106.5,348.5c2.87-2.34,3.24-3.43,3-4-1.31-3.13-21.17,9.21-40.84,2.81-5.7-1.85-9.15-4.56-16.21-4.37a30.92,30.92,0,0,0-15.3,4.87c-2.79,1.69-16.66,9.78-17.08,24-.27,9,4.38,15.94,9.31,22.21,4.75,6.05,10.25,12,18.75,13.56,13.41,2.42,24.67-6.68,30-11.13a42.93,42.93,0,0,0,12.44-16c2.31-5.37,1.69-7.64,3.56-13.18C95.81,362.28,99.13,355.58,106.5,348.5Z" transform="translate(-6.86 -16)"/>
+                                      <path class="cls-1" d="M109.68,351.68c1.78-1.46,3.57-3.18,4.2-5.48a5.31,5.31,0,0,0-3.58-6.43c-2.6-.81-5.56.22-8.07.94-3.87,1.12-7.74,2.26-11.7,3-1.09.21-2.18.38-3.28.55,1.08-.17-.6.07-.88.1-.71.07-1.42.14-2.13.18a45.56,45.56,0,0,1-7.66-.11l-.64-.07c.67.09-.7-.11-.65-.1-.63-.1-1.25-.22-1.88-.36a36.06,36.06,0,0,1-4.1-1.14c-2.18-.75-4.26-1.72-6.41-2.53a29.17,29.17,0,0,0-16.34-1.12c-6.5,1.31-12.43,4.84-17.62,8.87-6.29,4.88-11.66,11.78-13,19.82a30.32,30.32,0,0,0,2.42,17.26c2.09,4.75,5.26,8.92,8.49,13A44.49,44.49,0,0,0,37.8,408.29a28.12,28.12,0,0,0,15.94,4.14c9.78-.41,18.32-5.35,25.76-11.34,6.75-5.42,12.3-11.82,15.6-19.93,1.76-4.3,2-9,3.59-13.35l.42-1.14c.09-.21.18-.43.26-.65.22-.6-.47,1.05-.05.14s.88-1.9,1.37-2.82a45.72,45.72,0,0,1,3.75-5.88c.51-.7.16-.21,0-.07l.8-1,1.14-1.33c1-1.17,2.14-2.3,3.26-3.39a4.54,4.54,0,0,0,0-6.36,4.58,4.58,0,0,0-6.36,0C96.54,351.88,91,360.11,88.84,369.4c-.44,1.94-.71,3.91-1.22,5.83a26.64,26.64,0,0,1-1,3.13c.26-.65-.09.21-.16.37l-.36.78c-.33.69-.69,1.38-1.06,2.05-.52.93-1.07,1.83-1.66,2.72q-.52.78-1.08,1.53l-.43.59c.46-.61.08-.12-.18.19a43.76,43.76,0,0,1-3.77,4.05c-1,.9-1.93,1.76-2.94,2.6l-1.52,1.25-.9.73c-.14.11-.3.21-.43.33.89-.84.27-.21,0,0-1.49,1.12-3,2.19-4.63,3.16-.87.53-1.76,1-2.66,1.51-.42.22-.83.43-1.26.63l-.64.3c-.37.17-1,.41-.23.12a32.89,32.89,0,0,1-6.35,1.9l-.75.13c-1.2.21.62,0-.13,0-.58,0-1.15.1-1.73.13a32.67,32.67,0,0,1-3.57-.1c-1.29-.08.54.12-.23,0l-.82-.14c-.59-.11-1.18-.25-1.76-.41s-1-.29-1.5-.47c0,0-1.17-.43-.54-.19s-.4-.18-.51-.23a24.87,24.87,0,0,1-2.94-1.65c-.41-.27-.81-.57-1.22-.85-1-.68.44.39-.12-.09l-.85-.71A45.63,45.63,0,0,1,35,393.81c-.68-.8-1.34-1.6-2-2.42l-.45-.58-.36-.46c.39.52-.38-.49-.36-.47l-.58-.78a51.72,51.72,0,0,1-3.81-5.91c-.28-.52-.55-1-.8-1.57-.1-.2-.68-1.59-.34-.72a27.94,27.94,0,0,1-1.22-3.76c-.13-.52-.24-1-.33-1.57-.05-.27-.09-.53-.13-.8.12.91,0,0,0-.24a23,23,0,0,1,0-3.8c0-.23,0-.46.07-.69.09-1,0,.17,0,.18a9.24,9.24,0,0,0,.29-1.48,23.29,23.29,0,0,1,.89-2.95,3.83,3.83,0,0,1,.24-.59c-.51.83-.2.46-.08.2.21-.42.4-.84.62-1.26a28.84,28.84,0,0,1,1.5-2.49c.22-.33.46-.65.69-1,.57-.82-.49.58-.08.09.13-.15.25-.31.37-.46.57-.7,1.17-1.37,1.8-2a40.48,40.48,0,0,1,3.48-3.19c.16-.13,1.14-.9.47-.38s.3-.21.44-.31c.48-.36,1-.7,1.48-1A52.36,52.36,0,0,1,42,350.26l1.16-.58.7-.32c.64-.29-.13.13-.17.07s2.75-1,3-1.05a32.68,32.68,0,0,1,3.5-.78c-.81.15-.1,0,.07,0l.87-.08c.82-.06,1.64-.09,2.46-.08.62,0,1.24.07,1.87.11.21,0,.87.16,0,0l.74.13a24.19,24.19,0,0,1,3.24.87c2,.67,3.86,1.54,5.79,2.29,9.56,3.73,20,3.36,29.84,1.16,3.47-.77,6.87-1.82,10.3-2.79,1.11-.31,2.24-.51,3.35-.8-1.51.4-1,.08-.47.1s.78.23-.61-.13c.71.18-.59-.28-.68-.33a4.17,4.17,0,0,1-1.71-2.26,3,3,0,0,1,.14-2.19c.37-.84.11-.27,0-.1-.23.38-.22,0,.32-.38a8.22,8.22,0,0,0-.8.86c-.48.48-1,.92-1.53,1.36-1.82,1.5-1.68,4.82,0,6.36A4.61,4.61,0,0,0,109.68,351.68Z" transform="translate(-6.86 -16)"/>
+                                    </g>
+                                    <path class="cls-2" d="M454.85,164.66" transform="translate(-6.86 -16)"/>
+                                    <path class="cls-2" d="M544.25,476.11" transform="translate(-6.86 -16)"/>
+                                    <path class="cls-3" d="M426.5,435.5" transform="translate(-6.86 -16)"/>
+                                  </svg>                       
+                                  </div>
+                                <div>
+                                    <div class="color-palette-title">__MSG_mainAccent__</div>
+                                    <div class="color-palette-desc">__MSG_pickColor__</div>
+                                </div>
+                            </div>
+                            <h5 class="set-label">__MSG_defaultColors__</h5>
+                            <div class="color-container default" id="main-accent-default-palette">
+                                <div style="--color-var: #68b6ff;" class="color-entry"></div>
+                                <div style="--color-var: #7fd6ab;" class="color-entry"></div>
+                                <div style="--color-var: #ffbe5d;" class="color-entry"></div>
+                                <div style="--color-var: #fa7c91;" class="color-entry"></div>
+                                <div style="--color-var: #ff90de;" class="color-entry"></div>
+                            </div>
+                            <h5 class="set-label">__MSG_customColors__</h5>
+                            <div class="color-container custom" id="main-accent-container">
+                                <div class="color-container custom" id="main-accent-custom-palette">
+                                    <div class="add-color-entry" id="main-accent-popup-open"></div>
+                                </div>
+                                <div class="color-container custom popup" id="main-accent-popup">
+                                    <h3>__MSG_pickColor__</h3>
+                                    <input class="color-entry custom" type="color"></input>
+                                    <div class="inline-button-wrapper">
+                                        <div class="line-button green inline" id="color-save">__MSG_save__</div>
+                                        <div class="line-button red inline" id="color-cancel">__MSG_cancel__</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="side-pannel-entry" id="infos-pannel">
+                    <h1 class="side-pannel-header">__MSG_infoTab__</h1>
+                    <div class="side-header-separator"></div>
+                    <div class="side-pannel-section">
+                        <div class="side-pannel-section-header image-within" id="backgrounds-section"><div class="img"></div>__MSG_backgroundsRights__</div>
+                        <p class="side-pannel-section-paragraph">__MSG_backgroundsRightsP1__</p>
+                        <p class="side-pannel-section-paragraph">__MSG_backgroundsRightsP2__</p>
+                    </div>
+                    <div class="side-separator"></div>
+                    <div class="side-pannel-section">
+                        <div class="side-pannel-section-header image-within" id="icons-section"><div class="img"></div>__MSG_iconsRights__</div>
+                        <p class="side-pannel-section-paragraph">__MSG_iconsRightsP1__</p>
+                        <p class="side-pannel-section-paragraph">__MSG_iconsRightsP2__</p>
+                        <p class="side-pannel-section-paragraph">__MSG_iconsRightsP3__</p>
+                    </div>
+                    <div class="side-separator"></div>
+                    <div class="side-pannel-section">
+                        <div class="side-pannel-section-header image-within" id="codebase-section"><div class="img"></div>__MSG_codebaseRights__</div>
+                        <p class="side-pannel-section-paragraph">__MSG_codebaseRightsP1__</p>
+                    </div>
+                    <div class="side-separator"></div>
+                    <div class="side-pannel-section">
+                        <div class="side-pannel-section-header image-within" id="libraries-section"><div class="img"></div>__MSG_codebaseRightsLibraries__</div>
+                        <ul class="side-pannel-section-list">
+                            <li><a href="https://github.com/VincentGarreau/particles.js/" target="_blank">Particles.js</a></li>
+                            <li><a href="https://jquery.com/" target="_blank">jQuery</a></li>
+                            <li><a href="https://jikan.moe/" target="_blank">JikanAPI</a></li>
+                        </ul>                    
+                    </div>
+                    <div class="side-separator"></div>
+                    <div class="side-pannel-section">
+                        <div class="side-pannel-section-header image-within" id="feedback-section"><div class="img"></div>__MSG_feedbackAndBugs__</div>
+                        <p class="side-pannel-section-paragraph">__MSG_feedbackAndBugsP1__</p>
+                        <div class="line-button-side-wrapper stacked">
+                            <a href="https://chrome.google.com/webstore/detail/nexxt-tabs/dbocanalfbkfdbpjpnbjmipaidlogbmi" target="_blank" class="line-button blue full active" id="feedback-button">__MSG_feedbackAndBugsLeaveFeedback__</a>
+                            <a href="https://forms.gle/cL9F5q3m1WX4Hbv47" target="_blank" class="line-button red active" id="bug-button">__MSG_feedbackAndBugsReportBug__</a>
+                        </div>
+                    </div>
+                    <div class="side-separator"></div>
+                    <div class="side-pannel-section">
+                        <div class="side-pannel-section-header image-within" id="contact-section"><div class="img"></div>__MSG_contact__</div>
+                        <p class="side-pannel-section-paragraph">__MSG_contactP1__</p>
+                        
+                        <div class="line-button-side-wrapper" id="contact-button-wrapper">
+                            <a class="line-button blue active" id="contact-button" href="mailto:nocymer.dev@outlook.com">__MSG_contactUs__</a>
+                        </div>
+                        
+                    </div>
+                    <div class="side-separator"></div>
+                    <div class="side-pannel-section">
+                        <div class="social-media-container">
+                            <a href="https://github.com/NoCymer" target="_blank" title="Github" id="github"></a>
+                            <a href="https://twitter.com/NEXXT_Tabs" target="_blank" title="Twitter" id="twitter"></a>
+                            <a href="https://discord.gg/x5EbcbrCQG" target="_blank" title="Discord" id="discord"></a>
+                        </div>
+                        <h4 class="copyright-end-paragraph header" id="app-version"></h4>
+                        <p class="copyright-end-paragraph" id="app-copyright"></p>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="side-pannel-large backgrounds">
+            <div class="side-pannel-large-entry" id="background-settings-pannel">
+                <div class="side-pannel-large-section">
+                    <h4 class="side-pannel-section-header image-within edit-backgrounds"><div class="img"></div>__MSG_backgroundSelect__</h4>
+                    <div class="line-button-side-wrapper">
+                        <div class="line-button blue active" id="select-all-button">__MSG_selectAll__</div>
+                        <div class="line-button red active" id="deselect-all-button">__MSG_deselectAll__</div>
+                    </div>
+                    <div class="background-container"></div>
+                </div>
+            </div>
+        </div>
+    
+    
+    
     </div>
-    <!-- #endregion -->
 
-    <!-- #region addBookmark -->
-    <div id="add-bookmark-wrapper-wrapper">
-        <form id="submit-bookmark">
-            <div id="add-bookmark-wrapper">
-                <img src="src/assets/plus.svg" alt="" id="close-cross-btn">
-                <h1 id="bookmark-h1">__MSG_bookmarkNewH1__</h1>
-                <div class="bookmark-option">
-                    <h3>__MSG_bookmarkNewTitle__</h3>
-                    <input type="text" class="mcq" id="newBookMarkTitle" autocomplete="off" spellcheck="false">
+    <div class="main-content">
+        <div class="icon" id="settings-wheel"></div>
+        <div class="countdown-container top" id="top-countdown">
+            <h4 class="countdown-label"></h4>
+            <div class="countdown">
+                <div class="countdown-number-container">
+                    <h4 class="countdown-section ct-days">00</h4>
+                    <span class="separator">:</span>
+                    <h4 class="countdown-section ct-hours">00</h4>
+                    <span class="separator">:</span>
+                    <h4 class="countdown-section ct-minutes">00</h4>
+                    <span class="separator">:</span>
+                    <h4 class="countdown-section ct-seconds">00</h4>
                 </div>
-                <div class="bookmark-option">
-                    <h3>__MSG_bookmarkNewLink__</h3>
-                    <input type="text" class="mcq" id="newBookMarkURL" autocomplete="off" spellcheck="false">
+                <div class="countdown-units-container">
+                    <h4 class="countdown-section">__MSG_days__</h4>
+                    <span class="separator"></span>
+                    <h4 class="countdown-section">__MSG_hours__</h4>
+                    <span class="separator"></span>
+                    <h4 class="countdown-section">__MSG_minutes__</h4>
+                    <span class="separator"></span>
+                    <h4 class="countdown-section">__MSG_seconds__</h4>
                 </div>
-                <button class="standard-btn" tabindex="1" id="create-bookmark-btn">__MSG_bookmarkNewCreate__</button>
+            </div>
+        </div>
+        <div class="clock-container top" id="top-clock">
+            <h4 class="clock-section clock-hours">00</h4>
+            <span class="separator"></span>
+            <h4 class="clock-section clock-minutes">00</h4>
+            <h4 class="clock-section clock-period"></h4>
+        </div>
+        <div class="search-wrapper">
+            <form id="navigation-bar">
+                <span></span>
+                <input type="text" autocomplete="off" placeholder="__MSG_searchPlaceholder__" id="search-bar"> 
+           </form>
+           <div id="bookmark-container">
+                <div class="bookmark" id="add-bookmark"><img src="./assets/app-ressources/plus-symbol.svg" alt="Add Bookmark"></div>
+           </div>
+        </div>
+        <form class="bookmark-popup" id="bookmark-form">
+            <h4 class="side-pannel-section-header image-within new-bookmark"><div class="img"></div>__MSG_bookmarkNewH1__</h4>
+            <div class="bookmark-input-section">
+                <input type="text" placeholder=" " id="bookmark-title" tabindex="1" autocomplete="off">
+                <span class="input-background"></span>
+                <span class="input-header">__MSG_bookmarkNewTitle__</span>
+            </div>
+
+            <div class="bookmark-input-section">
+                <input type="text" placeholder=" " id="bookmark-url" tabindex="1" autocomplete="off">
+                <span class="input-background"></span>
+                <span class="input-header">URL</span>
+            </div>
+
+            <div class="inline-button-wrapper">
+                <input class="line-button green full active" id="bookmark-save" tabindex="1" type="submit" value="__MSG_save__"/>
+                <div class="line-button red active" id="bookmark-discard" tabindex="1" type="button">__MSG_discard__</div>
             </div>
         </form>
-    </div>
-    <!-- #endregion -->
-
-    <!-- #region settings -->
-    <div id="settings-page-wrapper">
-        <div id="settings-container">
-            <div class="settings-wrapper"><button id="settings-button-placeholder"></button></div>
-            <div id="nav-bar">
-                <button id="general-nav-button">__MSG_generalTab__</button>
-                <button id="background-nav-button">__MSG_backgroundTab__</button>
-                <button id="info-nav-button">__MSG_infoTab__</button>
+        <div class="update-popup-container">
+            <div class="update-popup">
+                <div class="close-container"><div id="close-update-popup"></div></div>
+                <div class="popup-content">
+                </div>
             </div>
         </div>
-        <div id="general-page" class="settings-page">
-            <div id="general-wrapper" class="sub-page-wrapper">
-                <div id="language-settings" class="setting-wrapper">
-                    <div class="setting-entry">
-                        <h3>__MSG_language__ : </h3>
-                        <h4 class="alert-txt" id="refresh-txt">__MSG_refresh__</h4>
-                        <select id="language-choice" name="search-engine" class="mcq">
-                            <option value="en">English</option>
-                            <option value="fr">Français</option>
-                            <option value="es">Español</option>
-                            <option value="vi">Tiếng Việt</option>
-                        </select>
-                    </div>
+        <div class="countdown-container bottom" id="bottom-countdown">
+            <h4 class="countdown-label"></h4>
+            <div class="countdown">
+                <div class="countdown-number-container">
+                    <h4 class="countdown-section ct-days">00</h4>
+                    <span class="separator">:</span>
+                    <h4 class="countdown-section ct-hours">00</h4>
+                    <span class="separator">:</span>
+                    <h4 class="countdown-section ct-minutes">00</h4>
+                    <span class="separator">:</span>
+                    <h4 class="countdown-section ct-seconds">00</h4>
                 </div>
-                <div id="search-engine-settings" class="setting-wrapper">
-                    <div class="setting-entry">
-                        <h3>__MSG_searchEngine__ : </h3>
-                        <select id="search-engine" name="search-engine" class="mcq">
-                            <option value="0">Google</option>
-                            <option value="1">DuckDuckGo</option>
-                            <option value="2">Ecosia</option>
-                            <option value="3">Qwant</option>
-                        </select>
-                    </div>
+                <div class="countdown-units-container">
+                    <h4 class="countdown-section">__MSG_days__</h4>
+                    <span class="separator"></span>
+                    <h4 class="countdown-section">__MSG_hours__</h4>
+                    <span class="separator"></span>
+                    <h4 class="countdown-section">__MSG_minutes__</h4>
+                    <span class="separator"></span>
+                    <h4 class="countdown-section">__MSG_seconds__</h4>
                 </div>
-                <div id="bookmark-settings" class="setting-wrapper">
-                    <div class="setting-entry" id="bookmark-setting-entry">
-                        <div class="sub-setting-entry bookmark-sub-entry">
-                            <h3>__MSG_bookmarks__</h3>
-                            <div class="switch-button">
-                                <label class="switch">
-                                    <input type="checkbox" id="bookmark-switch">
-                                    <span class="slider"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="sub-setting-entry secondary-sub-setting" id="bookmark-new-page-wrapper">
-                            <h3>__MSG_openNewPage__</h3>
-                            <div class="standard-checkbox sub-checkbox">
-                                <label class="checkbox">
-                                    <input type="checkbox" id="new-page-switch">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="google-apps-settings" class="setting-wrapper">
-                    <div class="setting-entry">
-                        <h3>__MSG_googleApps__</h3>
-                        <div class="switch-button">
-                            <label class="switch">
-                                <input type="checkbox" id="google-apps-switch">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div id="particle-settings" class="setting-wrapper">
-                    <div class="setting-entry">
-                        <h3>__MSG_particles__</h3>
-                        <div class="switch-button">
-                            <label class="switch">
-                                <input type="checkbox" id="particles-switch">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div id="timetable-settings" class="setting-wrapper">
-                    <div class="setting-entry">
-                        <h3>__MSG_schedule__</h3>
-                        <div class="switch-button">
-                            <label class="switch">
-                                <input type="checkbox" id="schedule-switch">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div id="timer-settings" class="setting-wrapper">
-                    <div class="setting-entry">
-                        <h3>__MSG_countdown__</h3>
-                        <div class="switch-button">
-                            <label class="switch">
-                                <input type="checkbox" id="ct-switch">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                    </div>
-                    <div id="timer-settings-subwrapper">
-                        <div class="setting-entry ct-sub-entry-hidden secondary-sub-setting">
-                            <h3>__MSG_countdownPosition__ :</h3>
-                            <select id="countdown-position" name="countdown-position" class="mcq">
-                                <option value="0">__MSG_countdownPositionTop__</option>
-                                <option value="1">__MSG_countdownPositionBottom__</option>
-                            </select>
-                        </div>
-                        <div class="setting-entry ct-sub-entry-hidden secondary-sub-setting">
-                            <h3>__MSG_countdownDate__ :</h3>
-                            <input type="datetime-local" id="datetime" class="mcq">
-                        </div>
-                        <div class="setting-entry ct-sub-entry-hidden secondary-sub-setting">
-                            <h3>__MSG_countdownLabel__ :</h3>
-                            <input type="text" id='lbl' class="mcq" autocomplete="off" spellcheck="false">
+            </div>
+        </div>
+        <div class="clock-container bottom" id="bottom-clock">
+            <h4 class="clock-section clock-hours">00</h4>
+            <span class="separator"></span>
+            <h4 class="clock-section clock-minutes">00</h4>
+            <h4 class="clock-section clock-period"></h4>
+        </div>
+        <div class="icon active" id="google-apps-button"></div>
+        <div class="large-icon-button active" id="schedule-button"></div>
+    </div>
+    <div class="side-pannel small right" id="google-apps-pannel">
+        <div class="side-pannel-small" id="google-apps-container">
+            <div class="side-bar right">
+                <div class="side-bar-element active" id="google-apps-sidebar"></div>
+                <span class="active-effect"></span>
+            </div>
+            <div class="side-pannel-content">
+                <div class="side-pannel-entry active" id="google-apps"> 
+                    <h1 class="side-pannel-header">GOOGLE APPS</h1>
+                    <div class="side-header-separator"></div>
+                    <div class="side-pannel-section">
+                        <div class="google-apps-link-container">
+                            <a href="https://calendar.google.com" id="calendar">Calendar</a>
+                            <a href="https://chat.google.com" id="chat">Chat</a>
+                            <a href="https://docs.google.com" id="docs">Docs</a>
+                            <a href="https://drive.google.com" id="drive">Drive</a>
+                            <a href="https://duo.google.com" id="duo">Duo</a>
+                            <a href="https://forms.google.com" id="forms">Forms</a>
+                            <a href="https://gmail.google.com" id="gmail">Gmail</a>
+                            <a href="https://translate.google.com" id="translate">Translate</a>
+                            <a href="https://hangouts.google.com" id="hangouts">Hangouts</a>
+                            <a href="https://keep.google.com" id="keep">Keep</a>
+                            <a href="https://maps.google.com" id="maps">Maps</a>
+                            <a href="https://meet.google.com" id="meet">Meet</a>
+                            <a href="https://news.google.com" id="news">News</a>
+                            <a href="https://photos.google.com" id="photos">Photos</a>
+                            <a href="https://sheets.google.com" id="sheets">Sheets</a>
+                            <a href="https://shopping.google.com" id="shopping">Shopping</a>
+                            <a href="https://google.com/slides" id="slides">Slides</a>
+                            <a href="https://youtube.com" id="youtube">Youtube</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="background-page" class="settings-page">
-            <div class="sub-page-wrapper">
-                <div id="background-settings" class="setting-wrapper">
-                    <div class="multiple-setting-entry">
-                        <div class="sub-setting-entry">
-                            <h3>__MSG_cycleBG__</h3>
-                            <div class="switch-button">
-                                <label class="switch">
-                                    <input type="checkbox" id="cycle-bg-switch">
-                                    <span class="slider"></span>
-                                </label>
-                            </div>
+    </div>
+    <div class="side-pannel small right" id="schedule-pannel">
+        <div class="side-pannel-small" id="schedule-container">
+            <div class="side-bar right">
+                <div class="side-bar-element active" id="schedule-sidebar"></div>
+                <span class="active-effect"></span>
+            </div>
+            <div class="side-pannel-content">
+                <div class="side-pannel-entry active" id="anime-schedule"> 
+                    <h1 class="side-pannel-header">__MSG_schedule__</h1>
+                    <div class="side-header-separator"></div>
+                    <div class="side-pannel-section">
+                        <div class="side-pannel-section-header">__MSG_weekday__</div>
+                        <div class="side-pannel-section-desc">__MSG_weekdayDesc__</div>
+                        <div class="inline-multiple-selector" id="weekday-multiple-selector">
+                            <div class="multiple-selector-entry" value="monday">__MSG_mondayShort__</div>
+                            <div class="multiple-selector-entry" value="tuesday">__MSG_tuesdayShort__</div>
+                            <div class="multiple-selector-entry" value="wednesday">__MSG_wednesdayShort__</div>
+                            <div class="multiple-selector-entry" value="thursday">__MSG_thursdayShort__</div>
+                            <div class="multiple-selector-entry" value="friday">__MSG_fridayShort__</div>
+                            <div class="multiple-selector-entry" value="saturday">__MSG_saturdayShort__</div>
+                            <div class="multiple-selector-entry" value="sunday">__MSG_sundayShort__</div>
                         </div>
-                        <div class="sub-setting-entry left-sub-setting">
-                            <h3>__MSG_shuffleBG__</h3>
-                            <div class="standard-checkbox">
-                                <label class="checkbox">
-                                    <input type="checkbox" id="shuffle-bg-switch">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
+                    </div>
+                    <div class="side-separator"></div>
+                    <div class="side-pannel-section side-slider-section">
+                        <div class="loading-symbol" id="schedule-loading"></div>
+                        <div class="side-slider-section-entry" id="monday">
                         </div>
-                        <div class="sub-setting-entry left-sub-setting">
-                            <h3>__MSG_delayBG__</h3>
-                            <input type="number" id="cycle-delay-input" spellcheck="false" autocomplete="off">
-                            <h3>__MSG_minutes__</h3>
+                        <div class="side-slider-section-entry" id="tuesday">
+                        </div>
+                        <div class="side-slider-section-entry" id="wednesday">
+                        </div>
+                        <div class="side-slider-section-entry" id="thursday">
+                        </div>
+                        <div class="side-slider-section-entry" id="friday">
+                        </div>
+                        <div class="side-slider-section-entry" id="saturday">
+                        </div>
+                        <div class="side-slider-section-entry" id="sunday">
                         </div>
                     </div>
                 </div>
-                <div id="pre-background-header">
-                    <h3>__MSG_backgroundChoice__</h3>
-                    <div id="pre-background-header-button-wrapper">
-                        <button class="standard-btn" tabindex="1" id="select-all-btn">__MSG_selectAll__</button>
-                        <button class="standard-btn" tabindex="1" id="deselect-all-btn">__MSG_deselectAll__</button>
-                    </div>
-                </div>
-                <div id="background-choice"></div>
-            </div>
-        </div>
-        <div id="info-page" class="settings-page">
-            <div class="sub-page-wrapper">
-
-                <h1 class="info-main-header"><img src="src/assets/NEXXT Logo.svg" alt="" id="extention-logo">__MSG_appName__</h1>
-                <h2 class="info-header">__MSG_imageRights__</h2>
-                <ul>
-                    <li>
-                        <p>__MSG_imageRightsTxt__</p>
-                    </li>
-                </ul>
-                <h2 class="info-header">__MSG_iconsRights__</h2>
-                <ul>
-                    <li>
-                        <p>__MSG_iconsRightsTxt__</p>
-                    </li>
-                </ul>
-                <h2 class="info-header">__MSG_codebaseRights__</h2>
-                <ul>
-                    <li>
-                        <p>__MSG_codebaseRightsTxt__</p>
-                    </li>
-                </ul>
-                <h2 class="info-header">__MSG_libraries__</h2>
-                <ul>__MSG_librariesTxt__</ul>
-                <h2 class="info-header">__MSG_feedbackBR__</h2>
-                <ul>
-                    <li>
-                        <p>__MSG_feedbackBRTxt__</p>
-                    </li>
-                </ul>
-                <div class="contact-means">
-                    <a href="https://discord.gg/x5EbcbrCQG" target="_blank" title="Join us on Discord"><img
-                            src="src/assets/Discord-Logo-White.svg" alt="" class="contact-img"></a>
-                    <a href="https://github.com/NoCymer" target="_blank" title="Follow me on GitHub"><img
-                            src="src/assets/GitHub-Mark-Light-120px-plus.png" alt="" class="contact-img"></a>
-                    <a href="https://twitter.com/NEXXT_Tabs" target="_blank" title="Follow on Twitter"><img
-                            src="src/assets/Twitter Logo white.svg" alt="" class="contact-img"></a>
-                </div>
-                <h1 class="info-footer">©Copyright <a href="https://github.com/NoCymer/" target="_blank">NoCymer</a>
-                    2021 - 2022</h1>
-                <p id="app-version"></p>
             </div>
         </div>
     </div>
-    <!-- #endregion -->
-
-    <!-- #region GoogleApps -->
-    <div id="google-apps-container">
-        <div id="google-apps-subcontainer">
-            <div id="google-apps-scroll-container">
-                <div class="google-app-entry" id="https://myaccount.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-account.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Account</h4>
-                </div>
-                <div class="google-app-entry" id="https://www.blogger.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-blogger.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Blogger</h4>
-                </div>
-                <div class="google-app-entry" id="https://books.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-books.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Books</h4>
-                </div>
-                <div class="google-app-entry" id="https://calendar.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-calendar.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Calendar</h4>
-                </div>
-                <div class="google-app-entry" id="https://chat.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-chat.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Chat</h4>
-                </div>
-                <div class="google-app-entry" id="https://contacts.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-contacts.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Contacts</h4>
-                </div>
-                <div class="google-app-entry" id="https://docs.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-docs.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Docs</h4>
-                </div>
-                <div class="google-app-entry" id="https://drive.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-drive.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Drive</h4>
-                </div>
-                <div class="google-app-entry" id="https://duo.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-duo.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Duo</h4>
-                </div>
-                <div class="google-app-entry" id="https://earth.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-earth.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Earth</h4>
-                </div>
-                <div class="google-app-entry" id="https://finance.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-finance.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Finance</h4>
-                </div>
-                <div class="google-app-entry" id="https://gmail.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-gmail.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Gmail</h4>
-                </div>
-                <div class="google-app-entry" id="https://hangouts.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-hangouts.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Hangouts</h4>
-                </div>
-                <div class="google-app-entry" id="https://jamboard.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-jamboard.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Jamboard</h4>
-                </div>
-                <div class="google-app-entry" id="https://keep.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-keep.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Keep</h4>
-                </div>
-                <div class="google-app-entry" id="https://maps.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-maps.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Maps</h4>
-                </div>
-                <div class="google-app-entry" id="https://meet.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-meet.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Meet</h4>
-                </div>
-                <div class="google-app-entry" id="https://www.google.com/business" tabindex="1">
-                    <img src="src/assets/google/icon--google-my-business.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">My Buisness</h4>
-                </div>
-                <div class="google-app-entry" id="https://news.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-news.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">News</h4>
-                </div>
-                <div class="google-app-entry" id="https://photos.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-photos.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Photos</h4>
-                </div>
-                <div class="google-app-entry" id="https://play.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-play.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Google Play</h4>
-                </div>
-                <div class="google-app-entry" id="https://search.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-search.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Search</h4>
-                </div>
-                <div class="google-app-entry" id="https://sheets.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-sheets.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Sheets</h4>
-                </div>
-                <div class="google-app-entry" id="https://shopping.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-shopping.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Shopping</h4>
-                </div>
-                <div class="google-app-entry" id="https://google.com/slides" tabindex="1">
-                    <img src="src/assets/google/icon--google-slide.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Slide</h4>
-                </div>
-                <div class="google-app-entry" id="https://translate.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-translate.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Translate</h4>
-                </div>
-                <div class="google-app-entry" id="https://pay.google.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-pay.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Pay</h4>
-                </div>
-                <div class="google-app-entry" id="https://youtube.com" tabindex="1">
-                    <img src="src/assets/google/icon--google-youtube.png" alt="" class="google-app-entry-img">
-                    <h4 class="google-app-title">Youtube</h4>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- #endregion -->
-    <div class="featurePresentation" id="schedule-feature">
-        <h1>Check out this new feature</h1>
-        <img src="src/assets/plus.svg" alt="" id="schedule-feature-close">
-    </div>
-    <div id="schedule-handle">
-        <img src="src/assets/arrow.svg" alt="" id="schedule-handle-el">
-    </div>
-    <div id="schedule-main-conatiner">
-        <div id="schedule-handle-op">
-            <img src="src/assets/arrow.svg" alt="" id="schedule-handle-el-op">
-        </div>
-        <div id="schedule-main-sub-conatiner">
-            <h1>__MSG_schedule__</h1>
-            <img src="src/assets/loading.svg" alt="" class="loading" id="schedule-loading">
-            <div id="week-days-container">
-                <div id="Monday" class="day">
-                    <h1 class="day-header">__MSG_monday__</h1>
-                </div>
-                <div id="Tuesday" class="day">
-                    <h1 class="day-header">__MSG_tuesday__</h1>
-                </div>
-                <div id="Wednesday" class="day">
-                    <h1 class="day-header">__MSG_wednesday__</h1>
-                </div>
-                <div id="Thursday" class="day">
-                    <h1 class="day-header">__MSG_thursday__</h1>
-                </div>
-                <div id="Friday" class="day">
-                    <h1 class="day-header">__MSG_friday__</h1>
-                </div>
-                <div id="Saturday" class="day">
-                    <h1 class="day-header">__MSG_saturday__</h1>
-                </div>
-                <div id="Sunday" class="day">
-                    <h1 class="day-header">__MSG_sunday__</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- #region countdownBottom -->
-    <div id="countdownContainerBottom" style="display:none;">
-        <table style="max-height:145px; min-width:800px;">
-            <tr class="info">
-                <td id="labelB" colspan="7" class="mainLbl"></td>
-            </tr>
-            <tr class="info">
-                <td class="lblNb" id="bD">00</td>
-                <td class="lbldot">:</td>
-                <td class="lblNb" id="bH">00</td>
-                <td class="lbldot">:</td>
-                <td class="lblNb" id="bM">00</td>
-                <td class="lbldot">:</td>
-                <td class="lblNb" id="bS">00</td>
-            </tr>
-            <tr class="lblHolder">
-                <td class="lblL">__MSG_days__</td>
-                <td class="lbl">__MSG_hours__</td>
-                <td class="lbl">__MSG_minutes__</td>
-                <td class="lblR">__MSG_seconds__</td>
-            </tr>
-        </table>
-    </div>
-    <!-- #endregion -->
 </body>
-
 </html>

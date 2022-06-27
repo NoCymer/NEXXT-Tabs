@@ -1,0 +1,32 @@
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 459 470.5">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+        stroke: #444856;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-1 {
+        stroke-width: 73px;
+      }
+
+      .cls-2 {
+        stroke-width: 50px;
+      }
+
+      .cls-3 {
+        stroke-width: 28px;
+      }
+    </style>
+  </defs>
+  <g>
+    <polyline class="cls-1" points="46 252.5 191 340.5 420 36.5"/>
+    <g>
+      <polyline class="cls-2" points="279 36.5 25 36.5 25 145.5"/>
+      <polyline class="cls-2" points="25 356.5 25 445.5 434 445.5 434 188.5"/>
+      <path class="cls-3" d="M52,239.72" transform="translate(-27 -14.5)"/>
+    </g>
+  </g>
+</svg>

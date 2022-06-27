@@ -1540,5 +1540,15 @@ document.addEventListener("translated", () => {
   
   };
   
+  const particlesContainer = $("#particles-js");
+  let particleBoolStorage = new Storage("particles-activated-boolean", true)
+  particlesContainer.css("transition", ".25s")
+  particleBoolStorage.getValue() ? particlesContainer.css('opacity', 1) : particlesContainer.css('opacity', 0);
+  document.addEventListener("particles-storage-change", () => {
+      particleBoolStorage.getValue() ? particlesContainer.css('opacity', 1) : particlesContainer.css('opacity', 0)
+  })
+  particlesJS.load('particles-js', '../assets/particles.json', function() {
+      console.log('callback - particles.js config loaded');
+  });
   
 })

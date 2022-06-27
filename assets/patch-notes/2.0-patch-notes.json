@@ -1,0 +1,29 @@
+{
+    "title": "V2.0 Patch Notes",
+    "videoURL": "https://www.youtube.com/embed/Vu_2iXYbwXE",
+    "videoThumbnail" : "https://i.ytimg.com/vi/Vu_2iXYbwXE/maxresdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC-P--_NKSUoz9IF1CmY9HDXgwlpg",
+    "content": {
+        "el1": {
+            "type":"paragraph",
+            "title":"We're celebrating the NEXXT update 🎉",
+            "content":"We officially reached over <b>3000 users</b> ! To properly celebrate this milestone, we decided to put an extra amount of love in our extension by offering it a <b>brand new look</b> and adding <b>brand new exciting features.</b>"
+        },
+        "el2": {
+            "type":"paragraph",
+            "title":"What's new ?"
+        },
+        "el3": {
+            "type":"list",
+            "array": [
+                "Total revamp of the user interface",
+                "Anime schedule system totaly revisited",
+                "Customizable interface",
+                "Clock feature"
+            ]
+        },
+        "el4": {
+            "type":"paragraph",
+            "content":"View <a href='https://github.com' target='_blank'>detailed patch note</a>"
+        }
+    }
+}

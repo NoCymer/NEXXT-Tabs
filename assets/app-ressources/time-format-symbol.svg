@@ -1,0 +1,28 @@
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 497.54282 492">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #d8d8d8;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 39px;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #d8d8d8;
+      }
+
+      .cls-3 {
+        font-size: 234.27065px;
+        font-family: Arial-BoldMT, Arial;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <g>
+    <path class="cls-1" d="M446.26941,131.82739A226.293,226.293,0,0,0,256.5,29C131.40753,29,30,130.40747,30,255.5S131.40753,482,256.5,482A226.51944,226.51944,0,0,0,462.01874,350.79688" transform="translate(-10.5 -9.5)"/>
+    <path class="cls-2" d="M508.04282,226.42188c-12.55127-55.29609-20.43686-128.9248-12.9444-182.64949l-56.93549,75.64143-92.13488,21.7066C398.23105,155.86194,462.47543,192.68645,508.04282,226.42188Z" transform="translate(-10.5 -9.5)"/>
+  </g>
+  <text class="cls-3" transform="translate(115.2207 323.30566)">24</text>
+</svg>

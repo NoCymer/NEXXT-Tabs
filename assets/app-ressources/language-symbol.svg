@@ -1,0 +1,34 @@
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 462 462">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #d8d8d8;
+      }
+
+      .cls-2, .cls-3 {
+        fill: none;
+        stroke: #d8d8d8;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        stroke-width: 28px;
+      }
+
+      .cls-3 {
+        stroke-width: 30px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g>
+    <path class="cls-1" d="M256,63a193,193,0,1,1-136.47,56.53A191.75,191.75,0,0,1,256,63m0-38C128.42,25,25,128.42,25,256S128.42,487,256,487,487,383.58,487,256,383.58,25,256,25Z" transform="translate(-25 -25)"/>
+    <line class="cls-2" x1="37.2" y1="129.6" x2="423.6" y2="129.6"/>
+    <line class="cls-2" x1="37.2" y1="338.4" x2="423.6" y2="338.4"/>
+    <line class="cls-2" x1="26.4" y1="231.6" x2="436.8" y2="231.6"/>
+    <path class="cls-3" d="M188.2,449.8" transform="translate(-25 -25)"/>
+    <path class="cls-2" d="M205,51.4c-18.28,29.75-50.73,91.71-55.2,176.4-5.67,107.45,32.35,200.85,50.4,230.4" transform="translate(-25 -25)"/>
+    <path class="cls-2" d="M310.6,458.2c18.28-29.75,50.94-100.69,55.41-185.38C371.68,165.37,328.65,81,310.6,51.4" transform="translate(-25 -25)"/>
+    <line class="cls-2" x1="230.4" y1="436.8" x2="230.4" y2="26.4"/>
+  </g>
+</svg>

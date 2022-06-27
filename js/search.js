@@ -1,56 +1,36 @@
 document.addEventListener("translated", () => {
-    const searchBar = document.querySelector("#search-wrapper");
-    const searchInput = document.querySelector("#search-input");
-    const searchForm = document.querySelector("#search-form");
-    const searchButton = document.querySelector("#search-button");
-    const searchEngine = document.querySelector("#search-engine");
-    let searchEnigne = 0;
+    const navigationForm = $("#navigation-bar");
+    const navigationInput = $("#search-bar");
+    const navigationButton = $("#navigation-bar span");
     
-    if(localStorage.getItem("searchEngine") != null) {
-        searchEnigne = Number(localStorage.getItem("searchEngine"));
-    }
     const search = (input) => {
-        if(localStorage.getItem("searchEngine") != null) {
-            searchEnigne = localStorage.getItem("searchEngine");
-        }
-        if(input != "" && input != " ") {
-            let url = "";
-            switch(Number(searchEnigne)) {
-                case 0:
-                    url = `https://google.com/search?q=${input}`;
-                    window.location = url;  
-                    break;
-                case 1:
-                    url = `https://duckduckgo.com/?q=${input}`;
-                    window.location = url;  
-                    break;
-                case 2:
-                    url = `https://ecosia.org/search?q=${input}`;
-                    window.location = url;  
-                    break;
-                case 3:
-                    url = `https://qwant.com/?q=${input}`;
-                    window.location = url;  
-                    break;
-            }
-        }
+        input = input.trim();
+        if(input === "") return;
+        const searchEngineStorage = new Storage("search-engine-string", "google");
+    
+        switch(searchEngineStorage.getValue()) {
+            case "google": 
+                window.location = `https://google.com/search?q=${input}`;
+                break;
+            case "duckduckgo": 
+                window.location = `https://duckduckgo.com/?q=${input}`;
+                break;
+            case "qwant": 
+                window.location = `https://qwant.com/?q=${input}`;
+                break;
+            case "ecosia": 
+                window.location = `https://ecosia.org/search?q=${input}`;
+                break;
+        }  
     }
     
-    searchButton.addEventListener("click", () => {
-        search(searchInput.value);
-    })
-    searchForm.addEventListener("submit", (e) => {
+    navigationForm.on("submit", function(e) {
         e.preventDefault();
-        search(searchInput.value);
+        e.stopPropagation();
+        search(navigationInput[0].value);
     })
-    searchInput.addEventListener("focus", () => {
-        searchInput.placeholder = "";
+    
+    navigationButton.click(function() {
+        search(navigationInput[0].value);
     })
-    searchInput.addEventListener("focusout", () => {
-        searchInput.placeholder = "Search";
-    })
-    searchEngine.value = searchEnigne;
-    searchEngine.onchange = () => {
-        localStorage.setItem("searchEngine",searchEngine.value);
-    }
-})
+});
