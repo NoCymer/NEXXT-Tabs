@@ -28,7 +28,7 @@ a{
 .search-wrapper{
     margin-top: 44vh;
     width: 100%;
-    min-height: 100%;
+    min-height: 50vh;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -125,7 +125,7 @@ a{
 
 #bookmark-container{
     width: 39%;
-    min-height: 800px;
+    min-height: 100px;
     transition: .25s;
     height: fit-content;
     display: flex;
@@ -1159,7 +1159,11 @@ input:not(:placeholder-shown) ~ .input-background,
     width: 88%;
     margin-top: 15px;
     text-align: justify;
-    text-indent: 1.5rem;
+    text-indent: 0rem;
+}
+.update-paragraph::before{
+    content: "• ";
+    font-size: 1.2rem;
 }
 .update-paragraph a{
     font-size: 1rem;
