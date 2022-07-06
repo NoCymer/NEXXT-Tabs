@@ -189,6 +189,8 @@
     transition: .25s;
     left: 20px;
     z-index: 1;
+    background-repeat: no-repeat;
+    background-position: center;
     cursor:pointer;
 }
 
